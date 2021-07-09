@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Story Explorer Preview</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      #storybook-iframe {
+        display: flex;
+        border: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <script crossorigin type="module" src="{{entrypoint}}"></script>
+  </head>
+  <body>
+    <style>
+      .loading {
+        cursor: default;
+      }
+
+      .loading-message {
+        margin: 16px;
+      }
+
+      @keyframes load {
+        from {
+          transform: translateX(-100%) scaleX(0.6);
+          animation-timing-function: ease-in;
+        }
+
+        50% {
+          transform: translateX(0) scaleX(1);
+          animation-timing-function: ease-out;
+        }
+
+        to {
+          transform: translateX(100%) scaleX(0.6);
+        }
+      }
+
+      .loading-bar {
+        height: 2px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .loading-bar-inner {
+        animation: load 2s infinite;
+        transform-origin: 50% 50%;
+
+        height: 100%;
+        width: 100%;
+        background-color: var(--vscode-progressBar-background);
+      }
+    </style>
+    <div id="loading-container" class="loading">
+      <div class="loading-bar">
+        <div class="loading-bar-inner"></div>
+      </div>
+      <div class="loading-message">Loading&hellip;</div>
+    </div>
+  </body>
+</html>

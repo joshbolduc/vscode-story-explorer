@@ -1,0 +1,81 @@
+<style>
+  .error {
+    margin: 16px;
+    cursor: default;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:focus {
+    outline-color: var(--vscode-focusBorder);
+  }
+
+  .refresh-button {
+    color: var(--vscode-button-foreground);
+    background-color: var(--vscode-button-background);
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    padding: 4px;
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    border: none;
+  }
+
+  .refresh-button:focus {
+    outline-offset: 2px !important;
+    outline-color: var(--vscode-focusBorder);
+    background-color: var(--vscode-button-hoverBackground);
+    border: 0 !important;
+    box-shadow: none;
+  }
+
+  .refresh-button:active {
+    outline: 0 !important;
+  }
+
+  .refresh-button:hover {
+    text-decoration: none !important;
+    color: var(--vscode-button-foreground);
+    background-color: var(--vscode-button-hoverBackground);
+  }
+</style>
+<div class="error">
+  <p>
+    There was a problem loading the story preview.
+    <strong
+      >Is the Storybook development server at
+      <code>{{storybookUrl}}</code> running?</strong
+    >
+  </p>
+
+  <ul>
+    <li>
+      You may need to start the Storybook development server using a command
+      like <code>npx start-storybook</code>, and then refresh this preview.
+    </li>
+    <li>
+      If <code>{{storybookUrl}}</code> is not the address of your Storybook
+      development server,
+      <a href="command:storyExplorer.openStorybookUrlSetting"
+        >modify <code>storyExplorer.server.external.url</code> with the correct
+        address</a
+      >.
+    </li>
+  </ul>
+
+  <p>
+    <a
+      href="command:storyExplorer.refreshWebview"
+      role="button"
+      tabindex="0"
+      class="refresh-button"
+      >Refresh</a
+    >
+  </p>
+</div>

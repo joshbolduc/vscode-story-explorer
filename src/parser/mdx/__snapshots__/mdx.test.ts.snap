@@ -1,0 +1,345 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mdx parses story file fixtures/Children.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": undefined,
+    "location": undefined,
+    "title": undefined,
+  },
+  "stories": Array [
+    Object {
+      "id": undefined,
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "name": "Children prop, children content",
+    },
+    Object {
+      "id": undefined,
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 8,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 8,
+        },
+      },
+      "name": "Children prop, empty body",
+    },
+    Object {
+      "id": undefined,
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 10,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 10,
+        },
+      },
+      "name": "Children prop, no body",
+    },
+    Object {
+      "id": undefined,
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 12,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 12,
+        },
+      },
+      "name": "No children prop, children content",
+    },
+  ],
+}
+`;
+
+exports[`mdx parses story file fixtures/Spread.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": undefined,
+    "location": undefined,
+    "title": undefined,
+  },
+  "stories": Array [
+    Object {
+      "id": undefined,
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 15,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 15,
+        },
+      },
+      "name": undefined,
+    },
+  ],
+}
+`;
+
+exports[`mdx parses story file project/src/stories/CsfWithMdx.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": "example-mdx-importing-csf",
+    "location": Object {
+      "end": Object {
+        "column": 0,
+        "line": 5,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 5,
+      },
+    },
+    "title": "Example/MDX importing CSF",
+  },
+  "stories": Array [
+    Object {
+      "id": "example-mdx-importing-csf--basic",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 11,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 11,
+        },
+      },
+      "name": "Basic",
+    },
+    Object {
+      "id": "example-mdx-importing-csf--basic-2",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 21,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 21,
+        },
+      },
+      "name": "Story name from MDX",
+    },
+    Object {
+      "id": "example-mdx-importing-csf--basic-3",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 25,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 25,
+        },
+      },
+      "name": "Basic 3",
+    },
+  ],
+}
+`;
+
+exports[`mdx parses story file project/src/stories/DocsOnly.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": "example-mdx-docs-only",
+    "location": Object {
+      "end": Object {
+        "column": 0,
+        "line": 3,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 3,
+      },
+    },
+    "title": "Example/MDX Docs Only",
+  },
+  "stories": Array [],
+}
+`;
+
+exports[`mdx parses story file project/src/stories/DocsOnlyTop.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": "mdx-docs-at-top-level",
+    "location": Object {
+      "end": Object {
+        "column": 0,
+        "line": 3,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 3,
+      },
+    },
+    "title": "MDX Docs at top level",
+  },
+  "stories": Array [],
+}
+`;
+
+exports[`mdx parses story file project/src/stories/MdxWithStories.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": "example-mdx-with-stories",
+    "location": Object {
+      "end": Object {
+        "column": 0,
+        "line": 6,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 6,
+      },
+    },
+    "title": "Example/MDX with Stories",
+  },
+  "stories": Array [
+    Object {
+      "id": "example-mdx-with-stories--mdx-first-story",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 10,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 10,
+        },
+      },
+      "name": "MDX first story",
+    },
+    Object {
+      "id": "example-mdx-with-stories--mdx-second-story",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 14,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 14,
+        },
+      },
+      "name": "MDX second story",
+    },
+    Object {
+      "id": "example-mdx-with-stories--mdx-story-3",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 18,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 18,
+        },
+      },
+      "name": "MDX Story 3",
+    },
+  ],
+}
+`;
+
+exports[`mdx parses story file project/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": "mdx-with-stories-top",
+    "location": Object {
+      "end": Object {
+        "column": 0,
+        "line": 4,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 4,
+      },
+    },
+    "title": "MDX with stories, top",
+  },
+  "stories": Array [
+    Object {
+      "id": "mdx-with-stories-top--mdx-with-stories-top",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 6,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 6,
+        },
+      },
+      "name": "MDX with stories, top",
+    },
+  ],
+}
+`;
+
+exports[`mdx parses story file project/src/stories/Precedence.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": "example-precedence",
+    "location": Object {
+      "end": Object {
+        "column": 0,
+        "line": 4,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 4,
+      },
+    },
+    "title": "Example/Precedence",
+  },
+  "stories": Array [
+    Object {
+      "id": "example-precedence--small",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 20,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 20,
+        },
+      },
+      "name": "Story with name, story, body",
+    },
+    Object {
+      "id": "example-precedence--story-with-name-body",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 26,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 26,
+        },
+      },
+      "name": "Story with name, body",
+    },
+  ],
+}
+`;

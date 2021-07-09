@@ -1,0 +1,43 @@
+import { IncomingMessage, request } from 'http';
+import { CancellationError, CancellationToken, Disposable } from 'vscode';
+
+export class TimeoutError extends Error {}
+
+export const fetch = (url: string, token: CancellationToken) => {
+  return new Promise<IncomingMessage>((resolve, reject) => {
+    const cleanup = () => {
+      tokenListener?.dispose();
+      tokenListener = undefined;
+      if (!req.destroyed) {
+        req.destroy();
+      }
+    };
+
+    const req = request(url)
+      .once('response', (res) => {
+        cleanup();
+        resolve(res);
+      })
+      .once('timeout', () => {
+        cleanup();
+        reject(new TimeoutError());
+      })
+      .once('error', (e) => {
+        cleanup();
+        reject(e);
+      })
+      .once('close', () => {
+        cleanup();
+        reject(new Error('Connection closed prematurely'));
+      });
+
+    req.end();
+
+    let tokenListener: Disposable | undefined = token.onCancellationRequested(
+      () => {
+        cleanup();
+        reject(new CancellationError());
+      },
+    );
+  });
+};

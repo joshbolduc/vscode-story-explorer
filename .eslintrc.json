@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "reportUnusedDisableDirectives": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "extraFileExtensions": [".mjs"],
+    "project": [
+      "./tsconfig.json",
+      "./common/tsconfig.json",
+      "./src/tsconfig.json",
+      "./webview/tsconfig.json"
+    ]
+  },
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-member-accessibility": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/member-ordering": "warn",
+    "@typescript-eslint/no-empty-function": [
+      "error",
+      { "allow": ["private-constructors"] }
+    ],
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/prefer-readonly": "warn",
+    "import/order": ["warn", { "alphabetize": { "order": "asc" } }],
+    "sort-imports": [
+      "warn",
+      { "ignoreCase": true, "ignoreDeclarationSort": true }
+    ]
+  },
+  "ignorePatterns": ["test/project/**/*"],
+  "overrides": [
+    {
+      "files": "**/*.test.*",
+      "rules": {
+        // Assertions are kind of the point of tests
+        "@typescript-eslint/no-non-null-assertion": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+export const spreadProps = {
+  id: 'test-id--via-spread',
+  name: 'Story name',
+  somethingElse: {
+    thatIs: 'nested',
+  },
+};
+
+export const deeplySpreadProps = {
+  ...spreadProps,
+};
+
+<Story {...spreadProps} />
+
+<Story {...deeplySpreadProps} />

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`convertGlob handles ** 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles **/* 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\/\\?\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles **/*.stories.@(js|jsx|ts|tsx) 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.stories\\\\\\.\\(js\\|jsx\\|ts\\|tsx\\)\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles **/../*.ts 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\\\\\.\\\\\\.\\\\/\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.ts\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles ../src/**/*.stories.@(js|jsx|ts|tsx) 1`] = `
+Object {
+  "globBasePath": "/mock/src",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.stories\\\\\\.\\(js\\|jsx\\|ts\\|tsx\\)\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles ../src/**/*.stories.mdx 1`] = `
+Object {
+  "globBasePath": "/mock/src",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.stories\\\\\\.mdx\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles @(js|jsx|ts|tsx) 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(js\\|jsx\\|ts\\|tsx\\)\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles file.ts 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir",
+  "globPattern": "file.ts",
+}
+`;
+
+exports[`convertGlob handles src/* 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir/src",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\/\\?\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles src/** 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir/src",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles src/**/*.ts 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir/src",
+  "globPattern": "**/*",
+  "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.ts\\)\\$/,
+}
+`;
+
+exports[`convertGlob handles src/file.ts 1`] = `
+Object {
+  "globBasePath": "/mock/baseDir",
+  "globPattern": "src/file.ts",
+}
+`;

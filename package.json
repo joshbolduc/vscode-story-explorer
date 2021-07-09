@@ -1,0 +1,407 @@
+{
+  "name": "story-explorer",
+  "displayName": "Story Explorer",
+  "description": "Browse and preview Storybook stories inside VS Code",
+  "publisher": "joshbolduc",
+  "version": "0.1.0",
+  "preview": true,
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshbolduc/vscode-story-explorer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joshbolduc/vscode-story-explorer/issues"
+  },
+  "homepage": "https://github.com/joshbolduc/vscode-story-explorer",
+  "license": "MIT",
+  "engines": {
+    "npm": "^6.0.0",
+    "vscode": "^1.58.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "storybook",
+    "component",
+    "story",
+    "csf"
+  ],
+  "activationEvents": [
+    "onCommand:storyExplorer.goToStorySource",
+    "onCommand:storyExplorer.openPreview",
+    "onCommand:storyExplorer.openPreviewInBrowser",
+    "onCommand:storyExplorer.openPreviewToSide",
+    "onCommand:storyExplorer.openStorybookConfig",
+    "onCommand:storyExplorer.openStorybookInBrowser",
+    "onCommand:storyExplorer.refreshAllWebviews",
+    "onCommand:storyExplorer.refreshWebview",
+    "onCommand:storyExplorer.restartStorybookServer",
+    "onCommand:storyExplorer.startStorybookServer",
+    "onCommand:storyExplorer.stopStorybookServer",
+    "onView:storyExplorer.storiesView",
+    "onWebviewPanel:storyExplorer.webviewPreview",
+    "workspaceContains:**/.storybook/*",
+    "workspaceContains:**/*.stories.js",
+    "workspaceContains:**/*.stories.jsx",
+    "workspaceContains:**/*.stories.mdx",
+    "workspaceContains:**/*.stories.ts",
+    "workspaceContains:**/*.stories.tsx"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "storyExplorer.openPreview",
+        "title": "Open Preview",
+        "category": "Story Explorer",
+        "icon": "$(preview)"
+      },
+      {
+        "command": "storyExplorer.openPreviewToSide",
+        "title": "Open Preview to the Side",
+        "category": "Story Explorer",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "storyExplorer.refreshWebview",
+        "title": "Refresh Preview",
+        "category": "Story Explorer",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "storyExplorer.refreshAllWebviews",
+        "title": "Refresh All Previews",
+        "category": "Story Explorer",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "storyExplorer.goToStorySource",
+        "title": "Go to Story Source",
+        "category": "Story Explorer",
+        "icon": "$(code)"
+      },
+      {
+        "command": "storyExplorer.openStorybookInBrowser",
+        "title": "Open Storybook in Browser",
+        "category": "Story Explorer",
+        "icon": "$(globe)",
+        "enablement": "storyExplorer.storybookConfigDetected"
+      },
+      {
+        "command": "storyExplorer.openPreviewInBrowser",
+        "title": "Open Preview in Browser",
+        "category": "Story Explorer",
+        "icon": "$(globe)"
+      },
+      {
+        "command": "storyExplorer.openStorybookConfig",
+        "title": "Open Storybook Config",
+        "category": "Story Explorer",
+        "icon": "$(gear)",
+        "enablement": "storyExplorer.storybookConfigDetected"
+      },
+      {
+        "command": "storyExplorer.startStorybookServer",
+        "title": "Start Storybook Server",
+        "category": "Story Explorer",
+        "icon": "$(gear)",
+        "enablement": "!storyExplorer.internalServerRunning && storyExplorer.storybookConfigDetected && config.storyExplorer.server.internal.enabled"
+      },
+      {
+        "command": "storyExplorer.stopStorybookServer",
+        "title": "Stop Storybook Server",
+        "category": "Story Explorer",
+        "icon": "$(gear)",
+        "enablement": "storyExplorer.internalServerRunning"
+      },
+      {
+        "command": "storyExplorer.restartStorybookServer",
+        "title": "Restart Storybook Server",
+        "category": "Story Explorer",
+        "icon": "$(gear)",
+        "enablement": "storyExplorer.internalServerRunning"
+      }
+    ],
+    "configuration": {
+      "title": "Story Explorer",
+      "properties": {
+        "storyExplorer.storybookConfigDir": {
+          "scope": "window",
+          "markdownDescription": "Location of the Storybook configuration directory containing `main.js`. By default, Story Explorer will attempt to auto-detect a `.storybook` configuration directory that contains a `main.js` file. If your configuration directory is named something other than `.storybook` or your workspace contains more than one configuration directory, you should manually specify a path to the configuration directory you wish to use.",
+          "type": "string",
+          "examples": [
+            ".storybook"
+          ]
+        },
+        "storyExplorer.storiesGlobs": {
+          "scope": "window",
+          "markdownDescription": "Globs specifying the location of stories in the project relative to the workspace root. By default, stories globs are read from the Storybook configuration file. If specified, this takes precedence over the Storybook configuration file.",
+          "default": null,
+          "type": [
+            "string",
+            "array"
+          ],
+          "items": {
+            "type": "string",
+            "examples": [
+              "src/**/*.stories.mdx",
+              "src/**/*.stories.@(js|jsx|ts|tsx)"
+            ]
+          },
+          "examples": [
+            "src/**/*.stories.mdx",
+            "src/**/*.stories.@(js|jsx|ts|tsx)",
+            [
+              "src/**/*.stories.mdx",
+              "src/**/*.stories.@(js|jsx|ts|tsx)"
+            ]
+          ]
+        },
+        "storyExplorer.server.internal.storybookBinaryPath": {
+          "scope": "window",
+          "markdownDescription": "Path to the `start-storybook` script used to start a Storybook development server. By default, Story Explorer will attempt to auto-detect the script inside `node_modules`.",
+          "type": "string",
+          "examples": [
+            "node_modules/.bin/start-storybook"
+          ],
+          "default": null
+        },
+        "storyExplorer.server.internal.environmentVariables": {
+          "scope": "window",
+          "markdownDescription": "Object with environment variables that will be added to the Storybook server process.",
+          "type": "object",
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        },
+        "storyExplorer.server.internal.enabled": {
+          "scope": "window",
+          "markdownDescription": "Controls whether to enable the internal Storybook development server. When unchecked, you will have to run the server externally.",
+          "default": "true",
+          "type": "boolean"
+        },
+        "storyExplorer.server.internal.behavior": {
+          "scope": "window",
+          "markdownDescription": "Controls when to automatically start a Storybook development server. This setting only applies when `#storyExplorer.server.internal.enabled#` is enabled.",
+          "default": "deferred",
+          "enum": [
+            "immediate",
+            "deferred"
+          ],
+          "markdownEnumDescriptions": [
+            "Start the server automatically when opening the workspace.",
+            "Wait to start the server automatically until a story preview is opened."
+          ]
+        },
+        "storyExplorer.server.external.url": {
+          "scope": "window",
+          "markdownDescription": "URL of an externally launched and managed Storybook instance, used when `#storyExplorer.server.internal.enabled#` is disabled. Defaults to `http://localhost:6006`.",
+          "type": "string",
+          "examples": [
+            "http://localhost:6006"
+          ]
+        },
+        "storyExplorer.codeLens.stories.enabled": {
+          "scope": "window",
+          "markdownDescription": "Controls whether to display CodeLens results for stories. When enabled, CodeLens results for stories appear above story definitions.",
+          "type": "boolean",
+          "default": true
+        },
+        "storyExplorer.codeLens.docs.enabled": {
+          "scope": "window",
+          "markdownDescription": "Controls whether to display CodeLens results for docs. When enabled, CodeLens results for docs appear at the top of story files.",
+          "type": "boolean",
+          "default": true
+        },
+        "storyExplorer.storiesView.showItemsWithoutStories": {
+          "scope": "window",
+          "markdownDescription": "Controls whether to display story kinds in the stories view that do not contain any valid stories. These items do not appear in Storybook.",
+          "type": "boolean",
+          "default": false
+        },
+        "storyExplorer.suggestTitle": {
+          "scope": "window",
+          "markdownDescription": "Controls whether to offer suggestions for titles when specifying a `Meta` object in CSF or MDX files. Suggestions are based on other titles used in the project.",
+          "type": "boolean",
+          "default": true
+        },
+        "storyExplorer.suggestStoryId": {
+          "scope": "window",
+          "markdownDescription": "Controls whether to offer suggestions for story IDs when using `<Story id=\"...\" />` in MDX files. Suggestions are based on the IDs of other stories in the project.",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "storyExplorer.goToStorySource",
+          "when": "storyExplorer.storybookPreviewFocused"
+        },
+        {
+          "command": "storyExplorer.refreshWebview",
+          "when": "storyExplorer.storybookPreviewFocused"
+        },
+        {
+          "command": "storyExplorer.openPreviewInBrowser",
+          "when": "storyExplorer.storybookPreviewFocused"
+        },
+        {
+          "command": "storyExplorer.refreshAllWebviews",
+          "when": "storyExplorer.storybookWebviewsOpen"
+        },
+        {
+          "command": "storyExplorer.openPreview",
+          "when": "false"
+        },
+        {
+          "command": "storyExplorer.openPreviewToSide",
+          "when": "false"
+        }
+      ],
+      "editor/title": [
+        {
+          "when": "storyExplorer.storybookPreviewFocused",
+          "group": "navigation",
+          "command": "storyExplorer.goToStorySource"
+        },
+        {
+          "when": "storyExplorer.storybookPreviewFocused",
+          "group": "navigation",
+          "command": "storyExplorer.refreshWebview"
+        },
+        {
+          "when": "storyExplorer.storybookPreviewFocused",
+          "group": "navigation",
+          "command": "storyExplorer.openPreviewInBrowser"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "storyExplorer.openPreviewInBrowser",
+          "when": "view == storyExplorer.storiesView && viewItem == story",
+          "group": "inline"
+        },
+        {
+          "command": "storyExplorer.openPreview",
+          "alt": "storyExplorer.openPreviewToSide",
+          "when": "view == storyExplorer.storiesView && viewItem == story",
+          "group": "inline"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "storyExplorer.openStorybookConfig",
+          "when": "view == storyExplorer.storiesView",
+          "group": "navigation"
+        },
+        {
+          "command": "storyExplorer.openStorybookInBrowser",
+          "when": "view == storyExplorer.storiesView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "storyExplorer.storiesView",
+          "name": "Stories",
+          "contextualTitle": "Story Explorer",
+          "icon": "$(bookmark)",
+          "when": "storyExplorer.storybookConfigDetected"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "storyExplorer.storiesView",
+        "contents": "No Storybook configuration could be loaded. Add a Storybook configuration to your project if it doesn't exist, or [set the Storybook configuration path](command:storyExplorer.openStorybookConfigDirSetting) to your existing configuration to see your project's stories here.",
+        "when": "!storyExplorer.storybookConfigDetected"
+      },
+      {
+        "view": "storyExplorer.storiesView",
+        "contents": "No stories were found. Add a story to see it appear here, or [check your Storybook configuration](command:storyExplorer.openStorybookConfig).",
+        "when": "storyExplorer.storybookConfigDetected"
+      }
+    ]
+  },
+  "main": "./dist/extension/index.js",
+  "scripts": {
+    "build": "npm run -S build:webview && npm run -S build:extension",
+    "build:extension": "npm run -S build:extension:base -- --sourcemap",
+    "build:webview": "npm run -S build:webview:base -- --sourcemap=inline",
+    "build:extension:base": "esbuild ./src/index.ts --bundle --outdir=dist/extension --external:vscode --loader:.html=text --format=cjs --platform=node --target=node14.16.0",
+    "build:webview:base": "esbuild ./webview/entry-story.ts ./webview/entry-host.ts --bundle --loader:.html=text --outdir=dist/webview --target=chrome89",
+    "watch": "concurrently npm:watch:webview npm:watch:extension",
+    "watch:extension": "npm run -S build:extension -- --watch",
+    "watch:webview": "npm run -S build:webview -- --watch",
+    "build:production": "npm run -S build:webview:base -- --minify && npm run -S build:extension:base -- --minify",
+    "package": "npm run -S build:production && vsce package --githubBranch main",
+    "deploy": "vsce publish --packagePath story-explorer-*.vsix",
+    "format": "prettier --check '{.vscode,src}/**/*.{json,ts}' '*.{json,md}'",
+    "format:fix": "npm run -S format -- --write",
+    "lint": "eslint src --ext ts --max-warnings 0",
+    "lint:fix": "npm run -S lint -- --fix",
+    "release": "standard-version",
+    "test": "jest",
+    "typecheck": "tsc --build",
+    "typecheck:watch": "npm run -S typecheck -- --watch"
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prettier --write CHANGELOG.md"
+    }
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.14.7",
+    "@babel/traverse": "^7.14.7",
+    "@babel/types": "^7.14.5",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@componentdriven/csf": "0.0.2-alpha.0",
+    "@mdx-js/mdx": "^1.6.22",
+    "@types/http-proxy": "^1.17.7",
+    "@types/jest": "^26.0.24",
+    "@types/micromatch": "^4.0.2",
+    "@types/node": "^14.16.0",
+    "@types/node-netstat": "^1.8.1",
+    "@types/vscode": "^1.58.0",
+    "@types/vscode-webview": "^1.57.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "concurrently": "^6.2.0",
+    "esbuild": "^0.12.15",
+    "esbuild-jest": "^0.5.0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "fast-glob": "^3.2.7",
+    "http-proxy": "^1.18.1",
+    "jest": "^27.0.6",
+    "micromatch": "^4.0.4",
+    "node-netstat": "^1.8.0",
+    "prettier": "^2.3.2",
+    "standard-changelog": "^2.0.27",
+    "standard-version": "^9.3.0",
+    "ts-eager": "^2.0.2",
+    "typescript": "^4.3.5",
+    "vsce": "^1.95.0"
+  }
+}
