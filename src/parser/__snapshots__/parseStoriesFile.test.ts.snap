@@ -683,6 +683,44 @@ Object {
 }
 `;
 
+exports[`parseStoriesFile parses story file project/src/stories/Form.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "id": undefined,
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 5,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 3,
+      },
+    },
+    "title": "Example/Form",
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Form",
+      "id": "example-form--form",
+      "location": Object {
+        "end": Position {
+          "column": 17,
+          "line": 7,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 7,
+        },
+      },
+      "name": "Form",
+      "properties": Object {},
+    },
+  ],
+  "type": "csf",
+}
+`;
+
 exports[`parseStoriesFile parses story file project/src/stories/Hoisting.stories.js 1`] = `
 Object {
   "meta": Object {

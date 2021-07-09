@@ -470,6 +470,42 @@ Object {
 }
 `;
 
+exports[`csf parses story file project/src/stories/Form.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 5,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 3,
+      },
+    },
+    "properties": Object {
+      "title": "Example/Form",
+    },
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Form",
+      "location": Object {
+        "end": Position {
+          "column": 17,
+          "line": 7,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 7,
+        },
+      },
+      "properties": Object {},
+    },
+  ],
+}
+`;
+
 exports[`csf parses story file project/src/stories/Hoisting.stories.js 1`] = `
 Object {
   "meta": Object {
