@@ -8,11 +8,21 @@ import { logDebug } from '../../log/log';
 import { parseFromContents, RawStory } from './parseFromContents';
 
 const getStoryName = (rawStory: RawStory) => {
-  const rawStoryName = rawStory.properties.storyName;
+  const hoistedStoryName = rawStory.properties.storyName;
 
-  return typeof rawStoryName === 'string' && rawStoryName
-    ? rawStoryName
-    : storyNameFromExport(rawStory.exportName);
+  if (typeof hoistedStoryName === 'string') {
+    return hoistedStoryName || storyNameFromExport(rawStory.exportName);
+  }
+
+  const { story } = rawStory.properties;
+  if (typeof story === 'object' && story && 'name' in story) {
+    const csfV1StoryName: unknown = (story as Record<string, unknown>).name;
+    if (typeof csfV1StoryName === 'string' && csfV1StoryName) {
+      return csfV1StoryName;
+    }
+  }
+
+  return storyNameFromExport(rawStory.exportName);
 };
 
 const parseCsf = (contents: string) => {
