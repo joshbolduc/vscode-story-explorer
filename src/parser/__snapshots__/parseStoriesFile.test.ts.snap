@@ -200,6 +200,90 @@ Object {
 }
 `;
 
+exports[`parseStoriesFile parses story file project/src/stories/CsfV1.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "id": undefined,
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 3,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 1,
+      },
+    },
+    "title": "Example/CSF v1",
+  },
+  "stories": Array [
+    Object {
+      "exportName": "V1StoryName",
+      "id": "example-csf-v1--v-1-story-name",
+      "location": Object {
+        "end": Position {
+          "column": 24,
+          "line": 5,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 5,
+        },
+      },
+      "name": "Renamed via non-hoisted story",
+      "properties": Object {
+        "story": Object {
+          "name": "Renamed via non-hoisted story",
+        },
+      },
+    },
+    Object {
+      "exportName": "V2V1StoryName",
+      "id": "example-csf-v1--v-2-v-1-story-name",
+      "location": Object {
+        "end": Position {
+          "column": 26,
+          "line": 11,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 11,
+        },
+      },
+      "name": "v2 name override",
+      "properties": Object {
+        "story": Object {
+          "name": "v1 name should be overridden",
+        },
+        "storyName": "v2 name override",
+      },
+    },
+    Object {
+      "exportName": "V2V1StoryNameEmpty",
+      "id": "example-csf-v1--v-2-v-1-story-name-empty",
+      "location": Object {
+        "end": Position {
+          "column": 31,
+          "line": 18,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 18,
+        },
+      },
+      "name": "V 2 V 1 Story Name Empty",
+      "properties": Object {
+        "story": Object {
+          "name": "v1 name should be ignored",
+        },
+        "storyName": "",
+      },
+    },
+  ],
+  "type": "csf",
+}
+`;
+
 exports[`parseStoriesFile parses story file project/src/stories/CsfWithMdx.stories.js 1`] = `
 Object {
   "meta": Object {
