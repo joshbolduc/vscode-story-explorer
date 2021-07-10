@@ -114,7 +114,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "Primary",
       "id": "example-basic-csf--primary",
       "location": Object {
         "end": Position {
@@ -127,14 +126,8 @@ Object {
         },
       },
       "name": "Primary",
-      "properties": Object {
-        "args": Object {
-          "children": "Primary",
-        },
-      },
     },
     Object {
-      "exportName": "Secondary",
       "id": "example-basic-csf--secondary",
       "location": Object {
         "end": Position {
@@ -147,14 +140,8 @@ Object {
         },
       },
       "name": "Secondary",
-      "properties": Object {
-        "args": Object {
-          "children": "Secondary",
-        },
-      },
     },
     Object {
-      "exportName": "Large",
       "id": "example-basic-csf--large",
       "location": Object {
         "end": Position {
@@ -167,15 +154,8 @@ Object {
         },
       },
       "name": "Large",
-      "properties": Object {
-        "args": Object {
-          "children": "Large",
-          "size": 24,
-        },
-      },
     },
     Object {
-      "exportName": "Small",
       "id": "example-basic-csf--small",
       "location": Object {
         "end": Position {
@@ -188,12 +168,6 @@ Object {
         },
       },
       "name": "Small",
-      "properties": Object {
-        "args": Object {
-          "children": "Small",
-          "size": 12,
-        },
-      },
     },
   ],
   "type": "csf",
@@ -218,7 +192,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "V1StoryName",
       "id": "example-csf-v1--v-1-story-name",
       "location": Object {
         "end": Position {
@@ -231,14 +204,8 @@ Object {
         },
       },
       "name": "Renamed via non-hoisted story",
-      "properties": Object {
-        "story": Object {
-          "name": "Renamed via non-hoisted story",
-        },
-      },
     },
     Object {
-      "exportName": "V2V1StoryName",
       "id": "example-csf-v1--v-2-v-1-story-name",
       "location": Object {
         "end": Position {
@@ -251,15 +218,8 @@ Object {
         },
       },
       "name": "v2 name override",
-      "properties": Object {
-        "story": Object {
-          "name": "v1 name should be overridden",
-        },
-        "storyName": "v2 name override",
-      },
     },
     Object {
-      "exportName": "V2V1StoryNameEmpty",
       "id": "example-csf-v1--v-2-v-1-story-name-empty",
       "location": Object {
         "end": Position {
@@ -272,12 +232,6 @@ Object {
         },
       },
       "name": "V 2 V 1 Story Name Empty",
-      "properties": Object {
-        "story": Object {
-          "name": "v1 name should be ignored",
-        },
-        "storyName": "",
-      },
     },
   ],
   "type": "csf",
@@ -293,7 +247,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "Basic",
       "id": undefined,
       "location": Object {
         "end": Position {
@@ -306,15 +259,8 @@ Object {
         },
       },
       "name": "Story name from JS",
-      "properties": Object {
-        "args": Object {
-          "children": "Basic",
-        },
-        "storyName": "Story name from JS",
-      },
     },
     Object {
-      "exportName": "Basic2",
       "id": undefined,
       "location": Object {
         "end": Position {
@@ -327,15 +273,8 @@ Object {
         },
       },
       "name": "Story name 2 from JS",
-      "properties": Object {
-        "args": Object {
-          "children": "Basic 2",
-        },
-        "storyName": "Story name 2 from JS",
-      },
     },
     Object {
-      "exportName": "Basic3",
       "id": undefined,
       "location": Object {
         "end": Position {
@@ -348,11 +287,6 @@ Object {
         },
       },
       "name": "Basic 3",
-      "properties": Object {
-        "args": Object {
-          "children": "Basic 3",
-        },
-      },
     },
   ],
   "type": "csf",
@@ -441,7 +375,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "Story",
       "id": "manually-specified-csf-story-id--story",
       "location": Object {
         "end": Position {
@@ -454,7 +387,6 @@ Object {
         },
       },
       "name": "Story",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -515,7 +447,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "CustomName",
       "id": "example-custom-name--custom-name",
       "location": Object {
         "end": Position {
@@ -528,15 +459,8 @@ Object {
         },
       },
       "name": "Custom story name",
-      "properties": Object {
-        "args": Object {
-          "children": "Expected name: Custom story name",
-        },
-        "storyName": "Custom story name",
-      },
     },
     Object {
-      "exportName": "Overridden",
       "id": "example-custom-name--overridden",
       "location": Object {
         "end": Position {
@@ -549,15 +473,8 @@ Object {
         },
       },
       "name": "Custom story name override",
-      "properties": Object {
-        "args": Object {
-          "children": "Expected name: Custom story name override",
-        },
-        "storyName": "Custom story name override",
-      },
     },
     Object {
-      "exportName": "NamedViaVariable",
       "id": "example-custom-name--named-via-variable",
       "location": Object {
         "end": Position {
@@ -570,15 +487,8 @@ Object {
         },
       },
       "name": "Custom story name var",
-      "properties": Object {
-        "args": Object {
-          "children": "Expected name: Custom story name var",
-        },
-        "storyName": "Custom story name var",
-      },
     },
     Object {
-      "exportName": "InterpolatedName",
       "id": "example-custom-name--interpolated-name",
       "location": Object {
         "end": Position {
@@ -591,12 +501,8 @@ Object {
         },
       },
       "name": "Custom story name var in template string",
-      "properties": Object {
-        "storyName": "Custom story name var in template string",
-      },
     },
     Object {
-      "exportName": "EmptyName",
       "id": "example-custom-name--empty-name",
       "location": Object {
         "end": Position {
@@ -609,12 +515,8 @@ Object {
         },
       },
       "name": "Empty Name",
-      "properties": Object {
-        "storyName": "",
-      },
     },
     Object {
-      "exportName": "LeadingWhitespace",
       "id": "example-custom-name--leading-whitespace",
       "location": Object {
         "end": Position {
@@ -627,9 +529,6 @@ Object {
         },
       },
       "name": "     Leading whitespace",
-      "properties": Object {
-        "storyName": "     Leading whitespace",
-      },
     },
   ],
   "type": "csf",
@@ -654,7 +553,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "Story",
       "id": "example-deep-tree-with-several-kinds--story",
       "location": Object {
         "end": Position {
@@ -667,11 +565,6 @@ Object {
         },
       },
       "name": "Story",
-      "properties": Object {
-        "args": Object {
-          "children": "Deep hierarchy",
-        },
-      },
     },
   ],
   "type": "csf",
@@ -738,7 +631,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "otherExport",
       "id": "test-exclusions-excluded--other-export",
       "location": Object {
         "end": Position {
@@ -751,7 +643,6 @@ Object {
         },
       },
       "name": "Other Export",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -776,7 +667,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "NormalExport",
       "id": "example-export-styles--normal-export",
       "location": Object {
         "end": Position {
@@ -789,14 +679,8 @@ Object {
         },
       },
       "name": "Normal Export",
-      "properties": Object {
-        "args": Object {
-          "children": "Export Style/Normal",
-        },
-      },
     },
     Object {
-      "exportName": "AlternativeExportName",
       "id": "example-export-styles--alternative-export-name",
       "location": Object {
         "end": Position {
@@ -809,14 +693,8 @@ Object {
         },
       },
       "name": "Alternative Export Name",
-      "properties": Object {
-        "args": Object {
-          "children": "Export Style/Exported as",
-        },
-      },
     },
     Object {
-      "exportName": "ExportNameOverridden",
       "id": "example-export-styles--export-name-overridden",
       "location": Object {
         "end": Position {
@@ -829,12 +707,6 @@ Object {
         },
       },
       "name": "Override name 3",
-      "properties": Object {
-        "args": Object {
-          "children": "Export Style/Story name takes priority over modified export name",
-        },
-        "storyName": "Override name 3",
-      },
     },
   ],
   "type": "csf",
@@ -859,7 +731,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "Form",
       "id": "example-form--form",
       "location": Object {
         "end": Position {
@@ -872,7 +743,6 @@ Object {
         },
       },
       "name": "Form",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -897,7 +767,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "Hoisting",
       "id": "example-hoisting--hoisting",
       "location": Object {
         "end": Position {
@@ -910,7 +779,6 @@ Object {
         },
       },
       "name": "Hoisting",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -935,7 +803,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "includedExport",
       "id": "test-exclusions-included--included-export",
       "location": Object {
         "end": Position {
@@ -948,7 +815,6 @@ Object {
         },
       },
       "name": "Included Export",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -973,7 +839,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "Story",
       "id": "example-jsx-extension--story",
       "location": Object {
         "end": Position {
@@ -986,7 +851,6 @@ Object {
         },
       },
       "name": "Story",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -1111,7 +975,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "One",
       "id": "example-merge--one",
       "location": Object {
         "end": Position {
@@ -1124,7 +987,6 @@ Object {
         },
       },
       "name": "One",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -1149,7 +1011,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "Two",
       "id": "example-merge--two",
       "location": Object {
         "end": Position {
@@ -1162,7 +1023,6 @@ Object {
         },
       },
       "name": "Two",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -1237,7 +1097,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "SameName",
       "id": "example-with-same-name--same-name",
       "location": Object {
         "end": Position {
@@ -1250,11 +1109,6 @@ Object {
         },
       },
       "name": "Same Name",
-      "properties": Object {
-        "args": Object {
-          "children": "Same name story",
-        },
-      },
     },
   ],
   "type": "csf",
@@ -1279,7 +1133,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "NestedStory",
       "id": "example-with-same-name-same-name--nested-story",
       "location": Object {
         "end": Position {
@@ -1292,11 +1145,6 @@ Object {
         },
       },
       "name": "Nested Story",
-      "properties": Object {
-        "args": Object {
-          "children": "Nested same name story",
-        },
-      },
     },
   ],
   "type": "csf",
@@ -1321,7 +1169,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "ConstDeclarator",
       "id": "test-story-declarations--const-declarator",
       "location": Object {
         "end": Position {
@@ -1334,10 +1181,8 @@ Object {
         },
       },
       "name": "Const Declarator",
-      "properties": Object {},
     },
     Object {
-      "exportName": "SeparateDeclarator",
       "id": "test-story-declarations--separate-declarator",
       "location": Object {
         "end": Position {
@@ -1350,10 +1195,8 @@ Object {
         },
       },
       "name": "Separate Declarator",
-      "properties": Object {},
     },
     Object {
-      "exportName": "SeparateDeclarator2",
       "id": "test-story-declarations--separate-declarator-2",
       "location": Object {
         "end": Position {
@@ -1366,12 +1209,8 @@ Object {
         },
       },
       "name": "Separate declarator with story name",
-      "properties": Object {
-        "storyName": "Separate declarator with story name",
-      },
     },
     Object {
-      "exportName": "MultipleOne",
       "id": "test-story-declarations--multiple-one",
       "location": Object {
         "end": Position {
@@ -1384,10 +1223,8 @@ Object {
         },
       },
       "name": "Multiple One",
-      "properties": Object {},
     },
     Object {
-      "exportName": "MultipleTwo",
       "id": "test-story-declarations--multiple-two",
       "location": Object {
         "end": Position {
@@ -1400,12 +1237,8 @@ Object {
         },
       },
       "name": "Multiple two (given name)",
-      "properties": Object {
-        "storyName": "Multiple two (given name)",
-      },
     },
     Object {
-      "exportName": "FunctionStory",
       "id": "test-story-declarations--function-story",
       "location": Object {
         "end": Position {
@@ -1418,12 +1251,8 @@ Object {
         },
       },
       "name": "Renamed Function Story",
-      "properties": Object {
-        "storyName": "Renamed Function Story",
-      },
     },
     Object {
-      "exportName": "SeparateFunctionStory",
       "id": "test-story-declarations--separate-function-story",
       "location": Object {
         "end": Position {
@@ -1436,10 +1265,8 @@ Object {
         },
       },
       "name": "Separate Function Story",
-      "properties": Object {},
     },
     Object {
-      "exportName": "SeparateFunctionStory2",
       "id": "test-story-declarations--separate-function-story-2",
       "location": Object {
         "end": Position {
@@ -1452,9 +1279,6 @@ Object {
         },
       },
       "name": "Separate function story with story name",
-      "properties": Object {
-        "storyName": "Separate function story with story name",
-      },
     },
   ],
   "type": "csf",
@@ -1479,7 +1303,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "Primary",
       "id": "example-title-interpolation--primary",
       "location": Object {
         "end": Position {
@@ -1492,11 +1315,6 @@ Object {
         },
       },
       "name": "Primary",
-      "properties": Object {
-        "args": Object {
-          "children": "Interpolation/Sample",
-        },
-      },
     },
   ],
   "type": "csf",
@@ -1521,7 +1339,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "TopLevelStory",
       "id": "top--top-level-story",
       "location": Object {
         "end": Position {
@@ -1534,11 +1351,6 @@ Object {
         },
       },
       "name": "Top Level Story",
-      "properties": Object {
-        "args": Object {
-          "children": "Top level story",
-        },
-      },
     },
   ],
   "type": "csf",
@@ -1563,7 +1375,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "TopHoisted",
       "id": "top-hoisted--top-hoisted",
       "location": Object {
         "end": Position {
@@ -1576,11 +1387,6 @@ Object {
         },
       },
       "name": "Top Hoisted",
-      "properties": Object {
-        "args": Object {
-          "children": "Top level hoisted story",
-        },
-      },
     },
   ],
   "type": "csf",
@@ -1605,7 +1411,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "TypeScriptStory",
       "id": "test-typescript-sample--type-script-story",
       "location": Object {
         "end": Position {
@@ -1618,10 +1423,8 @@ Object {
         },
       },
       "name": "Type Script Story",
-      "properties": Object {},
     },
     Object {
-      "exportName": "TypeScriptTypedStory",
       "id": "test-typescript-sample--type-script-typed-story",
       "location": Object {
         "end": Position {
@@ -1634,10 +1437,8 @@ Object {
         },
       },
       "name": "Type Script Typed Story",
-      "properties": Object {},
     },
     Object {
-      "exportName": "TypeScriptTypedGenericStory",
       "id": "test-typescript-sample--type-script-typed-generic-story",
       "location": Object {
         "end": Position {
@@ -1650,10 +1451,8 @@ Object {
         },
       },
       "name": "Type Script Typed Generic Story",
-      "properties": Object {},
     },
     Object {
-      "exportName": "TypeScriptTypeAssertionStory",
       "id": "test-typescript-sample--type-script-type-assertion-story",
       "location": Object {
         "end": Position {
@@ -1666,7 +1465,6 @@ Object {
         },
       },
       "name": "Type Script Type Assertion Story",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -1691,7 +1489,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "TypeScriptStory",
       "id": "test-typescript-default-as-meta--type-script-story",
       "location": Object {
         "end": Position {
@@ -1704,7 +1501,6 @@ Object {
         },
       },
       "name": "Type Script Story",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -1729,7 +1525,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "TypeScriptStory",
       "id": "test-typescript-typed-identifier--type-script-story",
       "location": Object {
         "end": Position {
@@ -1742,7 +1537,6 @@ Object {
         },
       },
       "name": "Type Script Story",
-      "properties": Object {},
     },
   ],
   "type": "csf",
@@ -1767,7 +1561,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "exportName": "TypeScriptStory",
       "id": "test-typescript-identifier-exported-as-meta--type-script-story",
       "location": Object {
         "end": Position {
@@ -1780,7 +1573,6 @@ Object {
         },
       },
       "name": "Type Script Story",
-      "properties": Object {},
     },
   ],
   "type": "csf",
