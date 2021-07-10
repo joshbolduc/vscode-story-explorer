@@ -54,7 +54,11 @@ const parseCsf = (contents: string) => {
           ? toId(id, niceStoryName)
           : undefined;
 
-      return { ...story, id: storyId, name: getStoryName(story) };
+      return {
+        id: storyId,
+        location: story.location,
+        name: getStoryName(story),
+      };
     });
 
   return { meta, stories };
