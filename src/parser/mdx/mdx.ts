@@ -1,20 +1,18 @@
-import { sanitize, storyNameFromExport, toId } from '@componentdriven/csf';
+import { storyNameFromExport, toId } from '@componentdriven/csf';
 import { logDebug } from '../../log/log';
 import { isDefined } from '../../util/isDefined';
+import { sanitizeMetaObject } from '../sanitizeMetaObject';
 import { parseFromContents } from './parseFromContents';
 
 const parse = (contents: string) => {
   const parsed = parseFromContents(contents);
 
   if (parsed) {
-    const { title } = parsed.meta.properties.values ?? {};
-    const titleAsString = typeof title === 'string' ? title : undefined;
-    const metaId =
-      titleAsString !== undefined ? sanitize(titleAsString) : undefined;
+    const { id, title } = sanitizeMetaObject(parsed.meta.properties.values);
 
     const meta = {
-      title: titleAsString,
-      id: metaId,
+      id,
+      title,
       location: parsed.meta.location,
     };
 
@@ -39,21 +37,21 @@ const parse = (contents: string) => {
             : undefined;
 
         const getId = () => {
-          if (!titleAsString) {
+          if (!id) {
             return undefined;
           }
 
           // When the `story` prop is given, the ID is based on the imported
           // name.
           if (storyNameFromStoryRefShortName) {
-            return toId(titleAsString, storyNameFromStoryRefShortName);
+            return toId(id, storyNameFromStoryRefShortName);
           }
 
           return namePropAsString !== undefined
-            ? toId(titleAsString, namePropAsString)
+            ? toId(id, namePropAsString)
             : undefined;
         };
-        const id = getId();
+        const storyId = getId();
 
         // If not specified as a prop, the actual name will be whatever the name
         // of the imported story is. But we don't (yet) resolve imports, so
@@ -62,7 +60,7 @@ const parse = (contents: string) => {
 
         return {
           location: story.location,
-          id,
+          id: storyId,
           name,
         };
       })

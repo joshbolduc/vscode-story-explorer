@@ -3,7 +3,7 @@ export const createIframeElement = () => {
 
   iframe.id = 'storybook-iframe';
   iframe.allow = 'clipboard-read; clipboard-write;';
-  iframe.sandbox.add('allow-same-origin', 'allow-scripts');
+  iframe.sandbox.add('allow-same-origin', 'allow-scripts', 'allow-forms');
 
   return iframe;
 };

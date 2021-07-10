@@ -93,7 +93,7 @@ To maximize compatibility, avoid using complex expressions and importing from ot
 
 ### CSF and MDX only
 
-Only [Component Story Format](https://storybook.js.org/docs/react/api/csf) (CSF, using [hoisted CSF annotations](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#hoisted-csf-annotations)) and [MDX](https://storybook.js.org/docs/react/api/mdx) stories are supported.
+Only [Component Story Format](https://storybook.js.org/docs/react/api/csf) (CSF, using CSF 1.0 or [2.0 with hoisted CSF annotations](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#hoisted-csf-annotations)) and [MDX](https://storybook.js.org/docs/react/api/mdx) stories are supported.
 
 The legacy `storiesOf` API is not supported.
 
@@ -101,7 +101,7 @@ The legacy `storiesOf` API is not supported.
 
 Story previews are rendered in an `iframe` embedded in a VS Code `webview`. This imposes some restrictions inherent to the use of cross-origin `iframe`s.
 
-For example, attempts to access `window.top` in a story will cause an exception te be thrown. This can interfere with the official actions addon.
+For example, attempts to access `window.top` in a story will cause an exception to be thrown. This can interfere with the official actions addon.
 
 Story Explorer attempts to suppress any uncaught exceptions so that they don't interfere with the preview, but some functionality may not work as expected. You can always open stories in an external browser instead of the built-in preview.
 

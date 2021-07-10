@@ -99,6 +99,84 @@ Object {
 }
 `;
 
+exports[`csf parses story file project/src/stories/CsfV1.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 3,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 1,
+      },
+    },
+    "properties": Object {
+      "title": "Example/CSF v1",
+    },
+  },
+  "stories": Array [
+    Object {
+      "exportName": "V1StoryName",
+      "location": Object {
+        "end": Position {
+          "column": 24,
+          "line": 5,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 5,
+        },
+      },
+      "properties": Object {
+        "story": Object {
+          "name": "Renamed via non-hoisted story",
+        },
+      },
+    },
+    Object {
+      "exportName": "V2V1StoryName",
+      "location": Object {
+        "end": Position {
+          "column": 26,
+          "line": 11,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 11,
+        },
+      },
+      "properties": Object {
+        "story": Object {
+          "name": "v1 name should be overridden",
+        },
+        "storyName": "v2 name override",
+      },
+    },
+    Object {
+      "exportName": "V2V1StoryNameEmpty",
+      "location": Object {
+        "end": Position {
+          "column": 31,
+          "line": 18,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 18,
+        },
+      },
+      "properties": Object {
+        "story": Object {
+          "name": "v1 name should be ignored",
+        },
+        "storyName": "",
+      },
+    },
+  ],
+}
+`;
+
 exports[`csf parses story file project/src/stories/CsfWithMdx.stories.js 1`] = `
 Object {
   "meta": Object {
@@ -161,6 +239,44 @@ Object {
           "children": "Basic 3",
         },
       },
+    },
+  ],
+}
+`;
+
+exports[`csf parses story file project/src/stories/CustomId.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "id": "Manually specified CSF story ID",
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 4,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 1,
+      },
+    },
+    "properties": Object {
+      "id": "Manually specified CSF story ID",
+      "title": "Example/Custom ID CSF",
+    },
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Story",
+      "location": Object {
+        "end": Position {
+          "column": 18,
+          "line": 6,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 6,
+        },
+      },
+      "properties": Object {},
     },
   ],
 }
@@ -465,6 +581,42 @@ Object {
         },
         "storyName": "Override name 3",
       },
+    },
+  ],
+}
+`;
+
+exports[`csf parses story file project/src/stories/Form.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 5,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 3,
+      },
+    },
+    "properties": Object {
+      "title": "Example/Form",
+    },
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Form",
+      "location": Object {
+        "end": Position {
+          "column": 17,
+          "line": 7,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 7,
+        },
+      },
+      "properties": Object {},
     },
   ],
 }

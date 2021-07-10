@@ -1,4 +1,4 @@
-import { sanitize, toId } from '@componentdriven/csf';
+import { toId } from '@componentdriven/csf';
 import { Range, ViewColumn } from 'vscode';
 import type { Story } from '../parser/parseTypes';
 import type { Location } from '../types/Location';
@@ -42,16 +42,17 @@ export class StoryExplorerStory {
   }
 
   public static fromStoryFileForDocs(storyFile: StoryExplorerStoryFile) {
+    const id = storyFile.getId();
     const title = storyFile.getTitle();
 
-    if (typeof title !== 'string') {
+    if (typeof id !== 'string' || typeof title !== 'string') {
       return undefined;
     }
 
     const [name = ''] = splitKind(title).slice(-1);
     return new StoryExplorerStory(
       {
-        id: storyFile.isDocsOnly() ? toId(title, 'page') : sanitize(title),
+        id: storyFile.isDocsOnly() ? toId(id, 'page') : id,
         location: storyFile.getMetaLocation(),
         name,
         isDocs: true,
