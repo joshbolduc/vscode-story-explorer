@@ -5,6 +5,7 @@ import {
   toId,
 } from '@componentdriven/csf';
 import { logDebug } from '../../log/log';
+import { sanitizeMetaObject } from '../sanitizeMetaObject';
 import { parseFromContents, RawStory } from './parseFromContents';
 
 const getStoryName = (rawStory: RawStory) => {
@@ -28,13 +29,12 @@ const getStoryName = (rawStory: RawStory) => {
 const parseCsf = (contents: string) => {
   const parsed = parseFromContents(contents);
 
-  const { title } = parsed.meta.properties;
-  const titleAsString = typeof title === 'string' ? title : undefined;
+  const { id, title } = sanitizeMetaObject(parsed.meta.properties);
 
   const meta = {
-    id: parsed.meta.id,
+    id,
+    title,
     location: parsed.meta.location,
-    title: titleAsString,
   };
 
   const { excludeStories, includeStories } = parsed.meta
@@ -49,13 +49,12 @@ const parseCsf = (contents: string) => {
     })
     .map((story) => {
       const niceStoryName = storyNameFromExport(story.exportName);
-      const { title: storyTitle } = parsed.meta.properties;
-      const id =
-        typeof storyTitle === 'string' && niceStoryName
-          ? toId(storyTitle, niceStoryName)
+      const storyId =
+        typeof id === 'string' && niceStoryName
+          ? toId(id, niceStoryName)
           : undefined;
 
-      return { ...story, id, name: getStoryName(story) };
+      return { ...story, id: storyId, name: getStoryName(story) };
     });
 
   return { meta, stories };
