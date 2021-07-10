@@ -244,6 +244,44 @@ Object {
 }
 `;
 
+exports[`csf parses story file project/src/stories/CustomId.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "id": "Manually specified CSF story ID",
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 4,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 1,
+      },
+    },
+    "properties": Object {
+      "id": "Manually specified CSF story ID",
+      "title": "Example/Custom ID CSF",
+    },
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Story",
+      "location": Object {
+        "end": Position {
+          "column": 18,
+          "line": 6,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 6,
+        },
+      },
+      "properties": Object {},
+    },
+  ],
+}
+`;
+
 exports[`csf parses story file project/src/stories/CustomName.stories.js 1`] = `
 Object {
   "meta": Object {

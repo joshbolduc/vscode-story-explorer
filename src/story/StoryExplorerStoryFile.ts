@@ -27,6 +27,10 @@ export class StoryExplorerStoryFile {
     return this.parsed.meta.title;
   }
 
+  public getId() {
+    return this.parsed.meta.id;
+  }
+
   public getStories() {
     return this.stories;
   }

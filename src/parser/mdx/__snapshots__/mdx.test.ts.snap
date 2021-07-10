@@ -157,6 +157,41 @@ Object {
 }
 `;
 
+exports[`mdx parses story file project/src/stories/CustomId.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": "manually-specified-mdx-id",
+    "location": Object {
+      "end": Object {
+        "column": 0,
+        "line": 3,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 3,
+      },
+    },
+    "title": "Example/Custom ID MDX",
+  },
+  "stories": Array [
+    Object {
+      "id": "manually-specified-mdx-id--story",
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 7,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 7,
+        },
+      },
+      "name": "Story",
+    },
+  ],
+}
+`;
+
 exports[`mdx parses story file project/src/stories/DocsOnly.stories.mdx 1`] = `
 Object {
   "meta": Object {
