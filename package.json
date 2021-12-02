@@ -378,7 +378,7 @@
     "@componentdriven/csf": "0.0.2-alpha.0",
     "@mdx-js/mdx": "^1.6.22",
     "@types/http-proxy": "^1.17.7",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.3",
     "@types/micromatch": "^4.0.2",
     "@types/node": "^14.16.0",
     "@types/node-netstat": "^1.8.1",
