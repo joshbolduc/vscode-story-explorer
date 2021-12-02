@@ -389,7 +389,7 @@
     "concurrently": "^6.2.0",
     "esbuild": "^0.12.15",
     "esbuild-jest": "^0.5.0",
-    "eslint": "^7.30.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "fast-glob": "^3.2.7",
