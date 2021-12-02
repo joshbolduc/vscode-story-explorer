@@ -397,7 +397,7 @@
     "jest": "^27.0.6",
     "micromatch": "^4.0.4",
     "node-netstat": "^1.8.0",
-    "prettier": "^2.3.2",
+    "prettier": "^2.5.0",
     "standard-changelog": "^2.0.27",
     "standard-version": "^9.3.2",
     "ts-eager": "^2.0.2",
