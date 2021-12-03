@@ -3,10 +3,9 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-/**
+export default /**
  * @type import('@jest/types').Config.InitialOptions
- */
-export default {
+ */ ({
   clearMocks: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
@@ -23,4 +22,4 @@ export default {
       },
     ],
   },
-};
+});
