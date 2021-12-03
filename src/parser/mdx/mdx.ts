@@ -1,13 +1,14 @@
-import { storyNameFromExport, toId } from '@componentdriven/csf';
+import { storyNameFromExport } from '@componentdriven/csf';
 import { logDebug } from '../../log/log';
 import { isDefined } from '../../util/isDefined';
+import type { RawParsedStoryFile } from '../RawParsedStoryFile';
 import { sanitizeMetaObject } from '../sanitizeMetaObject';
 import { parseFromContents } from './parseFromContents';
 
-const parse = (contents: string) => {
+const parse = (contents: string): RawParsedStoryFile | undefined => {
   const parsed = parseFromContents(contents);
 
-  if (parsed) {
+  if (parsed && (parsed.meta.declared || parsed.stories.length > 0)) {
     const { id, title } = sanitizeMetaObject(parsed.meta.properties.values);
 
     const meta = {
@@ -36,23 +37,6 @@ const parse = (contents: string) => {
             ? storyNameFromExport(storyRefShortName)
             : undefined;
 
-        const getId = () => {
-          if (!id) {
-            return undefined;
-          }
-
-          // When the `story` prop is given, the ID is based on the imported
-          // name.
-          if (storyNameFromStoryRefShortName) {
-            return toId(id, storyNameFromStoryRefShortName);
-          }
-
-          return namePropAsString !== undefined
-            ? toId(id, namePropAsString)
-            : undefined;
-        };
-        const storyId = getId();
-
         // If not specified as a prop, the actual name will be whatever the name
         // of the imported story is. But we don't (yet) resolve imports, so
         // use `storyNameFromStoryRefShortName` as a best guess.
@@ -60,8 +44,8 @@ const parse = (contents: string) => {
 
         return {
           location: story.location,
-          id: storyId,
           name,
+          nameForId: storyNameFromStoryRefShortName,
         };
       })
       .filter(isDefined);

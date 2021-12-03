@@ -29,7 +29,13 @@ describe('StoryExplorerStoryFile', () => {
         } as Uri,
       };
 
-      const storyFile = new StoryExplorerStoryFile(parsed);
+      const storyFile = new StoryExplorerStoryFile(parsed, [
+        {
+          directory: '/mock/basedir/project/src',
+          files: '**/*',
+          titlePrefix: 'Auto-generated title prefix',
+        },
+      ]);
 
       const stories = storyFile
         .getAllStories()

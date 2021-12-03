@@ -60,7 +60,8 @@ export class StoryCodeLensProvider implements CodeLensProvider {
     // results in the story store. Would need to make sure results aren't stale
     // and are updated when the story store updates.
 
-    if (!this.storyStore.isStoryFile(document.uri)) {
+    const globSpecifiers = this.storyStore.getGlobSpecifiers(document.uri);
+    if (globSpecifiers.length === 0) {
       return;
     }
 
@@ -71,10 +72,13 @@ export class StoryCodeLensProvider implements CodeLensProvider {
       return;
     }
 
-    const storyFile = new StoryExplorerStoryFile({
-      file: document.uri,
-      ...parsed,
-    });
+    const storyFile = new StoryExplorerStoryFile(
+      {
+        file: document.uri,
+        ...parsed,
+      },
+      globSpecifiers,
+    );
 
     const lenses: CodeLens[] = [];
 

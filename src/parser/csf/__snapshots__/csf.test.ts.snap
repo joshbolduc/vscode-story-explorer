@@ -1,8 +1,117 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`csf parses story file project/src/noTitle/csf/EmptyDefaultExport.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "declared": true,
+    "location": Object {
+      "end": Object {
+        "column": 17,
+        "line": 5,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 5,
+      },
+    },
+    "properties": Object {},
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Primary",
+      "location": Object {
+        "end": Position {
+          "column": 20,
+          "line": 9,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 9,
+        },
+      },
+      "properties": Object {
+        "args": Object {
+          "children": "Empty default export",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[`csf parses story file project/src/noTitle/csf/NoDefaultExport.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "declared": false,
+    "location": undefined,
+    "properties": Object {},
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Primary",
+      "location": Object {
+        "end": Position {
+          "column": 20,
+          "line": 7,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 7,
+        },
+      },
+      "properties": Object {
+        "args": Object {
+          "children": "No default export",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[`csf parses story file project/src/noTitle/csf/nested/WithoutTitle.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "declared": true,
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 7,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 5,
+      },
+    },
+    "properties": Object {},
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Primary",
+      "location": Object {
+        "end": Position {
+          "column": 20,
+          "line": 11,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 11,
+        },
+      },
+      "properties": Object {
+        "args": Object {
+          "children": "Without Title/Sample",
+        },
+      },
+    },
+  ],
+}
+`;
+
 exports[`csf parses story file project/src/stories/BasicCsf.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -102,6 +211,7 @@ Object {
 exports[`csf parses story file project/src/stories/CsfV1.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -180,6 +290,7 @@ Object {
 exports[`csf parses story file project/src/stories/CsfWithMdx.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": false,
     "location": undefined,
     "properties": Object {},
   },
@@ -247,6 +358,7 @@ Object {
 exports[`csf parses story file project/src/stories/CustomId.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "id": "Manually specified CSF story ID",
     "location": Object {
       "end": Object {
@@ -285,6 +397,7 @@ Object {
 exports[`csf parses story file project/src/stories/CustomName.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -416,6 +529,7 @@ Object {
 exports[`csf parses story file project/src/stories/DeepTree.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -456,6 +570,7 @@ Object {
 exports[`csf parses story file project/src/stories/Excluded.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -509,6 +624,7 @@ Object {
 exports[`csf parses story file project/src/stories/ExportStyles.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -589,6 +705,7 @@ Object {
 exports[`csf parses story file project/src/stories/Form.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -625,6 +742,7 @@ Object {
 exports[`csf parses story file project/src/stories/Hoisting.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -661,6 +779,7 @@ Object {
 exports[`csf parses story file project/src/stories/Included.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -714,6 +833,7 @@ Object {
 exports[`csf parses story file project/src/stories/JsxExtension.stories.jsx 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -750,6 +870,7 @@ Object {
 exports[`csf parses story file project/src/stories/MergeOne.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -786,6 +907,7 @@ Object {
 exports[`csf parses story file project/src/stories/MergeTwo.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -822,6 +944,7 @@ Object {
 exports[`csf parses story file project/src/stories/SameName.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -862,6 +985,7 @@ Object {
 exports[`csf parses story file project/src/stories/SameNameChild.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -902,6 +1026,7 @@ Object {
 exports[`csf parses story file project/src/stories/StoryDeclarations.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1044,6 +1169,7 @@ Object {
 exports[`csf parses story file project/src/stories/TitleInterpolation.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1084,6 +1210,7 @@ Object {
 exports[`csf parses story file project/src/stories/Top.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1124,6 +1251,7 @@ Object {
 exports[`csf parses story file project/src/stories/TopHoisted.stories.js 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1164,6 +1292,7 @@ Object {
 exports[`csf parses story file project/src/stories/TypeScript.stories.tsx 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 9,
@@ -1242,6 +1371,7 @@ Object {
 exports[`csf parses story file project/src/stories/TypeScriptAsMeta.stories.ts 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 9,
@@ -1278,6 +1408,7 @@ Object {
 exports[`csf parses story file project/src/stories/TypeScriptIdentifier.stories.ts 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1314,6 +1445,7 @@ Object {
 exports[`csf parses story file project/src/stories/TypeScriptIdentifierAsMeta.stories.ts 1`] = `
 Object {
   "meta": Object {
+    "declared": true,
     "location": Object {
       "end": Object {
         "column": 1,

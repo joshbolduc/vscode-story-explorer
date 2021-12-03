@@ -103,7 +103,11 @@ describe('convertGlob', () => {
 
   inputs.forEach(([input, match = undefined, noMatch = undefined]) =>
     it(`handles ${input}`, () => {
-      const { filter, ...result } = convertGlob(input, '/mock/baseDir');
+      const { filter, ...result } = convertGlob({
+        directory: '/mock/baseDir',
+        files: input,
+        titlePrefix: '',
+      });
 
       if (!match) {
         expect(filter).toBeUndefined();

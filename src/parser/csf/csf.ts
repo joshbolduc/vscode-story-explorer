@@ -2,9 +2,9 @@ import {
   IncludeExcludeOptions,
   isExportStory,
   storyNameFromExport,
-  toId,
 } from '@componentdriven/csf';
 import { logDebug } from '../../log/log';
+import type { RawParsedStoryFile } from '../RawParsedStoryFile';
 import { sanitizeMetaObject } from '../sanitizeMetaObject';
 import { parseFromContents, RawStory } from './parseFromContents';
 
@@ -26,8 +26,12 @@ const getStoryName = (rawStory: RawStory) => {
   return storyNameFromExport(rawStory.exportName);
 };
 
-const parseCsf = (contents: string) => {
+const parseCsf = (contents: string): RawParsedStoryFile | undefined => {
   const parsed = parseFromContents(contents);
+
+  if (!parsed.meta.declared) {
+    return undefined;
+  }
 
   const { id, title } = sanitizeMetaObject(parsed.meta.properties);
 
@@ -48,16 +52,10 @@ const parseCsf = (contents: string) => {
       });
     })
     .map((story) => {
-      const niceStoryName = storyNameFromExport(story.exportName);
-      const storyId =
-        typeof id === 'string' && niceStoryName
-          ? toId(id, niceStoryName)
-          : undefined;
-
       return {
-        id: storyId,
         location: story.location,
         name: getStoryName(story),
+        nameForId: storyNameFromExport(story.exportName),
       };
     });
 

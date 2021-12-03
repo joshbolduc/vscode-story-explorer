@@ -1,4 +1,5 @@
 import type { StoriesConfig } from './StorybookConfig';
+import { isValidStoriesConfigItem } from './isValidStoriesConfigItem';
 
 export const getStoriesGlobs = async (stories: StoriesConfig) => {
   const resolvedStories = await (typeof stories === 'function'
@@ -9,5 +10,5 @@ export const getStoriesGlobs = async (stories: StoriesConfig) => {
     return [];
   }
 
-  return resolvedStories.filter((s) => typeof s === 'string');
+  return resolvedStories.filter(isValidStoriesConfigItem);
 };

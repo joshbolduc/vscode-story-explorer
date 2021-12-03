@@ -1,30 +1,32 @@
+import { isValidStoriesConfigItem } from '../storybook/isValidStoriesConfigItem';
 import { getWorkspaceRoot } from '../util/getWorkspaceRoot';
 import { SettingsConfigProvider } from './SettingsConfigProvider';
+import { interpretStoriesConfigItem } from './normalizeStoriesEntry';
 
 export const storiesGlobsConfigProvider = new SettingsConfigProvider(
   'storiesGlobs',
-  (rawValue: unknown) => {
+  async (rawValue: unknown) => {
     const sanitize = () => {
-      if (typeof rawValue === 'string') {
-        return [rawValue];
+      if (Array.isArray(rawValue)) {
+        return rawValue.filter(isValidStoriesConfigItem);
       }
 
-      if (Array.isArray(rawValue)) {
-        return rawValue.filter(
-          (item): item is string => typeof item === 'string',
-        );
+      if (isValidStoriesConfigItem(rawValue)) {
+        return [rawValue];
       }
 
       return undefined;
     };
 
-    const storiesGlob = sanitize();
-    return storiesGlob
+    const storiesConfigItems = sanitize();
+    const configDirPath = getWorkspaceRoot();
+    return storiesConfigItems
       ? {
-          value: {
-            storiesGlobs: storiesGlob,
-            storiesGlobsRoot: getWorkspaceRoot(),
-          },
+          value: await Promise.all(
+            storiesConfigItems.map((configItem) =>
+              interpretStoriesConfigItem(configItem, configDirPath),
+            ),
+          ),
         }
       : undefined;
   },
