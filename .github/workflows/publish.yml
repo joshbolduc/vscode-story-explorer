@@ -14,7 +14,11 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2.5.0
         with:
-          node-version: 12.x
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            test/project/package-lock.json
       - name: Install Node dependencies
         run: npm ci
       - name: Package VSIX

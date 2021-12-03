@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.2.0...v0.2.1) (2021-12-03)
+
+### Bug Fixes
+
+- switch from micromatch to picomatch ([11f532c](https://github.com/joshbolduc/vscode-story-explorer/commit/11f532c59168d3b405d67707dcffaa4fba4956bf))
+
 ## [0.2.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.1.0...v0.2.0) (2021-07-10)
 
 ### Features
