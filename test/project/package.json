@@ -11,8 +11,8 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "6.3.2",
-    "@storybook/addon-essentials": "6.3.2",
-    "@storybook/react": "6.3.2"
+    "@storybook/addon-actions": "6.4.4",
+    "@storybook/addon-essentials": "6.4.4",
+    "@storybook/react": "6.4.4"
   }
 }
