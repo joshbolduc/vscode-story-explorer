@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { makeRe, scan } from 'micromatch';
+import { makeRe, scan } from 'picomatch';
 
 export const getGlobInfo = (glob: string, globBasePath: string) => {
   const globOptions = {
