@@ -6,22 +6,25 @@ import { parseConfigFile } from '../storybook/parseConfig';
 import { FileWatcher } from '../util/FileWatcher';
 import type { Aggregator } from './Aggregator';
 import type { ConfigProvider } from './ConfigProvider';
-import type { StoriesGlobsConfig } from './StoriesGlobsConfig';
+import type { GlobSpecifier } from './GlobSpecifier';
 import type { StorybookConfigLocation } from './StorybookConfigLocation';
+import { interpretStoriesConfigItem } from './normalizeStoriesEntry';
 
 const getStoriesGlobsFromFileUri = async (
   location: StorybookConfigLocation,
-): Promise<StoriesGlobsConfig | undefined> => {
+): Promise<GlobSpecifier[] | undefined> => {
   const fileUri = location.file;
 
   try {
     const config = parseConfigFile(fileUri.fsPath);
-    const storiesGlobs = await getStoriesGlobs(config.stories);
+    const storiesConfigItems = await getStoriesGlobs(config.stories);
+    const configDirPath = location.dir.fsPath;
 
-    return {
-      storiesGlobs,
-      storiesGlobsRoot: location.dir.fsPath,
-    };
+    return Promise.all(
+      storiesConfigItems.map((configItem) =>
+        interpretStoriesConfigItem(configItem, configDirPath),
+      ),
+    );
   } catch (e) {
     logWarn('Failed to read stories globs from config file', e, fileUri);
     return undefined;
@@ -29,11 +32,11 @@ const getStoriesGlobsFromFileUri = async (
 };
 
 export class StoriesGlobsDetectProvider
-  implements ConfigProvider<StoriesGlobsConfig>
+  implements ConfigProvider<GlobSpecifier[]>
 {
   private readonly onDidChangeConfigEmitter = new EventEmitter<
     | {
-        value: StoriesGlobsConfig;
+        value: GlobSpecifier[];
       }
     | undefined
   >();
@@ -42,7 +45,7 @@ export class StoriesGlobsDetectProvider
 
   private configLocationListener?: Disposable;
 
-  private storiesGlobsConfig?: StoriesGlobsConfig;
+  private storiesGlobsConfig?: GlobSpecifier[];
 
   private configFileWatcher?: FileWatcher;
 

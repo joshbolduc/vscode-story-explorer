@@ -1,6 +1,6 @@
-import { resolve } from 'path';
 import { Disposable, EventEmitter, Uri, workspace } from 'vscode';
 import type { ConfigManager } from '../config/ConfigManager';
+import type { GlobSpecifier } from '../config/GlobSpecifier';
 import { convertGlob } from '../globs/convertGlob';
 import { convertGlobForWorkspace } from '../globs/convertGlobForWorkspace';
 import { logError, logWarn } from '../log/log';
@@ -13,7 +13,20 @@ import { FileWatcher } from '../util/FileWatcher';
 import { Mailbox } from '../util/Mailbox';
 import { strCompareFn } from '../util/strCompareFn';
 import { BackingMap } from './BackingMap';
-import { findFilesByGlobs } from './findFilesByGlobs';
+import { findFilesByGlob } from './findFilesByGlobs';
+
+interface StoreMapEntry {
+  parsed: ParsedStoryWithFileUri;
+  specifiers: GlobSpecifier[];
+}
+
+const globSpecifierMatchesUri = (uri: Uri) => {
+  return (globSpecifier: GlobSpecifier) => {
+    const { filter, globPattern } = convertGlob(globSpecifier);
+
+    return filter?.(uri.path) ?? globPattern === uri.path;
+  };
+};
 
 export class StoryStore {
   private readonly backingMap = new BackingMap();
@@ -52,7 +65,7 @@ export class StoryStore {
     return storyStore;
   }
 
-  public set(uri: Uri, info: ParsedStoryWithFileUri) {
+  public set(uri: Uri, info: StoreMapEntry) {
     this.setWithoutNotify(uri, info);
     this.onDidUpdateStoryStoreEmitter.fire();
   }
@@ -88,11 +101,10 @@ export class StoryStore {
 
     const sortedFiles: StoryExplorerStoryFile[] = [];
 
-    const { storiesGlobs, storiesGlobsRoot } =
-      this.configManager.getStoriesGlobsConfig();
+    const globSpecifiers = this.configManager.getStoriesGlobsConfig();
 
-    const convertedGlobs = storiesGlobs.map((storiesGlob) =>
-      convertGlob(storiesGlob, storiesGlobsRoot),
+    const convertedGlobs = globSpecifiers.map((globSpecifier) =>
+      convertGlob(globSpecifier),
     );
 
     let remainingToSort = new Set(unsortedFiles);
@@ -129,27 +141,27 @@ export class StoryStore {
   }
 
   public isStoryFile(uri: Uri) {
-    const { storiesGlobs, storiesGlobsRoot } =
-      this.configManager.getStoriesGlobsConfig();
+    const globSpecifiers = this.configManager.getStoriesGlobsConfig();
 
-    return storiesGlobs.some((glob) => {
-      const { filter, globPattern } = convertGlob(glob, storiesGlobsRoot);
+    return globSpecifiers.some(globSpecifierMatchesUri(uri));
+  }
 
-      return (
-        filter?.(uri.path) ??
-        resolve(storiesGlobsRoot, globPattern) === uri.path
-      );
-    });
+  public getGlobSpecifiers(uri: Uri) {
+    const globSpecifiers = this.configManager.getStoriesGlobsConfig();
+
+    return globSpecifiers.filter(globSpecifierMatchesUri(uri));
   }
 
   public async refresh(uri: Uri) {
-    if (!this.isStoryFile(uri)) {
-      return;
-    }
+    const globSpecifiers = this.getGlobSpecifiers(uri);
 
-    const storyInfo = await parseStoriesFileByUri(uri);
+    const storyInfo =
+      globSpecifiers.length > 0 ? await parseStoriesFileByUri(uri) : undefined;
+
     if (storyInfo) {
-      this.set(uri, storyInfo);
+      this.set(uri, { parsed: storyInfo, specifiers: globSpecifiers });
+    } else {
+      this.delete(uri);
     }
   }
 
@@ -162,35 +174,23 @@ export class StoryStore {
   }
 
   private async init() {
-    const { storiesGlobs, storiesGlobsRoot } =
-      this.configManager.getStoriesGlobsConfig();
+    const globSpecifiers = this.configManager.getStoriesGlobsConfig();
 
     this.globWatchers.push(
-      ...storiesGlobs.map((storiesGlob) => {
-        const { globPattern, filter } = convertGlobForWorkspace(
-          storiesGlob,
-          storiesGlobsRoot,
-        );
+      ...globSpecifiers.map((globSpecifier) => {
+        const { globPattern } = convertGlobForWorkspace(globSpecifier);
 
         return new FileWatcher(
           globPattern,
           (uri) => {
-            if (!filter || filter(uri)) {
-              parseStoriesFileByUri(uri)
-                .then((storyInfo) => {
-                  if (storyInfo) {
-                    this.set(uri, storyInfo);
-                  }
-                })
-                .catch((e) => {
-                  logError(
-                    'Failed to parse story from story store glob file watcher',
-                    e,
-                    globPattern,
-                    uri,
-                  );
-                });
-            }
+            this.refresh(uri).catch((e) => {
+              logError(
+                'Failed to parse story from story store glob file watcher',
+                e,
+                globPattern,
+                uri,
+              );
+            });
           },
           false,
           true,
@@ -199,21 +199,34 @@ export class StoryStore {
       }),
     );
 
-    const uris = await findFilesByGlobs(storiesGlobs, storiesGlobsRoot);
+    const map = (
+      await Promise.all(
+        globSpecifiers.map(async (globSpecifier) => ({
+          globSpecifier,
+          storiesFiles: await Promise.all(
+            (await findFilesByGlob(globSpecifier)).map(parseStoriesFileByUri),
+          ),
+        })),
+      )
+    ).reduce((acc, cur) => {
+      cur.storiesFiles.forEach((storyFile) => {
+        if (storyFile) {
+          const key = storyFile.file.path;
+          const entry = acc.get(key);
+          const existingSpecifiers = entry?.specifiers ?? [];
 
-    const map = (await Promise.all(uris.map(parseStoriesFileByUri))).reduce(
-      (acc, cur) => {
-        if (cur) {
-          acc.set(cur.file, cur);
+          acc.set(key, {
+            parsed: storyFile,
+            specifiers: [...existingSpecifiers, cur.globSpecifier],
+          });
         }
+      });
 
-        return acc;
-      },
-      new Map<Uri, ParsedStoryWithFileUri>(),
-    );
+      return acc;
+    }, new Map<string, StoreMapEntry>());
 
-    for (const [key, value] of map) {
-      this.setWithoutNotify(key, value);
+    for (const [, value] of map) {
+      this.setWithoutNotify(value.parsed.file, value);
     }
 
     this.onDidUpdateStoryStoreEmitter.fire();
@@ -221,7 +234,7 @@ export class StoryStore {
     this.initWaiter.put();
   }
 
-  private setWithoutNotify(uri: Uri, info: ParsedStoryWithFileUri) {
+  private setWithoutNotify(uri: Uri, info: StoreMapEntry) {
     const path = uri.path;
 
     const watcher =
@@ -242,7 +255,7 @@ export class StoryStore {
       });
 
     this.backingMap.set(uri, {
-      storyFile: new StoryExplorerStoryFile(info),
+      storyFile: new StoryExplorerStoryFile(info.parsed, info.specifiers),
       fileWatcher: watcher,
     });
   }

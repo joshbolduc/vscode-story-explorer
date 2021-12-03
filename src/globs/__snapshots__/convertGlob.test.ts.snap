@@ -58,8 +58,7 @@ Object {
 
 exports[`convertGlob handles file.ts 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir",
-  "globPattern": "file.ts",
+  "globPattern": "/mock/baseDir/file.ts",
 }
 `;
 
@@ -89,7 +88,6 @@ Object {
 
 exports[`convertGlob handles src/file.ts 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir",
-  "globPattern": "src/file.ts",
+  "globPattern": "/mock/baseDir/src/file.ts",
 }
 `;

@@ -145,10 +145,42 @@
           "default": null,
           "type": [
             "string",
-            "array"
+            "array",
+            "object"
           ],
+          "required": [
+            "directory"
+          ],
+          "properties": {
+            "directory": {
+              "type": "string"
+            },
+            "titlePrefix": {
+              "type": "string"
+            },
+            "files": {
+              "type": "string"
+            }
+          },
           "items": {
-            "type": "string",
+            "type": [
+              "string",
+              "object"
+            ],
+            "required": [
+              "directory"
+            ],
+            "properties": {
+              "directory": {
+                "type": "string"
+              },
+              "titlePrefix": {
+                "type": "string"
+              },
+              "files": {
+                "type": "string"
+              }
+            },
             "examples": [
               "src/**/*.stories.mdx",
               "src/**/*.stories.@(js|jsx|ts|tsx)"
@@ -379,6 +411,7 @@
     "@mdx-js/mdx": "1.6.22",
     "@types/http-proxy": "1.17.7",
     "@types/jest": "27.0.3",
+    "@types/lodash": "4.14.177",
     "@types/node": "14.17.4",
     "@types/node-netstat": "1.8.1",
     "@types/picomatch": "2.3.0",
@@ -395,6 +428,7 @@
     "fast-glob": "3.2.7",
     "http-proxy": "1.18.1",
     "jest": "27.4.3",
+    "lodash": "4.17.21",
     "node-netstat": "1.8.0",
     "picomatch": "2.3.0",
     "prettier": "2.5.0",

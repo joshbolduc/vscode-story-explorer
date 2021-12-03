@@ -1,5 +1,6 @@
 import { Disposable, workspace } from 'vscode';
 import { configPrefix } from '../constants/constants';
+import { logError } from '../log/log';
 import { makeFullConfigName } from './makeFullConfigName';
 
 export class SettingsWatcher<T = unknown> {
@@ -7,11 +8,17 @@ export class SettingsWatcher<T = unknown> {
 
   public constructor(
     private readonly setting: string,
-    callback: (watcher: SettingsWatcher<T>) => void,
+    callback: (watcher: SettingsWatcher<T>) => void | Promise<void>,
   ) {
-    this.disposable = workspace.onDidChangeConfiguration((e) => {
-      if (e.affectsConfiguration(makeFullConfigName(setting))) {
-        callback(this);
+    this.disposable = workspace.onDidChangeConfiguration((event) => {
+      if (event.affectsConfiguration(makeFullConfigName(setting))) {
+        callback(this)?.catch((err) => {
+          logError(
+            'Failed to invoke configuration change callback',
+            err,
+            setting,
+          );
+        });
       }
     });
   }

@@ -1,5 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`StoryExplorerStoryFile parses story file project/src/noTitle/csf/EmptyDefaultExport.stories.js 1`] = `
+Object {
+  "id": "auto-generated-title-prefix-no-title-csf-empty-default-export",
+  "isDocsOnly": false,
+  "stories": Array [
+    Object {
+      "id": "auto-generated-title-prefix-no-title-csf-empty-default-export",
+      "isDocs": true,
+      "name": "Empty Default Export",
+    },
+    Object {
+      "id": "auto-generated-title-prefix-no-title-csf-empty-default-export--primary",
+      "isDocs": false,
+      "name": "Primary",
+    },
+  ],
+  "title": "Auto Generated Title Prefix/No Title/Csf/Empty Default Export",
+}
+`;
+
+exports[`StoryExplorerStoryFile parses story file project/src/noTitle/csf/nested/WithoutTitle.stories.js 1`] = `
+Object {
+  "id": "auto-generated-title-prefix-no-title-csf-nested-without-title",
+  "isDocsOnly": false,
+  "stories": Array [
+    Object {
+      "id": "auto-generated-title-prefix-no-title-csf-nested-without-title",
+      "isDocs": true,
+      "name": "Without Title",
+    },
+    Object {
+      "id": "auto-generated-title-prefix-no-title-csf-nested-without-title--primary",
+      "isDocs": false,
+      "name": "Primary",
+    },
+  ],
+  "title": "Auto Generated Title Prefix/No Title/Csf/Nested/Without Title",
+}
+`;
+
+exports[`StoryExplorerStoryFile parses story file project/src/noTitle/mdx/MdxMeta.stories.mdx 1`] = `
+Object {
+  "id": "auto-generated-title-prefix-no-title-mdx-mdx-meta",
+  "isDocsOnly": true,
+  "stories": Array [
+    Object {
+      "id": "auto-generated-title-prefix-no-title-mdx-mdx-meta--page",
+      "isDocs": true,
+      "name": "Mdx Meta",
+    },
+  ],
+  "title": "Auto Generated Title Prefix/No Title/Mdx/Mdx Meta",
+}
+`;
+
+exports[`StoryExplorerStoryFile parses story file project/src/noTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
+Object {
+  "id": "auto-generated-title-prefix-no-title-mdx-mdx-meta-and-story",
+  "isDocsOnly": false,
+  "stories": Array [
+    Object {
+      "id": "auto-generated-title-prefix-no-title-mdx-mdx-meta-and-story",
+      "isDocs": true,
+      "name": "Mdx Meta And Story",
+    },
+    Object {
+      "id": "auto-generated-title-prefix-no-title-mdx-mdx-meta-and-story--primary",
+      "isDocs": false,
+      "name": "Primary",
+    },
+  ],
+  "title": "Auto Generated Title Prefix/No Title/Mdx/Mdx Meta And Story",
+}
+`;
+
+exports[`StoryExplorerStoryFile parses story file project/src/noTitle/mdx/MdxStory.stories.mdx 1`] = `
+Object {
+  "id": "auto-generated-title-prefix-no-title-mdx-mdx-story",
+  "isDocsOnly": false,
+  "stories": Array [
+    Object {
+      "id": "auto-generated-title-prefix-no-title-mdx-mdx-story",
+      "isDocs": true,
+      "name": "Mdx Story",
+    },
+    Object {
+      "id": "auto-generated-title-prefix-no-title-mdx-mdx-story--primary",
+      "isDocs": false,
+      "name": "Primary",
+    },
+  ],
+  "title": "Auto Generated Title Prefix/No Title/Mdx/Mdx Story",
+}
+`;
+
 exports[`StoryExplorerStoryFile parses story file project/src/stories/BasicCsf.stories.js 1`] = `
 Object {
   "id": "example-basic-csf",
@@ -62,15 +157,6 @@ Object {
     },
   ],
   "title": "Example/CSF v1",
-}
-`;
-
-exports[`StoryExplorerStoryFile parses story file project/src/stories/CsfWithMdx.stories.js 1`] = `
-Object {
-  "id": undefined,
-  "isDocsOnly": false,
-  "stories": Array [],
-  "title": undefined,
 }
 `;
 

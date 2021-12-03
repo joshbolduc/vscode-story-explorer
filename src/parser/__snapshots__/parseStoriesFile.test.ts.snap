@@ -9,7 +9,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": undefined,
       "location": Object {
         "end": Object {
           "column": 0,
@@ -21,9 +20,9 @@ Object {
         },
       },
       "name": "Children prop, children content",
+      "nameForId": undefined,
     },
     Object {
-      "id": undefined,
       "location": Object {
         "end": Object {
           "column": 0,
@@ -35,9 +34,9 @@ Object {
         },
       },
       "name": "Children prop, empty body",
+      "nameForId": undefined,
     },
     Object {
-      "id": undefined,
       "location": Object {
         "end": Object {
           "column": 0,
@@ -49,9 +48,9 @@ Object {
         },
       },
       "name": "Children prop, no body",
+      "nameForId": undefined,
     },
     Object {
-      "id": undefined,
       "location": Object {
         "end": Object {
           "column": 0,
@@ -63,6 +62,7 @@ Object {
         },
       },
       "name": "No children prop, children content",
+      "nameForId": undefined,
     },
   ],
   "type": "mdx",
@@ -78,7 +78,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": undefined,
       "location": Object {
         "end": Object {
           "column": 0,
@@ -90,16 +89,177 @@ Object {
         },
       },
       "name": undefined,
+      "nameForId": undefined,
     },
   ],
   "type": "mdx",
 }
 `;
 
+exports[`parseStoriesFile parses story file project/src/noTitle/csf/EmptyDefaultExport.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "id": undefined,
+    "location": Object {
+      "end": Object {
+        "column": 17,
+        "line": 5,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 5,
+      },
+    },
+    "title": undefined,
+  },
+  "stories": Array [
+    Object {
+      "location": Object {
+        "end": Position {
+          "column": 20,
+          "line": 9,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 9,
+        },
+      },
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile parses story file project/src/noTitle/csf/NoDefaultExport.stories.js 1`] = `undefined`;
+
+exports[`parseStoriesFile parses story file project/src/noTitle/csf/nested/WithoutTitle.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "id": undefined,
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 7,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 5,
+      },
+    },
+    "title": undefined,
+  },
+  "stories": Array [
+    Object {
+      "location": Object {
+        "end": Position {
+          "column": 20,
+          "line": 11,
+        },
+        "start": Position {
+          "column": 13,
+          "line": 11,
+        },
+      },
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile parses story file project/src/noTitle/mdx/MdxMeta.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": undefined,
+    "location": Object {
+      "end": Object {
+        "column": 0,
+        "line": 3,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 3,
+      },
+    },
+    "title": undefined,
+  },
+  "stories": Array [],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile parses story file project/src/noTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": undefined,
+    "location": Object {
+      "end": Object {
+        "column": 0,
+        "line": 3,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 3,
+      },
+    },
+    "title": undefined,
+  },
+  "stories": Array [
+    Object {
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 5,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 5,
+        },
+      },
+      "name": "Primary",
+      "nameForId": undefined,
+    },
+  ],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile parses story file project/src/noTitle/mdx/MdxStory.stories.mdx 1`] = `
+Object {
+  "meta": Object {
+    "id": undefined,
+    "location": undefined,
+    "title": undefined,
+  },
+  "stories": Array [
+    Object {
+      "location": Object {
+        "end": Object {
+          "column": 0,
+          "line": 3,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 3,
+        },
+      },
+      "name": "Primary",
+      "nameForId": undefined,
+    },
+  ],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile parses story file project/src/noTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
+
 exports[`parseStoriesFile parses story file project/src/stories/BasicCsf.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-basic-csf",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -114,7 +274,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-basic-csf--primary",
       "location": Object {
         "end": Position {
           "column": 20,
@@ -126,9 +285,9 @@ Object {
         },
       },
       "name": "Primary",
+      "nameForId": "Primary",
     },
     Object {
-      "id": "example-basic-csf--secondary",
       "location": Object {
         "end": Position {
           "column": 22,
@@ -140,9 +299,9 @@ Object {
         },
       },
       "name": "Secondary",
+      "nameForId": "Secondary",
     },
     Object {
-      "id": "example-basic-csf--large",
       "location": Object {
         "end": Position {
           "column": 18,
@@ -154,9 +313,9 @@ Object {
         },
       },
       "name": "Large",
+      "nameForId": "Large",
     },
     Object {
-      "id": "example-basic-csf--small",
       "location": Object {
         "end": Position {
           "column": 18,
@@ -168,6 +327,7 @@ Object {
         },
       },
       "name": "Small",
+      "nameForId": "Small",
     },
   ],
   "type": "csf",
@@ -177,7 +337,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/CsfV1.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-csf-v1",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -192,7 +352,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-csf-v1--v-1-story-name",
       "location": Object {
         "end": Position {
           "column": 24,
@@ -204,9 +363,9 @@ Object {
         },
       },
       "name": "Renamed via non-hoisted story",
+      "nameForId": "V 1 Story Name",
     },
     Object {
-      "id": "example-csf-v1--v-2-v-1-story-name",
       "location": Object {
         "end": Position {
           "column": 26,
@@ -218,9 +377,9 @@ Object {
         },
       },
       "name": "v2 name override",
+      "nameForId": "V 2 V 1 Story Name",
     },
     Object {
-      "id": "example-csf-v1--v-2-v-1-story-name-empty",
       "location": Object {
         "end": Position {
           "column": 31,
@@ -232,71 +391,19 @@ Object {
         },
       },
       "name": "V 2 V 1 Story Name Empty",
+      "nameForId": "V 2 V 1 Story Name Empty",
     },
   ],
   "type": "csf",
 }
 `;
 
-exports[`parseStoriesFile parses story file project/src/stories/CsfWithMdx.stories.js 1`] = `
-Object {
-  "meta": Object {
-    "id": undefined,
-    "location": undefined,
-    "title": undefined,
-  },
-  "stories": Array [
-    Object {
-      "id": undefined,
-      "location": Object {
-        "end": Position {
-          "column": 18,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "line": 11,
-        },
-      },
-      "name": "Story name from JS",
-    },
-    Object {
-      "id": undefined,
-      "location": Object {
-        "end": Position {
-          "column": 19,
-          "line": 17,
-        },
-        "start": Position {
-          "column": 13,
-          "line": 17,
-        },
-      },
-      "name": "Story name 2 from JS",
-    },
-    Object {
-      "id": undefined,
-      "location": Object {
-        "end": Position {
-          "column": 19,
-          "line": 23,
-        },
-        "start": Position {
-          "column": 13,
-          "line": 23,
-        },
-      },
-      "name": "Basic 3",
-    },
-  ],
-  "type": "csf",
-}
-`;
+exports[`parseStoriesFile parses story file project/src/stories/CsfWithMdx.stories.js 1`] = `undefined`;
 
 exports[`parseStoriesFile parses story file project/src/stories/CsfWithMdx.stories.mdx 1`] = `
 Object {
   "meta": Object {
-    "id": "example-mdx-importing-csf",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 0,
@@ -311,7 +418,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-mdx-importing-csf--basic",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -323,9 +429,9 @@ Object {
         },
       },
       "name": "Basic",
+      "nameForId": "Basic",
     },
     Object {
-      "id": "example-mdx-importing-csf--basic-2",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -337,9 +443,9 @@ Object {
         },
       },
       "name": "Story name from MDX",
+      "nameForId": "Basic 2",
     },
     Object {
-      "id": "example-mdx-importing-csf--basic-3",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -351,6 +457,7 @@ Object {
         },
       },
       "name": "Basic 3",
+      "nameForId": "Basic 3",
     },
   ],
   "type": "mdx",
@@ -375,7 +482,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "manually-specified-csf-story-id--story",
       "location": Object {
         "end": Position {
           "column": 18,
@@ -387,6 +493,7 @@ Object {
         },
       },
       "name": "Story",
+      "nameForId": "Story",
     },
   ],
   "type": "csf",
@@ -411,7 +518,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "manually-specified-mdx-id--story",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -423,6 +529,7 @@ Object {
         },
       },
       "name": "Story",
+      "nameForId": undefined,
     },
   ],
   "type": "mdx",
@@ -432,7 +539,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/CustomName.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-custom-name",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -447,7 +554,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-custom-name--custom-name",
       "location": Object {
         "end": Position {
           "column": 23,
@@ -459,9 +565,9 @@ Object {
         },
       },
       "name": "Custom story name",
+      "nameForId": "Custom Name",
     },
     Object {
-      "id": "example-custom-name--overridden",
       "location": Object {
         "end": Position {
           "column": 23,
@@ -473,9 +579,9 @@ Object {
         },
       },
       "name": "Custom story name override",
+      "nameForId": "Overridden",
     },
     Object {
-      "id": "example-custom-name--named-via-variable",
       "location": Object {
         "end": Position {
           "column": 29,
@@ -487,9 +593,9 @@ Object {
         },
       },
       "name": "Custom story name var",
+      "nameForId": "Named Via Variable",
     },
     Object {
-      "id": "example-custom-name--interpolated-name",
       "location": Object {
         "end": Position {
           "column": 29,
@@ -501,9 +607,9 @@ Object {
         },
       },
       "name": "Custom story name var in template string",
+      "nameForId": "Interpolated Name",
     },
     Object {
-      "id": "example-custom-name--empty-name",
       "location": Object {
         "end": Position {
           "column": 22,
@@ -515,9 +621,9 @@ Object {
         },
       },
       "name": "Empty Name",
+      "nameForId": "Empty Name",
     },
     Object {
-      "id": "example-custom-name--leading-whitespace",
       "location": Object {
         "end": Position {
           "column": 30,
@@ -529,6 +635,7 @@ Object {
         },
       },
       "name": "     Leading whitespace",
+      "nameForId": "Leading Whitespace",
     },
   ],
   "type": "csf",
@@ -538,7 +645,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/DeepTree.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-deep-tree-with-several-kinds",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -553,7 +660,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-deep-tree-with-several-kinds--story",
       "location": Object {
         "end": Position {
           "column": 18,
@@ -565,6 +671,7 @@ Object {
         },
       },
       "name": "Story",
+      "nameForId": "Story",
     },
   ],
   "type": "csf",
@@ -574,7 +681,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/DocsOnly.stories.mdx 1`] = `
 Object {
   "meta": Object {
-    "id": "example-mdx-docs-only",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 0,
@@ -595,7 +702,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/DocsOnlyTop.stories.mdx 1`] = `
 Object {
   "meta": Object {
-    "id": "mdx-docs-at-top-level",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 0,
@@ -616,7 +723,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/Excluded.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "test-exclusions-excluded",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -631,7 +738,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "test-exclusions-excluded--other-export",
       "location": Object {
         "end": Position {
           "column": 24,
@@ -643,6 +749,7 @@ Object {
         },
       },
       "name": "Other Export",
+      "nameForId": "Other Export",
     },
   ],
   "type": "csf",
@@ -652,7 +759,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/ExportStyles.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-export-styles",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -667,7 +774,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-export-styles--normal-export",
       "location": Object {
         "end": Position {
           "column": 18,
@@ -679,9 +785,9 @@ Object {
         },
       },
       "name": "Normal Export",
+      "nameForId": "Normal Export",
     },
     Object {
-      "id": "example-export-styles--alternative-export-name",
       "location": Object {
         "end": Position {
           "column": 16,
@@ -693,9 +799,9 @@ Object {
         },
       },
       "name": "Alternative Export Name",
+      "nameForId": "Alternative Export Name",
     },
     Object {
-      "id": "example-export-styles--export-name-overridden",
       "location": Object {
         "end": Position {
           "column": 29,
@@ -707,6 +813,7 @@ Object {
         },
       },
       "name": "Override name 3",
+      "nameForId": "Export Name Overridden",
     },
   ],
   "type": "csf",
@@ -716,7 +823,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/Form.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-form",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -731,7 +838,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-form--form",
       "location": Object {
         "end": Position {
           "column": 17,
@@ -743,6 +849,7 @@ Object {
         },
       },
       "name": "Form",
+      "nameForId": "Form",
     },
   ],
   "type": "csf",
@@ -752,7 +859,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/Hoisting.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-hoisting",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -767,7 +874,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-hoisting--hoisting",
       "location": Object {
         "end": Position {
           "column": 21,
@@ -779,6 +885,7 @@ Object {
         },
       },
       "name": "Hoisting",
+      "nameForId": "Hoisting",
     },
   ],
   "type": "csf",
@@ -788,7 +895,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/Included.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "test-exclusions-included",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -803,7 +910,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "test-exclusions-included--included-export",
       "location": Object {
         "end": Position {
           "column": 27,
@@ -815,6 +921,7 @@ Object {
         },
       },
       "name": "Included Export",
+      "nameForId": "Included Export",
     },
   ],
   "type": "csf",
@@ -824,7 +931,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/JsxExtension.stories.jsx 1`] = `
 Object {
   "meta": Object {
-    "id": "example-jsx-extension",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -839,7 +946,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-jsx-extension--story",
       "location": Object {
         "end": Position {
           "column": 18,
@@ -851,6 +957,7 @@ Object {
         },
       },
       "name": "Story",
+      "nameForId": "Story",
     },
   ],
   "type": "csf",
@@ -860,7 +967,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/MdxWithStories.stories.mdx 1`] = `
 Object {
   "meta": Object {
-    "id": "example-mdx-with-stories",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 0,
@@ -875,7 +982,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-mdx-with-stories--mdx-first-story",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -887,9 +993,9 @@ Object {
         },
       },
       "name": "MDX first story",
+      "nameForId": undefined,
     },
     Object {
-      "id": "example-mdx-with-stories--mdx-second-story",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -901,9 +1007,9 @@ Object {
         },
       },
       "name": "MDX second story",
+      "nameForId": undefined,
     },
     Object {
-      "id": "example-mdx-with-stories--mdx-story-3",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -915,6 +1021,7 @@ Object {
         },
       },
       "name": "MDX Story 3",
+      "nameForId": undefined,
     },
   ],
   "type": "mdx",
@@ -924,7 +1031,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
 Object {
   "meta": Object {
-    "id": "mdx-with-stories-top",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 0,
@@ -939,7 +1046,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "mdx-with-stories-top--mdx-with-stories-top",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -951,6 +1057,7 @@ Object {
         },
       },
       "name": "MDX with stories, top",
+      "nameForId": undefined,
     },
   ],
   "type": "mdx",
@@ -960,7 +1067,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/MergeOne.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-merge",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -975,7 +1082,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-merge--one",
       "location": Object {
         "end": Position {
           "column": 16,
@@ -987,6 +1093,7 @@ Object {
         },
       },
       "name": "One",
+      "nameForId": "One",
     },
   ],
   "type": "csf",
@@ -996,7 +1103,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/MergeTwo.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-merge",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1011,7 +1118,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-merge--two",
       "location": Object {
         "end": Position {
           "column": 16,
@@ -1023,6 +1129,7 @@ Object {
         },
       },
       "name": "Two",
+      "nameForId": "Two",
     },
   ],
   "type": "csf",
@@ -1032,7 +1139,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/Precedence.stories.mdx 1`] = `
 Object {
   "meta": Object {
-    "id": "example-precedence",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 0,
@@ -1047,7 +1154,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-precedence--small",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -1059,9 +1165,9 @@ Object {
         },
       },
       "name": "Story with name, story, body",
+      "nameForId": "Small",
     },
     Object {
-      "id": "example-precedence--story-with-name-body",
       "location": Object {
         "end": Object {
           "column": 0,
@@ -1073,6 +1179,7 @@ Object {
         },
       },
       "name": "Story with name, body",
+      "nameForId": undefined,
     },
   ],
   "type": "mdx",
@@ -1082,7 +1189,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/SameName.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-with-same-name",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1097,7 +1204,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-with-same-name--same-name",
       "location": Object {
         "end": Position {
           "column": 21,
@@ -1109,6 +1215,7 @@ Object {
         },
       },
       "name": "Same Name",
+      "nameForId": "Same Name",
     },
   ],
   "type": "csf",
@@ -1118,7 +1225,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/SameNameChild.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-with-same-name-same-name",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1133,7 +1240,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-with-same-name-same-name--nested-story",
       "location": Object {
         "end": Position {
           "column": 24,
@@ -1145,6 +1251,7 @@ Object {
         },
       },
       "name": "Nested Story",
+      "nameForId": "Nested Story",
     },
   ],
   "type": "csf",
@@ -1154,7 +1261,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/StoryDeclarations.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "test-story-declarations",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1169,7 +1276,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "test-story-declarations--const-declarator",
       "location": Object {
         "end": Position {
           "column": 28,
@@ -1181,9 +1287,9 @@ Object {
         },
       },
       "name": "Const Declarator",
+      "nameForId": "Const Declarator",
     },
     Object {
-      "id": "test-story-declarations--separate-declarator",
       "location": Object {
         "end": Position {
           "column": 24,
@@ -1195,9 +1301,9 @@ Object {
         },
       },
       "name": "Separate Declarator",
+      "nameForId": "Separate Declarator",
     },
     Object {
-      "id": "test-story-declarations--separate-declarator-2",
       "location": Object {
         "end": Position {
           "column": 25,
@@ -1209,9 +1315,9 @@ Object {
         },
       },
       "name": "Separate declarator with story name",
+      "nameForId": "Separate Declarator 2",
     },
     Object {
-      "id": "test-story-declarations--multiple-one",
       "location": Object {
         "end": Position {
           "column": 24,
@@ -1223,9 +1329,9 @@ Object {
         },
       },
       "name": "Multiple One",
+      "nameForId": "Multiple One",
     },
     Object {
-      "id": "test-story-declarations--multiple-two",
       "location": Object {
         "end": Position {
           "column": 13,
@@ -1237,9 +1343,9 @@ Object {
         },
       },
       "name": "Multiple two (given name)",
+      "nameForId": "Multiple Two",
     },
     Object {
-      "id": "test-story-declarations--function-story",
       "location": Object {
         "end": Position {
           "column": 29,
@@ -1251,9 +1357,9 @@ Object {
         },
       },
       "name": "Renamed Function Story",
+      "nameForId": "Function Story",
     },
     Object {
-      "id": "test-story-declarations--separate-function-story",
       "location": Object {
         "end": Position {
           "column": 30,
@@ -1265,9 +1371,9 @@ Object {
         },
       },
       "name": "Separate Function Story",
+      "nameForId": "Separate Function Story",
     },
     Object {
-      "id": "test-story-declarations--separate-function-story-2",
       "location": Object {
         "end": Position {
           "column": 31,
@@ -1279,6 +1385,7 @@ Object {
         },
       },
       "name": "Separate function story with story name",
+      "nameForId": "Separate Function Story 2",
     },
   ],
   "type": "csf",
@@ -1288,7 +1395,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/TitleInterpolation.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "example-title-interpolation",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1303,7 +1410,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "example-title-interpolation--primary",
       "location": Object {
         "end": Position {
           "column": 20,
@@ -1315,6 +1421,7 @@ Object {
         },
       },
       "name": "Primary",
+      "nameForId": "Primary",
     },
   ],
   "type": "csf",
@@ -1324,7 +1431,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/Top.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "top",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1339,7 +1446,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "top--top-level-story",
       "location": Object {
         "end": Position {
           "column": 26,
@@ -1351,6 +1457,7 @@ Object {
         },
       },
       "name": "Top Level Story",
+      "nameForId": "Top Level Story",
     },
   ],
   "type": "csf",
@@ -1360,7 +1467,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/TopHoisted.stories.js 1`] = `
 Object {
   "meta": Object {
-    "id": "top-hoisted",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1375,7 +1482,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "top-hoisted--top-hoisted",
       "location": Object {
         "end": Position {
           "column": 23,
@@ -1387,6 +1493,7 @@ Object {
         },
       },
       "name": "Top Hoisted",
+      "nameForId": "Top Hoisted",
     },
   ],
   "type": "csf",
@@ -1396,7 +1503,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/TypeScript.stories.tsx 1`] = `
 Object {
   "meta": Object {
-    "id": "test-typescript-sample",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 9,
@@ -1411,7 +1518,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "test-typescript-sample--type-script-story",
       "location": Object {
         "end": Position {
           "column": 28,
@@ -1423,9 +1529,9 @@ Object {
         },
       },
       "name": "Type Script Story",
+      "nameForId": "Type Script Story",
     },
     Object {
-      "id": "test-typescript-sample--type-script-typed-story",
       "location": Object {
         "end": Position {
           "column": 40,
@@ -1437,9 +1543,9 @@ Object {
         },
       },
       "name": "Type Script Typed Story",
+      "nameForId": "Type Script Typed Story",
     },
     Object {
-      "id": "test-typescript-sample--type-script-typed-generic-story",
       "location": Object {
         "end": Position {
           "column": 51,
@@ -1451,9 +1557,9 @@ Object {
         },
       },
       "name": "Type Script Typed Generic Story",
+      "nameForId": "Type Script Typed Generic Story",
     },
     Object {
-      "id": "test-typescript-sample--type-script-type-assertion-story",
       "location": Object {
         "end": Position {
           "column": 41,
@@ -1465,6 +1571,7 @@ Object {
         },
       },
       "name": "Type Script Type Assertion Story",
+      "nameForId": "Type Script Type Assertion Story",
     },
   ],
   "type": "csf",
@@ -1474,7 +1581,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/TypeScriptAsMeta.stories.ts 1`] = `
 Object {
   "meta": Object {
-    "id": "test-typescript-default-as-meta",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 9,
@@ -1489,7 +1596,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "test-typescript-default-as-meta--type-script-story",
       "location": Object {
         "end": Position {
           "column": 28,
@@ -1501,6 +1607,7 @@ Object {
         },
       },
       "name": "Type Script Story",
+      "nameForId": "Type Script Story",
     },
   ],
   "type": "csf",
@@ -1510,7 +1617,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/TypeScriptIdentifier.stories.ts 1`] = `
 Object {
   "meta": Object {
-    "id": "test-typescript-typed-identifier",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1525,7 +1632,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "test-typescript-typed-identifier--type-script-story",
       "location": Object {
         "end": Position {
           "column": 28,
@@ -1537,6 +1643,7 @@ Object {
         },
       },
       "name": "Type Script Story",
+      "nameForId": "Type Script Story",
     },
   ],
   "type": "csf",
@@ -1546,7 +1653,7 @@ Object {
 exports[`parseStoriesFile parses story file project/src/stories/TypeScriptIdentifierAsMeta.stories.ts 1`] = `
 Object {
   "meta": Object {
-    "id": "test-typescript-identifier-exported-as-meta",
+    "id": undefined,
     "location": Object {
       "end": Object {
         "column": 1,
@@ -1561,7 +1668,6 @@ Object {
   },
   "stories": Array [
     Object {
-      "id": "test-typescript-identifier-exported-as-meta--type-script-story",
       "location": Object {
         "end": Position {
           "column": 28,
@@ -1573,6 +1679,7 @@ Object {
         },
       },
       "name": "Type Script Story",
+      "nameForId": "Type Script Story",
     },
   ],
   "type": "csf",

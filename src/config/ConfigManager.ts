@@ -33,12 +33,7 @@ export class ConfigManager {
   }
 
   public getStoriesGlobsConfig() {
-    return (
-      this.storiesGlobsConfigAggregator.getValue() ?? {
-        storiesGlobs: [],
-        storiesGlobsRoot: '',
-      }
-    );
+    return this.storiesGlobsConfigAggregator.getValue() ?? [];
   }
 
   public dispose() {

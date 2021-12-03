@@ -1,6 +1,6 @@
 import { toId } from '@componentdriven/csf';
 import { Range, ViewColumn } from 'vscode';
-import type { Story } from '../parser/parseTypes';
+import type { Story } from '../parser/Story';
 import type { Location } from '../types/Location';
 import { createOpenInEditorCommand } from '../util/createOpenCommand';
 import type { IconName } from '../util/getIconPath';
@@ -27,6 +27,13 @@ export class StoryExplorerStory {
    * Whether this story is actually a docs entry.
    */
   public readonly isDocs: boolean;
+
+  /**
+   * The story portion of the ID, if not based on the story name. Used, e.g.,
+   * for the export name for CSF stories and for MDX Story elements with a
+   * `story` prop.
+   */
+  private readonly nameForId: string | undefined;
 
   private constructor(
     private readonly story: Pick<
@@ -62,11 +69,19 @@ export class StoryExplorerStory {
   }
 
   public static fromStory(
-    { id, location, name }: Story,
+    { nameForId, location, name }: Story,
     storyFile: StoryExplorerStoryFile,
   ) {
+    const fileId = storyFile.getId();
+
+    if (!fileId) {
+      return undefined;
+    }
+
+    const storyIdPart = storyFile.isDocsOnly() ? 'page' : nameForId ?? name;
+
     return new StoryExplorerStory(
-      { id, location, name, isDocs: false },
+      { id: toId(fileId, storyIdPart), location, name, isDocs: false },
       storyFile,
     );
   }

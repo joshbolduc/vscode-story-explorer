@@ -17,6 +17,7 @@ interface RawMeta {
   id?: string;
   location: Location | undefined;
   properties: Record<string, unknown>;
+  declared: boolean;
 }
 
 export interface RawStory {
@@ -116,6 +117,7 @@ export const parseFromContents = (contents: string): RawResult => {
   const meta: RawMeta = {
     location: undefined,
     properties: {},
+    declared: false,
   };
   const stories: RawStory[] = [];
 
@@ -123,6 +125,7 @@ export const parseFromContents = (contents: string): RawResult => {
     properties: Record<string, unknown>,
     location: Location | undefined,
   ) => {
+    meta.declared = true;
     Object.assign(meta.properties, properties);
 
     meta.location = location;
@@ -226,5 +229,5 @@ export const parseFromContents = (contents: string): RawResult => {
     },
   });
 
-  return { meta: meta, stories };
+  return { meta, stories };
 };

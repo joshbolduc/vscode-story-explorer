@@ -17,15 +17,17 @@ export class SettingsConfigProvider<T, U> implements ConfigProvider<T> {
     private readonly settingName: string,
     private readonly transformer: (
       setting: U | undefined,
-    ) => { value: T } | undefined,
+    ) => { value: T } | undefined | Promise<{ value: T } | undefined>,
   ) {}
 
   public start() {
     if (!this.settingsWatcher) {
       this.settingsWatcher = new SettingsWatcher(
         this.settingName,
-        (watcher) => {
-          this.onDidChangeConfigEmitter.fire(this.transformer(watcher.read()));
+        async (watcher) => {
+          this.onDidChangeConfigEmitter.fire(
+            await this.transformer(watcher.read()),
+          );
         },
       );
     }

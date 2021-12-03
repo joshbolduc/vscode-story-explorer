@@ -7,10 +7,8 @@ export const sanitizeMetaObject = (
   const titleAsString = typeof title === 'string' ? title : undefined;
   const idAsString = typeof id === 'string' ? id : undefined;
 
-  const unsanitizedId = idAsString || titleAsString;
-
   const sanitizedId =
-    unsanitizedId !== undefined ? sanitize(unsanitizedId) : undefined;
+    idAsString !== undefined ? sanitize(idAsString) : undefined;
 
   return {
     id: sanitizedId,

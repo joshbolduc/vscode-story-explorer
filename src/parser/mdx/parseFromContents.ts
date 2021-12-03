@@ -13,6 +13,7 @@ interface RawResult {
       values?: Record<string, unknown>;
       literals?: Record<string, string>;
     };
+    declared: boolean;
   };
   stories: {
     location: Location | undefined;
@@ -44,6 +45,7 @@ export const parseFromContents = (contents: string): RawResult | undefined => {
     meta: {
       location: undefined,
       properties: {},
+      declared: false,
     },
     stories: [],
   };
@@ -73,6 +75,7 @@ export const parseFromContents = (contents: string): RawResult | undefined => {
           if (isMeta) {
             result.meta.properties = properties;
             result.meta.location = location;
+            result.meta.declared = true;
           } else if (isStory) {
             result.stories.push({
               location,
