@@ -1,22 +1,35 @@
 import { Disposable, EventEmitter } from 'vscode';
+import { storybookConfigParsedContext } from '../constants/constants';
 import { logWarn } from '../log/log';
 
 import { getStoriesGlobs } from '../storybook/getStoriesGlobs';
 import { parseConfigFile } from '../storybook/parseConfig';
 import { FileWatcher } from '../util/FileWatcher';
+import { setContext } from '../util/setContext';
 import type { Aggregator } from './Aggregator';
 import type { ConfigProvider } from './ConfigProvider';
 import type { GlobSpecifier } from './GlobSpecifier';
 import type { StorybookConfigLocation } from './StorybookConfigLocation';
 import { interpretStoriesConfigItem } from './normalizeStoriesEntry';
 
+const setParsedConfigContext = (parsed: boolean) => {
+  setContext(storybookConfigParsedContext, parsed);
+};
+
 const getStoriesGlobsFromFileUri = async (
   location: StorybookConfigLocation,
 ): Promise<GlobSpecifier[] | undefined> => {
   const fileUri = location.file;
 
+  const config = parseConfigFile(fileUri.fsPath);
+  const parsed = !!config;
+  setParsedConfigContext(parsed);
+
+  if (!parsed) {
+    return undefined;
+  }
+
   try {
-    const config = parseConfigFile(fileUri.fsPath);
     const storiesConfigItems = await getStoriesGlobs(config.stories);
     const configDirPath = location.dir.fsPath;
 
