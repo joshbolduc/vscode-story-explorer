@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.4.0...v0.5.0) (2021-12-04)
+
+### Features
+
+- support passing custom args to start-storybook script ([3740528](https://github.com/joshbolduc/vscode-story-explorer/commit/37405286cb01459f36fa148ab0cbda925d26d52b)), closes [#121](https://github.com/joshbolduc/vscode-story-explorer/issues/121)
+
 ## [0.4.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.3.0...v0.4.0) (2021-12-04)
 
 ### Features
