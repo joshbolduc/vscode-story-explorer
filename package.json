@@ -131,6 +131,25 @@
     "configuration": {
       "title": "Story Explorer",
       "properties": {
+        "storyExplorer.logLevel": {
+          "scope": "window",
+          "markdownDescription": "Log level to use for logging. Logs are available via the [Story Explorer output channel in the output panel](command:storyExplorer.openOutputChannel).",
+          "default": "error",
+          "enum": [
+            "none",
+            "error",
+            "warn",
+            "info",
+            "debug"
+          ],
+          "markdownEnumDescriptions": [
+            "Do not log",
+            "Log errors only",
+            "Log warnings and errors",
+            "Log general operational information, warnings, and errors",
+            "Log debugging information, general operational information, warnings, and errors"
+          ]
+        },
         "storyExplorer.storybookConfigDir": {
           "scope": "window",
           "markdownDescription": "Location of the Storybook configuration directory containing `main.js`. By default, Story Explorer will attempt to auto-detect a `.storybook` configuration directory that contains a `main.js` file. If your configuration directory is named something other than `.storybook` or your workspace contains more than one configuration directory, you should manually specify a path to the configuration directory you wish to use.",

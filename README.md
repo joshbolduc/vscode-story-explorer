@@ -33,6 +33,22 @@ Controls whether to display CodeLens results for docs. When enabled, CodeLens re
 
 Controls whether to display CodeLens results for stories. When enabled, CodeLens results for stories appear above story definitions.
 
+### `storyExplorer.logLevel`
+
+Log level to use for logging. Logs are available via the Story Explorer output channel in the output panel.
+
+### Options
+
+- `none`: Do not log
+
+- `error`: Log errors only
+
+- `warn`: Log warnings and errors
+
+- `info`: Log general operational information, warnings, and errors
+
+- `debug`: Log debugging information, general operational information, warnings, and errors
+
 ### `storyExplorer.server.external.url`
 
 URL of an externally launched and managed Storybook instance, used when `storyExplorer.server.internal.enabled` is disabled. Defaults to `http://localhost:6006`.

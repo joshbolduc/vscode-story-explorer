@@ -16,10 +16,15 @@ const output = Object.entries(settings)
   .map(([key, value]) => {
     const paragraphs = [
       `### \`${key}\``,
-      value.markdownDescription?.replace(
-        /`#([^#]+)#`/g,
-        (str, matchGroup: string) => `\`${matchGroup}\``,
-      ),
+      value.markdownDescription
+        ?.replace(
+          /`#([^#]+)#`/g,
+          (str, matchGroup: string) => `\`${matchGroup}\``,
+        )
+        .replace(
+          /\[([^\]]+)\]\([^)]+\)/g,
+          (str, matchGroup: string) => matchGroup,
+        ),
     ];
 
     if ('enum' in value) {

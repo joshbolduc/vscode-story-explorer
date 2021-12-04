@@ -1,12 +1,54 @@
-import { ExtensionMode, OutputChannel, window } from 'vscode';
-import { extensionName } from '../constants/constants';
+import { Disposable, ExtensionMode, OutputChannel, window } from 'vscode';
+import { extensionName, logLevelConfigSuffix } from '../constants/constants';
+import { SettingsWatcher } from '../util/SettingsWatcher';
+
+enum LogLevel {
+  None = 0,
+  Error = 1,
+  Warn = 2,
+  Info = 3,
+  Debug = 4,
+}
+
+const logLevelStringMap = {
+  none: LogLevel.None,
+  error: LogLevel.Error,
+  warn: LogLevel.Warn,
+  info: LogLevel.Info,
+  debug: LogLevel.Debug,
+} as const;
+
+const defaultLogLevel = LogLevel.Error;
 
 let outputChannel: OutputChannel;
 let extensionMode: ExtensionMode = ExtensionMode.Production;
+let configuredLogLevel: LogLevel = defaultLogLevel;
 
-export const initLogger = (mode: ExtensionMode) => {
+const getLogLevelFromString = (str: string | undefined) => {
+  const key = str?.toLowerCase();
+
+  return key && key in logLevelStringMap
+    ? logLevelStringMap[key as keyof typeof logLevelStringMap]
+    : defaultLogLevel;
+};
+
+export const initLogger = (mode: ExtensionMode): Disposable => {
   outputChannel = window.createOutputChannel(extensionName);
   extensionMode = mode;
+
+  const logLevelSettingsWatcher = new SettingsWatcher<string>(
+    logLevelConfigSuffix,
+    (watcher) => {
+      configuredLogLevel = getLogLevelFromString(watcher.read());
+    },
+  );
+
+  return {
+    dispose: () => {
+      logLevelSettingsWatcher.dispose();
+      outputChannel.dispose();
+    },
+  };
 };
 
 export const getLogger = () => outputChannel;
@@ -24,10 +66,11 @@ const stringify = (item: unknown) => {
 const append = (...msg: unknown[]) =>
   getLogger().appendLine(msg.map(stringify).join(' '));
 
-const shouldLog = () => extensionMode === ExtensionMode.Production;
+const shouldLog = (level: LogLevel) =>
+  extensionMode === ExtensionMode.Development || level <= configuredLogLevel;
 
 export const logDebug = (...msg: unknown[]) => {
-  if (shouldLog()) {
+  if (!shouldLog(LogLevel.Debug)) {
     return;
   }
   console.debug(...msg);
@@ -35,7 +78,7 @@ export const logDebug = (...msg: unknown[]) => {
 };
 
 export const logInfo = (...msg: unknown[]) => {
-  if (shouldLog()) {
+  if (!shouldLog(LogLevel.Info)) {
     return;
   }
   console.info(...msg);
@@ -43,7 +86,7 @@ export const logInfo = (...msg: unknown[]) => {
 };
 
 export const logWarn = (...msg: unknown[]) => {
-  if (shouldLog()) {
+  if (!shouldLog(LogLevel.Warn)) {
     return;
   }
   console.warn(...msg);
@@ -51,7 +94,7 @@ export const logWarn = (...msg: unknown[]) => {
 };
 
 export const logError = (...msg: unknown[]) => {
-  if (shouldLog()) {
+  if (!shouldLog(LogLevel.Error)) {
     return;
   }
   console.error(...msg);
