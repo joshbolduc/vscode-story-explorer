@@ -11,7 +11,18 @@ export const initLogger = (mode: ExtensionMode) => {
 
 export const getLogger = () => outputChannel;
 
-const append = (...msg: unknown[]) => getLogger().appendLine(msg.join(' '));
+const stringify = (item: unknown) => {
+  if (item instanceof Error) {
+    return `${item.name}: ${item.message}${
+      item.stack ? `\n${item.stack}\n` : ''
+    }`;
+  }
+
+  return item;
+};
+
+const append = (...msg: unknown[]) =>
+  getLogger().appendLine(msg.map(stringify).join(' '));
 
 const shouldLog = () => extensionMode === ExtensionMode.Production;
 
