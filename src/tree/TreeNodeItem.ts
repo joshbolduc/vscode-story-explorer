@@ -2,11 +2,13 @@ import {
   ExtensionContext,
   TreeItem,
   TreeItemCollapsibleState,
+  window,
   workspace,
 } from 'vscode';
 import { createOpenInEditorCommand } from '../util/createOpenCommand';
 import { getIconPath } from '../util/getIconPath';
 import type { TreeNode } from './TreeNode';
+import { findEntryByUri } from './findEntryByUri';
 
 const getDefaultCollapsedState = (
   entry: TreeNode,
@@ -16,10 +18,17 @@ const getDefaultCollapsedState = (
   }
 
   const isTopLevel = !entry.parent;
+  if (isTopLevel) {
+    return TreeItemCollapsibleState.Expanded;
+  }
 
-  return isTopLevel
-    ? TreeItemCollapsibleState.Expanded
-    : TreeItemCollapsibleState.Collapsed;
+  const activeUri = window.activeTextEditor?.document.uri;
+  const hasActiveFile = activeUri && !!findEntryByUri([entry], activeUri);
+  if (hasActiveFile) {
+    return TreeItemCollapsibleState.Expanded;
+  }
+
+  return TreeItemCollapsibleState.Collapsed;
 };
 
 export class TreeNodeItem extends TreeItem {
