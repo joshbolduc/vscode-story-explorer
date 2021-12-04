@@ -1,3 +1,4 @@
+import { logWarn } from '../log/log';
 import type { StorybookConfig } from './StorybookConfig';
 
 const requireUncached = <T>(filePath: string): T => {
@@ -7,5 +8,11 @@ const requireUncached = <T>(filePath: string): T => {
 };
 
 export const parseConfigFile = (configFilePath: string) => {
-  return requireUncached<StorybookConfig>(configFilePath);
+  try {
+    return requireUncached<StorybookConfig>(configFilePath);
+  } catch (e) {
+    logWarn('Failed to read config file', e, configFilePath);
+  }
+
+  return undefined;
 };

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.3.0...v0.4.0) (2021-12-04)
+
+### Features
+
+- add logLevel setting ([6175017](https://github.com/joshbolduc/vscode-story-explorer/commit/61750171b5dab32bf0150bb237721b1b9eaaa37c))
+
+### Bug Fixes
+
+- ignore empty csf v2 storyName ([39a8e09](https://github.com/joshbolduc/vscode-story-explorer/commit/39a8e09637017655eda7bfcc3371367af1738557))
+- improve Error logging ([262bd41](https://github.com/joshbolduc/vscode-story-explorer/commit/262bd417c22f7f568f1ce104fa57410b16be13a2))
+- warn when config file parsing fails ([a528f26](https://github.com/joshbolduc/vscode-story-explorer/commit/a528f2665dcf180c7904d6c7493204fe377959ba))
+
 ## [0.3.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.2.1...v0.3.0) (2021-12-04)
 
 ### Features
