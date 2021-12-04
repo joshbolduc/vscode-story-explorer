@@ -11,8 +11,8 @@ import { parseFromContents, RawStory } from './parseFromContents';
 const getStoryName = (rawStory: RawStory) => {
   const hoistedStoryName = rawStory.properties.storyName;
 
-  if (typeof hoistedStoryName === 'string') {
-    return hoistedStoryName || storyNameFromExport(rawStory.exportName);
+  if (typeof hoistedStoryName === 'string' && hoistedStoryName) {
+    return hoistedStoryName;
   }
 
   const { story } = rawStory.properties;

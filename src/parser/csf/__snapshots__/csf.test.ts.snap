@@ -278,7 +278,7 @@ Object {
       },
       "properties": Object {
         "story": Object {
-          "name": "v1 name should be ignored",
+          "name": "v1 name should be used",
         },
         "storyName": "",
       },

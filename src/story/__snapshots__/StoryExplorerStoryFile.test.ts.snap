@@ -153,7 +153,7 @@ Object {
     Object {
       "id": "example-csf-v1--v-2-v-1-story-name-empty",
       "isDocs": false,
-      "name": "V 2 V 1 Story Name Empty",
+      "name": "v1 name should be used",
     },
   ],
   "title": "Example/CSF v1",
