@@ -6,6 +6,8 @@ export const internalServerRunningContext =
   'storyExplorer.internalServerRunning';
 export const storybookConfigDetectedContext =
   'storyExplorer.storybookConfigDetected';
+export const storybookConfigParsedContext =
+  'storyExplorer.storybookConfigParsed';
 export const storybookPreviewFocusedContext =
   'storyExplorer.storybookPreviewFocused';
 export const storybookWebviewsOpenContext =
@@ -19,8 +21,8 @@ export const openPreviewCommand = 'storyExplorer.openPreview';
 export const openPreviewInBrowserCommand = 'storyExplorer.openPreviewInBrowser';
 export const openPreviewToSideCommand = 'storyExplorer.openPreviewToSide';
 export const openStorybookConfigCommand = 'storyExplorer.openStorybookConfig';
-export const openStorybookConfigDirSettingCommand =
-  'storyExplorer.openStorybookConfigDirSetting';
+export const openStoriesGlobsSettingCommand =
+  'storyExplorer.openStoriesGlobsSetting';
 export const openStorybookInBrowserCommand =
   'storyExplorer.openStorybookInBrowser';
 export const openStorybookUrlSettingCommand =
@@ -46,6 +48,7 @@ export const serverInternalEnvironmentVariablesConfigSuffix =
   'server.internal.environmentVariables';
 export const serverInternalStorybookBinaryPathConfigSuffix =
   'server.internal.storybookBinaryPath';
+export const storiesGlobsConfigSuffix = 'storiesGlobs';
 export const storiesViewShowItemsWithoutStoriesConfigSuffix =
   'storiesView.showItemsWithoutStories';
 export const storybookConfigDirConfigSuffix = 'storybookConfigDir';
@@ -58,6 +61,7 @@ export const serverExternalUrlConfig = makeFullConfigName(
 export const serverInternalStorybookBinaryPathConfig = makeFullConfigName(
   serverInternalStorybookBinaryPathConfigSuffix,
 );
+export const storiesGlobsConfig = makeFullConfigName(storiesGlobsConfigSuffix);
 export const storybookConfigDirConfig = makeFullConfigName(
   storybookConfigDirConfigSuffix,
 );

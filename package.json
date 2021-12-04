@@ -384,13 +384,13 @@
     "viewsWelcome": [
       {
         "view": "storyExplorer.storiesView",
-        "contents": "No Storybook configuration could be loaded. Add a Storybook configuration to your project if it doesn't exist, or [set the Storybook configuration path](command:storyExplorer.openStorybookConfigDirSetting) to your existing configuration to see your project's stories here.",
-        "when": "!storyExplorer.storybookConfigDetected"
+        "contents": "There was a problem parsing your Storybook configuration. [Check your Storybook configuration](command:storyExplorer.openStorybookConfig), or [try manually specifying your project's stories](command:storyExplorer.openStoriesGlobsSetting).",
+        "when": "storyExplorer.storybookConfigDetected && !storyExplorer.storybookConfigParsed"
       },
       {
         "view": "storyExplorer.storiesView",
         "contents": "No stories were found. Add a story to see it appear here, or [check your Storybook configuration](command:storyExplorer.openStorybookConfig).",
-        "when": "storyExplorer.storybookConfigDetected"
+        "when": "storyExplorer.storybookConfigParsed"
       }
     ]
   },

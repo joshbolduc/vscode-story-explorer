@@ -1,10 +1,10 @@
-import { storybookConfigDirConfig } from '../constants/constants';
+import { storiesGlobsConfig } from '../constants/constants';
 import { logError } from '../log/log';
 import { openWorkspaceSetting } from '../util/openWorkspaceSetting';
 
-export const openStorybookConfigDirSetting = () => async () => {
+export const openStoriesGlobsSetting = () => async () => {
   try {
-    await openWorkspaceSetting(storybookConfigDirConfig);
+    await openWorkspaceSetting(storiesGlobsConfig);
   } catch (e) {
     logError('Failed to open Storybook URL workspace setting', e);
   }
