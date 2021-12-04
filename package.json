@@ -223,6 +223,23 @@
           ],
           "default": null
         },
+        "storyExplorer.server.internal.commandLineArgs": {
+          "scope": "window",
+          "markdownDescription": "Array of command line arguments to pass to the `start-storybook` script.",
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "examples": [
+            [
+              "-p",
+              "6006"
+            ]
+          ]
+        },
         "storyExplorer.server.internal.environmentVariables": {
           "scope": "window",
           "markdownDescription": "Object with environment variables that will be added to the Storybook server process.",
@@ -409,6 +426,7 @@
     "deploy": "vsce publish --packagePath story-explorer-*.vsix",
     "format": "prettier --check '{.vscode,src}/**/*.{json,ts}' '*.{json,md}'",
     "format:fix": "npm run -s format -- --write",
+    "generate-settings-markdown": "node -r ts-eager/register ./scripts/generateSettingsReadmeMarkdown.ts",
     "lint": "eslint src --ext ts --max-warnings 0",
     "lint:fix": "npm run -s lint -- --fix",
     "release": "standard-version",

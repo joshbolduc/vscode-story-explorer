@@ -7,6 +7,7 @@ import {
 } from 'vscode';
 import {
   configPrefix,
+  serverInternalCommandLineArgsConfigSuffix,
   serverInternalEnvironmentVariablesConfigSuffix,
 } from '../constants/constants';
 
@@ -35,19 +36,41 @@ const getEnvironmentVariables = () => {
   return undefined;
 };
 
+const getArgs = () => {
+  const rawConfig = workspace
+    .getConfiguration(configPrefix)
+    .get(serverInternalCommandLineArgsConfigSuffix);
+
+  if (
+    Array.isArray(rawConfig) &&
+    rawConfig.every(
+      (item): item is string | number =>
+        typeof item === 'string' || typeof item === 'number',
+    )
+  ) {
+    return rawConfig.map((item) => item.toString());
+  }
+
+  return undefined;
+};
+
 export const createTask = (
   binPath: string,
   cwd: string,
   configDirPath: string | undefined,
 ) => {
-  const processExecution = new ProcessExecution('node', [binPath], {
-    cwd,
-    env: {
-      CI: 'true',
-      ...(configDirPath && { SBCONFIG_CONFIG_DIR: configDirPath }),
-      ...getEnvironmentVariables(),
+  const processExecution = new ProcessExecution(
+    'node',
+    [binPath, ...(getArgs() ?? [])],
+    {
+      cwd,
+      env: {
+        CI: 'true',
+        ...(configDirPath && { SBCONFIG_CONFIG_DIR: configDirPath }),
+        ...getEnvironmentVariables(),
+      },
     },
-  });
+  );
 
   const task = new Task(
     { type: 'storyExplorerTask' },
