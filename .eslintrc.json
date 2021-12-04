@@ -23,7 +23,6 @@
   ],
   "rules": {
     "@typescript-eslint/explicit-member-accessibility": "error",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/member-ordering": "warn",
     "@typescript-eslint/no-empty-function": [
       "error",
