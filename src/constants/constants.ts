@@ -43,6 +43,8 @@ export const codeLensStoriesEnabledConfigSuffix = 'codeLens.stories.enabled';
 export const logLevelConfigSuffix = 'logLevel';
 export const serverExternalUrlConfigSuffix = 'server.external.url';
 export const serverInternalBehaviorConfigSuffix = 'server.internal.behavior';
+export const serverInternalCommandLineArgsConfigSuffix =
+  'server.internal.commandLineArgs';
 export const serverInternalEnabledConfigSuffix = 'server.internal.enabled';
 export const serverInternalEnvironmentVariablesConfigSuffix =
   'server.internal.environmentVariables';

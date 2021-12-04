@@ -63,6 +63,10 @@ Controls when to automatically start a Storybook development server. This settin
 
 - `deferred`: Wait to start the server automatically until a story preview is opened.
 
+### `storyExplorer.server.internal.commandLineArgs`
+
+Array of command line arguments to pass to the `start-storybook` script.
+
 ### `storyExplorer.server.internal.enabled`
 
 Controls whether to enable the internal Storybook development server. When unchecked, you will have to run the server externally.
