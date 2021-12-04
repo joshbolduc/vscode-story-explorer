@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.2.1...v0.3.0) (2021-12-04)
+
+### Features
+
+- support new stories config format and autotitle ([5fd99c8](https://github.com/joshbolduc/vscode-story-explorer/commit/5fd99c844b5ae3bc4d583fd17f9e610cb9455825))
+
 ### [0.2.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.2.0...v0.2.1) (2021-12-03)
 
 ### Bug Fixes
