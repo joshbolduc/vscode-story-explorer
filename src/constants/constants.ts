@@ -14,6 +14,7 @@ export const storybookWebviewsOpenContext =
 export const storyTreeViewId = 'storyExplorer.storiesView';
 
 export const goToStorySourceCommand = 'storyExplorer.goToStorySource';
+export const openOutputChannelCommand = 'storyExplorer.openOutputChannel';
 export const openPreviewCommand = 'storyExplorer.openPreview';
 export const openPreviewInBrowserCommand = 'storyExplorer.openPreviewInBrowser';
 export const openPreviewToSideCommand = 'storyExplorer.openPreviewToSide';
@@ -37,6 +38,7 @@ export const configPrefix = 'storyExplorer';
 
 export const codeLensDocsEnabledConfigSuffix = 'codeLens.docs.enabled';
 export const codeLensStoriesEnabledConfigSuffix = 'codeLens.stories.enabled';
+export const logLevelConfigSuffix = 'logLevel';
 export const serverExternalUrlConfigSuffix = 'server.external.url';
 export const serverInternalBehaviorConfigSuffix = 'server.internal.behavior';
 export const serverInternalEnabledConfigSuffix = 'server.internal.enabled';

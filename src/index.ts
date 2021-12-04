@@ -3,6 +3,7 @@ import type { ExtensionContext } from 'vscode';
 import { commands, Disposable } from 'vscode';
 import { CodeLensManager } from './codelens/CodeLensManager';
 import { goToStorySource } from './commands/goToStorySource';
+import { openOutputChannel } from './commands/openOutputChannel';
 import { openPreview } from './commands/openPreview';
 import { openPreviewInBrowser } from './commands/openPreviewInBrowser';
 import { openStorybookConfig } from './commands/openStorybookConfig';
@@ -19,6 +20,7 @@ import { TitleCompletionManager } from './completion/TitleCompletionManager';
 import { ConfigManager } from './config/ConfigManager';
 import {
   goToStorySourceCommand,
+  openOutputChannelCommand,
   openPreviewCommand,
   openPreviewInBrowserCommand,
   openPreviewToSideCommand,
@@ -40,14 +42,14 @@ import { TreeViewManager } from './tree/TreeViewManager';
 import { WebviewManager } from './webview/WebviewManager';
 
 export const activate = async (context: ExtensionContext) => {
-  initLogger(context.extensionMode);
-
-  logInfo('Starting extension activation');
-
   const addSubscription = <T extends Disposable>(item: T) => {
     context.subscriptions.push(item);
     return item;
   };
+
+  addSubscription(initLogger(context.extensionMode));
+
+  logInfo('Starting extension activation');
 
   const registerCommand = (
     ...args: Parameters<typeof commands['registerCommand']>
@@ -111,10 +113,11 @@ export const activate = async (context: ExtensionContext) => {
       openStorybookConfigCommand,
       openStorybookConfig(configManager),
     );
-    registerCommand(
-      startStorybookServerCommand,
-      startStorybookServer(serverManager),
-    );
+    registerCommand(openOutputChannelCommand, openOutputChannel()),
+      registerCommand(
+        startStorybookServerCommand,
+        startStorybookServer(serverManager),
+      );
     registerCommand(
       stopStorybookServerCommand,
       stopStorybookServer(serverManager),
