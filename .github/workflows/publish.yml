@@ -38,16 +38,11 @@ jobs:
         run: npm run deploy
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-      - name: Generate changelog
-        run: touch null.txt && npx standard-changelog -o changelog.release.md -r 2 -i null.txt
       - name: Read changelog
+        uses: yashanand1910/standard-release-notes@v1.2.1
         id: changelog
-        run: |
-          export CHANGELOG="$(cat changelog.release.md)"
-          CHANGELOG="${CHANGELOG//'%'/'%25'}"
-          CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
-          CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
-          echo "::set-output name=changelog::$(echo "$CHANGELOG")"
+        with:
+          version: ${{ github.ref }}
       - name: Create release
         uses: svenstaro/upload-release-action@2.2.1
         with:
@@ -56,4 +51,4 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
-          body: ${{ steps.changelog.outputs.changelog }}
+          body: ${{ steps.changelog.outputs.release_notes }}
