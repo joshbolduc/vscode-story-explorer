@@ -16,8 +16,8 @@ V2V1StoryName.story = {
 V2V1StoryName.storyName = 'v2 name override';
 
 export const V2V1StoryNameEmpty = () =>
-  'Uses generated story name: should be "V 2 V 1 Story Name Empty"';
+  'Uses v1 name over empty v2 name: should be "v1 name should be used" (as of Storybook 6.4)';
 V2V1StoryNameEmpty.story = {
-  name: 'v1 name should be ignored',
+  name: 'v1 name should be used',
 };
 V2V1StoryNameEmpty.storyName = '';
