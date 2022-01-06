@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.0...v0.5.1) (2022-01-06)
+
+### Bug Fixes
+
+- initially expand tree node for active file ([dd01cdc](https://github.com/joshbolduc/vscode-story-explorer/commit/dd01cdc7b397cd1499f84399740309aaa5ded80e))
+
 ## [0.5.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.4.0...v0.5.0) (2021-12-04)
 
 ### Features
