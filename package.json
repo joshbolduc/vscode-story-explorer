@@ -464,7 +464,7 @@
     "eslint-plugin-import": "2.25.3",
     "fast-glob": "3.2.7",
     "http-proxy": "1.18.1",
-    "jest": "27.4.3",
+    "jest": "28.1.0",
     "lodash": "4.17.21",
     "node-netstat": "1.8.0",
     "picomatch": "2.3.0",
