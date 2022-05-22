@@ -1,7 +1,7 @@
 module.exports = {
   stories: [
     {
-      directory: '../src/noTitle',
+      directory: '../src/autoTitle',
       titlePrefix: 'Custom title prefix/Second level',
     },
     '../src/**/*.stories.mdx',

@@ -94,7 +94,7 @@ Object {
 }
 `;
 
-exports[`mdx parses story file project/src/noTitle/mdx/MdxMeta.stories.mdx 1`] = `
+exports[`mdx parses story file project/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
 Object {
   "meta": Object {
     "id": undefined,
@@ -114,7 +114,7 @@ Object {
 }
 `;
 
-exports[`mdx parses story file project/src/noTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
+exports[`mdx parses story file project/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
 Object {
   "meta": Object {
     "id": undefined,
@@ -149,7 +149,7 @@ Object {
 }
 `;
 
-exports[`mdx parses story file project/src/noTitle/mdx/MdxStory.stories.mdx 1`] = `
+exports[`mdx parses story file project/src/autoTitle/mdx/MdxStory.stories.mdx 1`] = `
 Object {
   "meta": Object {
     "id": undefined,
@@ -175,7 +175,7 @@ Object {
 }
 `;
 
-exports[`mdx parses story file project/src/noTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
+exports[`mdx parses story file project/src/autoTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
 
 exports[`mdx parses story file project/src/stories/CsfWithMdx.stories.mdx 1`] = `
 Object {

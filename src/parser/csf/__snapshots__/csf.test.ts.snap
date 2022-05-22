@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`csf parses story file project/src/noTitle/csf/EmptyDefaultExport.stories.js 1`] = `
+exports[`csf parses story file project/src/autoTitle/csf/EmptyDefaultExport.stories.js 1`] = `
 Object {
   "meta": Object {
     "declared": true,
@@ -41,7 +41,7 @@ Object {
 }
 `;
 
-exports[`csf parses story file project/src/noTitle/csf/NoDefaultExport.stories.js 1`] = `
+exports[`csf parses story file project/src/autoTitle/csf/NoDefaultExport.stories.js 1`] = `
 Object {
   "meta": Object {
     "declared": false,
@@ -73,7 +73,7 @@ Object {
 }
 `;
 
-exports[`csf parses story file project/src/noTitle/csf/nested/WithoutTitle.stories.js 1`] = `
+exports[`csf parses story file project/src/autoTitle/csf/nested/WithoutTitle.stories.js 1`] = `
 Object {
   "meta": Object {
     "declared": true,
