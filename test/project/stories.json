@@ -5,11 +5,11 @@
       "id": "custom-title-prefix-second-level-csf-empty-default-export--primary",
       "name": "Primary",
       "title": "Custom Title Prefix/Second Level/Csf/Empty Default Export",
-      "importPath": "./src/noTitle/csf/EmptyDefaultExport.stories.js",
+      "importPath": "./src/autoTitle/csf/EmptyDefaultExport.stories.js",
       "kind": "Custom Title Prefix/Second Level/Csf/Empty Default Export",
       "story": "Primary",
       "parameters": {
-        "fileName": "./src/noTitle/csf/EmptyDefaultExport.stories.js",
+        "fileName": "./src/autoTitle/csf/EmptyDefaultExport.stories.js",
         "framework": "react",
         "__id": "custom-title-prefix-second-level-csf-empty-default-export--primary",
         "__isArgsStory": true
@@ -19,11 +19,11 @@
       "id": "custom-title-prefix-second-level-csf-nested-without-title--primary",
       "name": "Primary",
       "title": "Custom Title Prefix/Second Level/Csf/Nested/Without Title",
-      "importPath": "./src/noTitle/csf/nested/WithoutTitle.stories.js",
+      "importPath": "./src/autoTitle/csf/nested/WithoutTitle.stories.js",
       "kind": "Custom Title Prefix/Second Level/Csf/Nested/Without Title",
       "story": "Primary",
       "parameters": {
-        "fileName": "./src/noTitle/csf/nested/WithoutTitle.stories.js",
+        "fileName": "./src/autoTitle/csf/nested/WithoutTitle.stories.js",
         "framework": "react",
         "__id": "custom-title-prefix-second-level-csf-nested-without-title--primary",
         "__isArgsStory": true
@@ -33,11 +33,11 @@
       "id": "custom-title-prefix-second-level-mdx-mdx-meta--page",
       "name": "Page",
       "title": "Custom Title Prefix/Second Level/Mdx/Mdx Meta",
-      "importPath": "./src/noTitle/mdx/MdxMeta.stories.mdx",
+      "importPath": "./src/autoTitle/mdx/MdxMeta.stories.mdx",
       "kind": "Custom Title Prefix/Second Level/Mdx/Mdx Meta",
       "story": "Page",
       "parameters": {
-        "fileName": "./src/noTitle/mdx/MdxMeta.stories.mdx",
+        "fileName": "./src/autoTitle/mdx/MdxMeta.stories.mdx",
         "docsOnly": true,
         "framework": "react",
         "__id": "custom-title-prefix-second-level-mdx-mdx-meta--page",
@@ -48,11 +48,11 @@
       "id": "custom-title-prefix-second-level-mdx-mdx-meta-and-story--primary",
       "name": "Primary",
       "title": "Custom Title Prefix/Second Level/Mdx/Mdx Meta And Story",
-      "importPath": "./src/noTitle/mdx/MdxMetaAndStory.stories.mdx",
+      "importPath": "./src/autoTitle/mdx/MdxMetaAndStory.stories.mdx",
       "kind": "Custom Title Prefix/Second Level/Mdx/Mdx Meta And Story",
       "story": "Primary",
       "parameters": {
-        "fileName": "./src/noTitle/mdx/MdxMetaAndStory.stories.mdx",
+        "fileName": "./src/autoTitle/mdx/MdxMetaAndStory.stories.mdx",
         "framework": "react",
         "__id": "custom-title-prefix-second-level-mdx-mdx-meta-and-story--primary",
         "__isArgsStory": false
@@ -62,11 +62,11 @@
       "id": "custom-title-prefix-second-level-mdx-mdx-story--primary",
       "name": "Primary",
       "title": "Custom Title Prefix/Second Level/Mdx/Mdx Story",
-      "importPath": "./src/noTitle/mdx/MdxStory.stories.mdx",
+      "importPath": "./src/autoTitle/mdx/MdxStory.stories.mdx",
       "kind": "Custom Title Prefix/Second Level/Mdx/Mdx Story",
       "story": "Primary",
       "parameters": {
-        "fileName": "./src/noTitle/mdx/MdxStory.stories.mdx",
+        "fileName": "./src/autoTitle/mdx/MdxStory.stories.mdx",
         "framework": "react",
         "__id": "custom-title-prefix-second-level-mdx-mdx-story--primary",
         "__isArgsStory": false
