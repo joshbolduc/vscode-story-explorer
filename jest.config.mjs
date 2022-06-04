@@ -11,7 +11,7 @@ export default /**
   coverageProvider: 'v8',
   coverageReporters: ['text'],
   moduleNameMapper: {
-    vscode: join(__dirname, 'vscode.js'),
+    '^vscode$': join(__dirname, 'vscode.js'),
   },
   roots: ['src'],
   transform: {
