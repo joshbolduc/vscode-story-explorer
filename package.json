@@ -467,6 +467,7 @@
     "jest": "28.1.0",
     "lodash": "4.17.21",
     "node-netstat": "1.8.0",
+    "p-limit": "4.0.0",
     "picomatch": "2.3.0",
     "prettier": "2.6.2",
     "standard-version": "9.3.2",

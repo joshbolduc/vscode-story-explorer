@@ -19,11 +19,3 @@ export const findFilesByGlob = async (globSpecifier: GlobSpecifier) => {
 
   return findResults;
 };
-
-export const findFilesByGlobs = async (globSpecifiers: GlobSpecifier[]) => {
-  return (
-    await Promise.all(
-      globSpecifiers.map((globSpecifier) => findFilesByGlob(globSpecifier)),
-    )
-  ).flat();
-};

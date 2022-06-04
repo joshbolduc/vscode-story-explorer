@@ -1,3 +1,4 @@
+import pLimit from 'p-limit';
 import { Disposable, EventEmitter, Uri, workspace } from 'vscode';
 import type { ConfigManager } from '../config/ConfigManager';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
@@ -13,7 +14,7 @@ import { FileWatcher } from '../util/FileWatcher';
 import { Mailbox } from '../util/Mailbox';
 import { strCompareFn } from '../util/strCompareFn';
 import { BackingMap } from './BackingMap';
-import { findFilesByGlob } from './findFilesByGlobs';
+import { findFilesByGlob } from './findFilesByGlob';
 
 interface StoreMapEntry {
   parsed: ParsedStoryWithFileUri;
@@ -27,6 +28,8 @@ const globSpecifierMatchesUri = (uri: Uri) => {
     return filter?.(uri.path) ?? globPattern === uri.path;
   };
 };
+
+const MAX_CONCURRENT_FIND_OPERATIONS = 3;
 
 export class StoryStore {
   private readonly backingMap = new BackingMap();
@@ -199,16 +202,17 @@ export class StoryStore {
       }),
     );
 
-    const map = (
-      await Promise.all(
-        globSpecifiers.map(async (globSpecifier) => ({
-          globSpecifier,
-          storiesFiles: await Promise.all(
-            (await findFilesByGlob(globSpecifier)).map(parseStoriesFileByUri),
-          ),
-        })),
-      )
-    ).reduce((acc, cur) => {
+    const limit = pLimit(MAX_CONCURRENT_FIND_OPERATIONS);
+    const input = globSpecifiers.map((globSpecifier) =>
+      limit(async () => ({
+        globSpecifier,
+        storiesFiles: await Promise.all(
+          (await findFilesByGlob(globSpecifier)).map(parseStoriesFileByUri),
+        ),
+      })),
+    );
+
+    const map = (await Promise.all(input)).reduce((acc, cur) => {
       cur.storiesFiles.forEach((storyFile) => {
         if (storyFile) {
           const key = storyFile.file.path;
