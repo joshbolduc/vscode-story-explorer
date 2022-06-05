@@ -1,7 +1,7 @@
 import type { SourceLocation } from '@babel/types';
 
 export const sourceLocationToLocation = (
-  sourceLocation: SourceLocation | null,
+  sourceLocation: SourceLocation | null | undefined,
 ) =>
   sourceLocation
     ? {
