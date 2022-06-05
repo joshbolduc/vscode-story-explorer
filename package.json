@@ -460,7 +460,7 @@
     "esbuild": "0.14.42",
     "esbuild-jest": "0.5.0",
     "eslint": "8.17.0",
-    "eslint-config-prettier": "8.3.0",
+    "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.25.3",
     "fast-glob": "3.2.7",
     "http-proxy": "1.18.1",
