@@ -440,7 +440,7 @@
     }
   },
   "devDependencies": {
-    "@babel/parser": "7.16.4",
+    "@babel/parser": "7.18.4",
     "@babel/traverse": "7.18.2",
     "@babel/types": "7.16.0",
     "@commitlint/config-conventional": "15.0.0",
@@ -463,7 +463,7 @@
     "eslint": "8.17.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
-    "fast-glob": "3.2.7",
+    "fast-glob": "3.2.11",
     "http-proxy": "1.18.1",
     "jest": "28.1.0",
     "lodash": "4.17.21",

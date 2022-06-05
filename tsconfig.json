@@ -2,7 +2,11 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "checkJs": true,
-    "module": "esnext"
+    "module": "esnext",
+    "composite": false,
+    "emitDeclarationOnly": false,
+    "declaration": false,
+    "noEmit": true
   },
   "references": [
     { "path": "./common" },
