@@ -1,0 +1,32 @@
+name: Version and Tag
+
+on: workflow_dispatch
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.2
+        with:
+          token: ${{ secrets.GIT_PUSH_TOKEN }}
+          fetch-depth: 0
+      - name: Configure committer
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      - name: Install Node.js
+        uses: actions/setup-node@v3.2.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            test/project/package-lock.json
+      - name: Install Node dependencies
+        run: npm ci
+      - name: Bump version
+        run: npm run release
+      - name: Push changes
+        run: |
+          git push --follow-tags
