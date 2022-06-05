@@ -462,7 +462,7 @@
     "eslint": "8.17.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
-    "fast-glob": "3.2.7",
+    "fast-glob": "3.2.11",
     "http-proxy": "1.18.1",
     "jest": "28.1.0",
     "lodash": "4.17.21",
