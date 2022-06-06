@@ -28,6 +28,8 @@ jobs:
         with:
           name: vsix
           path: '*.vsix'
+      - name: Test
+        run: npm run test -- --coverage
       - name: Typecheck
         run: npm run typecheck
       - name: Lint
