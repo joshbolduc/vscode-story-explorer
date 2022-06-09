@@ -286,13 +286,13 @@
           ]
         },
         "storyExplorer.codeLens.stories.enabled": {
-          "scope": "window",
+          "scope": "language-overridable",
           "markdownDescription": "Controls whether to display CodeLens results for stories. When enabled, CodeLens results for stories appear above story definitions.",
           "type": "boolean",
           "default": true
         },
         "storyExplorer.codeLens.docs.enabled": {
-          "scope": "window",
+          "scope": "language-overridable",
           "markdownDescription": "Controls whether to display CodeLens results for docs. When enabled, CodeLens results for docs appear at the top of story files.",
           "type": "boolean",
           "default": true
@@ -304,13 +304,13 @@
           "default": false
         },
         "storyExplorer.suggestTitle": {
-          "scope": "window",
+          "scope": "language-overridable",
           "markdownDescription": "Controls whether to offer suggestions for titles when specifying a `Meta` object in CSF or MDX files. Suggestions are based on other titles used in the project.",
           "type": "boolean",
           "default": true
         },
         "storyExplorer.suggestStoryId": {
-          "scope": "window",
+          "scope": "language-overridable",
           "markdownDescription": "Controls whether to offer suggestions for story IDs when using `<Story id=\"...\" />` in MDX files. Suggestions are based on the IDs of other stories in the project.",
           "type": "boolean",
           "default": true

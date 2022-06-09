@@ -53,8 +53,12 @@ export class StoryCodeLensProvider implements CodeLensProvider {
   }
 
   public provideCodeLenses(document: TextDocument): CodeLens[] | undefined {
-    const showStories = this.storiesSettingsWatcher.read() !== false;
-    const showDocs = this.docsSettingsWatcher.read() !== false;
+    const showStories = this.storiesSettingsWatcher.read(document) !== false;
+    const showDocs = this.docsSettingsWatcher.read(document) !== false;
+
+    if (!showStories && !showDocs) {
+      return;
+    }
 
     // FUTURE: instead of parsing the file again, consider re-using existing
     // results in the story store. Would need to make sure results aren't stale

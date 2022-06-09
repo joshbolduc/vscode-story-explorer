@@ -9,7 +9,7 @@ export class IdCompletionManager {
   private mdxIdProvider?: MdxStoryIdCompletionProvider;
   private mdxIdRegistration?: Disposable;
 
-  private readonly settingsWatcher = new SettingsWatcher(
+  private readonly settingsWatcher = new SettingsWatcher<boolean>(
     suggestStoryIdConfigSuffix,
     () => {
       this.startIfEnabled();
@@ -26,7 +26,10 @@ export class IdCompletionManager {
 
   public start() {
     if (!this.mdxIdProvider) {
-      this.mdxIdProvider = new MdxStoryIdCompletionProvider(this.storyStore);
+      this.mdxIdProvider = new MdxStoryIdCompletionProvider(
+        this.storyStore,
+        this.settingsWatcher,
+      );
       this.mdxIdRegistration = languages.registerCompletionItemProvider(
         [{ language: 'markdown' }, { language: 'mdx' }],
         this.mdxIdProvider,
@@ -49,7 +52,7 @@ export class IdCompletionManager {
   }
 
   private shouldEnable() {
-    return this.settingsWatcher.read() !== false;
+    return true;
   }
 
   private startIfEnabled() {

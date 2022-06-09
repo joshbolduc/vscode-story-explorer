@@ -6,6 +6,7 @@ import type {
   TextDocument,
 } from 'vscode';
 import type { StoryStore } from '../store/StoryStore';
+import type { SettingsWatcher } from '../util/SettingsWatcher';
 import type { TextCompletionItem } from './TextCompletionItem';
 import { getRangeForCompletion } from './getRangeForCompletion';
 import { getStoryKindCompletionItems } from './getStoryKindCompletionItems';
@@ -13,12 +14,19 @@ import { getStoryKindCompletionItems } from './getStoryKindCompletionItems';
 export class CsfTitleCompletionProvider
   implements CompletionItemProvider<TextCompletionItem>
 {
-  public constructor(private readonly storyStore: StoryStore) {}
+  public constructor(
+    private readonly storyStore: StoryStore,
+    private readonly settingsWatcher: SettingsWatcher<boolean>,
+  ) {}
 
   public provideCompletionItems(
     document: TextDocument,
     position: Position,
   ): ProviderResult<TextCompletionItem[] | CompletionList<TextCompletionItem>> {
+    if (!this.settingsWatcher.read(document)) {
+      return undefined;
+    }
+
     // FUTURE: reduce false positives, e.g., by determining if the position
     // appears to be defining a title property for the default (Meta) export
 

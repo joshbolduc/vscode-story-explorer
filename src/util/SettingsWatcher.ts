@@ -1,4 +1,4 @@
-import { Disposable, workspace } from 'vscode';
+import { ConfigurationScope, Disposable, workspace } from 'vscode';
 import { configPrefix } from '../constants/constants';
 import { logError } from '../log/log';
 import { makeFullConfigName } from './makeFullConfigName';
@@ -23,8 +23,8 @@ export class SettingsWatcher<T = unknown> {
     });
   }
 
-  public read() {
-    return workspace.getConfiguration(configPrefix).get<T>(this.setting);
+  public read(scope?: ConfigurationScope) {
+    return workspace.getConfiguration(configPrefix, scope).get<T>(this.setting);
   }
 
   public dispose() {
