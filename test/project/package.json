@@ -8,11 +8,13 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "generate-stories-json": "build-storybook && sb extract storybook-static ./stories.json"
   },
   "devDependencies": {
     "@storybook/addon-actions": "6.4.4",
     "@storybook/addon-essentials": "6.4.4",
+    "@storybook/cli": "6.4.4",
     "@storybook/react": "6.4.4"
   }
 }
