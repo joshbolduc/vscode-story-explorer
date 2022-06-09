@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.2...v0.5.3) (2022-06-09)
+
+### Features
+
+- make some settings language-overridable ([da64aa2](https://github.com/joshbolduc/vscode-story-explorer/commit/da64aa2857415aea676ef645bf85c283303be902))
+
 ### [0.5.2](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.1...v0.5.2) (2022-06-05)
 
 ### [0.5.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.0...v0.5.1) (2022-01-06)
