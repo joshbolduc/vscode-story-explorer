@@ -77,10 +77,7 @@ export class CodeLensManager {
   }
 
   private shouldEnable() {
-    return (
-      this.docsSettingsWatcher.read() !== false ||
-      this.storiesSettingsWatcher.read() !== false
-    );
+    return true;
   }
 
   private refresh() {

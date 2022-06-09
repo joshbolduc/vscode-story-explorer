@@ -14,7 +14,7 @@ export class TitleCompletionManager {
   private mdxProvider?: MdxTitleCompletionProvider;
   private mdxRegistration?: Disposable;
 
-  private readonly settingsWatcher = new SettingsWatcher(
+  private readonly settingsWatcher = new SettingsWatcher<boolean>(
     suggestTitleConfigSuffix,
     () => {
       this.startIfEnabled();
@@ -31,7 +31,10 @@ export class TitleCompletionManager {
 
   public start() {
     if (!this.csfProvider) {
-      this.csfProvider = new CsfTitleCompletionProvider(this.storyStore);
+      this.csfProvider = new CsfTitleCompletionProvider(
+        this.storyStore,
+        this.settingsWatcher,
+      );
       this.csfRegistration = languages.registerCompletionItemProvider(
         [
           { language: 'javascript' },
@@ -46,7 +49,10 @@ export class TitleCompletionManager {
     }
 
     if (!this.mdxProvider) {
-      this.mdxProvider = new MdxTitleCompletionProvider(this.storyStore);
+      this.mdxProvider = new MdxTitleCompletionProvider(
+        this.storyStore,
+        this.settingsWatcher,
+      );
       this.mdxRegistration = languages.registerCompletionItemProvider(
         [{ language: 'markdown' }, { language: 'mdx' }],
         this.mdxProvider,
@@ -74,7 +80,7 @@ export class TitleCompletionManager {
   }
 
   private shouldEnable() {
-    return this.settingsWatcher.read() !== false;
+    return true;
   }
 
   private startIfEnabled() {

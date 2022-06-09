@@ -7,18 +7,26 @@ import {
   workspace,
 } from 'vscode';
 import type { StoryStore } from '../store/StoryStore';
+import type { SettingsWatcher } from '../util/SettingsWatcher';
 import { TextCompletionItem } from './TextCompletionItem';
 import { getRangeForCompletion } from './getRangeForCompletion';
 
 export class MdxStoryIdCompletionProvider
   implements CompletionItemProvider<TextCompletionItem>
 {
-  public constructor(private readonly storyStore: StoryStore) {}
+  public constructor(
+    private readonly storyStore: StoryStore,
+    private readonly settingsWatcher: SettingsWatcher<boolean>,
+  ) {}
 
   public provideCompletionItems(
     document: TextDocument,
     position: Position,
   ): ProviderResult<TextCompletionItem[] | CompletionList<TextCompletionItem>> {
+    if (!this.settingsWatcher.read(document)) {
+      return undefined;
+    }
+
     // FUTURE: reduce false positives, e.g., by determining if the position
     // appears to be within props for a `<Story />` element
 
