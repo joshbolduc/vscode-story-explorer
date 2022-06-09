@@ -48,7 +48,7 @@ Object {
     Object {
       "id": "auto-generated-title-prefix-no-title-mdx-mdx-meta--page",
       "isDocs": true,
-      "name": "Mdx Meta",
+      "name": "Page",
     },
   ],
   "title": "Auto Generated Title Prefix/No Title/Mdx/Mdx Meta",
@@ -303,7 +303,7 @@ Object {
     Object {
       "id": "example-mdx-docs-only--page",
       "isDocs": true,
-      "name": "MDX Docs Only",
+      "name": "Page",
     },
   ],
   "title": "Example/MDX Docs Only",
@@ -318,7 +318,7 @@ Object {
     Object {
       "id": "mdx-docs-at-top-level--page",
       "isDocs": true,
-      "name": "MDX Docs at top level",
+      "name": "Page",
     },
   ],
   "title": "MDX Docs at top level",
