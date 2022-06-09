@@ -7,6 +7,8 @@ import type { IconName } from '../util/getIconPath';
 import { splitKind } from '../util/splitKind';
 import type { StoryExplorerStoryFile } from './StoryExplorerStoryFile';
 
+const DOCS_ONLY_STORY_NAME = 'Page';
+
 export class StoryExplorerStory {
   /**
    * The story's ID.
@@ -28,13 +30,6 @@ export class StoryExplorerStory {
    */
   public readonly isDocs: boolean;
 
-  /**
-   * The story portion of the ID, if not based on the story name. Used, e.g.,
-   * for the export name for CSF stories and for MDX Story elements with a
-   * `story` prop.
-   */
-  private readonly nameForId: string | undefined;
-
   private constructor(
     private readonly story: Pick<
       StoryExplorerStory,
@@ -49,17 +44,20 @@ export class StoryExplorerStory {
   }
 
   public static fromStoryFileForDocs(storyFile: StoryExplorerStoryFile) {
-    const id = storyFile.getId();
+    const fileId = storyFile.getId();
     const title = storyFile.getTitle();
 
-    if (typeof id !== 'string' || typeof title !== 'string') {
+    if (typeof fileId !== 'string' || typeof title !== 'string') {
       return undefined;
     }
 
-    const [name = ''] = splitKind(title).slice(-1);
+    const [nameFromTitle = ''] = splitKind(title).slice(-1);
+
+    const name = storyFile.isDocsOnly() ? DOCS_ONLY_STORY_NAME : nameFromTitle;
+
     return new StoryExplorerStory(
       {
-        id: storyFile.isDocsOnly() ? toId(id, 'page') : id,
+        id: storyFile.isDocsOnly() ? toId(fileId, name) : fileId,
         location: storyFile.getMetaLocation(),
         name,
         isDocs: true,
@@ -78,10 +76,13 @@ export class StoryExplorerStory {
       return undefined;
     }
 
-    const storyIdPart = storyFile.isDocsOnly() ? 'page' : nameForId ?? name;
-
     return new StoryExplorerStory(
-      { id: toId(fileId, storyIdPart), location, name, isDocs: false },
+      {
+        id: toId(fileId, nameForId ?? name),
+        location,
+        name,
+        isDocs: false,
+      },
       storyFile,
     );
   }
