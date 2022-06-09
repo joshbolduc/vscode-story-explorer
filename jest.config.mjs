@@ -13,7 +13,7 @@ export default /**
   moduleNameMapper: {
     '^vscode$': join(__dirname, 'vscode.js'),
   },
-  roots: ['src'],
+  roots: ['src', 'test'],
   transform: {
     '^.+\\.tsx?$': [
       'esbuild-jest',

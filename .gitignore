@@ -6,3 +6,4 @@ node_modules
 *.vsix
 null.txt
 changelog.release.md
+storybook-static/
