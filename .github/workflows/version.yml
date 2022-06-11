@@ -5,12 +5,14 @@ on:
     inputs:
       releaseAs:
         type: choice
-        description: 'Release type, to override the default'
+        description: 'Release type'
         options:
+          - default
           - patch
           - minor
           - major
-        required: false
+        default: default
+        required: true
 
 jobs:
   version:
@@ -36,10 +38,10 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
       - name: Bump version (detect type)
-        if: ${{ inputs.releaseAs == '' }}
+        if: ${{ inputs.releaseAs == 'default' }}
         run: npm run release
       - name: Bump version (override --releaseAs)
-        if: ${{ inputs.releaseAs != '' }}
+        if: ${{ inputs.releaseAs != 'default' }}
         run: npm run release --release-as ${{ inputs.releaseAs }}
       - name: Push changes
         run: |
