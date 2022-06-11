@@ -1,130 +1,130 @@
 {
   "v": 3,
   "stories": {
-    "custom-title-prefix-second-level-csf-empty-default-export--primary": {
-      "id": "custom-title-prefix-second-level-csf-empty-default-export--primary",
+    "custom-title-prefix-second-level-csf-emptydefaultexport--primary": {
+      "id": "custom-title-prefix-second-level-csf-emptydefaultexport--primary",
       "name": "Primary",
-      "title": "Custom Title Prefix/Second Level/Csf/Empty Default Export",
+      "title": "Custom title prefix/Second level/csf/EmptyDefaultExport",
       "importPath": "./src/autoTitle/csf/EmptyDefaultExport.stories.js",
-      "kind": "Custom Title Prefix/Second Level/Csf/Empty Default Export",
+      "kind": "Custom title prefix/Second level/csf/EmptyDefaultExport",
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/EmptyDefaultExport.stories.js",
         "framework": "react",
-        "__id": "custom-title-prefix-second-level-csf-empty-default-export--primary",
+        "__id": "custom-title-prefix-second-level-csf-emptydefaultexport--primary",
         "__isArgsStory": true
       }
     },
-    "custom-title-prefix-second-level-csf-empty-title--primary": {
-      "id": "custom-title-prefix-second-level-csf-empty-title--primary",
+    "custom-title-prefix-second-level-csf-emptytitle--primary": {
+      "id": "custom-title-prefix-second-level-csf-emptytitle--primary",
       "name": "Primary",
-      "title": "Custom Title Prefix/Second Level/Csf/Empty Title",
+      "title": "Custom title prefix/Second level/csf/EmptyTitle",
       "importPath": "./src/autoTitle/csf/EmptyTitle.stories.js",
-      "kind": "Custom Title Prefix/Second Level/Csf/Empty Title",
+      "kind": "Custom title prefix/Second level/csf/EmptyTitle",
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/EmptyTitle.stories.js",
         "framework": "react",
-        "__id": "custom-title-prefix-second-level-csf-empty-title--primary",
+        "__id": "custom-title-prefix-second-level-csf-emptytitle--primary",
         "__isArgsStory": true
       }
     },
-    "explicit-title--primary": {
-      "id": "explicit-title--primary",
+    "custom-title-prefix-second-level-explicit-title--primary": {
+      "id": "custom-title-prefix-second-level-explicit-title--primary",
       "name": "Primary",
-      "title": "Explicit title",
+      "title": "Custom title prefix/Second level/Explicit title",
       "importPath": "./src/autoTitle/csf/ExtraTitle.stories.js",
-      "kind": "Explicit title",
+      "kind": "Custom title prefix/Second level/Explicit title",
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/ExtraTitle.stories.js",
         "framework": "react",
-        "__id": "explicit-title--primary",
+        "__id": "custom-title-prefix-second-level-explicit-title--primary",
         "__isArgsStory": true
       }
     },
-    "custom-title-prefix-second-level-csf-nested-without-title--primary": {
-      "id": "custom-title-prefix-second-level-csf-nested-without-title--primary",
+    "custom-title-prefix-second-level-csf-nested-withouttitle--primary": {
+      "id": "custom-title-prefix-second-level-csf-nested-withouttitle--primary",
       "name": "Primary",
-      "title": "Custom Title Prefix/Second Level/Csf/Nested/Without Title",
+      "title": "Custom title prefix/Second level/csf/nested/WithoutTitle",
       "importPath": "./src/autoTitle/csf/nested/WithoutTitle.stories.js",
-      "kind": "Custom Title Prefix/Second Level/Csf/Nested/Without Title",
+      "kind": "Custom title prefix/Second level/csf/nested/WithoutTitle",
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/nested/WithoutTitle.stories.js",
         "framework": "react",
-        "__id": "custom-title-prefix-second-level-csf-nested-without-title--primary",
+        "__id": "custom-title-prefix-second-level-csf-nested-withouttitle--primary",
         "__isArgsStory": true
       }
     },
-    "custom-title-prefix-second-level-csf-nested-nested--primary": {
-      "id": "custom-title-prefix-second-level-csf-nested-nested--primary",
+    "custom-title-prefix-second-level-csf-nested--primary": {
+      "id": "custom-title-prefix-second-level-csf-nested--primary",
       "name": "Primary",
-      "title": "Custom Title Prefix/Second Level/Csf/Nested/Nested",
+      "title": "Custom title prefix/Second level/csf/nested",
       "importPath": "./src/autoTitle/csf/nested/nested.stories.js",
-      "kind": "Custom Title Prefix/Second Level/Csf/Nested/Nested",
+      "kind": "Custom title prefix/Second level/csf/nested",
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/nested/nested.stories.js",
         "framework": "react",
-        "__id": "custom-title-prefix-second-level-csf-nested-nested--primary",
+        "__id": "custom-title-prefix-second-level-csf-nested--primary",
         "__isArgsStory": true
       }
     },
-    "custom-title-prefix-second-level-csf-with-index-index--primary": {
-      "id": "custom-title-prefix-second-level-csf-with-index-index--primary",
+    "custom-title-prefix-second-level-csf-withindex--primary": {
+      "id": "custom-title-prefix-second-level-csf-withindex--primary",
       "name": "Primary",
-      "title": "Custom Title Prefix/Second Level/Csf/With Index/Index",
+      "title": "Custom title prefix/Second level/csf/withIndex",
       "importPath": "./src/autoTitle/csf/withIndex/index.stories.js",
-      "kind": "Custom Title Prefix/Second Level/Csf/With Index/Index",
+      "kind": "Custom title prefix/Second level/csf/withIndex",
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/withIndex/index.stories.js",
         "framework": "react",
-        "__id": "custom-title-prefix-second-level-csf-with-index-index--primary",
+        "__id": "custom-title-prefix-second-level-csf-withindex--primary",
         "__isArgsStory": true
       }
     },
-    "custom-title-prefix-second-level-mdx-mdx-meta--page": {
-      "id": "custom-title-prefix-second-level-mdx-mdx-meta--page",
+    "custom-title-prefix-second-level-mdx-mdxmeta--page": {
+      "id": "custom-title-prefix-second-level-mdx-mdxmeta--page",
       "name": "Page",
-      "title": "Custom Title Prefix/Second Level/Mdx/Mdx Meta",
+      "title": "Custom title prefix/Second level/mdx/MdxMeta",
       "importPath": "./src/autoTitle/mdx/MdxMeta.stories.mdx",
-      "kind": "Custom Title Prefix/Second Level/Mdx/Mdx Meta",
+      "kind": "Custom title prefix/Second level/mdx/MdxMeta",
       "story": "Page",
       "parameters": {
         "fileName": "./src/autoTitle/mdx/MdxMeta.stories.mdx",
         "docsOnly": true,
         "framework": "react",
-        "__id": "custom-title-prefix-second-level-mdx-mdx-meta--page",
+        "__id": "custom-title-prefix-second-level-mdx-mdxmeta--page",
         "__isArgsStory": false
       }
     },
-    "custom-title-prefix-second-level-mdx-mdx-meta-and-story--primary": {
-      "id": "custom-title-prefix-second-level-mdx-mdx-meta-and-story--primary",
+    "custom-title-prefix-second-level-mdx-mdxmetaandstory--primary": {
+      "id": "custom-title-prefix-second-level-mdx-mdxmetaandstory--primary",
       "name": "Primary",
-      "title": "Custom Title Prefix/Second Level/Mdx/Mdx Meta And Story",
+      "title": "Custom title prefix/Second level/mdx/MdxMetaAndStory",
       "importPath": "./src/autoTitle/mdx/MdxMetaAndStory.stories.mdx",
-      "kind": "Custom Title Prefix/Second Level/Mdx/Mdx Meta And Story",
+      "kind": "Custom title prefix/Second level/mdx/MdxMetaAndStory",
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/mdx/MdxMetaAndStory.stories.mdx",
         "framework": "react",
-        "__id": "custom-title-prefix-second-level-mdx-mdx-meta-and-story--primary",
+        "__id": "custom-title-prefix-second-level-mdx-mdxmetaandstory--primary",
         "__isArgsStory": false
       }
     },
-    "custom-title-prefix-second-level-mdx-mdx-story--primary": {
-      "id": "custom-title-prefix-second-level-mdx-mdx-story--primary",
+    "custom-title-prefix-second-level-mdx-mdxstory--primary": {
+      "id": "custom-title-prefix-second-level-mdx-mdxstory--primary",
       "name": "Primary",
-      "title": "Custom Title Prefix/Second Level/Mdx/Mdx Story",
+      "title": "Custom title prefix/Second level/mdx/MdxStory",
       "importPath": "./src/autoTitle/mdx/MdxStory.stories.mdx",
-      "kind": "Custom Title Prefix/Second Level/Mdx/Mdx Story",
+      "kind": "Custom title prefix/Second level/mdx/MdxStory",
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/mdx/MdxStory.stories.mdx",
         "framework": "react",
-        "__id": "custom-title-prefix-second-level-mdx-mdx-story--primary",
+        "__id": "custom-title-prefix-second-level-mdx-mdxstory--primary",
         "__isArgsStory": false
       }
     },

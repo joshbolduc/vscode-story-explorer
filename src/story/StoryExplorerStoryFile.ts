@@ -1,8 +1,9 @@
 import { sanitize } from '@componentdriven/csf';
-import startCase from 'lodash/startCase';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
 import type { ParsedStoryWithFileUri } from '../parser/parseStoriesFileByUri';
 import { StoryExplorerStory } from './StoryExplorerStory';
+import { getAutoTitleSuffixParts } from './getAutoTitleSuffixParts';
+import { getPartialFilePath } from './getPartialFilePath';
 
 export class StoryExplorerStoryFile {
   public readonly docsStory?: StoryExplorerStory;
@@ -37,42 +38,27 @@ export class StoryExplorerStoryFile {
   }
 
   public getTitle() {
-    const title = this.parsed.meta.title;
+    const uriPath = this.getUri().path;
+    const matchingSpecifier = this.specifiers.find((specifier) =>
+      uriPath.startsWith(specifier.directory),
+    );
 
-    if (title) {
-      return title;
+    if (!matchingSpecifier) {
+      return undefined;
     }
 
-    const generateTitle = (specifier: GlobSpecifier) => {
-      const uriPath = this.getUri().path;
-      if (!uriPath.startsWith(specifier.directory)) {
-        return undefined;
-      }
+    const titlePrefixParts = matchingSpecifier.titlePrefix.split('/');
 
-      const fileSuffix = uriPath.slice(specifier.directory.length);
+    const metaTitle = this.parsed.meta.title;
+    const titleSuffix = metaTitle
+      ? metaTitle.split('/')
+      : getAutoTitleSuffixParts(getPartialFilePath(matchingSpecifier, uriPath));
 
-      const extensionIndex = fileSuffix.indexOf('.');
+    const autoTitleParts = [...titlePrefixParts, ...titleSuffix].filter(
+      Boolean,
+    );
 
-      const suffixWithoutExtension =
-        extensionIndex > 0 ? fileSuffix.slice(0, extensionIndex) : fileSuffix;
-
-      const autoTitleParts = [
-        ...(specifier.titlePrefix?.split('/') ?? []),
-        ...suffixWithoutExtension.split('/'),
-      ]
-        .map(startCase)
-        .filter(Boolean);
-
-      return autoTitleParts.join('/');
-    };
-
-    for (const specifier of this.specifiers) {
-      const autoTitle = generateTitle(specifier);
-
-      if (autoTitle) {
-        return autoTitle;
-      }
-    }
+    return autoTitleParts.join('/');
   }
 
   public getId() {
