@@ -13,6 +13,7 @@ export default /**
   moduleNameMapper: {
     '^vscode$': join(__dirname, 'vscode.js'),
   },
+  reporters: ['default', 'github-actions'],
   roots: ['src', 'test'],
   transform: {
     '^.+\\.tsx?$': [
