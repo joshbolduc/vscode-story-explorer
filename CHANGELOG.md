@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.4](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.3...v0.5.4) (2022-06-11)
+
+### Features
+
+- support new Storybook 6.5 auto-title behaviors ([7342798](https://github.com/joshbolduc/vscode-story-explorer/commit/73427989bfafb5a5b33df4d2dd16c0aa6dac35b5))
+
 ### [0.5.3](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.2...v0.5.3) (2022-06-09)
 
 ### Features
