@@ -42,7 +42,7 @@ jobs:
         run: npm run release
       - name: Bump version (override --releaseAs)
         if: ${{ inputs.releaseAs != 'default' }}
-        run: npm run release --release-as ${{ inputs.releaseAs }}
+        run: npm run release -- --release-as ${{ inputs.releaseAs }}
       - name: Push changes
         run: |
           git push --follow-tags
