@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default /**
- * @type import('@jest/types').Config.InitialOptions
+ * @type import('jest').Config
  */ ({
   clearMocks: true,
   coverageDirectory: 'coverage',
