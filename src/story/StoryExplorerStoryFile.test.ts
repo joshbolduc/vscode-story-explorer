@@ -17,9 +17,14 @@ describe('StoryExplorerStoryFile', () => {
 
       const storyFile = new StoryExplorerStoryFile(parsed, [
         {
-          directory: '/mock/basedir/project/src',
+          directory: '/mock/basedir/project/src/autoTitle',
           files: '**/*',
           titlePrefix: 'Auto-generated title prefix',
+        },
+        {
+          directory: '/mock/basedir/project/src',
+          files: '**/*',
+          titlePrefix: '',
         },
       ]);
 
