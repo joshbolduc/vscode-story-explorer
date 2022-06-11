@@ -2,41 +2,41 @@
 
 exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/EmptyDefaultExport.stories.js 1`] = `
 Object {
-  "id": "auto-generated-title-prefix-auto-title-csf-empty-default-export",
+  "id": "auto-generated-title-prefix-csf-empty-default-export",
   "isDocsOnly": false,
   "stories": Array [
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-empty-default-export",
+      "id": "auto-generated-title-prefix-csf-empty-default-export",
       "isDocs": true,
       "name": "Empty Default Export",
     },
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-empty-default-export--primary",
+      "id": "auto-generated-title-prefix-csf-empty-default-export--primary",
       "isDocs": false,
       "name": "Primary",
     },
   ],
-  "title": "Auto Generated Title Prefix/Auto Title/Csf/Empty Default Export",
+  "title": "Auto Generated Title Prefix/Csf/Empty Default Export",
 }
 `;
 
 exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/EmptyTitle.stories.js 1`] = `
 Object {
-  "id": "auto-generated-title-prefix-auto-title-csf-empty-title",
+  "id": "auto-generated-title-prefix-csf-empty-title",
   "isDocsOnly": false,
   "stories": Array [
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-empty-title",
+      "id": "auto-generated-title-prefix-csf-empty-title",
       "isDocs": true,
       "name": "Empty Title",
     },
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-empty-title--primary",
+      "id": "auto-generated-title-prefix-csf-empty-title--primary",
       "isDocs": false,
       "name": "Primary",
     },
   ],
-  "title": "Auto Generated Title Prefix/Auto Title/Csf/Empty Title",
+  "title": "Auto Generated Title Prefix/Csf/Empty Title",
 }
 `;
 
@@ -62,116 +62,116 @@ Object {
 
 exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/nested/WithoutTitle.stories.js 1`] = `
 Object {
-  "id": "auto-generated-title-prefix-auto-title-csf-nested-without-title",
+  "id": "auto-generated-title-prefix-csf-nested-without-title",
   "isDocsOnly": false,
   "stories": Array [
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-nested-without-title",
+      "id": "auto-generated-title-prefix-csf-nested-without-title",
       "isDocs": true,
       "name": "Without Title",
     },
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-nested-without-title--primary",
+      "id": "auto-generated-title-prefix-csf-nested-without-title--primary",
       "isDocs": false,
       "name": "Primary",
     },
   ],
-  "title": "Auto Generated Title Prefix/Auto Title/Csf/Nested/Without Title",
+  "title": "Auto Generated Title Prefix/Csf/Nested/Without Title",
 }
 `;
 
 exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/nested/nested.stories.js 1`] = `
 Object {
-  "id": "auto-generated-title-prefix-auto-title-csf-nested-nested",
+  "id": "auto-generated-title-prefix-csf-nested-nested",
   "isDocsOnly": false,
   "stories": Array [
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-nested-nested",
+      "id": "auto-generated-title-prefix-csf-nested-nested",
       "isDocs": true,
       "name": "Nested",
     },
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-nested-nested--primary",
+      "id": "auto-generated-title-prefix-csf-nested-nested--primary",
       "isDocs": false,
       "name": "Primary",
     },
   ],
-  "title": "Auto Generated Title Prefix/Auto Title/Csf/Nested/Nested",
+  "title": "Auto Generated Title Prefix/Csf/Nested/Nested",
 }
 `;
 
 exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/withIndex/index.stories.js 1`] = `
 Object {
-  "id": "auto-generated-title-prefix-auto-title-csf-with-index-index",
+  "id": "auto-generated-title-prefix-csf-with-index-index",
   "isDocsOnly": false,
   "stories": Array [
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-with-index-index",
+      "id": "auto-generated-title-prefix-csf-with-index-index",
       "isDocs": true,
       "name": "Index",
     },
     Object {
-      "id": "auto-generated-title-prefix-auto-title-csf-with-index-index--primary",
+      "id": "auto-generated-title-prefix-csf-with-index-index--primary",
       "isDocs": false,
       "name": "Primary",
     },
   ],
-  "title": "Auto Generated Title Prefix/Auto Title/Csf/With Index/Index",
+  "title": "Auto Generated Title Prefix/Csf/With Index/Index",
 }
 `;
 
 exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
 Object {
-  "id": "auto-generated-title-prefix-auto-title-mdx-mdx-meta",
+  "id": "auto-generated-title-prefix-mdx-mdx-meta",
   "isDocsOnly": true,
   "stories": Array [
     Object {
-      "id": "auto-generated-title-prefix-auto-title-mdx-mdx-meta--page",
+      "id": "auto-generated-title-prefix-mdx-mdx-meta--page",
       "isDocs": true,
       "name": "Page",
     },
   ],
-  "title": "Auto Generated Title Prefix/Auto Title/Mdx/Mdx Meta",
+  "title": "Auto Generated Title Prefix/Mdx/Mdx Meta",
 }
 `;
 
 exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
 Object {
-  "id": "auto-generated-title-prefix-auto-title-mdx-mdx-meta-and-story",
+  "id": "auto-generated-title-prefix-mdx-mdx-meta-and-story",
   "isDocsOnly": false,
   "stories": Array [
     Object {
-      "id": "auto-generated-title-prefix-auto-title-mdx-mdx-meta-and-story",
+      "id": "auto-generated-title-prefix-mdx-mdx-meta-and-story",
       "isDocs": true,
       "name": "Mdx Meta And Story",
     },
     Object {
-      "id": "auto-generated-title-prefix-auto-title-mdx-mdx-meta-and-story--primary",
+      "id": "auto-generated-title-prefix-mdx-mdx-meta-and-story--primary",
       "isDocs": false,
       "name": "Primary",
     },
   ],
-  "title": "Auto Generated Title Prefix/Auto Title/Mdx/Mdx Meta And Story",
+  "title": "Auto Generated Title Prefix/Mdx/Mdx Meta And Story",
 }
 `;
 
 exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/mdx/MdxStory.stories.mdx 1`] = `
 Object {
-  "id": "auto-generated-title-prefix-auto-title-mdx-mdx-story",
+  "id": "auto-generated-title-prefix-mdx-mdx-story",
   "isDocsOnly": false,
   "stories": Array [
     Object {
-      "id": "auto-generated-title-prefix-auto-title-mdx-mdx-story",
+      "id": "auto-generated-title-prefix-mdx-mdx-story",
       "isDocs": true,
       "name": "Mdx Story",
     },
     Object {
-      "id": "auto-generated-title-prefix-auto-title-mdx-mdx-story--primary",
+      "id": "auto-generated-title-prefix-mdx-mdx-story--primary",
       "isDocs": false,
       "name": "Primary",
     },
   ],
-  "title": "Auto Generated Title Prefix/Auto Title/Mdx/Mdx Story",
+  "title": "Auto Generated Title Prefix/Mdx/Mdx Story",
 }
 `;
 
