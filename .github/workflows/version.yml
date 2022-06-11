@@ -1,6 +1,16 @@
 name: Version and Tag
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      releaseAs:
+        type: choice
+        description: 'Release type, to override the default'
+        options:
+          - patch
+          - minor
+          - major
+        required: false
 
 jobs:
   version:
@@ -25,8 +35,12 @@ jobs:
             test/project/package-lock.json
       - name: Install Node dependencies
         run: npm ci
-      - name: Bump version
+      - name: Bump version (detect type)
+        if: ${{ inputs.releaseAs == '' }}
         run: npm run release
+      - name: Bump version (override --releaseAs)
+        if: ${{ inputs.releaseAs != '' }}
+        run: npm run release --release-as ${{ inputs.releaseAs }}
       - name: Push changes
         run: |
           git push --follow-tags
