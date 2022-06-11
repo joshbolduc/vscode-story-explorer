@@ -41,6 +41,92 @@ Object {
 }
 `;
 
+exports[`csf parses story file project/src/autoTitle/csf/EmptyTitle.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "declared": true,
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 7,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 5,
+      },
+    },
+    "properties": Object {
+      "title": "",
+    },
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Primary",
+      "location": Object {
+        "end": Position {
+          "column": 20,
+          "index": 183,
+          "line": 11,
+        },
+        "start": Position {
+          "column": 13,
+          "index": 176,
+          "line": 11,
+        },
+      },
+      "properties": Object {
+        "args": Object {
+          "children": "Story with empty title and prefix",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[`csf parses story file project/src/autoTitle/csf/ExtraTitle.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "declared": true,
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 7,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 5,
+      },
+    },
+    "properties": Object {
+      "title": "Explicit title",
+    },
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Primary",
+      "location": Object {
+        "end": Position {
+          "column": 20,
+          "index": 197,
+          "line": 11,
+        },
+        "start": Position {
+          "column": 13,
+          "index": 190,
+          "line": 11,
+        },
+      },
+      "properties": Object {
+        "args": Object {
+          "children": "Story with explicit title and prefix",
+        },
+      },
+    },
+  ],
+}
+`;
+
 exports[`csf parses story file project/src/autoTitle/csf/NoDefaultExport.stories.js 1`] = `
 Object {
   "meta": Object {
@@ -107,6 +193,88 @@ Object {
       "properties": Object {
         "args": Object {
           "children": "Without Title/Sample",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[`csf parses story file project/src/autoTitle/csf/nested/nested.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "declared": true,
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 7,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 5,
+      },
+    },
+    "properties": Object {},
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Primary",
+      "location": Object {
+        "end": Position {
+          "column": 20,
+          "index": 194,
+          "line": 11,
+        },
+        "start": Position {
+          "column": 13,
+          "index": 187,
+          "line": 11,
+        },
+      },
+      "properties": Object {
+        "args": Object {
+          "children": "Nested redundant filename",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[`csf parses story file project/src/autoTitle/csf/withIndex/index.stories.js 1`] = `
+Object {
+  "meta": Object {
+    "declared": true,
+    "location": Object {
+      "end": Object {
+        "column": 1,
+        "line": 7,
+      },
+      "start": Object {
+        "column": 15,
+        "line": 5,
+      },
+    },
+    "properties": Object {},
+  },
+  "stories": Array [
+    Object {
+      "exportName": "Primary",
+      "location": Object {
+        "end": Position {
+          "column": 20,
+          "index": 194,
+          "line": 11,
+        },
+        "start": Position {
+          "column": 13,
+          "index": 187,
+          "line": 11,
+        },
+      },
+      "properties": Object {
+        "args": Object {
+          "children": "Nested index filename",
         },
       },
     },
