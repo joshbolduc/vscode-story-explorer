@@ -15,6 +15,34 @@
         "__isArgsStory": true
       }
     },
+    "custom-title-prefix-second-level-csf-empty-title--primary": {
+      "id": "custom-title-prefix-second-level-csf-empty-title--primary",
+      "name": "Primary",
+      "title": "Custom Title Prefix/Second Level/Csf/Empty Title",
+      "importPath": "./src/autoTitle/csf/EmptyTitle.stories.js",
+      "kind": "Custom Title Prefix/Second Level/Csf/Empty Title",
+      "story": "Primary",
+      "parameters": {
+        "fileName": "./src/autoTitle/csf/EmptyTitle.stories.js",
+        "framework": "react",
+        "__id": "custom-title-prefix-second-level-csf-empty-title--primary",
+        "__isArgsStory": true
+      }
+    },
+    "explicit-title--primary": {
+      "id": "explicit-title--primary",
+      "name": "Primary",
+      "title": "Explicit title",
+      "importPath": "./src/autoTitle/csf/ExtraTitle.stories.js",
+      "kind": "Explicit title",
+      "story": "Primary",
+      "parameters": {
+        "fileName": "./src/autoTitle/csf/ExtraTitle.stories.js",
+        "framework": "react",
+        "__id": "explicit-title--primary",
+        "__isArgsStory": true
+      }
+    },
     "custom-title-prefix-second-level-csf-nested-without-title--primary": {
       "id": "custom-title-prefix-second-level-csf-nested-without-title--primary",
       "name": "Primary",
@@ -26,6 +54,34 @@
         "fileName": "./src/autoTitle/csf/nested/WithoutTitle.stories.js",
         "framework": "react",
         "__id": "custom-title-prefix-second-level-csf-nested-without-title--primary",
+        "__isArgsStory": true
+      }
+    },
+    "custom-title-prefix-second-level-csf-nested-nested--primary": {
+      "id": "custom-title-prefix-second-level-csf-nested-nested--primary",
+      "name": "Primary",
+      "title": "Custom Title Prefix/Second Level/Csf/Nested/Nested",
+      "importPath": "./src/autoTitle/csf/nested/nested.stories.js",
+      "kind": "Custom Title Prefix/Second Level/Csf/Nested/Nested",
+      "story": "Primary",
+      "parameters": {
+        "fileName": "./src/autoTitle/csf/nested/nested.stories.js",
+        "framework": "react",
+        "__id": "custom-title-prefix-second-level-csf-nested-nested--primary",
+        "__isArgsStory": true
+      }
+    },
+    "custom-title-prefix-second-level-csf-with-index-index--primary": {
+      "id": "custom-title-prefix-second-level-csf-with-index-index--primary",
+      "name": "Primary",
+      "title": "Custom Title Prefix/Second Level/Csf/With Index/Index",
+      "importPath": "./src/autoTitle/csf/withIndex/index.stories.js",
+      "kind": "Custom Title Prefix/Second Level/Csf/With Index/Index",
+      "story": "Primary",
+      "parameters": {
+        "fileName": "./src/autoTitle/csf/withIndex/index.stories.js",
+        "framework": "react",
+        "__id": "custom-title-prefix-second-level-csf-with-index-index--primary",
         "__isArgsStory": true
       }
     },

@@ -20,6 +20,46 @@ Object {
 }
 `;
 
+exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/EmptyTitle.stories.js 1`] = `
+Object {
+  "id": "auto-generated-title-prefix-auto-title-csf-empty-title",
+  "isDocsOnly": false,
+  "stories": Array [
+    Object {
+      "id": "auto-generated-title-prefix-auto-title-csf-empty-title",
+      "isDocs": true,
+      "name": "Empty Title",
+    },
+    Object {
+      "id": "auto-generated-title-prefix-auto-title-csf-empty-title--primary",
+      "isDocs": false,
+      "name": "Primary",
+    },
+  ],
+  "title": "Auto Generated Title Prefix/Auto Title/Csf/Empty Title",
+}
+`;
+
+exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/ExtraTitle.stories.js 1`] = `
+Object {
+  "id": "explicit-title",
+  "isDocsOnly": false,
+  "stories": Array [
+    Object {
+      "id": "explicit-title",
+      "isDocs": true,
+      "name": "Explicit title",
+    },
+    Object {
+      "id": "explicit-title--primary",
+      "isDocs": false,
+      "name": "Primary",
+    },
+  ],
+  "title": "Explicit title",
+}
+`;
+
 exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/nested/WithoutTitle.stories.js 1`] = `
 Object {
   "id": "auto-generated-title-prefix-auto-title-csf-nested-without-title",
@@ -37,6 +77,46 @@ Object {
     },
   ],
   "title": "Auto Generated Title Prefix/Auto Title/Csf/Nested/Without Title",
+}
+`;
+
+exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/nested/nested.stories.js 1`] = `
+Object {
+  "id": "auto-generated-title-prefix-auto-title-csf-nested-nested",
+  "isDocsOnly": false,
+  "stories": Array [
+    Object {
+      "id": "auto-generated-title-prefix-auto-title-csf-nested-nested",
+      "isDocs": true,
+      "name": "Nested",
+    },
+    Object {
+      "id": "auto-generated-title-prefix-auto-title-csf-nested-nested--primary",
+      "isDocs": false,
+      "name": "Primary",
+    },
+  ],
+  "title": "Auto Generated Title Prefix/Auto Title/Csf/Nested/Nested",
+}
+`;
+
+exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/withIndex/index.stories.js 1`] = `
+Object {
+  "id": "auto-generated-title-prefix-auto-title-csf-with-index-index",
+  "isDocsOnly": false,
+  "stories": Array [
+    Object {
+      "id": "auto-generated-title-prefix-auto-title-csf-with-index-index",
+      "isDocs": true,
+      "name": "Index",
+    },
+    Object {
+      "id": "auto-generated-title-prefix-auto-title-csf-with-index-index--primary",
+      "isDocs": false,
+      "name": "Primary",
+    },
+  ],
+  "title": "Auto Generated Title Prefix/Auto Title/Csf/With Index/Index",
 }
 `;
 
