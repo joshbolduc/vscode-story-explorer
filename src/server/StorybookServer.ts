@@ -75,7 +75,12 @@ export class StorybookServer {
         }
 
         setContext(internalServerRunningContext, true);
-        await this.taskExecutor.start(token);
+        try {
+          await this.taskExecutor.start(token);
+        } catch (e) {
+          this.stop();
+          throw e;
+        }
 
         const url = await this.urlMailbox.get();
 
