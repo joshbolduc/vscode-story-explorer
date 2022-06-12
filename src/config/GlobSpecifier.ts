@@ -1,5 +1,7 @@
+import type { Uri } from 'vscode';
+
 export interface GlobSpecifier {
-  directory: string;
+  directory: Uri;
   files: string;
   titlePrefix: string;
 }

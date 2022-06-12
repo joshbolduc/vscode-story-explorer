@@ -1,5 +1,5 @@
-import { resolve } from 'path';
 import { Uri } from 'vscode';
+import { Utils } from 'vscode-uri';
 import { getWorkspaceRoot } from '../util/getWorkspaceRoot';
 import { SettingsConfigProvider } from './SettingsConfigProvider';
 import type { StorybookConfigLocation } from './StorybookConfigLocation';
@@ -21,8 +21,12 @@ export const storybookConfigLocationConfigProvider = new SettingsConfigProvider<
     return undefined;
   }
 
-  const rootPath = getWorkspaceRoot();
-  const dir = Uri.file(resolve(rootPath, configDir));
+  const rootUri = getWorkspaceRoot();
+  if (!rootUri) {
+    return undefined;
+  }
+
+  const dir = Utils.resolvePath(rootUri, configDir);
   const file = Uri.joinPath(dir, 'main.js');
   return configDir
     ? {

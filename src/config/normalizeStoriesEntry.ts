@@ -1,22 +1,23 @@
-import { basename, dirname, resolve } from 'path';
+import { basename, dirname } from 'path';
 import { scan } from 'picomatch';
 import { FileType, Uri, workspace } from 'vscode';
+import { Utils } from 'vscode-uri';
 import type { StoriesConfigItem } from '../storybook/StorybookConfig';
 import type { GlobSpecifier } from './GlobSpecifier';
 
 const DEFAULT_FILES = '**/*.stories.@(mdx|tsx|ts|jsx|js)';
 const DEFAULT_TITLE_PREFIX = '';
 
-const isDirectory = async (path: string, rootPath: string) => {
+const isDirectory = async (path: string, root: Uri) => {
   try {
-    const stat = await workspace.fs.stat(Uri.file(resolve(rootPath, path)));
+    const stat = await workspace.fs.stat(Utils.resolvePath(root, path));
     return !!(stat.type & FileType.Directory);
   } catch (e) {
     return false;
   }
 };
 
-const getSpecifier = async (item: StoriesConfigItem, rootPath: string) => {
+const getSpecifier = async (item: StoriesConfigItem, root: Uri) => {
   if (typeof item === 'object') {
     return {
       directory: item.directory,
@@ -26,7 +27,7 @@ const getSpecifier = async (item: StoriesConfigItem, rootPath: string) => {
   }
 
   if (!item.includes('*')) {
-    if (await isDirectory(item, rootPath)) {
+    if (await isDirectory(item, root)) {
       return {
         directory: item,
         titlePrefix: DEFAULT_TITLE_PREFIX,
@@ -60,12 +61,12 @@ const getSpecifier = async (item: StoriesConfigItem, rootPath: string) => {
 
 export const interpretStoriesConfigItem = async (
   item: StoriesConfigItem,
-  configDirPath: string,
+  configDir: Uri,
 ): Promise<GlobSpecifier> => {
-  const { directory, ...specifier } = await getSpecifier(item, configDirPath);
+  const { directory, ...specifier } = await getSpecifier(item, configDir);
 
   return {
     ...specifier,
-    directory: resolve(configDirPath, directory),
+    directory: Utils.resolvePath(configDir, directory),
   };
 };

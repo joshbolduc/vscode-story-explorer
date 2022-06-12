@@ -1,4 +1,2 @@
-import type { GlobSpecifier } from '../config/GlobSpecifier';
-
-export const getPartialFilePath = (specifier: GlobSpecifier, uriPath: string) =>
-  uriPath.slice(specifier.directory.length);
+export const getPartialFilePath = (pathPrefix: string, uriPath: string) =>
+  uriPath.slice(pathPrefix.length);

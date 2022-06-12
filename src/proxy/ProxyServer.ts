@@ -1,8 +1,7 @@
-import { readFileSync } from 'fs';
 import { createServer, Server, ServerResponse } from 'http';
 import type { AddressInfo } from 'net';
-import { resolve as pathResolve } from 'path';
 import * as httpProxy from 'http-proxy';
+import { Uri, workspace } from 'vscode';
 import {
   ERR_BAD_GATEWAY,
   hostScriptPath,
@@ -15,26 +14,41 @@ import type { ServerManager } from '../server/ServerManager';
 import { Cacheable } from '../util/Cacheable';
 import storyIframeHtml from './storyIframe.html';
 
-const webviewScriptDir = pathResolve(__dirname, '..', 'webview');
-
 const respondWithScriptContents = (
   res: ServerResponse,
-  scriptFilePath: string,
+  scriptContent: string,
 ) => {
-  const scriptContent = readFileSync(scriptFilePath);
-
   res.writeHead(200, { 'Content-Type': 'application/javascript' });
   res.write(scriptContent);
   res.end();
+};
+
+const getScriptContents = async (extensionUri: Uri, scriptFileName: string) => {
+  const scriptUri = Uri.joinPath(
+    extensionUri,
+    'dist',
+    'webview',
+    scriptFileName,
+  );
+  return (await workspace.fs.readFile(scriptUri)).toString();
 };
 
 export class ProxyServer {
   private proxy?: httpProxy;
   private server?: Server;
 
-  private readonly cacheable = new Cacheable(() => {
+  private readonly cacheable = new Cacheable(async () => {
     const proxy = httpProxy.createProxyServer();
     this.proxy = proxy;
+
+    const storyEntryScriptContent = await getScriptContents(
+      this.extensionUri,
+      'entry-story.js',
+    );
+    const hostEntryScriptContent = await getScriptContents(
+      this.extensionUri,
+      'entry-host.js',
+    );
 
     const server = createServer((req, res) => {
       if (req.url === `/${iframePath}`) {
@@ -49,16 +63,14 @@ export class ProxyServer {
         }
         res.end();
       } else if (req.url === `/${storyScriptPath}`) {
-        const scriptFilePath = pathResolve(webviewScriptDir, 'entry-story.js');
-        respondWithScriptContents(res, scriptFilePath);
+        respondWithScriptContents(res, storyEntryScriptContent);
       } else if (req.url === `/${hostScriptPath}`) {
-        const scriptFilePath = pathResolve(webviewScriptDir, 'entry-host.js');
         const requestOrigin = req.headers.origin;
 
         if (requestOrigin) {
           res.setHeader('Access-Control-Allow-Origin', requestOrigin);
         }
-        respondWithScriptContents(res, scriptFilePath);
+        respondWithScriptContents(res, hostEntryScriptContent);
       } else {
         Promise.resolve(this.getProxyTarget())
           .then((target) => {
@@ -89,7 +101,10 @@ export class ProxyServer {
     });
   });
 
-  public constructor(private readonly serverManager: ServerManager) {}
+  public constructor(
+    private readonly serverManager: ServerManager,
+    private readonly extensionUri: Uri,
+  ) {}
 
   public async getPort() {
     const server = await this.cacheable.getResult();

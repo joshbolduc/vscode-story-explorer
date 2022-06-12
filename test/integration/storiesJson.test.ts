@@ -1,12 +1,12 @@
 import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import merge from 'lodash/merge';
-import type { Uri } from 'vscode';
+import { Uri } from 'vscode';
 import { interpretStoriesConfigItem } from '../../src/config/normalizeStoriesEntry';
 import type { ParsedStoryWithFileUri } from '../../src/parser/parseStoriesFileByUri';
 import { StoryExplorerStoryFile } from '../../src/story/StoryExplorerStoryFile';
 import { getStoriesGlobs } from '../../src/storybook/getStoriesGlobs';
-import { parseConfigFile } from '../../src/storybook/parseConfig';
+import { parseLocalConfigFile } from '../../src/storybook/parseLocalConfigFile';
 import { parseTestProjectStories } from '../util/parseTestProjectStories';
 import { testBaseDir } from '../util/testBaseDir';
 
@@ -43,11 +43,14 @@ describe('stories.json', () => {
       'main.js',
     );
 
-    const mockConfig = parseConfigFile(storybookConfigPath)!;
+    const mockConfig = parseLocalConfigFile(storybookConfigPath)!;
     const storiesGlobs = await getStoriesGlobs(mockConfig.stories);
     const mockSpecifiers = await Promise.all(
       storiesGlobs.map((config) =>
-        interpretStoriesConfigItem(config, '/mock/basedir/project/.storybook'),
+        interpretStoriesConfigItem(
+          config,
+          Uri.file('/mock/basedir/project/.storybook'),
+        ),
       ),
     );
 
@@ -61,9 +64,7 @@ describe('stories.json', () => {
       .flatMap(({ file, parsedRaw }) => {
         const parsed: ParsedStoryWithFileUri = {
           ...parsedRaw,
-          file: {
-            path: `/mock/basedir/${file}`,
-          } as Uri,
+          file: Uri.file(`/mock/basedir/${file}`),
         };
 
         const storyFile = new StoryExplorerStoryFile(parsed, mockSpecifiers);

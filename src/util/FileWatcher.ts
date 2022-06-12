@@ -15,15 +15,21 @@ export type WatchListener = (
 export class FileWatcher {
   private fsWatcher?: FileSystemWatcher;
 
+  private readonly glob: GlobPattern;
+
   private readonly listenerDisposables: Disposable[] = [];
 
   public constructor(
-    private readonly glob: GlobPattern,
+    patternOrUri: GlobPattern | Uri,
     private readonly callback: WatchListener,
     ignoreCreate = false,
     ignoreChange = false,
     ignoreDelete = false,
   ) {
+    this.glob =
+      typeof patternOrUri === 'string' || 'pattern' in patternOrUri
+        ? patternOrUri
+        : patternOrUri.fsPath;
     this.init(callback, ignoreCreate, ignoreChange, ignoreDelete);
   }
 

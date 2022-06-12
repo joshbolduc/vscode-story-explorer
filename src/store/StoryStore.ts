@@ -2,7 +2,7 @@ import pLimit from 'p-limit';
 import { Disposable, EventEmitter, Uri, workspace } from 'vscode';
 import type { ConfigManager } from '../config/ConfigManager';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
-import { convertGlob } from '../globs/convertGlob';
+import { ConvertedGlob, convertGlob } from '../globs/convertGlob';
 import { convertGlobForWorkspace } from '../globs/convertGlobForWorkspace';
 import { logError, logWarn } from '../log/log';
 import {
@@ -21,12 +21,17 @@ interface StoreMapEntry {
   specifiers: GlobSpecifier[];
 }
 
-const globSpecifierMatchesUri = (uri: Uri) => {
-  return (globSpecifier: GlobSpecifier) => {
-    const { filter, globPattern } = convertGlob(globSpecifier);
+const globMatchesUri = (glob: ConvertedGlob, uri: Uri) => {
+  if (glob.filter) {
+    return glob.filter(uri);
+  }
 
-    return filter?.(uri.path) ?? globPattern === uri.path;
-  };
+  return glob.globBase.toString() === uri.toString();
+};
+
+const globSpecifierMatchesUri = (uri: Uri) => {
+  return (globSpecifier: GlobSpecifier) =>
+    globMatchesUri(convertGlob(globSpecifier), uri);
 };
 
 const MAX_CONCURRENT_FIND_OPERATIONS = 3;
@@ -99,7 +104,7 @@ export class StoryStore {
     const unsortedFiles = Array.from(this.backingMap.values())
       .map((value) => value.storyFile)
       .sort((a, b) => {
-        return strCompareFn(a.getUri().path, b.getUri().path);
+        return strCompareFn(a.getUri().toString(), b.getUri().toString());
       });
 
     const sortedFiles: StoryExplorerStoryFile[] = [];
@@ -114,10 +119,7 @@ export class StoryStore {
 
     convertedGlobs.forEach((glob) => {
       remainingToSort = Array.from(remainingToSort).reduce((acc, file) => {
-        const filePath = file.getUri().path;
-        const matchesGlob = glob.filter
-          ? glob.filter(filePath)
-          : glob.globPattern === filePath;
+        const matchesGlob = globMatchesUri(glob, file.getUri());
 
         if (matchesGlob) {
           sortedFiles.push(file);
@@ -215,7 +217,7 @@ export class StoryStore {
     const map = (await Promise.all(input)).reduce((acc, cur) => {
       cur.storiesFiles.forEach((storyFile) => {
         if (storyFile) {
-          const key = storyFile.file.path;
+          const key = storyFile.file.toString();
           const entry = acc.get(key);
           const existingSpecifiers = entry?.specifiers ?? [];
 
@@ -239,11 +241,9 @@ export class StoryStore {
   }
 
   private setWithoutNotify(uri: Uri, info: StoreMapEntry) {
-    const path = uri.path;
-
     const watcher =
       this.backingMap.get(uri)?.fileWatcher ??
-      new FileWatcher(path, (watchedUri, eventType) => {
+      new FileWatcher(uri, (watchedUri, eventType) => {
         if (eventType === 'delete') {
           this.delete(watchedUri);
         } else {

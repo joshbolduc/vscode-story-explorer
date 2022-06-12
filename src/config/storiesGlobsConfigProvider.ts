@@ -19,12 +19,12 @@ export const storiesGlobsConfigProvider = new SettingsConfigProvider(
     };
 
     const storiesConfigItems = sanitize();
-    const configDirPath = getWorkspaceRoot();
-    return storiesConfigItems
+    const configDir = getWorkspaceRoot();
+    return storiesConfigItems && configDir
       ? {
           value: await Promise.all(
             storiesConfigItems.map((configItem) =>
-              interpretStoriesConfigItem(configItem, configDirPath),
+              interpretStoriesConfigItem(configItem, configDir),
             ),
           ),
         }

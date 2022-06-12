@@ -1,3 +1,4 @@
+import { URI } from 'vscode-uri';
 import { convertGlob } from './convertGlob';
 
 describe('convertGlob', () => {
@@ -104,7 +105,7 @@ describe('convertGlob', () => {
   inputs.forEach(([input, match = undefined, noMatch = undefined]) =>
     it(`handles ${input}`, () => {
       const { filter, ...result } = convertGlob({
-        directory: '/mock/baseDir',
+        directory: URI.file('/mock/baseDir'),
         files: input,
         titlePrefix: '',
       });
@@ -116,13 +117,18 @@ describe('convertGlob', () => {
       }
 
       (match ?? []).forEach((path) => {
-        expect(filter!(path)).toBe(true);
+        expect(filter!(URI.file(path))).toBe(true);
       });
       (noMatch ?? []).forEach((path) => {
-        expect(filter!(path)).toBe(false);
+        expect(filter!(URI.file(path))).toBe(false);
       });
 
-      expect(result).toMatchSnapshot();
+      const normalizedResult = {
+        ...result,
+        globBase: result.globBase.toString(),
+      };
+
+      expect(normalizedResult).toMatchSnapshot();
     }),
   );
 });

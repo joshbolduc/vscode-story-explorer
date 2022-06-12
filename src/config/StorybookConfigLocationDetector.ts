@@ -1,4 +1,5 @@
-import { EventEmitter, Uri, workspace } from 'vscode';
+import { EventEmitter, workspace } from 'vscode';
+import { Utils } from 'vscode-uri';
 import { logError, logInfo, logWarn } from '../log/log';
 import { FileWatcher } from '../util/FileWatcher';
 import { RecursiveDeleteWatcher } from '../util/RecursiveDeleteWatcher';
@@ -72,8 +73,8 @@ export class StorybookConfigLocationDetectProvider
       (await this.fileWatcher?.find('**/node_modules/**')) ?? [];
     const configLocations = findResults.map((uri) => ({
       file: uri,
-      dir: Uri.joinPath(uri, '..'),
-      relativePath: workspace.asRelativePath(uri),
+      dir: Utils.dirname(uri),
+      relativePath: workspace.asRelativePath(uri, false),
     }));
 
     configLocations.sort((a, b) =>
@@ -95,7 +96,7 @@ export class StorybookConfigLocationDetectProvider
 
     const locationChanged =
       configLocation &&
-      configLocation.file.fsPath === this.configLocation?.file.fsPath;
+      configLocation.file.toString() === this.configLocation?.file.toString();
 
     if (locationChanged) {
       return configLocation;

@@ -11,7 +11,9 @@ export const findFilesByGlob = async (globSpecifier: GlobSpecifier) => {
   if (filter) {
     return findResults.then((uris) => {
       logDebug(
-        `Found ${uris.length} URIs matching ${globSpecifier.files} under ${globSpecifier.directory}`,
+        `Found ${uris.length} URIs matching ${
+          globSpecifier.files
+        } under ${globSpecifier.directory.toString()}`,
       );
       return uris.filter(filter);
     });

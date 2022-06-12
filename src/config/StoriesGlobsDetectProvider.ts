@@ -1,10 +1,11 @@
-import { Disposable, EventEmitter } from 'vscode';
+import { Disposable, EventEmitter, Uri } from 'vscode';
 import { storybookConfigParsedContext } from '../constants/constants';
 import { logWarn } from '../log/log';
 
 import { getStoriesGlobs } from '../storybook/getStoriesGlobs';
-import { parseConfigFile } from '../storybook/parseConfig';
+import { parseLocalConfigFile } from '../storybook/parseLocalConfigFile';
 import { FileWatcher } from '../util/FileWatcher';
+import { isVirtualUri } from '../util/isVirtualUri';
 import { setContext } from '../util/setContext';
 import type { Aggregator } from './Aggregator';
 import type { ConfigProvider } from './ConfigProvider';
@@ -16,12 +17,20 @@ const setParsedConfigContext = (parsed: boolean) => {
   setContext(storybookConfigParsedContext, parsed);
 };
 
+const parseConfigUri = (uri: Uri) => {
+  if (!isVirtualUri(uri)) {
+    return parseLocalConfigFile(uri.fsPath);
+  }
+
+  return undefined;
+};
+
 const getStoriesGlobsFromFileUri = async (
   location: StorybookConfigLocation,
 ): Promise<GlobSpecifier[] | undefined> => {
   const fileUri = location.file;
 
-  const config = parseConfigFile(fileUri.fsPath);
+  const config = parseConfigUri(fileUri);
   const parsed = !!config;
   setParsedConfigContext(parsed);
 
@@ -31,11 +40,11 @@ const getStoriesGlobsFromFileUri = async (
 
   try {
     const storiesConfigItems = await getStoriesGlobs(config.stories);
-    const configDirPath = location.dir.fsPath;
+    const configDir = location.dir;
 
     return Promise.all(
       storiesConfigItems.map((configItem) =>
-        interpretStoriesConfigItem(configItem, configDirPath),
+        interpretStoriesConfigItem(configItem, configDir),
       ),
     );
   } catch (e) {
@@ -104,7 +113,7 @@ export class StoriesGlobsDetectProvider
     this.configFileWatcher?.dispose();
     if (location) {
       this.configFileWatcher = new FileWatcher(
-        location.file.fsPath,
+        location.file,
         () => {
           this.handleReadAndUpdate(location).catch((e) => {
             logWarn('Failed to read updated config file', e, location);

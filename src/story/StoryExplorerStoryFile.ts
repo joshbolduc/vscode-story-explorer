@@ -38,9 +38,12 @@ export class StoryExplorerStoryFile {
   }
 
   public getTitle() {
-    const uriPath = this.getUri().path;
-    const matchingSpecifier = this.specifiers.find((specifier) =>
-      uriPath.startsWith(specifier.directory),
+    const uri = this.getUri();
+    const matchingSpecifier = this.specifiers.find(
+      (specifier) =>
+        uri.scheme === specifier.directory.scheme &&
+        uri.authority === specifier.directory.authority &&
+        uri.path.startsWith(specifier.directory.path),
     );
 
     if (!matchingSpecifier) {
@@ -52,7 +55,9 @@ export class StoryExplorerStoryFile {
     const metaTitle = this.parsed.meta.title;
     const titleSuffix = metaTitle
       ? metaTitle.split('/')
-      : getAutoTitleSuffixParts(getPartialFilePath(matchingSpecifier, uriPath));
+      : getAutoTitleSuffixParts(
+          getPartialFilePath(matchingSpecifier.directory.path, uri.path),
+        );
 
     const autoTitleParts = [...titlePrefixParts, ...titleSuffix].filter(
       Boolean,

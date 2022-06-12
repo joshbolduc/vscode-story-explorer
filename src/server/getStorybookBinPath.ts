@@ -14,7 +14,7 @@ const getDetectedStorybookBinPath = async (): Promise<string | undefined> => {
   const [match] = matches
     .map((uri) => ({
       uri,
-      relativePath: workspace.asRelativePath(uri),
+      relativePath: workspace.asRelativePath(uri, false),
     }))
     .sort((a, b) => pathDepthCompareFn(a.relativePath, b.relativePath));
 

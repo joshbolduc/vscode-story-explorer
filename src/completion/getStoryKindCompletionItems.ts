@@ -1,10 +1,11 @@
+import type { Uri } from 'vscode';
 import type { StoryStore } from '../store/StoryStore';
 import { splitKind } from '../util/splitKind';
 import { TextCompletionItem } from './TextCompletionItem';
 
-const getStoryKindSegments = (storyStore: StoryStore, ignoreFsPath: string) => {
+const getStoryKindSegments = (storyStore: StoryStore, ignoreUri: Uri) => {
   return storyStore.getStoryFiles().reduce((acc, cur) => {
-    if (cur.getUri().fsPath !== ignoreFsPath) {
+    if (cur.getUri().toString() !== ignoreUri.toString()) {
       const title = cur.getTitle();
       if (title && typeof title === 'string') {
         const segments = splitKind(title);
@@ -20,10 +21,10 @@ const getStoryKindSegments = (storyStore: StoryStore, ignoreFsPath: string) => {
 
 export const getStoryKindCompletionItems = (
   storyStore: StoryStore,
-  ignoreFsPath: string,
+  ignoreUri: Uri,
   range: TextCompletionItem['range'],
 ) => {
-  const segmentSet = getStoryKindSegments(storyStore, ignoreFsPath);
+  const segmentSet = getStoryKindSegments(storyStore, ignoreUri);
 
   return Array.from(segmentSet.values()).map((title) =>
     TextCompletionItem.create(title, { range, commitCharacters: ['/'] }),
