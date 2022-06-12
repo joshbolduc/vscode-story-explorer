@@ -39,11 +39,7 @@ export class CsfTitleCompletionProvider
     );
 
     if (range) {
-      return getStoryKindCompletionItems(
-        this.storyStore,
-        document.uri.fsPath,
-        range,
-      );
+      return getStoryKindCompletionItems(this.storyStore, document.uri, range);
     }
   }
 }

@@ -67,7 +67,9 @@ export const activate = async (context: ExtensionContext) => {
     const treeViewManager = addSubscription(
       TreeViewManager.init(context, storyStore),
     );
-    const proxyManager = addSubscription(ProxyManager.init(serverManager));
+    const proxyManager = addSubscription(
+      ProxyManager.init(serverManager, context.extensionUri),
+    );
     const webviewManager = addSubscription(
       WebviewManager.init(
         context,

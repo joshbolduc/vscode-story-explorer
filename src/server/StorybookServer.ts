@@ -1,11 +1,10 @@
 import type { IncomingMessage } from 'http';
-import { ProgressLocation, window } from 'vscode';
+import { ProgressLocation, window, workspace } from 'vscode';
 import type { ConfigManager } from '../config/ConfigManager';
 import { internalServerRunningContext } from '../constants/constants';
 import { logDebug, logError, logInfo } from '../log/log';
 import { Cacheable } from '../util/Cacheable';
 import { Mailbox } from '../util/Mailbox';
-import { getWorkspaceRoot } from '../util/getWorkspaceRoot';
 import { poll } from '../util/poll';
 import { setContext } from '../util/setContext';
 import { TaskExecutor } from './TaskExecutor';
@@ -159,14 +158,16 @@ export class StorybookServer {
 
   private async createTask() {
     const binPath = await getStorybookBinPath();
-    const cwd = getWorkspaceRoot();
-    const configDirPath = this.configManager.getConfigDir()?.path;
+    const configDir = this.configManager.getConfigDir();
+    const cwd = configDir
+      ? workspace.getWorkspaceFolder(configDir)?.uri
+      : undefined;
 
     if (!binPath) {
       return undefined;
     }
 
-    return createTask(binPath, cwd, configDirPath);
+    return createTask(binPath, cwd, configDir);
   }
 
   private readonly cleanupAfterTaskExit = () => {

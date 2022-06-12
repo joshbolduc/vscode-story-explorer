@@ -3,6 +3,7 @@ import {
   Task,
   TaskRevealKind,
   TaskScope,
+  Uri,
   workspace,
 } from 'vscode';
 import {
@@ -56,17 +57,17 @@ const getArgs = () => {
 
 export const createTask = (
   binPath: string,
-  cwd: string,
-  configDirPath: string | undefined,
+  cwd: Uri | undefined,
+  configDir: Uri | undefined,
 ) => {
   const processExecution = new ProcessExecution(
     'node',
     [binPath, ...(getArgs() ?? [])],
     {
-      cwd,
+      cwd: cwd?.fsPath,
       env: {
         CI: 'true',
-        ...(configDirPath && { SBCONFIG_CONFIG_DIR: configDirPath }),
+        ...(configDir && { SBCONFIG_CONFIG_DIR: configDir.fsPath }),
         ...getEnvironmentVariables(),
       },
     },

@@ -7,7 +7,7 @@ const requireUncached = <T>(filePath: string): T => {
   return require(filePath) as T;
 };
 
-export const parseConfigFile = (configFilePath: string) => {
+export const parseLocalConfigFile = (configFilePath: string) => {
   try {
     return requireUncached<StorybookConfig>(configFilePath);
   } catch (e) {

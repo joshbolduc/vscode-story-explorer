@@ -2,7 +2,7 @@
 
 exports[`convertGlob handles ** 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir",
+  "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\)\\$/,
 }
@@ -10,7 +10,7 @@ Object {
 
 exports[`convertGlob handles **/* 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir",
+  "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\/\\?\\)\\$/,
 }
@@ -18,7 +18,7 @@ Object {
 
 exports[`convertGlob handles **/*.stories.@(js|jsx|ts|tsx) 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir",
+  "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.stories\\\\\\.\\(js\\|jsx\\|ts\\|tsx\\)\\)\\$/,
 }
@@ -26,7 +26,7 @@ Object {
 
 exports[`convertGlob handles **/../*.ts 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir",
+  "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\\\\\.\\\\\\.\\\\/\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.ts\\)\\$/,
 }
@@ -34,7 +34,7 @@ Object {
 
 exports[`convertGlob handles ../src/**/*.stories.@(js|jsx|ts|tsx) 1`] = `
 Object {
-  "globBasePath": "/mock/src",
+  "globBase": "file:///mock/src",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.stories\\\\\\.\\(js\\|jsx\\|ts\\|tsx\\)\\)\\$/,
 }
@@ -42,7 +42,7 @@ Object {
 
 exports[`convertGlob handles ../src/**/*.stories.mdx 1`] = `
 Object {
-  "globBasePath": "/mock/src",
+  "globBase": "file:///mock/src",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.stories\\\\\\.mdx\\)\\$/,
 }
@@ -50,7 +50,7 @@ Object {
 
 exports[`convertGlob handles @(js|jsx|ts|tsx) 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir",
+  "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(js\\|jsx\\|ts\\|tsx\\)\\)\\$/,
 }
@@ -58,13 +58,13 @@ Object {
 
 exports[`convertGlob handles file.ts 1`] = `
 Object {
-  "globPattern": "/mock/baseDir/file.ts",
+  "globBase": "file:///mock/baseDir/file.ts",
 }
 `;
 
 exports[`convertGlob handles src/* 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir/src",
+  "globBase": "file:///mock/baseDir/src",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\/\\?\\)\\$/,
 }
@@ -72,7 +72,7 @@ Object {
 
 exports[`convertGlob handles src/** 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir/src",
+  "globBase": "file:///mock/baseDir/src",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\)\\$/,
 }
@@ -80,7 +80,7 @@ Object {
 
 exports[`convertGlob handles src/**/*.ts 1`] = `
 Object {
-  "globBasePath": "/mock/baseDir/src",
+  "globBase": "file:///mock/baseDir/src",
   "globPattern": "**/*",
   "regex": /\\^\\(\\?:\\(\\?:\\^\\|\\\\/\\|\\(\\?:\\(\\?:\\(\\?!\\(\\?:\\^\\|\\\\/\\)\\\\\\.\\)\\.\\)\\*\\?\\)\\\\/\\)\\(\\?!\\\\\\.\\)\\(\\?=\\.\\)\\[\\^/\\]\\*\\?\\\\\\.ts\\)\\$/,
 }
@@ -88,6 +88,6 @@ Object {
 
 exports[`convertGlob handles src/file.ts 1`] = `
 Object {
-  "globPattern": "/mock/baseDir/src/file.ts",
+  "globBase": "file:///mock/baseDir/src/file.ts",
 }
 `;

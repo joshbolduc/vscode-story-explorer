@@ -1,3 +1,5 @@
+import { URI, Utils } from 'vscode-uri';
+
 export enum ExtensionMode {
   Production = 1,
   Development = 2,
@@ -9,3 +11,8 @@ export class RelativePattern {
     return { base, pattern };
   }
 }
+
+export const Uri = {
+  ...URI,
+  ...Utils,
+};

@@ -1,3 +1,4 @@
+import type { Uri } from 'vscode';
 import type { ServerManager } from '../server/ServerManager';
 import { Cacheable } from '../util/Cacheable';
 import { ProxyServer } from './ProxyServer';
@@ -6,15 +7,18 @@ export class ProxyManager {
   private proxyServer?: ProxyServer;
 
   private readonly proxyServerCacheable = new Cacheable(() => {
-    this.proxyServer = new ProxyServer(this.serverManager);
+    this.proxyServer = new ProxyServer(this.serverManager, this.extensionUri);
 
     return this.proxyServer;
   });
 
-  private constructor(private readonly serverManager: ServerManager) {}
+  private constructor(
+    private readonly serverManager: ServerManager,
+    private readonly extensionUri: Uri,
+  ) {}
 
-  public static init(serverManager: ServerManager) {
-    return new ProxyManager(serverManager);
+  public static init(serverManager: ServerManager, extensionUri: Uri) {
+    return new ProxyManager(serverManager, extensionUri);
   }
 
   public ensureProxyServer() {

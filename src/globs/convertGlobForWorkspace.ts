@@ -1,43 +1,37 @@
-import { basename, dirname, join } from 'path';
-import type { GlobPattern } from 'vscode';
+import { join } from 'path';
 import { RelativePattern, Uri, workspace } from 'vscode';
+import { Utils } from 'vscode-uri';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
 import { convertGlob } from './convertGlob';
 
 const getRelativePatternForWorkspace = (
-  globBasePath: string | undefined,
-  globPattern: string,
+  globBasePath: Uri,
+  globPattern: string | undefined,
 ) => {
-  const dir = globBasePath ?? dirname(globPattern);
-  const file = globBasePath !== undefined ? globPattern : basename(globPattern);
+  const workspaceFolder = workspace.getWorkspaceFolder(globBasePath);
 
-  const uri = Uri.file(dir);
-  const workspaceFolder = workspace.getWorkspaceFolder(uri);
+  const dir =
+    globPattern !== undefined ? globBasePath : Utils.dirname(globBasePath);
+  const file =
+    globPattern !== undefined ? globPattern : Utils.basename(globBasePath);
 
   if (workspaceFolder) {
     const pattern =
-      workspaceFolder.uri.fsPath === uri.fsPath
+      workspaceFolder.uri.toString() === dir.toString()
         ? file
-        : join(workspace.asRelativePath(uri, false), file);
+        : join(workspace.asRelativePath(dir, false), file);
     return new RelativePattern(workspaceFolder, pattern);
   }
 
   return new RelativePattern(dir, file);
 };
 
-export const convertGlobForWorkspace = (
-  globSpecifier: GlobSpecifier,
-): {
-  globPattern: GlobPattern;
-  filter?: (path: Uri) => boolean;
-  regex?: RegExp;
-} => {
-  const { globBasePath, globPattern, filter, regex } =
-    convertGlob(globSpecifier);
+export const convertGlobForWorkspace = (globSpecifier: GlobSpecifier) => {
+  const { globBase, globPattern, filter, regex } = convertGlob(globSpecifier);
 
   return {
-    globPattern: getRelativePatternForWorkspace(globBasePath, globPattern),
-    filter: filter ? (uri) => filter(uri.path) : undefined,
+    globPattern: getRelativePatternForWorkspace(globBase, globPattern),
+    filter,
     regex,
   };
 };

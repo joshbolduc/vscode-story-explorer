@@ -1,24 +1,29 @@
-import { dirname } from 'path';
 import type { Uri } from 'vscode';
+import { Utils } from 'vscode-uri';
 import { logDebug } from '../log/log';
 import { FileWatcher, WatchListener } from './FileWatcher';
+import { isVirtualUri } from './isVirtualUri';
 
 export class RecursiveDeleteWatcher {
-  private fsListeners: FileWatcher[];
+  private fsListeners: FileWatcher[] = [];
 
-  public constructor(uri: Uri, callback: WatchListener) {
-    const paths: string[] = [];
-
-    let uriPath = uri.path;
-    while (uriPath !== dirname(uriPath)) {
-      paths.push(uriPath);
-      uriPath = dirname(uriPath);
+  public constructor(targetUri: Uri, callback: WatchListener) {
+    if (isVirtualUri(targetUri)) {
+      return;
     }
 
-    logDebug('Watching for deletion on paths', paths);
+    const uris: Uri[] = [];
 
-    this.fsListeners = paths.map(
-      (path) => new FileWatcher(path, callback, true, true, false),
+    let currentUri = targetUri;
+    while (currentUri.toString() !== Utils.dirname(currentUri).toString()) {
+      uris.push(currentUri);
+      currentUri = Utils.dirname(currentUri);
+    }
+
+    logDebug('Watching for deletion on URIs', uris);
+
+    this.fsListeners = uris.map(
+      (uri) => new FileWatcher(uri, callback, true, true, false),
     );
   }
 

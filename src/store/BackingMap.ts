@@ -8,7 +8,7 @@ interface BackingMapEntry {
 }
 
 const uriToKey = (uri: Uri) => {
-  return uri.path;
+  return uri.toString();
 };
 
 export class BackingMap {

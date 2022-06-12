@@ -1,4 +1,4 @@
-import type { Uri } from 'vscode';
+import { URI } from 'vscode-uri';
 import { parseTestProjectStories } from '../../test/util/parseTestProjectStories';
 import type { ParsedStoryWithFileUri } from '../parser/parseStoriesFileByUri';
 import { StoryExplorerStoryFile } from './StoryExplorerStoryFile';
@@ -10,19 +10,17 @@ describe('StoryExplorerStoryFile', () => {
     it(`parses story file ${file}`, () => {
       const parsed: ParsedStoryWithFileUri = {
         ...parsedRaw,
-        file: {
-          path: `/mock/basedir/${file}`,
-        } as Uri,
+        file: URI.file(`/mock/basedir/${file}`),
       };
 
       const storyFile = new StoryExplorerStoryFile(parsed, [
         {
-          directory: '/mock/basedir/project/src/autoTitle',
+          directory: URI.file('/mock/basedir/project/src/autoTitle'),
           files: '**/*',
           titlePrefix: 'Auto-generated title prefix',
         },
         {
-          directory: '/mock/basedir/project/src',
+          directory: URI.file('/mock/basedir/project/src'),
           files: '**/*',
           titlePrefix: '',
         },
