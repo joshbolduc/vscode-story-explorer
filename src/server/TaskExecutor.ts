@@ -29,9 +29,9 @@ export class TaskExecutor {
     }
 
     if (!task) {
-      const openSettingsItem = 'Open Settings';
+      const showLaunchErrorMessage = async () => {
+        const openSettingsItem = 'Open Settings';
 
-      try {
         const choice = await window.showErrorMessage(
           "Launching the Storybook server failed. The path to the Storybook server script couldn't be determined. If this project uses Storybook, you may need to install your project's dependencies, or specify a path manually in settings.",
           openSettingsItem,
@@ -40,9 +40,11 @@ export class TaskExecutor {
         if (choice === openSettingsItem) {
           await openWorkspaceSetting(serverInternalStorybookBinaryPathConfig);
         }
-      } catch (e) {
+      };
+
+      showLaunchErrorMessage().catch((e) => {
         logError('Failed to handle server launch error message', e);
-      }
+      });
 
       throw new Error('Failed to find path to launch Storybook server');
     }
