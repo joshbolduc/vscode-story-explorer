@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.5](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.4...v0.5.5) (2022-06-16)
+
+### Bug Fixes
+
+- abort failed launch without waiting for user acknowledgment ([961e94d](https://github.com/joshbolduc/vscode-story-explorer/commit/961e94d19fc7f1eb83b7e0bc6158a20447711d7f))
+- clear failed launch state to unblock future attempts ([5a45ed3](https://github.com/joshbolduc/vscode-story-explorer/commit/5a45ed342739f7c2e4b660f3e6cfb19d8346f3da))
+- improve filesystem compatibility ([aee143b](https://github.com/joshbolduc/vscode-story-explorer/commit/aee143b9f86fbf39383ea218b5d0cbba27b71236))
+
 ### [0.5.4](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.3...v0.5.4) (2022-06-11)
 
 ### Features
