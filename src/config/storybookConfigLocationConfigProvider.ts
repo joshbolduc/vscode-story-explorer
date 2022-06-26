@@ -1,13 +1,13 @@
-import { Uri } from 'vscode';
 import { Utils } from 'vscode-uri';
 import { getWorkspaceRoot } from '../util/getWorkspaceRoot';
 import { SettingsConfigProvider } from './SettingsConfigProvider';
 import type { StorybookConfigLocation } from './StorybookConfigLocation';
+import { findConfigFileInDir } from './findConfigFileInDir';
 
 export const storybookConfigLocationConfigProvider = new SettingsConfigProvider<
   StorybookConfigLocation,
   unknown
->('storybookConfigDir', (rawValue: unknown) => {
+>('storybookConfigDir', async (rawValue: unknown) => {
   const sanitize = () => {
     if (typeof rawValue === 'string') {
       return rawValue;
@@ -27,13 +27,12 @@ export const storybookConfigLocationConfigProvider = new SettingsConfigProvider<
   }
 
   const dir = Utils.resolvePath(rootUri, configDir);
-  const file = Uri.joinPath(dir, 'main.js');
-  return configDir
-    ? {
-        value: {
-          dir,
-          file,
-        },
-      }
-    : undefined;
+  const file = await findConfigFileInDir(dir);
+
+  return {
+    value: {
+      dir,
+      file,
+    },
+  };
 });

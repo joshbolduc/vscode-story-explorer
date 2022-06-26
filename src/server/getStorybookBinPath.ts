@@ -4,6 +4,7 @@ import {
   serverInternalStorybookBinaryPathConfigSuffix,
 } from '../constants/constants';
 import { pathDepthCompareFn } from '../util/pathDepthCompareFn';
+import { strCompareFn } from '../util/strCompareFn';
 
 const getDetectedStorybookBinPath = async (): Promise<string | undefined> => {
   const matches = await workspace.findFiles(
@@ -16,7 +17,11 @@ const getDetectedStorybookBinPath = async (): Promise<string | undefined> => {
       uri,
       relativePath: workspace.asRelativePath(uri, false),
     }))
-    .sort((a, b) => pathDepthCompareFn(a.relativePath, b.relativePath));
+    .sort(
+      (a, b) =>
+        pathDepthCompareFn(a.relativePath, b.relativePath) ||
+        strCompareFn(a.relativePath, b.relativePath),
+    );
 
   return match?.uri.fsPath;
 };

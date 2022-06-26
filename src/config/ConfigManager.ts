@@ -14,7 +14,7 @@ export class ConfigManager {
 
   private readonly configLocationListener =
     this.storybookConfigLocationAggregator.onDidChangeConfig((e) => {
-      setContext(storybookConfigDetectedContext, e !== undefined);
+      setContext(storybookConfigDetectedContext, e?.file !== undefined);
     });
 
   private readonly storiesGlobsConfigAggregator = new Aggregator([
