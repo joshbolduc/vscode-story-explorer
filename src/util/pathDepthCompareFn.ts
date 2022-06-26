@@ -1,5 +1,3 @@
-import { strCompareFn } from './strCompareFn';
-
 const getDepth = (path: string) => path.split('/').length;
 
 export const pathDepthCompareFn = (a: string, b: string): number => {
@@ -10,5 +8,5 @@ export const pathDepthCompareFn = (a: string, b: string): number => {
     return aDepth - bDepth;
   }
 
-  return strCompareFn(a, b);
+  return 0;
 };

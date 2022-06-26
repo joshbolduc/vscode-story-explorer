@@ -3,11 +3,12 @@ import { Utils } from 'vscode-uri';
 import { logError, logInfo, logWarn } from '../log/log';
 import { FileWatcher } from '../util/FileWatcher';
 import { RecursiveDeleteWatcher } from '../util/RecursiveDeleteWatcher';
-import { pathDepthCompareFn } from '../util/pathDepthCompareFn';
 import type { ConfigProvider } from './ConfigProvider';
 import type { StorybookConfigLocation } from './StorybookConfigLocation';
+import { configFileExtensions } from './configFileExtensions';
+import { configLocationCompareFn } from './configLocationCompareFn';
 
-const configFileGlob = '**/.storybook/main.js';
+const configFileGlob = `**/.storybook/main.{${configFileExtensions.join(',')}}`;
 
 export class StorybookConfigLocationDetectProvider
   implements ConfigProvider<StorybookConfigLocation>
@@ -77,9 +78,7 @@ export class StorybookConfigLocationDetectProvider
       relativePath: workspace.asRelativePath(uri, false),
     }));
 
-    configLocations.sort((a, b) =>
-      pathDepthCompareFn(a.relativePath, b.relativePath),
-    );
+    configLocations.sort(configLocationCompareFn);
 
     let configLocation: StorybookConfigLocation | undefined;
 
@@ -95,16 +94,16 @@ export class StorybookConfigLocationDetectProvider
     }
 
     const locationChanged =
-      configLocation &&
-      configLocation.file.toString() === this.configLocation?.file.toString();
+      configLocation?.file?.toString() !==
+      this.configLocation?.file?.toString();
 
-    if (locationChanged) {
+    if (!locationChanged) {
       return configLocation;
     }
 
     this.deleteWatcher?.dispose();
 
-    if (!configLocation) {
+    if (!configLocation?.file) {
       return undefined;
     }
 

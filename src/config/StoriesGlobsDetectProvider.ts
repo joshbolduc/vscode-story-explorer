@@ -5,12 +5,15 @@ import { logWarn } from '../log/log';
 import { getStoriesGlobs } from '../storybook/getStoriesGlobs';
 import { parseLocalConfigFile } from '../storybook/parseLocalConfigFile';
 import { FileWatcher } from '../util/FileWatcher';
+import { getRelativePatternForWorkspace } from '../util/getRelativePatternForWorkspace';
 import { isVirtualUri } from '../util/isVirtualUri';
 import { setContext } from '../util/setContext';
 import type { Aggregator } from './Aggregator';
 import type { ConfigProvider } from './ConfigProvider';
 import type { GlobSpecifier } from './GlobSpecifier';
 import type { StorybookConfigLocation } from './StorybookConfigLocation';
+import { configFileExtensions } from './configFileExtensions';
+import { findConfigFileInDir } from './findConfigFileInDir';
 import { interpretStoriesConfigItem } from './normalizeStoriesEntry';
 
 const setParsedConfigContext = (parsed: boolean) => {
@@ -25,10 +28,13 @@ const parseConfigUri = (uri: Uri) => {
   return undefined;
 };
 
-const getStoriesGlobsFromFileUri = async (
+const getStoriesGlobsFromLocation = async (
   location: StorybookConfigLocation,
 ): Promise<GlobSpecifier[] | undefined> => {
-  const fileUri = location.file;
+  const fileUri = await findConfigFileInDir(location.dir);
+  if (!fileUri) {
+    return undefined;
+  }
 
   const config = parseConfigUri(fileUri);
   const parsed = !!config;
@@ -113,20 +119,24 @@ export class StoriesGlobsDetectProvider
     this.configFileWatcher?.dispose();
     if (location) {
       this.configFileWatcher = new FileWatcher(
-        location.file,
+        getRelativePatternForWorkspace(
+          location.dir,
+          `main.{${configFileExtensions.join(',')}}`,
+        ),
+
         () => {
           this.handleReadAndUpdate(location).catch((e) => {
             logWarn('Failed to read updated config file', e, location);
           });
         },
-        true,
         false,
-        true,
+        false,
+        false,
       );
     }
 
     this.storiesGlobsConfig = location
-      ? await getStoriesGlobsFromFileUri(location)
+      ? await getStoriesGlobsFromLocation(location)
       : undefined;
   }
 }
