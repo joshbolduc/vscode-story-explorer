@@ -6,6 +6,6 @@ export const openStoriesGlobsSetting = () => async () => {
   try {
     await openWorkspaceSetting(storiesGlobsConfig);
   } catch (e) {
-    logError('Failed to open Storybook URL workspace setting', e);
+    logError('Failed to open stories glob workspace setting', e);
   }
 };
