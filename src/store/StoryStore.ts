@@ -2,6 +2,10 @@ import pLimit from 'p-limit';
 import { Disposable, EventEmitter, Uri, workspace } from 'vscode';
 import type { ConfigManager } from '../config/ConfigManager';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
+import {
+  initialLoadCompleteContext,
+  loadingStoriesContext,
+} from '../constants/constants';
 import { ConvertedGlob, convertGlob } from '../globs/convertGlob';
 import { convertGlobForWorkspace } from '../globs/convertGlobForWorkspace';
 import { logError, logWarn } from '../log/log';
@@ -12,6 +16,7 @@ import {
 import { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import { FileWatcher } from '../util/FileWatcher';
 import { Mailbox } from '../util/Mailbox';
+import { setContext } from '../util/setContext';
 import { strCompareFn } from '../util/strCompareFn';
 import { BackingMap } from './BackingMap';
 import { findFilesByGlob } from './findFilesByGlob';
@@ -32,6 +37,14 @@ const globMatchesUri = (glob: ConvertedGlob, uri: Uri) => {
 const globSpecifierMatchesUri = (uri: Uri) => {
   return (globSpecifier: GlobSpecifier) =>
     globMatchesUri(convertGlob(globSpecifier), uri);
+};
+
+const setLoadingStories = (loading: boolean) => {
+  setContext(loadingStoriesContext, loading);
+};
+
+const setInitialLoadComplete = (loading: boolean) => {
+  setContext(initialLoadCompleteContext, loading);
 };
 
 const MAX_CONCURRENT_FIND_OPERATIONS = 3;
@@ -181,6 +194,8 @@ export class StoryStore {
   private async init() {
     const globSpecifiers = this.configManager.getStoriesGlobsConfig();
 
+    setLoadingStories(true);
+
     this.globWatchers.push(
       ...globSpecifiers.map((globSpecifier) => {
         const { globPattern } = convertGlobForWorkspace(globSpecifier);
@@ -238,6 +253,9 @@ export class StoryStore {
     this.onDidUpdateStoryStoreEmitter.fire();
 
     this.initWaiter.put();
+
+    setInitialLoadComplete(true);
+    setLoadingStories(false);
   }
 
   private setWithoutNotify(uri: Uri, info: StoreMapEntry) {

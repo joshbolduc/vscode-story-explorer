@@ -2,12 +2,16 @@ import { makeFullConfigName } from '../util/makeFullConfigName';
 
 export const extensionName = 'Story Explorer';
 
+export const initialLoadCompleteContext = 'storyExplorer.initialLoadComplete';
 export const internalServerRunningContext =
   'storyExplorer.internalServerRunning';
+export const loadingStoriesContext = 'storyExplorer.loadingStories';
 export const storybookConfigDetectedContext =
   'storyExplorer.storybookConfigDetected';
 export const storybookConfigParsedContext =
   'storyExplorer.storybookConfigParsed';
+export const storybookConfigParseFailedContext =
+  'storyExplorer.storybookConfigParseFailed';
 export const storybookPreviewFocusedContext =
   'storyExplorer.storybookPreviewFocused';
 export const storybookWebviewsOpenContext =
@@ -21,6 +25,8 @@ export const openPreviewCommand = 'storyExplorer.openPreview';
 export const openPreviewInBrowserCommand = 'storyExplorer.openPreviewInBrowser';
 export const openPreviewToSideCommand = 'storyExplorer.openPreviewToSide';
 export const openStorybookConfigCommand = 'storyExplorer.openStorybookConfig';
+export const openStorybookConfigDirSettingCommand =
+  'storyExplorer.openStorybookConfigDirSetting';
 export const openStoriesGlobsSettingCommand =
   'storyExplorer.openStoriesGlobsSetting';
 export const openStorybookInBrowserCommand =

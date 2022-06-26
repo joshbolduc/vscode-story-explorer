@@ -8,6 +8,7 @@ import { openPreview } from './commands/openPreview';
 import { openPreviewInBrowser } from './commands/openPreviewInBrowser';
 import { openStoriesGlobsSetting } from './commands/openStoriesGlobsSetting';
 import { openStorybookConfig } from './commands/openStorybookConfig';
+import { openStorybookConfigDirSetting } from './commands/openStorybookConfigDirSetting';
 import { openStorybookInBrowser } from './commands/openStorybookInBrowser';
 import { openStorybookUrlSetting } from './commands/openStorybookUrlSetting';
 import { refreshAllWebviews } from './commands/refreshAllWebviews';
@@ -26,6 +27,7 @@ import {
   openPreviewToSideCommand,
   openStoriesGlobsSettingCommand,
   openStorybookConfigCommand,
+  openStorybookConfigDirSettingCommand,
   openStorybookInBrowserCommand,
   openStorybookUrlSettingCommand,
   refreshAllWebviewsCommand,
@@ -105,6 +107,10 @@ export const activate = async (context: ExtensionContext) => {
     registerCommand(
       openPreviewInBrowserCommand,
       openPreviewInBrowser(webviewManager, storyStore, serverManager),
+    );
+    registerCommand(
+      openStorybookConfigDirSettingCommand,
+      openStorybookConfigDirSetting(),
     );
     registerCommand(openStoriesGlobsSettingCommand, openStoriesGlobsSetting());
     registerCommand(openStorybookUrlSettingCommand, openStorybookUrlSetting());

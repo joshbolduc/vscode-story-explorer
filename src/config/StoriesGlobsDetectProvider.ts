@@ -1,5 +1,8 @@
 import { Disposable, EventEmitter, Uri } from 'vscode';
-import { storybookConfigParsedContext } from '../constants/constants';
+import {
+  storybookConfigParsedContext,
+  storybookConfigParseFailedContext,
+} from '../constants/constants';
 import { logWarn } from '../log/log';
 
 import { getStoriesGlobs } from '../storybook/getStoriesGlobs';
@@ -16,8 +19,16 @@ import { configFileExtensions } from './configFileExtensions';
 import { findConfigFileInDir } from './findConfigFileInDir';
 import { interpretStoriesConfigItem } from './normalizeStoriesEntry';
 
+const setParseFailedConfigContext = (failed: boolean) => {
+  setContext(storybookConfigParseFailedContext, failed);
+};
 const setParsedConfigContext = (parsed: boolean) => {
   setContext(storybookConfigParsedContext, parsed);
+};
+
+const resetConfigContext = () => {
+  setParsedConfigContext(false);
+  setParseFailedConfigContext(false);
 };
 
 const parseConfigUri = (uri: Uri) => {
@@ -39,6 +50,7 @@ const getStoriesGlobsFromLocation = async (
   const config = parseConfigUri(fileUri);
   const parsed = !!config;
   setParsedConfigContext(parsed);
+  setParseFailedConfigContext(!parsed);
 
   if (!parsed) {
     return undefined;
@@ -96,6 +108,8 @@ export class StoriesGlobsDetectProvider
   public stop(): void {
     this.configLocationListener?.dispose();
     this.configLocationListener = undefined;
+
+    resetConfigContext();
   }
 
   public dispose(): void {
@@ -116,6 +130,8 @@ export class StoriesGlobsDetectProvider
   private async readGlobsFromLocation(
     location: StorybookConfigLocation | undefined,
   ) {
+    resetConfigContext();
+
     this.configFileWatcher?.dispose();
     if (location) {
       this.configFileWatcher = new FileWatcher(

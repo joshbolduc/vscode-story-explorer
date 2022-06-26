@@ -393,21 +393,30 @@
           "id": "storyExplorer.storiesView",
           "name": "Stories",
           "contextualTitle": "Story Explorer",
-          "icon": "$(bookmark)",
-          "when": "storyExplorer.storybookConfigDetected"
+          "icon": "$(bookmark)"
         }
       ]
     },
     "viewsWelcome": [
       {
         "view": "storyExplorer.storiesView",
-        "contents": "There was a problem parsing your Storybook configuration. [Check your Storybook configuration](command:storyExplorer.openStorybookConfig), or [try manually specifying your project's stories](command:storyExplorer.openStoriesGlobsSetting).",
-        "when": "storyExplorer.storybookConfigDetected && !storyExplorer.storybookConfigParsed"
+        "contents": "Looking for stories...",
+        "when": "!storyExplorer.initialLoadComplete || storyExplorer.loadingStories"
       },
       {
         "view": "storyExplorer.storiesView",
-        "contents": "No stories were found. Add a story to see it appear here, or [check your Storybook configuration](command:storyExplorer.openStorybookConfig).",
-        "when": "storyExplorer.storybookConfigParsed"
+        "contents": "No Storybook configuration or stories were found. Try manually specifying your project's [configuration directory](command:storyExplorer.openStorybookConfigDirSetting) or [stories](command:storyExplorer.openStoriesGlobsSetting).",
+        "when": "storyExplorer.initialLoadComplete && !storyExplorer.loadingStories && !storyExplorer.storybookConfigDetected"
+      },
+      {
+        "view": "storyExplorer.storiesView",
+        "contents": "There was a problem parsing your Storybook configuration. [Check your Storybook configuration](command:storyExplorer.openStorybookConfig), or [try manually specifying your project's stories](command:storyExplorer.openStoriesGlobsSetting).",
+        "when": "storyExplorer.initialLoadComplete && !storyExplorer.loadingStories && storyExplorer.storybookConfigDetected && storyExplorer.storybookConfigParseFailed"
+      },
+      {
+        "view": "storyExplorer.storiesView",
+        "contents": "No stories were found. Add a story to see it appear here, or [check your Storybook configuration](command:storyExplorer.openStorybookConfig), or [try manually specifying your project's stories](command:storyExplorer.openStoriesGlobsSetting).",
+        "when": "storyExplorer.initialLoadComplete && !storyExplorer.loadingStories && storyExplorer.storybookConfigDetected && !storyExplorer.storybookConfigParseFailed"
       }
     ]
   },
