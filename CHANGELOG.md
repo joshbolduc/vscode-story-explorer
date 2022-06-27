@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.6](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.5...v0.5.6) (2022-06-27)
+
+### Bug Fixes
+
+- detect storybook configurations with non-`.js` extensions ([0e61e74](https://github.com/joshbolduc/vscode-story-explorer/commit/0e61e749c5bf7d31e397cf396e10b7f882e204d6)), closes [#451](https://github.com/joshbolduc/vscode-story-explorer/issues/451)
+- fix typo in error message ([9f4a937](https://github.com/joshbolduc/vscode-story-explorer/commit/9f4a9374a8bf3cc9737cc95a07a45f1865e58ca0))
+- improve messaging when no stories found ([ac48ac1](https://github.com/joshbolduc/vscode-story-explorer/commit/ac48ac152fca2ca8779d29b8a6716e9c3f97e0a0))
+
 ### [0.5.5](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.4...v0.5.5) (2022-06-16)
 
 ### Bug Fixes
