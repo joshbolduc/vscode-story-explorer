@@ -9,7 +9,7 @@ import { strCompareFn } from '../util/strCompareFn';
 const getDetectedStorybookBinPath = async (): Promise<string | undefined> => {
   const matches = await workspace.findFiles(
     '**/node_modules/.bin/start-storybook',
-    undefined,
+    null,
   );
 
   const [match] = matches
