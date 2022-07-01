@@ -60,6 +60,14 @@ const stringify = (item: unknown) => {
     }`;
   }
 
+  if (typeof item === 'object' && String(item) === '[object Object]') {
+    try {
+      return JSON.stringify(item);
+    } catch {
+      // fall through
+    }
+  }
+
   return item;
 };
 
