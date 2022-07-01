@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.7](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.6...v0.5.7) (2022-07-01)
+
+### Bug Fixes
+
+- ignore default excludes when searching for start-storybook ([8a6b408](https://github.com/joshbolduc/vscode-story-explorer/commit/8a6b408afb7e044d86843d413ac2b15b114204a4))
+
 ### [0.5.6](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.5...v0.5.6) (2022-06-27)
 
 ### Bug Fixes
