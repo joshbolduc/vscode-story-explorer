@@ -8,7 +8,7 @@ import {
   iframePath,
   storyScriptPath,
 } from '../../common/constants';
-import { logError, logWarn } from '../log/log';
+import { logDebug, logError, logWarn } from '../log/log';
 import type { ServerManager } from '../server/ServerManager';
 
 import { Cacheable } from '../util/Cacheable';
@@ -96,6 +96,8 @@ export class ProxyServer {
 
     return new Promise<Server>((resolve) => {
       server.listen(0, () => {
+        const addressInfo = server.address() as AddressInfo;
+        logDebug(`Started proxy server on port ${addressInfo.port}`);
         resolve(server);
       });
     });

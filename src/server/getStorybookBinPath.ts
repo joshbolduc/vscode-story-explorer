@@ -3,6 +3,7 @@ import {
   configPrefix,
   serverInternalStorybookBinaryPathConfigSuffix,
 } from '../constants/constants';
+import { logDebug } from '../log/log';
 import { pathDepthCompareFn } from '../util/pathDepthCompareFn';
 import { strCompareFn } from '../util/strCompareFn';
 
@@ -23,7 +24,17 @@ const getDetectedStorybookBinPath = async (): Promise<string | undefined> => {
         strCompareFn(a.relativePath, b.relativePath),
     );
 
-  return match?.uri.fsPath;
+  const fsPath = match?.uri.fsPath;
+
+  if (fsPath) {
+    logDebug(
+      `Detected ${matches.length} match(es) for start-storybook, selecting ${fsPath}`,
+    );
+  } else {
+    logDebug(`Detected ${matches.length} matches for start-storybook`);
+  }
+
+  return fsPath;
 };
 
 export const getStorybookBinPath = ():
