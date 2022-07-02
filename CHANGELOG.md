@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.8](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.7...v0.5.8) (2022-07-02)
+
+### Bug Fixes
+
+- add more debug logging ([3286b72](https://github.com/joshbolduc/vscode-story-explorer/commit/3286b72a303d62970ff066292abcbcb383047b29))
+- improve logging of objects ([51c26d8](https://github.com/joshbolduc/vscode-story-explorer/commit/51c26d8ba1318e1d13b191b15cf74e233d97596a))
+
 ### [0.5.7](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.6...v0.5.7) (2022-07-01)
 
 ### Bug Fixes
