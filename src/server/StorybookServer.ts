@@ -17,12 +17,15 @@ export class StorybookServer {
   private readonly taskExecutor = new TaskExecutor(
     () => this.createTask(),
     ({ processId }) => {
+      logDebug(`Scanning process ${processId} for opened port`);
+
       // This approach assumes that the launched process is the development
       // server. If this process opens multiple ports or spawns another process
       // that's the actual server, this won't work.
       pollForPort(processId)
         .then((port) => {
           const url = `http://localhost:${port}`;
+          logDebug(`Detected Storybook server URL as ${url}`);
           this.urlMailbox.put(url);
         })
         .catch((err) => {
@@ -94,6 +97,7 @@ export class StorybookServer {
           const finalResponse = await poll<IncomingMessage, undefined>(
             async () => {
               try {
+                logDebug(`Sending request to ${url}`);
                 return await fetch(url, token);
               } catch (e: unknown) {
                 if (e instanceof TimeoutError) {

@@ -158,10 +158,14 @@ export class StoryWebview {
 
             // undefined URL suggests server launch was canceled
             if (!storybookUrl) {
+              logDebug('Closing webview in response to canceled launch');
               this.close();
               return;
             }
 
+            logDebug(
+              `Loading URL ${storybookUrl} in webview via proxy port ${proxyPort}`,
+            );
             await this.finishLoading(storybookUrl, proxyPort);
           } catch (err) {
             logError('Failed to complete webview initialization', err);
