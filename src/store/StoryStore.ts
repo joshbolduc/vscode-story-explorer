@@ -92,8 +92,9 @@ export class StoryStore {
   }
 
   public delete(uri: Uri) {
-    this.backingMap.delete(uri);
-    this.onDidUpdateStoryStoreEmitter.fire();
+    if (this.backingMap.delete(uri)) {
+      this.onDidUpdateStoryStoreEmitter.fire();
+    }
   }
 
   public getStoryById(id: string) {
