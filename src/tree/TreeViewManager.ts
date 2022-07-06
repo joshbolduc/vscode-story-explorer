@@ -1,7 +1,6 @@
 import {
   CancellationToken,
   CancellationTokenSource,
-  Disposable,
   ExtensionContext,
   TreeView,
   Uri,
@@ -42,7 +41,6 @@ const findEntryByStoryId = (
 export class TreeViewManager {
   private readonly provider: StoryTreeDataProvider;
   private readonly view: TreeView<TreeNode>;
-  private readonly storeListener: Disposable;
 
   private activateCancellationTokenSource?: CancellationTokenSource;
   private readonly activeTextEditorWatcher = window.onDidChangeActiveTextEditor(
@@ -76,10 +74,6 @@ export class TreeViewManager {
       treeDataProvider: this.provider,
       showCollapseAll: true,
     });
-
-    this.storeListener = storyStore.onDidUpdateStoryStore(() => {
-      this.provider.refreshAll();
-    });
   }
 
   public static init(context: ExtensionContext, storyStore: StoryStore) {
@@ -108,7 +102,6 @@ export class TreeViewManager {
 
   public dispose() {
     this.view.dispose();
-    this.storeListener.dispose();
     this.activeTextEditorWatcher.dispose();
     this.activeColorThemeWatcher.dispose();
     this.provider.dispose();
