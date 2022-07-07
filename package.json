@@ -261,7 +261,7 @@
         "storyExplorer.server.internal.enabled": {
           "scope": "window",
           "markdownDescription": "Controls whether to enable the internal Storybook development server. When unchecked, you will have to run the server externally.",
-          "default": "true",
+          "default": true,
           "type": "boolean"
         },
         "storyExplorer.server.internal.behavior": {
