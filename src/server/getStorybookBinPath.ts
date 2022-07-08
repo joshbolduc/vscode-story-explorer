@@ -1,4 +1,5 @@
-import { workspace } from 'vscode';
+import { Uri, workspace } from 'vscode';
+import { Utils } from 'vscode-uri';
 import {
   configPrefix,
   serverInternalStorybookBinaryPathConfigSuffix,
@@ -6,8 +7,43 @@ import {
 import { logDebug } from '../log/log';
 import { pathDepthCompareFn } from '../util/pathDepthCompareFn';
 import { strCompareFn } from '../util/strCompareFn';
+import { tryStat } from '../util/tryStat';
 
-const getDetectedStorybookBinPath = async (): Promise<string | undefined> => {
+const getDetectedStorybookBinPathFromConfigDir = async (
+  configDir: Uri | undefined,
+): Promise<string | undefined> => {
+  if (configDir) {
+    logDebug('Looking for start-storybook from config dir', configDir);
+
+    const workspaceFolder = workspace.getWorkspaceFolder(configDir);
+    let currentDir = configDir;
+
+    do {
+      const proposedPath = Utils.joinPath(
+        currentDir,
+        'node_modules',
+        '.bin',
+        'start-storybook',
+      );
+      if (await tryStat(proposedPath)) {
+        logDebug('Found start-storybook from config dir', proposedPath);
+        return proposedPath.fsPath;
+      }
+
+      currentDir = Utils.dirname(currentDir);
+    } while (
+      workspaceFolder &&
+      workspaceFolder.uri.toString() ===
+        workspace.getWorkspaceFolder(currentDir)?.uri.toString()
+    );
+  }
+
+  return undefined;
+};
+
+const getDetectedStorybookBinPathFromWorkspaceSearch = async (): Promise<
+  string | undefined
+> => {
   const matches = await workspace.findFiles(
     '**/node_modules/.bin/start-storybook',
     null,
@@ -37,10 +73,18 @@ const getDetectedStorybookBinPath = async (): Promise<string | undefined> => {
   return fsPath;
 };
 
-export const getStorybookBinPath = ():
-  | string
-  | Promise<string | undefined>
-  | undefined => {
+const getDetectedStorybookBinPath = async (
+  configDir: Uri | undefined,
+): Promise<string | undefined> => {
+  return (
+    (await getDetectedStorybookBinPathFromConfigDir(configDir)) ??
+    (await getDetectedStorybookBinPathFromWorkspaceSearch())
+  );
+};
+
+export const getStorybookBinPath = (
+  configDir: Uri | undefined,
+): string | Promise<string | undefined> | undefined => {
   const configuredPath = workspace
     .getConfiguration(configPrefix)
     .get(serverInternalStorybookBinaryPathConfigSuffix);
@@ -49,5 +93,5 @@ export const getStorybookBinPath = ():
     return configuredPath;
   }
 
-  return getDetectedStorybookBinPath();
+  return getDetectedStorybookBinPath(configDir);
 };

@@ -161,8 +161,8 @@ export class StorybookServer {
   }
 
   private async createTask() {
-    const binPath = await getStorybookBinPath();
     const configDir = this.configManager.getConfigDir();
+    const binPath = await getStorybookBinPath(configDir);
     const cwd = configDir
       ? workspace.getWorkspaceFolder(configDir)?.uri
       : undefined;
