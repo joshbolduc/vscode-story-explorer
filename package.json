@@ -451,7 +451,7 @@
   "devDependencies": {
     "@babel/parser": "7.18.5",
     "@babel/traverse": "7.18.5",
-    "@babel/types": "7.18.4",
+    "@babel/types": "7.18.7",
     "@commitlint/config-conventional": "17.0.2",
     "@componentdriven/csf": "0.0.2-alpha.0",
     "@mdx-js/mdx": "1.6.22",
