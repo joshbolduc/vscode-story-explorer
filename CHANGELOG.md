@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.10](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.9...v0.5.10) (2022-07-08)
+
+### Bug Fixes
+
+- default `server.internal.enabled` value should be boolean ([f1056ea](https://github.com/joshbolduc/vscode-story-explorer/commit/f1056ea0bdb9ee8fa4011d0e8a403fca3aa59dd0))
+- improve start-storybook script detection ([cf68b06](https://github.com/joshbolduc/vscode-story-explorer/commit/cf68b06ea3a8af424bc0520537b2c9bc8f2e9100)), closes [#460](https://github.com/joshbolduc/vscode-story-explorer/issues/460)
+
 ### [0.5.9](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.8...v0.5.9) (2022-07-06)
 
 ### [0.5.8](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.7...v0.5.8) (2022-07-02)
