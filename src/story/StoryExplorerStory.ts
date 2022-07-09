@@ -31,11 +31,9 @@ export class StoryExplorerStory {
   public readonly isDocs: boolean;
 
   private constructor(
-    private readonly story: Pick<
-      StoryExplorerStory,
-      'id' | 'name' | 'location' | 'isDocs'
-    >,
+    story: Pick<StoryExplorerStory, 'id' | 'name' | 'location' | 'isDocs'>,
     private readonly storyFile: StoryExplorerStoryFile,
+    public readonly label: string,
   ) {
     this.id = story.id;
     this.name = story.name;
@@ -51,9 +49,9 @@ export class StoryExplorerStory {
       return undefined;
     }
 
-    const [nameFromTitle = ''] = splitKind(title).slice(-1);
+    const [label = ''] = splitKind(title).slice(-1);
 
-    const name = storyFile.isDocsOnly() ? DOCS_ONLY_STORY_NAME : nameFromTitle;
+    const name = storyFile.isDocsOnly() ? DOCS_ONLY_STORY_NAME : label;
 
     return new StoryExplorerStory(
       {
@@ -63,6 +61,7 @@ export class StoryExplorerStory {
         isDocs: true,
       },
       storyFile,
+      label,
     );
   }
 
@@ -84,6 +83,7 @@ export class StoryExplorerStory {
         isDocs: false,
       },
       storyFile,
+      name,
     );
   }
 
@@ -100,7 +100,7 @@ export class StoryExplorerStory {
   }
 
   public getOpenCommand(viewColumn?: ViewColumn) {
-    const location = this.story.location;
+    const location = this.location;
 
     return createOpenInEditorCommand(this.storyFile.getUri(), {
       selection: location

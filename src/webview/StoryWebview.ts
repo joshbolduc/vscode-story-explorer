@@ -214,7 +214,7 @@ export class StoryWebview {
       this.serverManager.ensureServerHealthy(),
     );
 
-    this.panel.title = this.story.name;
+    this.panel.title = this.story.label;
 
     this.panel.iconPath = {
       dark: getIconPath(this.story.getIconName(), this.context, 'dark'),
