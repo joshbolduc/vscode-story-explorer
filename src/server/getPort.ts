@@ -12,7 +12,10 @@ const getPortNetstat = (pid: number) =>
           if (error) {
             logWarn('Got error running netstat', error);
             reject(new Error(error));
+            return;
           }
+
+          resolve(undefined);
         },
       },
       (data) => {
