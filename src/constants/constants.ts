@@ -34,6 +34,7 @@ export const openStorybookInBrowserCommand =
 export const openStorybookUrlSettingCommand =
   'storyExplorer.openStorybookUrlSetting';
 export const refreshAllWebviewsCommand = 'storyExplorer.refreshAllWebviews';
+export const refreshStoriesCommand = 'storyExplorer.refreshStories';
 export const refreshWebviewCommand = 'storyExplorer.refreshWebview';
 export const restartStorybookServerCommand =
   'storyExplorer.restartStorybookServer';

@@ -68,9 +68,7 @@ export class StoryStore {
 
   private constructor(private readonly configManager: ConfigManager) {
     this.configWatcher = configManager.onDidChangeStoriesGlobsConfig(() => {
-      this.clearBackingMap();
-      this.clearGlobWatchers();
-      this.init().catch((e) => {
+      this.refreshAll().catch((e) => {
         logError(
           'Failed to initialize story store after globs config change',
           e,
@@ -169,6 +167,12 @@ export class StoryStore {
     const globSpecifiers = this.configManager.getStoriesGlobsConfig();
 
     return globSpecifiers.filter(globSpecifierMatchesUri(uri));
+  }
+
+  public refreshAll() {
+    this.clearBackingMap();
+    this.clearGlobWatchers();
+    return this.init();
   }
 
   public async refresh(uri: Uri) {
