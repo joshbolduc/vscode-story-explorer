@@ -69,6 +69,13 @@
         "icon": "$(open-preview)"
       },
       {
+        "command": "storyExplorer.refreshStories",
+        "title": "Refresh Stories",
+        "shortTitle": "Refresh",
+        "category": "Story Explorer",
+        "icon": "$(refresh)"
+      },
+      {
         "command": "storyExplorer.refreshWebview",
         "title": "Refresh Preview",
         "category": "Story Explorer",
@@ -382,6 +389,11 @@
         },
         {
           "command": "storyExplorer.openStorybookInBrowser",
+          "when": "view == storyExplorer.storiesView",
+          "group": "navigation"
+        },
+        {
+          "command": "storyExplorer.refreshStories",
           "when": "view == storyExplorer.storiesView",
           "group": "navigation"
         }
