@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.10...v0.6.0) (2022-07-14)
+
+### Features
+
+- add refresh stories command ([99ebe84](https://github.com/joshbolduc/vscode-story-explorer/commit/99ebe846bb14b0dddfb2c33d557506afcbd13966))
+
+### Bug Fixes
+
+- use kind name as webview title for docs ([60fd979](https://github.com/joshbolduc/vscode-story-explorer/commit/60fd979f639c8b4471653ec32dda3a1adfe194ec))
+
 ### [0.5.10](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.9...v0.5.10) (2022-07-08)
 
 ### Bug Fixes
