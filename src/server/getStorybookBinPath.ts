@@ -1,3 +1,4 @@
+import { platform } from 'process';
 import { Uri, workspace } from 'vscode';
 import { Utils } from 'vscode-uri';
 import {
@@ -9,6 +10,19 @@ import { pathDepthCompareFn } from '../util/pathDepthCompareFn';
 import { strCompareFn } from '../util/strCompareFn';
 import { tryStat } from '../util/tryStat';
 
+const getSearchGlobSuffix = () => {
+  if (platform === 'win32') {
+    return 'start-storybook.cmd';
+  }
+  return 'start-storybook';
+};
+
+const getSearchGlobParts = () => [
+  'node_modules',
+  '.bin',
+  getSearchGlobSuffix(),
+];
+
 const getDetectedStorybookBinPathFromConfigDir = async (
   configDir: Uri | undefined,
 ): Promise<string | undefined> => {
@@ -19,12 +33,7 @@ const getDetectedStorybookBinPathFromConfigDir = async (
     let currentDir = configDir;
 
     do {
-      const proposedPath = Utils.joinPath(
-        currentDir,
-        'node_modules',
-        '.bin',
-        'start-storybook',
-      );
+      const proposedPath = Utils.joinPath(currentDir, ...getSearchGlobParts());
       if (await tryStat(proposedPath)) {
         logDebug('Found start-storybook from config dir', proposedPath);
         return proposedPath.fsPath;
@@ -45,7 +54,7 @@ const getDetectedStorybookBinPathFromWorkspaceSearch = async (): Promise<
   string | undefined
 > => {
   const matches = await workspace.findFiles(
-    '**/node_modules/.bin/start-storybook',
+    `**/${getSearchGlobParts().join('/')}`,
     null,
   );
 
