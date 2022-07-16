@@ -1,13 +1,13 @@
 import { exec } from 'child_process';
 import { platform } from 'process';
 import netstat from 'node-netstat';
+import pidtree from 'pidtree';
 import { logWarn } from '../log/log';
 
-const getPortNetstat = (pid: number) =>
+const getPortNetstat = (pids: number[]) =>
   new Promise<number | undefined>((resolve, reject) => {
     netstat(
       {
-        filter: { pid },
         done: (error) => {
           if (error) {
             logWarn('Got error running netstat', error);
@@ -19,14 +19,16 @@ const getPortNetstat = (pid: number) =>
         },
       },
       (data) => {
-        resolve(data.local.port ?? undefined);
+        if (data.local.port && pids.includes(data.pid)) {
+          resolve(data.local.port);
+        }
       },
     );
   });
 
-const getPortLsOf = (pid: number) =>
+const getPortLsOf = (pids: number[]) =>
   new Promise<number | undefined>((resolve, reject) => {
-    exec(`lsof -aPi -Fn -p ${Number(pid)}`, (error, stdout) => {
+    exec(`lsof -aPi -Fn -p ${pids.map(Number).join(',')}`, (error, stdout) => {
       if (error) {
         if (error.code === 1) {
           resolve(undefined);
@@ -47,10 +49,13 @@ const getPortLsOf = (pid: number) =>
     });
   });
 
-export const getPort = (pid: number) => {
+export const getPort = async (rootPid: number) => {
+  const childPids = await pidtree(rootPid);
+  const allPids = [rootPid, ...childPids];
+
   if (platform === 'win32') {
-    return getPortNetstat(pid);
+    return getPortNetstat(allPids);
   }
 
-  return getPortLsOf(pid);
+  return getPortLsOf(allPids);
 };

@@ -17,11 +17,10 @@ export class StorybookServer {
   private readonly taskExecutor = new TaskExecutor(
     () => this.createTask(),
     ({ processId }) => {
-      logDebug(`Scanning process ${processId} for opened port`);
+      logDebug(
+        `Scanning process ${processId} and child processes for opened port`,
+      );
 
-      // This approach assumes that the launched process is the development
-      // server. If this process opens multiple ports or spawns another process
-      // that's the actual server, this won't work.
       pollForPort(processId)
         .then((port) => {
           const url = `http://localhost:${port}`;
