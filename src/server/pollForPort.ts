@@ -2,8 +2,8 @@ import { poll } from '../util/poll';
 import { getPort } from './getPort';
 
 export const pollForPort = async (
-  pid: number,
+  rootPid: number,
   interval = 2000,
 ): Promise<number> => {
-  return poll(() => getPort(pid), interval);
+  return poll(() => getPort(rootPid), interval);
 };

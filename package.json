@@ -490,6 +490,7 @@
     "node-netstat": "1.8.0",
     "p-limit": "4.0.0",
     "picomatch": "2.3.1",
+    "pidtree": "0.6.0",
     "prettier": "2.7.0",
     "standard-version": "9.5.0",
     "ts-eager": "2.0.2",
