@@ -60,18 +60,14 @@ export const createTask = (
   cwd: Uri | undefined,
   configDir: Uri | undefined,
 ) => {
-  const processExecution = new ProcessExecution(
-    'node',
-    [binPath, ...(getArgs() ?? [])],
-    {
-      cwd: cwd?.fsPath,
-      env: {
-        CI: 'true',
-        ...(configDir && { SBCONFIG_CONFIG_DIR: configDir.fsPath }),
-        ...getEnvironmentVariables(),
-      },
+  const processExecution = new ProcessExecution(binPath, getArgs() ?? [], {
+    cwd: cwd?.fsPath,
+    env: {
+      CI: 'true',
+      ...(configDir && { SBCONFIG_CONFIG_DIR: configDir.fsPath }),
+      ...getEnvironmentVariables(),
     },
-  );
+  });
 
   const task = new Task(
     { type: 'storyExplorerTask' },
