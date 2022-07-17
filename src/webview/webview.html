@@ -31,19 +31,17 @@
         margin: 16px;
       }
 
-      @keyframes load {
-        from {
-          transform: translateX(-100%) scaleX(0.6);
-          animation-timing-function: ease-in;
+      @keyframes progress {
+        0% {
+          transform: translateX(0) scaleX(1);
         }
 
         50% {
-          transform: translateX(0) scaleX(1);
-          animation-timing-function: ease-out;
+          transform: translateX(2500%) scaleX(3);
         }
 
         to {
-          transform: translateX(100%) scaleX(0.6);
+          transform: translateX(4900%) scaleX(1);
         }
       }
 
@@ -54,16 +52,22 @@
       }
 
       .loading-bar-inner {
-        animation: load 2s infinite;
-        transform-origin: 50% 50%;
+        height: 2px;
+        width: 2%;
+        position: absolute;
+        left: 0;
 
-        height: 100%;
-        width: 100%;
+        animation-name: progress;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        transform: translateZ(0);
+        animation-timing-function: linear;
+
         background-color: var(--vscode-progressBar-background);
       }
     </style>
     <div id="loading-container" class="loading">
-      <div class="loading-bar">
+      <div class="loading-bar" role="progressbar" aria-valuemin="0">
         <div class="loading-bar-inner"></div>
       </div>
       <div class="loading-message">Loading&hellip;</div>
