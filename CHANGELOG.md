@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.6.0...v0.6.1) (2022-07-17)
+
+### Bug Fixes
+
+- correctly poll for server port on win32 ([61c0f67](https://github.com/joshbolduc/vscode-story-explorer/commit/61c0f676718c7f2c9cf817b85c75f828905270e6))
+- execute start-storybook directly, not via node ([da6e134](https://github.com/joshbolduc/vscode-story-explorer/commit/da6e134aaf8e8af6462e06ba4d00360a65d7595d))
+- fix start-storybook detection on win32 ([fb567b9](https://github.com/joshbolduc/vscode-story-explorer/commit/fb567b9229893328ab77f06b021ba99b9555f182))
+- make webview loading animation more closely match vscode's ([070da69](https://github.com/joshbolduc/vscode-story-explorer/commit/070da69c57da573f15c32534210354a97489de0c))
+- scan child processes for opened storybook ports ([def9eac](https://github.com/joshbolduc/vscode-story-explorer/commit/def9eacfb1eda2889a20c98d9c06faf239e29741)), closes [#474](https://github.com/joshbolduc/vscode-story-explorer/issues/474)
+- set aria role on webview loading progress bar ([351850a](https://github.com/joshbolduc/vscode-story-explorer/commit/351850a033b83fcf1545a0926fdb4ccd7ccbff4d))
+
 ## [0.6.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.5.10...v0.6.0) (2022-07-14)
 
 ### Features
