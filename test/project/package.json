@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "6.5.8",
-    "@storybook/addon-essentials": "6.5.8",
+    "@storybook/addon-essentials": "6.5.13",
     "@storybook/cli": "6.5.8",
     "@storybook/react": "6.5.8"
   }
