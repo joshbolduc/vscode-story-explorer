@@ -41,7 +41,7 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - name: Read changelog
-        uses: yashanand1910/standard-release-notes@v1.2.1
+        uses: yashanand1910/standard-release-notes@v1.3.0
         id: changelog
         with:
           version: ${{ github.ref }}
