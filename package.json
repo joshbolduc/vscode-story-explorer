@@ -496,6 +496,6 @@
     "ts-eager": "2.0.2",
     "typescript": "4.7.4",
     "vsce": "2.15.0",
-    "vscode-uri": "3.0.3"
+    "vscode-uri": "3.0.7"
   }
 }
