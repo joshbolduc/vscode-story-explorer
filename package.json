@@ -464,7 +464,7 @@
     "@babel/parser": "7.20.7",
     "@babel/traverse": "7.20.12",
     "@babel/types": "7.20.7",
-    "@commitlint/config-conventional": "17.3.0",
+    "@commitlint/config-conventional": "17.4.2",
     "@componentdriven/csf": "0.0.2-alpha.0",
     "@mdx-js/mdx": "1.6.22",
     "@types/http-proxy": "1.17.9",
