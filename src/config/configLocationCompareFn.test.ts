@@ -20,7 +20,7 @@ describe('configLocationCompareFn', () => {
 
     expect(candidates.sort(configLocationCompareFn).map((p) => p.relativePath))
       .toMatchInlineSnapshot(`
-      Array [
+      [
         "shallow/.storybook/main.js",
         "deep/path/.storybook/main.js",
         "very/deep/path/.storybook/main.js",
@@ -37,7 +37,7 @@ describe('configLocationCompareFn', () => {
 
     expect(candidates.sort(configLocationCompareFn).map((p) => p.relativePath))
       .toMatchInlineSnapshot(`
-      Array [
+      [
         "shallow/.storybook/main.ts",
         "deep/path/.storybook/main.js",
         "very/deep/path/.storybook/main.js",
@@ -60,7 +60,7 @@ describe('configLocationCompareFn', () => {
 
     expect(candidates.sort(configLocationCompareFn).map((p) => p.relativePath))
       .toMatchInlineSnapshot(`
-      Array [
+      [
         ".storybook/main.js",
         ".storybook/main.jsx",
         ".storybook/main.ts",
