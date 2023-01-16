@@ -18,7 +18,7 @@ import { createMessenger, Messenger } from './createMessenger';
 import webviewHtml from './webview.html';
 
 export class StoryWebview {
-  private panel: WebviewPanel;
+  private readonly panel: WebviewPanel;
   private readonly messenger: Messenger;
   private readyListener?: Disposable;
 
