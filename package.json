@@ -461,7 +461,7 @@
     }
   },
   "devDependencies": {
-    "@babel/parser": "7.18.8",
+    "@babel/parser": "7.20.7",
     "@babel/traverse": "7.18.8",
     "@babel/types": "7.20.7",
     "@commitlint/config-conventional": "17.3.0",
