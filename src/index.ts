@@ -56,7 +56,7 @@ export const activate = async (context: ExtensionContext) => {
   logInfo('Starting extension activation');
 
   const registerCommand = (
-    ...args: Parameters<typeof commands['registerCommand']>
+    ...args: Parameters<(typeof commands)['registerCommand']>
   ) => {
     addSubscription(commands.registerCommand(...args));
   };
