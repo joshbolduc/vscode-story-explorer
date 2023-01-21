@@ -8,11 +8,11 @@ import { defaultCsfQuoteCharacters } from './defaultCsfQuoteCharacters';
 import { defaultMdxQuoteCharacters } from './defaultMdxQuoteCharacters';
 
 export class TitleCompletionManager {
-  private csfProvider?: CsfTitleCompletionProvider;
-  private csfRegistration?: Disposable;
+  private csfProvider?: CsfTitleCompletionProvider | undefined;
+  private csfRegistration?: Disposable | undefined;
 
-  private mdxProvider?: MdxTitleCompletionProvider;
-  private mdxRegistration?: Disposable;
+  private mdxProvider?: MdxTitleCompletionProvider | undefined;
+  private mdxRegistration?: Disposable | undefined;
 
   private readonly settingsWatcher = new SettingsWatcher<boolean>(
     suggestTitleConfigSuffix,

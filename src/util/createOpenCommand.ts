@@ -3,7 +3,7 @@ import type { TextDocumentShowOptions, Uri } from 'vscode';
 interface OpenCommandParams {
   title?: string;
   tooltip?: string;
-  arguments: readonly [uri: Uri, options?: TextDocumentShowOptions];
+  arguments: readonly [uri: Uri, options?: TextDocumentShowOptions | undefined];
 }
 
 export interface OpenCommandStaticProperties {

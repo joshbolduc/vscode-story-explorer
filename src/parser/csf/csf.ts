@@ -47,8 +47,8 @@ const parseCsf = (contents: string): RawParsedStoryFile | undefined => {
   const stories = parsed.stories
     .filter(({ exportName }) => {
       return isExportStory(exportName, {
-        excludeStories,
-        includeStories,
+        ...(excludeStories !== undefined && { excludeStories }),
+        ...(includeStories !== undefined && { includeStories }),
       });
     })
     .map((story) => {

@@ -9,8 +9,8 @@ import { SettingsWatcher } from '../util/SettingsWatcher';
 import { StoryCodeLensProvider } from './StoryCodeLensProvider';
 
 export class CodeLensManager {
-  private provider?: StoryCodeLensProvider;
-  private registration?: Disposable;
+  private provider?: StoryCodeLensProvider | undefined;
+  private registration?: Disposable | undefined;
 
   private readonly docsSettingsWatcher = new SettingsWatcher(
     codeLensDocsEnabledConfigSuffix,

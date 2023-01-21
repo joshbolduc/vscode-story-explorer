@@ -40,11 +40,12 @@ export const openPreviewInBrowser =
     }
 
     const storyId = story.id;
-    const uriToOpen = Uri.parse(host, true).with({
-      query: storyId
-        ? `path=/${story.getType()}/${encodeURIComponent(storyId)}`
-        : undefined,
-    });
+    const baseUri = Uri.parse(host, true);
+    const uriToOpen = storyId
+      ? baseUri.with({
+          query: `path=/${story.getType()}/${encodeURIComponent(storyId)}`,
+        })
+      : baseUri;
 
     try {
       await env.openExternal(uriToOpen);

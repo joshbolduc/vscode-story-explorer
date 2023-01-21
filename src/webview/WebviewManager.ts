@@ -20,9 +20,9 @@ import { setStorybookPreviewFocused } from './setStorybookPreviewFocused';
 
 export class WebviewManager {
   private readonly storyIdToWebviewMap = new Map<string, StoryWebview>();
-  private lastActiveStoryId?: string;
-  private panelViewStateChangeListener?: Disposable;
-  private panelDisposeListener?: Disposable;
+  private lastActiveStoryId?: string | undefined;
+  private panelViewStateChangeListener?: Disposable | undefined;
+  private panelDisposeListener?: Disposable | undefined;
   private readonly deserializerListener: Disposable;
 
   private readonly webviewPanelSerializer: WebviewPanelSerializer<

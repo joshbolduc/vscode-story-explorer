@@ -20,7 +20,7 @@ import webviewHtml from './webview.html';
 export class StoryWebview {
   private readonly panel: WebviewPanel;
   private readonly messenger: Messenger;
-  private readyListener?: Disposable;
+  private readyListener?: Disposable | undefined;
 
   private constructor(
     story: StoryExplorerStory,

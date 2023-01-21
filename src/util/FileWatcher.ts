@@ -13,7 +13,7 @@ export type WatchListener = (
 ) => void;
 
 export class FileWatcher {
-  private fsWatcher?: FileSystemWatcher;
+  private fsWatcher?: FileSystemWatcher | undefined;
 
   private readonly glob: GlobPattern;
 

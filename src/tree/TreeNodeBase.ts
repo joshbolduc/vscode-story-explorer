@@ -12,7 +12,7 @@ export abstract class TreeNodeBase {
   /**
    * The node's parent, if any.
    */
-  public readonly parent?: KindTreeNode;
+  public readonly parent?: KindTreeNode | undefined;
   /**
    * The node's type. `kind` is any intermediate entry or file (including
    * docs-only stories and hoisted stories). `story` is a leaf node

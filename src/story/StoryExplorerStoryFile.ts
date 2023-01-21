@@ -6,7 +6,7 @@ import { getAutoTitleSuffixParts } from './getAutoTitleSuffixParts';
 import { getPartialFilePath } from './getPartialFilePath';
 
 export class StoryExplorerStoryFile {
-  public readonly docsStory?: StoryExplorerStory;
+  public readonly docsStory?: StoryExplorerStory | undefined;
 
   private readonly stories: StoryExplorerStory[];
 

@@ -1,4 +1,5 @@
 import { CompletionItem, CompletionItemKind } from 'vscode';
+import type { PartialOrUndefined } from '../types/PartialOrUndefined';
 
 export class TextCompletionItem extends CompletionItem {
   private constructor(
@@ -6,12 +7,16 @@ export class TextCompletionItem extends CompletionItem {
     {
       commitCharacters,
       range,
-    }: Pick<CompletionItem, 'commitCharacters' | 'range'>,
+    }: PartialOrUndefined<Pick<CompletionItem, 'commitCharacters' | 'range'>>,
   ) {
     super(name, CompletionItemKind.Text);
 
-    this.range = range;
-    this.commitCharacters = commitCharacters;
+    if (range !== undefined) {
+      this.range = range;
+    }
+    if (commitCharacters !== undefined) {
+      this.commitCharacters = commitCharacters;
+    }
   }
 
   public static create(
@@ -19,7 +24,7 @@ export class TextCompletionItem extends CompletionItem {
     {
       commitCharacters,
       range,
-    }: Pick<CompletionItem, 'commitCharacters' | 'range'>,
+    }: PartialOrUndefined<Pick<CompletionItem, 'commitCharacters' | 'range'>>,
   ) {
     return new TextCompletionItem(name, { commitCharacters, range });
   }

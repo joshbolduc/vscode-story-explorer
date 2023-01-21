@@ -13,7 +13,7 @@ export class KindTreeNode extends TreeNodeBase {
    */
   public readonly files: StoryExplorerStoryFile[] = [];
 
-  public docsStory?: StoryExplorerStory;
+  public docsStory?: StoryExplorerStory | undefined;
 
   /**
    * The node's children.

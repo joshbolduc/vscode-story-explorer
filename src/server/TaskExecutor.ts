@@ -13,8 +13,8 @@ import { openWorkspaceSetting } from '../util/openWorkspaceSetting';
 import { TaskProcessListener } from './TaskProcessListener';
 
 export class TaskExecutor {
-  private listener?: TaskProcessListener;
-  private execution?: TaskExecution;
+  private listener?: TaskProcessListener | undefined;
+  private execution?: TaskExecution | undefined;
 
   public constructor(
     private readonly taskFactory: () => Promise<Task | undefined>,
