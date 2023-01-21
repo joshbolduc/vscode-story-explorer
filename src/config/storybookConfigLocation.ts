@@ -16,7 +16,7 @@ import {
   tap,
   window,
 } from 'rxjs';
-import { GlobPattern, Uri, workspace } from 'vscode';
+import { GlobPattern, RelativePattern, Uri, workspace } from 'vscode';
 import { Utils } from 'vscode-uri';
 import { storybookConfigDetectedContext } from '../constants/constants';
 import { storybookConfigDirConfigSuffix } from '../constants/constants';
@@ -74,7 +74,7 @@ export const storybookConfigLocation: Observable<
     map(([fullGlob, root]): GlobPattern => {
       const rootPath = root?.fsPath;
 
-      return rootPath ? { base: rootPath, pattern: fullGlob } : fullGlob;
+      return rootPath ? new RelativePattern(rootPath, fullGlob) : fullGlob;
     }),
     distinctUntilChanged(),
     switchMap((globPattern) => {
