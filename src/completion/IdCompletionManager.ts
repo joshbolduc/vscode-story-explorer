@@ -6,8 +6,8 @@ import { MdxStoryIdCompletionProvider } from './MdxStoryIdCompletionProvider';
 import { defaultMdxQuoteCharacters } from './defaultMdxQuoteCharacters';
 
 export class IdCompletionManager {
-  private mdxIdProvider?: MdxStoryIdCompletionProvider;
-  private mdxIdRegistration?: Disposable;
+  private mdxIdProvider?: MdxStoryIdCompletionProvider | undefined;
+  private mdxIdRegistration?: Disposable | undefined;
 
   private readonly settingsWatcher = new SettingsWatcher<boolean>(
     suggestStoryIdConfigSuffix,

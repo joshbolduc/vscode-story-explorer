@@ -23,7 +23,7 @@ export class StoryExplorerStory {
   /**
    * The source location of the story's definition, if available.
    */
-  public readonly location?: Location;
+  public readonly location?: Location | undefined;
 
   /**
    * Whether this story is actually a docs entry.
@@ -103,15 +103,15 @@ export class StoryExplorerStory {
     const location = this.location;
 
     return createOpenInEditorCommand(this.storyFile.getUri(), {
-      selection: location
-        ? new Range(
-            location.start.line - 1,
-            location.start.column,
-            location.start.line - 1,
-            location.start.column,
-          )
-        : undefined,
-      viewColumn,
+      ...(location && {
+        selection: new Range(
+          location.start.line - 1,
+          location.start.column,
+          location.start.line - 1,
+          location.start.column,
+        ),
+      }),
+      ...(viewColumn !== undefined && { viewColumn }),
     });
   }
 

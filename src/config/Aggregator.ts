@@ -6,7 +6,7 @@ import type { ConfigProvider } from './ConfigProvider';
 class ProviderWrapper<T> {
   private started = false;
   private readonly listener: Disposable;
-  private cachedResult?: { value: T };
+  private cachedResult?: { value: T } | undefined;
 
   public constructor(
     private readonly provider: ConfigProvider<T>,
@@ -48,7 +48,7 @@ class ProviderWrapper<T> {
 export class Aggregator<T> {
   private readonly providers: ProviderWrapper<T>[];
 
-  private lastValue?: T;
+  private lastValue?: T | undefined;
   private hasFired = false;
 
   private readonly onDidChangeConfigEmitter = new EventEmitter<T | undefined>();

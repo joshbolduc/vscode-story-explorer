@@ -2,7 +2,7 @@
  * An object that lazily performs a predefined operation and caches its result.
  */
 export class Cacheable<T> {
-  private cachedResult?: { result: T };
+  private cachedResult?: { result: T } | undefined;
 
   /**
    * Initialize a new Cacheable with a given callback.

@@ -15,6 +15,7 @@
     "composite": true,
     "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true
   }
 }

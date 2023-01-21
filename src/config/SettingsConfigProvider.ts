@@ -3,7 +3,7 @@ import { SettingsWatcher } from '../util/SettingsWatcher';
 import type { ConfigProvider } from './ConfigProvider';
 
 export class SettingsConfigProvider<T, U> implements ConfigProvider<T> {
-  private settingsWatcher?: SettingsWatcher<U>;
+  private settingsWatcher?: SettingsWatcher<U> | undefined;
   private readonly onDidChangeConfigEmitter = new EventEmitter<
     | {
         value: T;

@@ -60,8 +60,9 @@ export const createTask = (
   cwd: Uri | undefined,
   configDir: Uri | undefined,
 ) => {
+  const cwdPath = cwd?.fsPath;
   const processExecution = new ProcessExecution(binPath, getArgs() ?? [], {
-    cwd: cwd?.fsPath,
+    ...(cwdPath && { cwd: cwdPath }),
     env: {
       CI: 'true',
       ...(configDir && { SBCONFIG_CONFIG_DIR: configDir.fsPath }),

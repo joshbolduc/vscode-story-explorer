@@ -22,9 +22,9 @@ export class StorybookConfigLocationDetectProvider
   // eslint-disable-next-line @typescript-eslint/member-ordering
   public readonly onDidChangeConfig = this.onDidChangeConfigEmitter.event;
 
-  private fileWatcher?: FileWatcher;
-  private deleteWatcher?: RecursiveDeleteWatcher;
-  private configLocation?: StorybookConfigLocation;
+  private fileWatcher?: FileWatcher | undefined;
+  private deleteWatcher?: RecursiveDeleteWatcher | undefined;
+  private configLocation?: StorybookConfigLocation | undefined;
 
   public async start() {
     if (!this.fileWatcher) {

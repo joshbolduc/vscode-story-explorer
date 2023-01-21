@@ -83,11 +83,11 @@ export class StoriesGlobsDetectProvider
   // eslint-disable-next-line @typescript-eslint/member-ordering
   public readonly onDidChangeConfig = this.onDidChangeConfigEmitter.event;
 
-  private configLocationListener?: Disposable;
+  private configLocationListener?: Disposable | undefined;
 
-  private storiesGlobsConfig?: GlobSpecifier[];
+  private storiesGlobsConfig?: GlobSpecifier[] | undefined;
 
-  private configFileWatcher?: FileWatcher;
+  private configFileWatcher?: FileWatcher | undefined;
 
   public constructor(
     private readonly configLocationAggregator: Aggregator<StorybookConfigLocation>,

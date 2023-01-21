@@ -12,7 +12,7 @@ import type { ServerMode } from './ServerMode';
 import { StorybookServer } from './StorybookServer';
 
 export class ServerManager {
-  private server?: StorybookServer;
+  private server?: StorybookServer | undefined;
   private readonly behaviorSettingsWatcher = new SettingsWatcher(
     serverInternalBehaviorConfigSuffix,
     () => {
