@@ -13,6 +13,7 @@ import type { ProxyManager } from '../proxy/ProxyManager';
 import type { ServerManager } from '../server/ServerManager';
 import type { StoryStore } from '../store/StoryStore';
 import type { StoryExplorerStory } from '../story/StoryExplorerStory';
+import type { ValueOrPromise } from '../util/ValueOrPromise';
 import { getIconPath } from '../util/getIconPath';
 import { createMessenger, Messenger } from './createMessenger';
 import webviewHtml from './webview.html';
@@ -138,8 +139,8 @@ export class StoryWebview {
   }
 
   public setLoading(
-    serverReadyPromise: string | Promise<string | undefined>,
-    proxyPortPromise: number | Promise<number>,
+    serverReadyPromise: NonNullable<ValueOrPromise<string | undefined>>,
+    proxyPortPromise: ValueOrPromise<number>,
   ) {
     this.readyListener = this.panel.webview.onDidReceiveMessage(
       async (e: Message) => {

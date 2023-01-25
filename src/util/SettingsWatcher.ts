@@ -1,6 +1,7 @@
 import { ConfigurationScope, Disposable, workspace } from 'vscode';
 import { configPrefix } from '../constants/constants';
 import { logError } from '../log/log';
+import type { ValueOrPromise } from './ValueOrPromise';
 import { makeFullConfigName } from './makeFullConfigName';
 
 export class SettingsWatcher<T = unknown> {
@@ -8,7 +9,7 @@ export class SettingsWatcher<T = unknown> {
 
   public constructor(
     private readonly setting: string,
-    callback: (watcher: SettingsWatcher<T>) => void | Promise<void>,
+    callback: (watcher: SettingsWatcher<T>) => ValueOrPromise<void>,
   ) {
     this.disposable = workspace.onDidChangeConfiguration((event) => {
       if (event.affectsConfiguration(makeFullConfigName(setting))) {

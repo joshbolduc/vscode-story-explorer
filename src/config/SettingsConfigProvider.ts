@@ -1,5 +1,6 @@
 import { EventEmitter } from 'vscode';
 import { SettingsWatcher } from '../util/SettingsWatcher';
+import type { ValueOrPromise } from '../util/ValueOrPromise';
 import type { ConfigProvider } from './ConfigProvider';
 
 export class SettingsConfigProvider<T, U> implements ConfigProvider<T> {
@@ -17,7 +18,7 @@ export class SettingsConfigProvider<T, U> implements ConfigProvider<T> {
     private readonly settingName: string,
     private readonly transformer: (
       setting: U | undefined,
-    ) => { value: T } | undefined | Promise<{ value: T } | undefined>,
+    ) => ValueOrPromise<{ value: T } | undefined>,
   ) {}
 
   public start() {
