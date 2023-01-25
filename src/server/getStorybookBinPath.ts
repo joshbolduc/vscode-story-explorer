@@ -6,6 +6,7 @@ import {
   serverInternalStorybookBinaryPathConfigSuffix,
 } from '../constants/constants';
 import { logDebug } from '../log/log';
+import type { ValueOrPromise } from '../util/ValueOrPromise';
 import { pathDepthCompareFn } from '../util/pathDepthCompareFn';
 import { strCompareFn } from '../util/strCompareFn';
 import { tryStat } from '../util/tryStat';
@@ -93,7 +94,7 @@ const getDetectedStorybookBinPath = async (
 
 export const getStorybookBinPath = (
   configDir: Uri | undefined,
-): string | Promise<string | undefined> | undefined => {
+): ValueOrPromise<string | undefined> => {
   const configuredPath = workspace
     .getConfiguration(configPrefix)
     .get(serverInternalStorybookBinaryPathConfigSuffix);
