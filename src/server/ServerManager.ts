@@ -1,5 +1,4 @@
 import { workspace } from 'vscode';
-import type { ConfigManager } from '../config/ConfigManager';
 import {
   configPrefix,
   serverExternalUrlConfigSuffix,
@@ -31,10 +30,8 @@ export class ServerManager {
     },
   );
 
-  public constructor(private readonly configManager: ConfigManager) {}
-
-  public static async init(configManager: ConfigManager) {
-    const serverManager = new ServerManager(configManager);
+  public static async init() {
+    const serverManager = new ServerManager();
     await serverManager.init();
 
     return serverManager;
@@ -96,7 +93,7 @@ export class ServerManager {
 
   private ensureServer() {
     if (!this.server) {
-      this.server = new StorybookServer(this.configManager);
+      this.server = new StorybookServer();
     }
 
     return this.server;

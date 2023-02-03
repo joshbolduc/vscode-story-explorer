@@ -2,7 +2,6 @@ import type {
   CompletionItemProvider,
   CompletionList,
   Position,
-  ProviderResult,
   TextDocument,
 } from 'vscode';
 import type { StoryStore } from '../store/StoryStore';
@@ -19,10 +18,12 @@ export class MdxTitleCompletionProvider
     private readonly settingsWatcher: SettingsWatcher<boolean>,
   ) {}
 
-  public provideCompletionItems(
+  public async provideCompletionItems(
     document: TextDocument,
     position: Position,
-  ): ProviderResult<TextCompletionItem[] | CompletionList<TextCompletionItem>> {
+  ): Promise<
+    TextCompletionItem[] | CompletionList<TextCompletionItem> | undefined
+  > {
     if (!this.settingsWatcher.read(document)) {
       return undefined;
     }
@@ -30,7 +31,7 @@ export class MdxTitleCompletionProvider
     // FUTURE: reduce false positives, e.g., by determining if the position
     // appears to be within props for a `<Meta />` element
 
-    const range = getRangeForCompletion(
+    const range = await getRangeForCompletion(
       document,
       position,
       this.storyStore,

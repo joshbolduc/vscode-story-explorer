@@ -1,12 +1,11 @@
 import {
   CodeLens,
   CodeLensProvider,
-  Disposable,
   EventEmitter,
   Range,
   TextDocument,
 } from 'vscode';
-import type { ConfigManager } from '../config/ConfigManager';
+import { storiesGlobs } from '../config/storiesGlobs';
 import {
   openPreviewInBrowserCommand,
   openPreviewToSideCommand,
@@ -21,38 +20,33 @@ export class StoryCodeLensProvider implements CodeLensProvider {
   private readonly onDidChangeCodeLensesEmitter = new EventEmitter<void>();
   // eslint-disable-next-line @typescript-eslint/member-ordering
   public onDidChangeCodeLenses = this.onDidChangeCodeLensesEmitter.event;
-  private readonly storiesGlobsListener: Disposable;
+  private readonly storiesGlobsListener = storiesGlobs.subscribe(() => {
+    this.onDidChangeCodeLensesEmitter.fire();
+  });
 
   private constructor(
     private readonly storyStore: StoryStore,
     private readonly docsSettingsWatcher: SettingsWatcher,
     private readonly storiesSettingsWatcher: SettingsWatcher,
-    configManager: ConfigManager,
-  ) {
-    this.storiesGlobsListener = configManager.onDidChangeStoriesGlobsConfig(
-      () => {
-        this.onDidChangeCodeLensesEmitter.fire();
-      },
-    );
-  }
+  ) {}
 
   public static init(
     storyStore: StoryStore,
     docsSettingsWatcher: SettingsWatcher,
     storiesSettingsWatcher: SettingsWatcher,
-    configManager: ConfigManager,
   ) {
     const provider = new StoryCodeLensProvider(
       storyStore,
       docsSettingsWatcher,
       storiesSettingsWatcher,
-      configManager,
     );
 
     return provider;
   }
 
-  public provideCodeLenses(document: TextDocument): CodeLens[] | undefined {
+  public async provideCodeLenses(
+    document: TextDocument,
+  ): Promise<CodeLens[] | undefined> {
     const showStories = this.storiesSettingsWatcher.read(document) !== false;
     const showDocs = this.docsSettingsWatcher.read(document) !== false;
 
@@ -64,7 +58,9 @@ export class StoryCodeLensProvider implements CodeLensProvider {
     // results in the story store. Would need to make sure results aren't stale
     // and are updated when the story store updates.
 
-    const globSpecifiers = this.storyStore.getGlobSpecifiers(document.uri);
+    const globSpecifiers = await this.storyStore.getGlobSpecifiers(
+      document.uri,
+    );
     if (globSpecifiers.length === 0) {
       return;
     }
@@ -148,7 +144,7 @@ export class StoryCodeLensProvider implements CodeLensProvider {
   }
 
   public dispose() {
-    this.storiesGlobsListener.dispose();
+    this.storiesGlobsListener.unsubscribe();
     this.onDidChangeCodeLensesEmitter.dispose();
   }
 }

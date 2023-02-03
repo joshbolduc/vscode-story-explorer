@@ -19,7 +19,6 @@ import { startStorybookServer } from './commands/startStorybookServer';
 import { stopStorybookServer } from './commands/stopStorybookServer';
 import { IdCompletionManager } from './completion/IdCompletionManager';
 import { TitleCompletionManager } from './completion/TitleCompletionManager';
-import { ConfigManager } from './config/ConfigManager';
 import {
   goToStorySourceCommand,
   openOutputChannelCommand,
@@ -62,11 +61,8 @@ export const activate = async (context: ExtensionContext) => {
   };
 
   try {
-    const configManager = addSubscription(await ConfigManager.init());
-    const serverManager = addSubscription(
-      await ServerManager.init(configManager),
-    );
-    const storyStore = addSubscription(await StoryStore.init(configManager));
+    const serverManager = addSubscription(await ServerManager.init());
+    const storyStore = addSubscription(await StoryStore.init());
 
     const treeViewManager = addSubscription(
       TreeViewManager.init(context, storyStore),
@@ -84,7 +80,7 @@ export const activate = async (context: ExtensionContext) => {
       ),
     );
 
-    addSubscription(CodeLensManager.init(storyStore, configManager));
+    addSubscription(CodeLensManager.init(storyStore));
     addSubscription(TitleCompletionManager.init(storyStore));
     addSubscription(IdCompletionManager.init(storyStore));
 
@@ -117,10 +113,7 @@ export const activate = async (context: ExtensionContext) => {
     );
     registerCommand(openStoriesGlobsSettingCommand, openStoriesGlobsSetting());
     registerCommand(openStorybookUrlSettingCommand, openStorybookUrlSetting());
-    registerCommand(
-      openStorybookConfigCommand,
-      openStorybookConfig(configManager),
-    );
+    registerCommand(openStorybookConfigCommand, openStorybookConfig());
     registerCommand(openOutputChannelCommand, openOutputChannel()),
       registerCommand(
         startStorybookServerCommand,

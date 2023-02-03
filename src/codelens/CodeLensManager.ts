@@ -1,5 +1,4 @@
 import { Disposable, languages } from 'vscode';
-import type { ConfigManager } from '../config/ConfigManager';
 import {
   codeLensDocsEnabledConfigSuffix,
   codeLensStoriesEnabledConfigSuffix,
@@ -25,15 +24,12 @@ export class CodeLensManager {
     },
   );
 
-  private constructor(
-    private readonly storyStore: StoryStore,
-    private readonly configManager: ConfigManager,
-  ) {
+  private constructor(private readonly storyStore: StoryStore) {
     this.startIfEnabled();
   }
 
-  public static init(storyStore: StoryStore, configManager: ConfigManager) {
-    return new CodeLensManager(storyStore, configManager);
+  public static init(storyStore: StoryStore) {
+    return new CodeLensManager(storyStore);
   }
 
   public dispose() {
@@ -52,7 +48,6 @@ export class CodeLensManager {
       this.storyStore,
       this.docsSettingsWatcher,
       this.storiesSettingsWatcher,
-      this.configManager,
     );
 
     this.registration = languages.registerCodeLensProvider(
