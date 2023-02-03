@@ -95,7 +95,7 @@ export class StoryTreeDataProvider implements TreeDataProvider<TreeNode> {
   private async getRootChildren() {
     await this.store.waitUntilInitialized();
 
-    const storyFiles = this.store.getSortedStoryFiles();
+    const storyFiles = await this.store.getSortedStoryFiles();
     const showKindsWithoutChildren =
       this.showItemsWithoutStoriesWatcher.read() === true;
     const root = storyFilesToKindTree(storyFiles, showKindsWithoutChildren);

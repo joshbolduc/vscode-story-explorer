@@ -1,6 +1,7 @@
 import type { IncomingMessage } from 'http';
+import { firstValueFrom } from 'rxjs';
 import { ProgressLocation, window, workspace } from 'vscode';
-import type { ConfigManager } from '../config/ConfigManager';
+import { storybookConfigLocation } from '../config/storybookConfigLocation';
 import { internalServerRunningContext } from '../constants/constants';
 import { logDebug, logError, logInfo } from '../log/log';
 import { Cacheable } from '../util/Cacheable';
@@ -140,8 +141,6 @@ export class StorybookServer {
     );
   });
 
-  public constructor(private readonly configManager: ConfigManager) {}
-
   public stop() {
     this.taskExecutor.stop();
 
@@ -160,7 +159,11 @@ export class StorybookServer {
   }
 
   private async createTask() {
-    const configDir = this.configManager.getConfigDir();
+    const configDir = (
+      await firstValueFrom(storybookConfigLocation, {
+        defaultValue: undefined,
+      })
+    )?.dir;
     const binPath = await getStorybookBinPath(configDir);
     const cwd = configDir
       ? workspace.getWorkspaceFolder(configDir)?.uri

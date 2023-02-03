@@ -1,5 +1,4 @@
 import {
-  CancellationToken,
   Disposable,
   FileSystemWatcher,
   GlobPattern,
@@ -21,7 +20,7 @@ export class FileWatcher {
 
   public constructor(
     patternOrUri: GlobPattern | Uri,
-    private readonly callback: WatchListener,
+    callback: WatchListener,
     ignoreCreate = false,
     ignoreChange = false,
     ignoreDelete = false,
@@ -31,31 +30,6 @@ export class FileWatcher {
         ? patternOrUri
         : patternOrUri.fsPath;
     this.init(callback, ignoreCreate, ignoreChange, ignoreDelete);
-  }
-
-  public find(
-    exclude?: GlobPattern,
-    maxResults?: number,
-    token?: CancellationToken,
-  ) {
-    return workspace.findFiles(this.glob, exclude, maxResults, token);
-  }
-
-  public async findWithCallback(
-    exclude?: GlobPattern,
-    maxResults?: number,
-    token?: CancellationToken,
-  ) {
-    const findResults = await workspace.findFiles(
-      this.glob,
-      exclude,
-      maxResults,
-      token,
-    );
-
-    findResults.forEach((uri) => {
-      this.callback(uri, 'create');
-    });
   }
 
   public dispose() {

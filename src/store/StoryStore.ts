@@ -1,7 +1,8 @@
 import pLimit from 'p-limit';
+import { firstValueFrom, Subscription } from 'rxjs';
 import { Disposable, EventEmitter, Uri, workspace } from 'vscode';
-import type { ConfigManager } from '../config/ConfigManager';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
+import { storiesGlobs } from '../config/storiesGlobs';
 import {
   initialLoadCompleteContext,
   loadingStoriesContext,
@@ -54,7 +55,7 @@ export class StoryStore {
   private globWatchers: Disposable[] = [];
   private readonly initWaiter = new Mailbox<void>();
 
-  private readonly configWatcher: Disposable;
+  private readonly configWatcher: Subscription;
 
   private readonly onDidUpdateStoryStoreEmitter = new EventEmitter<void>();
   // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -66,8 +67,8 @@ export class StoryStore {
       await this.refresh(ev.document.uri);
     });
 
-  private constructor(private readonly configManager: ConfigManager) {
-    this.configWatcher = configManager.onDidChangeStoriesGlobsConfig(() => {
+  private constructor() {
+    this.configWatcher = storiesGlobs.subscribe(() => {
       this.refreshAll().catch((e) => {
         logError(
           'Failed to initialize story store after globs config change',
@@ -77,8 +78,8 @@ export class StoryStore {
     });
   }
 
-  public static async init(configManager: ConfigManager) {
-    const storyStore = new StoryStore(configManager);
+  public static async init() {
+    const storyStore = new StoryStore();
     await storyStore.init();
 
     return storyStore;
@@ -112,7 +113,7 @@ export class StoryStore {
     return Array.from(this.backingMap.values()).map((value) => value.storyFile);
   }
 
-  public getSortedStoryFiles() {
+  public async getSortedStoryFiles() {
     const unsortedFiles = Array.from(this.backingMap.values())
       .map((value) => value.storyFile)
       .sort((a, b) => {
@@ -121,7 +122,13 @@ export class StoryStore {
 
     const sortedFiles: StoryExplorerStoryFile[] = [];
 
-    const globSpecifiers = this.configManager.getStoriesGlobsConfig();
+    const globSpecifiers = await firstValueFrom(storiesGlobs, {
+      defaultValue: undefined,
+    });
+
+    if (!globSpecifiers) {
+      return [];
+    }
 
     const convertedGlobs = globSpecifiers.map((globSpecifier) =>
       convertGlob(globSpecifier),
@@ -157,14 +164,16 @@ export class StoryStore {
     return this.initWaiter.get().then(() => this);
   }
 
-  public isStoryFile(uri: Uri) {
-    const globSpecifiers = this.configManager.getStoriesGlobsConfig();
+  public async isStoryFile(uri: Uri) {
+    const globSpecifiers =
+      (await firstValueFrom(storiesGlobs, { defaultValue: undefined })) ?? [];
 
     return globSpecifiers.some(globSpecifierMatchesUri(uri));
   }
 
-  public getGlobSpecifiers(uri: Uri) {
-    const globSpecifiers = this.configManager.getStoriesGlobsConfig();
+  public async getGlobSpecifiers(uri: Uri) {
+    const globSpecifiers =
+      (await firstValueFrom(storiesGlobs, { defaultValue: undefined })) ?? [];
 
     return globSpecifiers.filter(globSpecifierMatchesUri(uri));
   }
@@ -176,7 +185,7 @@ export class StoryStore {
   }
 
   public async refresh(uri: Uri) {
-    const globSpecifiers = this.getGlobSpecifiers(uri);
+    const globSpecifiers = await this.getGlobSpecifiers(uri);
 
     const storyInfo =
       globSpecifiers.length > 0 ? await parseStoriesFileByUri(uri) : undefined;
@@ -189,7 +198,7 @@ export class StoryStore {
   }
 
   public dispose() {
-    this.configWatcher.dispose();
+    this.configWatcher.unsubscribe();
     this.textDocumentChangeListener.dispose();
     this.clearBackingMap();
     this.clearGlobWatchers();
@@ -197,7 +206,8 @@ export class StoryStore {
   }
 
   private async init() {
-    const globSpecifiers = this.configManager.getStoriesGlobsConfig();
+    const globSpecifiers =
+      (await firstValueFrom(storiesGlobs, { defaultValue: undefined })) ?? [];
 
     setLoadingStories(true);
 

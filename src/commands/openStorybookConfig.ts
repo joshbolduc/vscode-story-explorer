@@ -1,24 +1,26 @@
+import { firstValueFrom } from 'rxjs';
 import { commands } from 'vscode';
-import type { ConfigManager } from '../config/ConfigManager';
+import { storybookConfigLocation } from '../config/storybookConfigLocation';
 import { logError, logInfo } from '../log/log';
 import { createOpenCommand } from '../util/createOpenCommand';
 
-export const openStorybookConfig =
-  (configManager: ConfigManager) => async () => {
-    const configFile = configManager.getConfigFile();
-    if (!configFile) {
-      logInfo('Failed to open storybook config: config file not detected');
-      return;
-    }
+export const openStorybookConfig = () => async () => {
+  const configFile = (
+    await firstValueFrom(storybookConfigLocation, { defaultValue: undefined })
+  )?.file;
+  if (!configFile) {
+    logInfo('Failed to open storybook config: config file not detected');
+    return;
+  }
 
-    const openCommand = createOpenCommand({ arguments: [configFile] });
+  const openCommand = createOpenCommand({ arguments: [configFile] });
 
-    try {
-      await commands.executeCommand(
-        openCommand.command,
-        ...openCommand.arguments,
-      );
-    } catch (e) {
-      logError('Failed to open storybook config', e);
-    }
-  };
+  try {
+    await commands.executeCommand(
+      openCommand.command,
+      ...openCommand.arguments,
+    );
+  } catch (e) {
+    logError('Failed to open storybook config', e);
+  }
+};

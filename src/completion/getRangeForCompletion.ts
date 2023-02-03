@@ -2,14 +2,14 @@ import { Position, Range, TextDocument } from 'vscode';
 import { logError } from '../log/log';
 import type { StoryStore } from '../store/StoryStore';
 
-export const getRangeForCompletion = (
+export const getRangeForCompletion = async (
   document: TextDocument,
   position: Position,
   storyStore: StoryStore,
   regex: RegExp,
   replace: boolean,
 ) => {
-  if (!storyStore.isStoryFile(document.uri)) {
+  if (!(await storyStore.isStoryFile(document.uri))) {
     return undefined;
   }
 
