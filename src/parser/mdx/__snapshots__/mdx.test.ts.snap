@@ -9,58 +9,22 @@ exports[`mdx parses story file fixtures/Children.mdx 1`] = `
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 1,
-        },
-        "start": {
-          "column": 0,
-          "line": 1,
-        },
-      },
+      "location": [Ln 1, Col 0] - [Ln 1, Col 0],
       "name": "Children prop, children content",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 8,
-        },
-        "start": {
-          "column": 0,
-          "line": 8,
-        },
-      },
+      "location": [Ln 8, Col 0] - [Ln 8, Col 0],
       "name": "Children prop, empty body",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 10,
-        },
-        "start": {
-          "column": 0,
-          "line": 10,
-        },
-      },
+      "location": [Ln 10, Col 0] - [Ln 10, Col 0],
       "name": "Children prop, no body",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 12,
-        },
-        "start": {
-          "column": 0,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 0] - [Ln 12, Col 0],
       "name": "No children prop, children content",
       "nameForId": undefined,
     },
@@ -77,16 +41,7 @@ exports[`mdx parses story file fixtures/Spread.mdx 1`] = `
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 15,
-        },
-        "start": {
-          "column": 0,
-          "line": 15,
-        },
-      },
+      "location": [Ln 15, Col 0] - [Ln 15, Col 0],
       "name": undefined,
       "nameForId": undefined,
     },
@@ -98,16 +53,7 @@ exports[`mdx parses story file project/src/autoTitle/mdx/MdxMeta.stories.mdx 1`]
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": undefined,
   },
   "stories": [],
@@ -118,30 +64,12 @@ exports[`mdx parses story file project/src/autoTitle/mdx/MdxMetaAndStory.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": undefined,
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 5,
-        },
-        "start": {
-          "column": 0,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 0] - [Ln 5, Col 0],
       "name": "Primary",
       "nameForId": undefined,
     },
@@ -158,16 +86,7 @@ exports[`mdx parses story file project/src/autoTitle/mdx/MdxStory.stories.mdx 1`
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 3,
-        },
-        "start": {
-          "column": 0,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 0] - [Ln 3, Col 0],
       "name": "Primary",
       "nameForId": undefined,
     },
@@ -181,58 +100,22 @@ exports[`mdx parses story file project/src/stories/CsfWithMdx.stories.mdx 1`] = 
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 5,
-      },
-      "start": {
-        "column": 0,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 0] - [Ln 5, Col 0],
     "title": "Example/MDX importing CSF",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 11,
-        },
-        "start": {
-          "column": 0,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 0] - [Ln 11, Col 0],
       "name": "Basic",
       "nameForId": "Basic",
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 21,
-        },
-        "start": {
-          "column": 0,
-          "line": 21,
-        },
-      },
+      "location": [Ln 21, Col 0] - [Ln 21, Col 0],
       "name": "Story name from MDX",
       "nameForId": "Basic 2",
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 25,
-        },
-        "start": {
-          "column": 0,
-          "line": 25,
-        },
-      },
+      "location": [Ln 25, Col 0] - [Ln 25, Col 0],
       "name": "Basic 3",
       "nameForId": "Basic 3",
     },
@@ -244,30 +127,12 @@ exports[`mdx parses story file project/src/stories/CustomId.stories.mdx 1`] = `
 {
   "meta": {
     "id": "manually-specified-mdx-id",
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": "Example/Custom ID MDX",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 7,
-        },
-        "start": {
-          "column": 0,
-          "line": 7,
-        },
-      },
+      "location": [Ln 7, Col 0] - [Ln 7, Col 0],
       "name": "Story",
       "nameForId": undefined,
     },
@@ -279,16 +144,7 @@ exports[`mdx parses story file project/src/stories/DocsOnly.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": "Example/MDX Docs Only",
   },
   "stories": [],
@@ -299,16 +155,7 @@ exports[`mdx parses story file project/src/stories/DocsOnlyTop.stories.mdx 1`] =
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": "MDX Docs at top level",
   },
   "stories": [],
@@ -319,58 +166,22 @@ exports[`mdx parses story file project/src/stories/MdxWithStories.stories.mdx 1`
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 6,
-      },
-      "start": {
-        "column": 0,
-        "line": 6,
-      },
-    },
+    "location": [Ln 6, Col 0] - [Ln 6, Col 0],
     "title": "Example/MDX with Stories",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 10,
-        },
-        "start": {
-          "column": 0,
-          "line": 10,
-        },
-      },
+      "location": [Ln 10, Col 0] - [Ln 10, Col 0],
       "name": "MDX first story",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 14,
-        },
-        "start": {
-          "column": 0,
-          "line": 14,
-        },
-      },
+      "location": [Ln 14, Col 0] - [Ln 14, Col 0],
       "name": "MDX second story",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 18,
-        },
-        "start": {
-          "column": 0,
-          "line": 18,
-        },
-      },
+      "location": [Ln 18, Col 0] - [Ln 18, Col 0],
       "name": "MDX Story 3",
       "nameForId": undefined,
     },
@@ -382,30 +193,12 @@ exports[`mdx parses story file project/src/stories/MdxWithStoriesTop.stories.mdx
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 4,
-      },
-      "start": {
-        "column": 0,
-        "line": 4,
-      },
-    },
+    "location": [Ln 4, Col 0] - [Ln 4, Col 0],
     "title": "MDX with stories, top",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 6,
-        },
-        "start": {
-          "column": 0,
-          "line": 6,
-        },
-      },
+      "location": [Ln 6, Col 0] - [Ln 6, Col 0],
       "name": "MDX with stories, top",
       "nameForId": undefined,
     },
@@ -417,44 +210,17 @@ exports[`mdx parses story file project/src/stories/Precedence.stories.mdx 1`] = 
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 4,
-      },
-      "start": {
-        "column": 0,
-        "line": 4,
-      },
-    },
+    "location": [Ln 4, Col 0] - [Ln 4, Col 0],
     "title": "Example/Precedence",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 20,
-        },
-        "start": {
-          "column": 0,
-          "line": 20,
-        },
-      },
+      "location": [Ln 20, Col 0] - [Ln 20, Col 0],
       "name": "Story with name, story, body",
       "nameForId": "Small",
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 26,
-        },
-        "start": {
-          "column": 0,
-          "line": 26,
-        },
-      },
+      "location": [Ln 26, Col 0] - [Ln 26, Col 0],
       "name": "Story with name, body",
       "nameForId": undefined,
     },

@@ -1,5 +1,10 @@
 {
   "extends": "../tsconfig.base.json",
-  "include": ["**/*", "../test/integration/**/*", "../test/util/**/*"],
+  "include": [
+    "**/*",
+    "../test/*",
+    "../test/integration/**/*",
+    "../test/util/**/*"
+  ],
   "references": [{ "path": "../common" }]
 }
