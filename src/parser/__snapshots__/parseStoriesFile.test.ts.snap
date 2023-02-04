@@ -9,58 +9,22 @@ exports[`parseStoriesFile parses story file fixtures/Children.mdx 1`] = `
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 1,
-        },
-        "start": {
-          "column": 0,
-          "line": 1,
-        },
-      },
+      "location": [Ln 1, Col 0] - [Ln 1, Col 0],
       "name": "Children prop, children content",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 8,
-        },
-        "start": {
-          "column": 0,
-          "line": 8,
-        },
-      },
+      "location": [Ln 8, Col 0] - [Ln 8, Col 0],
       "name": "Children prop, empty body",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 10,
-        },
-        "start": {
-          "column": 0,
-          "line": 10,
-        },
-      },
+      "location": [Ln 10, Col 0] - [Ln 10, Col 0],
       "name": "Children prop, no body",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 12,
-        },
-        "start": {
-          "column": 0,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 0] - [Ln 12, Col 0],
       "name": "No children prop, children content",
       "nameForId": undefined,
     },
@@ -78,16 +42,7 @@ exports[`parseStoriesFile parses story file fixtures/Spread.mdx 1`] = `
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 15,
-        },
-        "start": {
-          "column": 0,
-          "line": 15,
-        },
-      },
+      "location": [Ln 15, Col 0] - [Ln 15, Col 0],
       "name": undefined,
       "nameForId": undefined,
     },
@@ -100,32 +55,12 @@ exports[`parseStoriesFile parses story file project/src/autoTitle/csf/EmptyDefau
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 17,
-        "line": 5,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 5, Col 17],
     "title": undefined,
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 169,
-          "line": 9,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 162,
-          "line": 9,
-        },
-      },
+      "location": [Ln 9, Col 13] - [Ln 9, Col 20],
       "name": "Primary",
       "nameForId": "Primary",
     },
@@ -138,32 +73,12 @@ exports[`parseStoriesFile parses story file project/src/autoTitle/csf/EmptyTitle
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "title": "",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 183,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 176,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "name": "Primary",
       "nameForId": "Primary",
     },
@@ -176,32 +91,12 @@ exports[`parseStoriesFile parses story file project/src/autoTitle/csf/ExtraTitle
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "title": "Explicit title",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 197,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 190,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "name": "Primary",
       "nameForId": "Primary",
     },
@@ -216,32 +111,12 @@ exports[`parseStoriesFile parses story file project/src/autoTitle/csf/nested/Wit
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "title": undefined,
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 194,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 187,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "name": "Primary",
       "nameForId": "Primary",
     },
@@ -254,32 +129,12 @@ exports[`parseStoriesFile parses story file project/src/autoTitle/csf/nested/nes
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "title": undefined,
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 194,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 187,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "name": "Primary",
       "nameForId": "Primary",
     },
@@ -292,32 +147,12 @@ exports[`parseStoriesFile parses story file project/src/autoTitle/csf/withIndex/
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "title": undefined,
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 194,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 187,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "name": "Primary",
       "nameForId": "Primary",
     },
@@ -330,16 +165,7 @@ exports[`parseStoriesFile parses story file project/src/autoTitle/mdx/MdxMeta.st
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": undefined,
   },
   "stories": [],
@@ -351,30 +177,12 @@ exports[`parseStoriesFile parses story file project/src/autoTitle/mdx/MdxMetaAnd
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": undefined,
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 5,
-        },
-        "start": {
-          "column": 0,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 0] - [Ln 5, Col 0],
       "name": "Primary",
       "nameForId": undefined,
     },
@@ -392,16 +200,7 @@ exports[`parseStoriesFile parses story file project/src/autoTitle/mdx/MdxStory.s
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 3,
-        },
-        "start": {
-          "column": 0,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 0] - [Ln 3, Col 0],
       "name": "Primary",
       "nameForId": undefined,
     },
@@ -416,80 +215,27 @@ exports[`parseStoriesFile parses story file project/src/stories/BasicCsf.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 11,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 11, Col 1],
     "title": "Example/Basic CSF",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 252,
-          "line": 15,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 245,
-          "line": 15,
-        },
-      },
+      "location": [Ln 15, Col 13] - [Ln 15, Col 20],
       "name": "Primary",
       "nameForId": "Primary",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 22,
-          "index": 340,
-          "line": 20,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 331,
-          "line": 20,
-        },
-      },
+      "location": [Ln 20, Col 13] - [Ln 20, Col 22],
       "name": "Secondary",
       "nameForId": "Secondary",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 428,
-          "line": 25,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 423,
-          "line": 25,
-        },
-      },
+      "location": [Ln 25, Col 13] - [Ln 25, Col 18],
       "name": "Large",
       "nameForId": "Large",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 520,
-          "line": 31,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 515,
-          "line": 31,
-        },
-      },
+      "location": [Ln 31, Col 13] - [Ln 31, Col 18],
       "name": "Small",
       "nameForId": "Small",
     },
@@ -502,64 +248,22 @@ exports[`parseStoriesFile parses story file project/src/stories/CsfV1.stories.js
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 3, Col 1],
     "title": "Example/CSF v1",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 72,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 61,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 24],
       "name": "Renamed via non-hoisted story",
       "nameForId": "V 1 Story Name",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 26,
-          "index": 243,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 230,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 26],
       "name": "v2 name override",
       "nameForId": "V 2 V 1 Story Name",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 31,
-          "index": 466,
-          "line": 18,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 448,
-          "line": 18,
-        },
-      },
+      "location": [Ln 18, Col 13] - [Ln 18, Col 31],
       "name": "v1 name should be used",
       "nameForId": "V 2 V 1 Story Name Empty",
     },
@@ -574,58 +278,22 @@ exports[`parseStoriesFile parses story file project/src/stories/CsfWithMdx.stori
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 5,
-      },
-      "start": {
-        "column": 0,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 0] - [Ln 5, Col 0],
     "title": "Example/MDX importing CSF",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 11,
-        },
-        "start": {
-          "column": 0,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 0] - [Ln 11, Col 0],
       "name": "Basic",
       "nameForId": "Basic",
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 21,
-        },
-        "start": {
-          "column": 0,
-          "line": 21,
-        },
-      },
+      "location": [Ln 21, Col 0] - [Ln 21, Col 0],
       "name": "Story name from MDX",
       "nameForId": "Basic 2",
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 25,
-        },
-        "start": {
-          "column": 0,
-          "line": 25,
-        },
-      },
+      "location": [Ln 25, Col 0] - [Ln 25, Col 0],
       "name": "Basic 3",
       "nameForId": "Basic 3",
     },
@@ -638,32 +306,12 @@ exports[`parseStoriesFile parses story file project/src/stories/CustomId.stories
 {
   "meta": {
     "id": "manually-specified-csf-story-id",
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 4,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 4, Col 1],
     "title": "Example/Custom ID CSF",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 114,
-          "line": 6,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 109,
-          "line": 6,
-        },
-      },
+      "location": [Ln 6, Col 13] - [Ln 6, Col 18],
       "name": "Story",
       "nameForId": "Story",
     },
@@ -676,30 +324,12 @@ exports[`parseStoriesFile parses story file project/src/stories/CustomId.stories
 {
   "meta": {
     "id": "manually-specified-mdx-id",
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": "Example/Custom ID MDX",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 7,
-        },
-        "start": {
-          "column": 0,
-          "line": 7,
-        },
-      },
+      "location": [Ln 7, Col 0] - [Ln 7, Col 0],
       "name": "Story",
       "nameForId": undefined,
     },
@@ -712,112 +342,37 @@ exports[`parseStoriesFile parses story file project/src/stories/CustomName.stori
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 12,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 12, Col 1],
     "title": "Example/Custom Name",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 23,
-          "index": 292,
-          "line": 16,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 282,
-          "line": 16,
-        },
-      },
+      "location": [Ln 16, Col 13] - [Ln 16, Col 23],
       "name": "Custom story name",
       "nameForId": "Custom Name",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 23,
-          "index": 453,
-          "line": 22,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 443,
-          "line": 22,
-        },
-      },
+      "location": [Ln 22, Col 13] - [Ln 22, Col 23],
       "name": "Custom story name override",
       "nameForId": "Overridden",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 29,
-          "index": 682,
-          "line": 29,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 666,
-          "line": 29,
-        },
-      },
+      "location": [Ln 29, Col 13] - [Ln 29, Col 29],
       "name": "Custom story name var",
       "nameForId": "Named Via Variable",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 29,
-          "index": 898,
-          "line": 36,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 882,
-          "line": 36,
-        },
-      },
+      "location": [Ln 36, Col 13] - [Ln 36, Col 29],
       "name": "Custom story name var in template string",
       "nameForId": "Interpolated Name",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 22,
-          "index": 1007,
-          "line": 39,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 998,
-          "line": 39,
-        },
-      },
+      "location": [Ln 39, Col 13] - [Ln 39, Col 22],
       "name": "Empty Name",
       "nameForId": "Empty Name",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 30,
-          "index": 1086,
-          "line": 42,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 1069,
-          "line": 42,
-        },
-      },
+      "location": [Ln 42, Col 13] - [Ln 42, Col 30],
       "name": "     Leading whitespace",
       "nameForId": "Leading Whitespace",
     },
@@ -830,32 +385,12 @@ exports[`parseStoriesFile parses story file project/src/stories/DeepTree.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 6,
-      },
-      "start": {
-        "column": 15,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 15] - [Ln 6, Col 1],
     "title": "Example/Deep/Tree/With/Several/Kinds",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 207,
-          "line": 10,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 202,
-          "line": 10,
-        },
-      },
+      "location": [Ln 10, Col 13] - [Ln 10, Col 18],
       "name": "Story",
       "nameForId": "Story",
     },
@@ -868,16 +403,7 @@ exports[`parseStoriesFile parses story file project/src/stories/DocsOnly.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": "Example/MDX Docs Only",
   },
   "stories": [],
@@ -889,16 +415,7 @@ exports[`parseStoriesFile parses story file project/src/stories/DocsOnlyTop.stor
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 3,
-      },
-      "start": {
-        "column": 0,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 0] - [Ln 3, Col 0],
     "title": "MDX Docs at top level",
   },
   "stories": [],
@@ -910,32 +427,12 @@ exports[`parseStoriesFile parses story file project/src/stories/Excluded.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 4,
-      },
-    },
+    "location": [Ln 4, Col 15] - [Ln 7, Col 1],
     "title": "Test/Exclusions/Excluded",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 89,
-          "line": 2,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 78,
-          "line": 2,
-        },
-      },
+      "location": [Ln 2, Col 13] - [Ln 2, Col 24],
       "name": "Other Export",
       "nameForId": "Other Export",
     },
@@ -948,64 +445,22 @@ exports[`parseStoriesFile parses story file project/src/stories/ExportStyles.sto
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 11,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 11, Col 1],
     "title": "Example/Export Styles",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 255,
-          "line": 15,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 243,
-          "line": 15,
-        },
-      },
+      "location": [Ln 15, Col 6] - [Ln 15, Col 18],
       "name": "Normal Export",
       "nameForId": "Normal Export",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 16,
-          "index": 354,
-          "line": 20,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 344,
-          "line": 20,
-        },
-      },
+      "location": [Ln 20, Col 6] - [Ln 20, Col 16],
       "name": "Alternative Export Name",
       "nameForId": "Alternative Export Name",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 29,
-          "index": 469,
-          "line": 25,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 446,
-          "line": 25,
-        },
-      },
+      "location": [Ln 25, Col 6] - [Ln 25, Col 29],
       "name": "Override name 3",
       "nameForId": "Export Name Overridden",
     },
@@ -1018,32 +473,12 @@ exports[`parseStoriesFile parses story file project/src/stories/Form.stories.js 
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 5,
-      },
-      "start": {
-        "column": 15,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
     "title": "Example/Form",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 17,
-          "index": 105,
-          "line": 7,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 101,
-          "line": 7,
-        },
-      },
+      "location": [Ln 7, Col 13] - [Ln 7, Col 17],
       "name": "Form",
       "nameForId": "Form",
     },
@@ -1056,32 +491,12 @@ exports[`parseStoriesFile parses story file project/src/stories/Hoisting.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "title": "Example/Hoisting",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 21,
-          "index": 131,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 123,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 21],
       "name": "Hoisting",
       "nameForId": "Hoisting",
     },
@@ -1094,32 +509,12 @@ exports[`parseStoriesFile parses story file project/src/stories/Included.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 4,
-      },
-    },
+    "location": [Ln 4, Col 15] - [Ln 7, Col 1],
     "title": "Test/Exclusions/Included",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 27,
-          "index": 27,
-          "line": 1,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 13,
-          "line": 1,
-        },
-      },
+      "location": [Ln 1, Col 13] - [Ln 1, Col 27],
       "name": "Included Export",
       "nameForId": "Included Export",
     },
@@ -1132,32 +527,12 @@ exports[`parseStoriesFile parses story file project/src/stories/JsxExtension.sto
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 3, Col 1],
     "title": "Example/JSX extension",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 73,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 68,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 18],
       "name": "Story",
       "nameForId": "Story",
     },
@@ -1170,58 +545,22 @@ exports[`parseStoriesFile parses story file project/src/stories/MdxWithStories.s
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 6,
-      },
-      "start": {
-        "column": 0,
-        "line": 6,
-      },
-    },
+    "location": [Ln 6, Col 0] - [Ln 6, Col 0],
     "title": "Example/MDX with Stories",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 10,
-        },
-        "start": {
-          "column": 0,
-          "line": 10,
-        },
-      },
+      "location": [Ln 10, Col 0] - [Ln 10, Col 0],
       "name": "MDX first story",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 14,
-        },
-        "start": {
-          "column": 0,
-          "line": 14,
-        },
-      },
+      "location": [Ln 14, Col 0] - [Ln 14, Col 0],
       "name": "MDX second story",
       "nameForId": undefined,
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 18,
-        },
-        "start": {
-          "column": 0,
-          "line": 18,
-        },
-      },
+      "location": [Ln 18, Col 0] - [Ln 18, Col 0],
       "name": "MDX Story 3",
       "nameForId": undefined,
     },
@@ -1234,30 +573,12 @@ exports[`parseStoriesFile parses story file project/src/stories/MdxWithStoriesTo
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 4,
-      },
-      "start": {
-        "column": 0,
-        "line": 4,
-      },
-    },
+    "location": [Ln 4, Col 0] - [Ln 4, Col 0],
     "title": "MDX with stories, top",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 6,
-        },
-        "start": {
-          "column": 0,
-          "line": 6,
-        },
-      },
+      "location": [Ln 6, Col 0] - [Ln 6, Col 0],
       "name": "MDX with stories, top",
       "nameForId": undefined,
     },
@@ -1270,32 +591,12 @@ exports[`parseStoriesFile parses story file project/src/stories/MergeOne.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 3, Col 1],
     "title": "Example/Merge",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 16,
-          "index": 63,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 60,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 16],
       "name": "One",
       "nameForId": "One",
     },
@@ -1308,32 +609,12 @@ exports[`parseStoriesFile parses story file project/src/stories/MergeTwo.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 3, Col 1],
     "title": "Example/Merge",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 16,
-          "index": 63,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 60,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 16],
       "name": "Two",
       "nameForId": "Two",
     },
@@ -1346,44 +627,17 @@ exports[`parseStoriesFile parses story file project/src/stories/Precedence.stori
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 0,
-        "line": 4,
-      },
-      "start": {
-        "column": 0,
-        "line": 4,
-      },
-    },
+    "location": [Ln 4, Col 0] - [Ln 4, Col 0],
     "title": "Example/Precedence",
   },
   "stories": [
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 20,
-        },
-        "start": {
-          "column": 0,
-          "line": 20,
-        },
-      },
+      "location": [Ln 20, Col 0] - [Ln 20, Col 0],
       "name": "Story with name, story, body",
       "nameForId": "Small",
     },
     {
-      "location": {
-        "end": {
-          "column": 0,
-          "line": 26,
-        },
-        "start": {
-          "column": 0,
-          "line": 26,
-        },
-      },
+      "location": [Ln 26, Col 0] - [Ln 26, Col 0],
       "name": "Story with name, body",
       "nameForId": undefined,
     },
@@ -1396,32 +650,12 @@ exports[`parseStoriesFile parses story file project/src/stories/SameName.stories
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
     "title": "Example/With Same Name",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 21,
-          "index": 224,
-          "line": 12,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 216,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 13] - [Ln 12, Col 21],
       "name": "Same Name",
       "nameForId": "Same Name",
     },
@@ -1434,32 +668,12 @@ exports[`parseStoriesFile parses story file project/src/stories/SameNameChild.st
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
     "title": "Example/With Same Name/Same Name",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 237,
-          "line": 12,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 226,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 13] - [Ln 12, Col 24],
       "name": "Nested Story",
       "nameForId": "Nested Story",
     },
@@ -1472,144 +686,47 @@ exports[`parseStoriesFile parses story file project/src/stories/StoryDeclaration
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 6,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 6] - [Ln 3, Col 1],
     "title": "Test/Story Declarations",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 105,
-          "line": 7,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 90,
-          "line": 7,
-        },
-      },
+      "location": [Ln 7, Col 13] - [Ln 7, Col 28],
       "name": "Const Declarator",
       "nameForId": "Const Declarator",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 169,
-          "line": 9,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 151,
-          "line": 9,
-        },
-      },
+      "location": [Ln 9, Col 6] - [Ln 9, Col 24],
       "name": "Separate Declarator",
       "nameForId": "Separate Declarator",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 25,
-          "index": 236,
-          "line": 10,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 217,
-          "line": 10,
-        },
-      },
+      "location": [Ln 10, Col 6] - [Ln 10, Col 25],
       "name": "Separate declarator with story name",
       "nameForId": "Separate Declarator 2",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 448,
-          "line": 15,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 437,
-          "line": 15,
-        },
-      },
+      "location": [Ln 15, Col 13] - [Ln 15, Col 24],
       "name": "Multiple One",
       "nameForId": "Multiple One",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 13,
-          "index": 505,
-          "line": 16,
-        },
-        "start": Position {
-          "column": 2,
-          "index": 494,
-          "line": 16,
-        },
-      },
+      "location": [Ln 16, Col 2] - [Ln 16, Col 13],
       "name": "Multiple two (given name)",
       "nameForId": "Multiple Two",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 29,
-          "index": 633,
-          "line": 20,
-        },
-        "start": Position {
-          "column": 16,
-          "index": 620,
-          "line": 20,
-        },
-      },
+      "location": [Ln 20, Col 16] - [Ln 20, Col 29],
       "name": "Renamed Function Story",
       "nameForId": "Function Story",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 30,
-          "index": 768,
-          "line": 25,
-        },
-        "start": Position {
-          "column": 9,
-          "index": 747,
-          "line": 25,
-        },
-      },
+      "location": [Ln 25, Col 9] - [Ln 25, Col 30],
       "name": "Separate Function Story",
       "nameForId": "Separate Function Story",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 31,
-          "index": 853,
-          "line": 29,
-        },
-        "start": Position {
-          "column": 9,
-          "index": 831,
-          "line": 29,
-        },
-      },
+      "location": [Ln 29, Col 9] - [Ln 29, Col 31],
       "name": "Separate function story with story name",
       "nameForId": "Separate Function Story 2",
     },
@@ -1622,32 +739,12 @@ exports[`parseStoriesFile parses story file project/src/stories/TitleInterpolati
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 10,
-      },
-      "start": {
-        "column": 15,
-        "line": 7,
-      },
-    },
+    "location": [Ln 7, Col 15] - [Ln 10, Col 1],
     "title": "Example/Title Interpolation",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 271,
-          "line": 14,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 264,
-          "line": 14,
-        },
-      },
+      "location": [Ln 14, Col 13] - [Ln 14, Col 20],
       "name": "Primary",
       "nameForId": "Primary",
     },
@@ -1660,32 +757,12 @@ exports[`parseStoriesFile parses story file project/src/stories/Top.stories.js 1
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
     "title": "Top",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 26,
-          "index": 210,
-          "line": 12,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 197,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 13] - [Ln 12, Col 26],
       "name": "Top Level Story",
       "nameForId": "Top Level Story",
     },
@@ -1698,32 +775,12 @@ exports[`parseStoriesFile parses story file project/src/stories/TopHoisted.stori
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
     "title": "Top Hoisted",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 23,
-          "index": 215,
-          "line": 12,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 205,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 13] - [Ln 12, Col 23],
       "name": "Top Hoisted",
       "nameForId": "Top Hoisted",
     },
@@ -1736,80 +793,27 @@ exports[`parseStoriesFile parses story file project/src/stories/TypeScript.stori
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 9,
-        "line": 19,
-      },
-      "start": {
-        "column": 15,
-        "line": 17,
-      },
-    },
+    "location": [Ln 17, Col 15] - [Ln 19, Col 9],
     "title": "Test/TypeScript/Sample",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 77,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 62,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
       "name": "Type Script Story",
       "nameForId": "Type Script Story",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 40,
-          "index": 150,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 123,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 40],
       "name": "Type Script Typed Story",
       "nameForId": "Type Script Typed Story",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 51,
-          "index": 255,
-          "line": 9,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 217,
-          "line": 9,
-        },
-      },
+      "location": [Ln 9, Col 13] - [Ln 9, Col 51],
       "name": "Type Script Typed Generic Story",
       "nameForId": "Type Script Typed Generic Story",
     },
     {
-      "location": {
-        "end": Position {
-          "column": 41,
-          "index": 362,
-          "line": 13,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 334,
-          "line": 13,
-        },
-      },
+      "location": [Ln 13, Col 13] - [Ln 13, Col 41],
       "name": "Type Script Type Assertion Story",
       "nameForId": "Type Script Type Assertion Story",
     },
@@ -1822,32 +826,12 @@ exports[`parseStoriesFile parses story file project/src/stories/TypeScriptAsMeta
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 9,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 9],
     "title": "Test/TypeScript/Default as Meta",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 70,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 55,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
       "name": "Type Script Story",
       "nameForId": "Type Script Story",
     },
@@ -1860,32 +844,12 @@ exports[`parseStoriesFile parses story file project/src/stories/TypeScriptIdenti
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 6,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 6] - [Ln 7, Col 1],
     "title": "Test/TypeScript/Typed Identifier",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 70,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 55,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
       "name": "Type Script Story",
       "nameForId": "Type Script Story",
     },
@@ -1898,32 +862,12 @@ exports[`parseStoriesFile parses story file project/src/stories/TypeScriptIdenti
 {
   "meta": {
     "id": undefined,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 6,
-        "line": 6,
-      },
-    },
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
     "title": "Test/TypeScript/Identifier Exported as Meta",
   },
   "stories": [
     {
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 70,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 55,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
       "name": "Type Script Story",
       "nameForId": "Type Script Story",
     },

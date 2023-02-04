@@ -1,10 +1,6 @@
+import type { Position } from './Position';
+
 export interface Location {
-  start: {
-    line: number;
-    column: number;
-  };
-  end: {
-    line: number;
-    column: number;
-  };
+  start: Position;
+  end: Position;
 }

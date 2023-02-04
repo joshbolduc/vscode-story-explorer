@@ -15,6 +15,7 @@ export default /**
   },
   reporters: ['default', 'github-actions'],
   roots: ['src', 'test'],
+  setupFilesAfterEnv: ['./test/jest.setup.ts'],
   transform: {
     '^.+\\.tsx?$': [
       'esbuild-jest',

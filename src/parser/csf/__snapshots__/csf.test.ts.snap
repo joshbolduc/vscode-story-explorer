@@ -4,33 +4,13 @@ exports[`csf parses story file project/src/autoTitle/csf/EmptyDefaultExport.stor
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 17,
-        "line": 5,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 5, Col 17],
     "properties": {},
   },
   "stories": [
     {
       "exportName": "Primary",
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 169,
-          "line": 9,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 162,
-          "line": 9,
-        },
-      },
+      "location": [Ln 9, Col 13] - [Ln 9, Col 20],
       "properties": {
         "args": {
           "children": "Empty default export",
@@ -45,16 +25,7 @@ exports[`csf parses story file project/src/autoTitle/csf/EmptyTitle.stories.js 1
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "properties": {
       "title": "",
     },
@@ -62,18 +33,7 @@ exports[`csf parses story file project/src/autoTitle/csf/EmptyTitle.stories.js 1
   "stories": [
     {
       "exportName": "Primary",
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 183,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 176,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "properties": {
         "args": {
           "children": "Story with empty title and prefix",
@@ -88,16 +48,7 @@ exports[`csf parses story file project/src/autoTitle/csf/ExtraTitle.stories.js 1
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "properties": {
       "title": "Explicit title",
     },
@@ -105,18 +56,7 @@ exports[`csf parses story file project/src/autoTitle/csf/ExtraTitle.stories.js 1
   "stories": [
     {
       "exportName": "Primary",
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 197,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 190,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "properties": {
         "args": {
           "children": "Story with explicit title and prefix",
@@ -137,18 +77,7 @@ exports[`csf parses story file project/src/autoTitle/csf/NoDefaultExport.stories
   "stories": [
     {
       "exportName": "Primary",
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 149,
-          "line": 7,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 142,
-          "line": 7,
-        },
-      },
+      "location": [Ln 7, Col 13] - [Ln 7, Col 20],
       "properties": {
         "args": {
           "children": "No default export",
@@ -163,33 +92,13 @@ exports[`csf parses story file project/src/autoTitle/csf/nested/WithoutTitle.sto
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "properties": {},
   },
   "stories": [
     {
       "exportName": "Primary",
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 194,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 187,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "properties": {
         "args": {
           "children": "Without Title/Sample",
@@ -204,33 +113,13 @@ exports[`csf parses story file project/src/autoTitle/csf/nested/nested.stories.j
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "properties": {},
   },
   "stories": [
     {
       "exportName": "Primary",
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 194,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 187,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "properties": {
         "args": {
           "children": "Nested redundant filename",
@@ -245,33 +134,13 @@ exports[`csf parses story file project/src/autoTitle/csf/withIndex/index.stories
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "properties": {},
   },
   "stories": [
     {
       "exportName": "Primary",
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 194,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 187,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
       "properties": {
         "args": {
           "children": "Nested index filename",
@@ -286,16 +155,7 @@ exports[`csf parses story file project/src/stories/BasicCsf.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 11,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 11, Col 1],
     "properties": {
       "args": {
         "color": "blue",
@@ -306,18 +166,7 @@ exports[`csf parses story file project/src/stories/BasicCsf.stories.js 1`] = `
   "stories": [
     {
       "exportName": "Primary",
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 252,
-          "line": 15,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 245,
-          "line": 15,
-        },
-      },
+      "location": [Ln 15, Col 13] - [Ln 15, Col 20],
       "properties": {
         "args": {
           "children": "Primary",
@@ -326,18 +175,7 @@ exports[`csf parses story file project/src/stories/BasicCsf.stories.js 1`] = `
     },
     {
       "exportName": "Secondary",
-      "location": {
-        "end": Position {
-          "column": 22,
-          "index": 340,
-          "line": 20,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 331,
-          "line": 20,
-        },
-      },
+      "location": [Ln 20, Col 13] - [Ln 20, Col 22],
       "properties": {
         "args": {
           "children": "Secondary",
@@ -346,18 +184,7 @@ exports[`csf parses story file project/src/stories/BasicCsf.stories.js 1`] = `
     },
     {
       "exportName": "Large",
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 428,
-          "line": 25,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 423,
-          "line": 25,
-        },
-      },
+      "location": [Ln 25, Col 13] - [Ln 25, Col 18],
       "properties": {
         "args": {
           "children": "Large",
@@ -367,18 +194,7 @@ exports[`csf parses story file project/src/stories/BasicCsf.stories.js 1`] = `
     },
     {
       "exportName": "Small",
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 520,
-          "line": 31,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 515,
-          "line": 31,
-        },
-      },
+      "location": [Ln 31, Col 13] - [Ln 31, Col 18],
       "properties": {
         "args": {
           "children": "Small",
@@ -394,16 +210,7 @@ exports[`csf parses story file project/src/stories/CsfV1.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 3, Col 1],
     "properties": {
       "title": "Example/CSF v1",
     },
@@ -411,18 +218,7 @@ exports[`csf parses story file project/src/stories/CsfV1.stories.js 1`] = `
   "stories": [
     {
       "exportName": "V1StoryName",
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 72,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 61,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 24],
       "properties": {
         "story": {
           "name": "Renamed via non-hoisted story",
@@ -431,18 +227,7 @@ exports[`csf parses story file project/src/stories/CsfV1.stories.js 1`] = `
     },
     {
       "exportName": "V2V1StoryName",
-      "location": {
-        "end": Position {
-          "column": 26,
-          "index": 243,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 230,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 26],
       "properties": {
         "story": {
           "name": "v1 name should be overridden",
@@ -452,18 +237,7 @@ exports[`csf parses story file project/src/stories/CsfV1.stories.js 1`] = `
     },
     {
       "exportName": "V2V1StoryNameEmpty",
-      "location": {
-        "end": Position {
-          "column": 31,
-          "index": 466,
-          "line": 18,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 448,
-          "line": 18,
-        },
-      },
+      "location": [Ln 18, Col 13] - [Ln 18, Col 31],
       "properties": {
         "story": {
           "name": "v1 name should be used",
@@ -485,18 +259,7 @@ exports[`csf parses story file project/src/stories/CsfWithMdx.stories.js 1`] = `
   "stories": [
     {
       "exportName": "Basic",
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 263,
-          "line": 11,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 258,
-          "line": 11,
-        },
-      },
+      "location": [Ln 11, Col 13] - [Ln 11, Col 18],
       "properties": {
         "args": {
           "children": "Basic",
@@ -506,18 +269,7 @@ exports[`csf parses story file project/src/stories/CsfWithMdx.stories.js 1`] = `
     },
     {
       "exportName": "Basic2",
-      "location": {
-        "end": Position {
-          "column": 19,
-          "index": 397,
-          "line": 17,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 391,
-          "line": 17,
-        },
-      },
+      "location": [Ln 17, Col 13] - [Ln 17, Col 19],
       "properties": {
         "args": {
           "children": "Basic 2",
@@ -527,18 +279,7 @@ exports[`csf parses story file project/src/stories/CsfWithMdx.stories.js 1`] = `
     },
     {
       "exportName": "Basic3",
-      "location": {
-        "end": Position {
-          "column": 19,
-          "index": 537,
-          "line": 23,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 531,
-          "line": 23,
-        },
-      },
+      "location": [Ln 23, Col 13] - [Ln 23, Col 19],
       "properties": {
         "args": {
           "children": "Basic 3",
@@ -554,16 +295,7 @@ exports[`csf parses story file project/src/stories/CustomId.stories.js 1`] = `
   "meta": {
     "declared": true,
     "id": "Manually specified CSF story ID",
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 4,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 4, Col 1],
     "properties": {
       "id": "Manually specified CSF story ID",
       "title": "Example/Custom ID CSF",
@@ -572,18 +304,7 @@ exports[`csf parses story file project/src/stories/CustomId.stories.js 1`] = `
   "stories": [
     {
       "exportName": "Story",
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 114,
-          "line": 6,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 109,
-          "line": 6,
-        },
-      },
+      "location": [Ln 6, Col 13] - [Ln 6, Col 18],
       "properties": {},
     },
   ],
@@ -594,16 +315,7 @@ exports[`csf parses story file project/src/stories/CustomName.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 12,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 12, Col 1],
     "properties": {
       "args": {
         "children": "Default content",
@@ -615,18 +327,7 @@ exports[`csf parses story file project/src/stories/CustomName.stories.js 1`] = `
   "stories": [
     {
       "exportName": "CustomName",
-      "location": {
-        "end": Position {
-          "column": 23,
-          "index": 292,
-          "line": 16,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 282,
-          "line": 16,
-        },
-      },
+      "location": [Ln 16, Col 13] - [Ln 16, Col 23],
       "properties": {
         "args": {
           "children": "Expected name: Custom story name",
@@ -636,18 +337,7 @@ exports[`csf parses story file project/src/stories/CustomName.stories.js 1`] = `
     },
     {
       "exportName": "Overridden",
-      "location": {
-        "end": Position {
-          "column": 23,
-          "index": 453,
-          "line": 22,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 443,
-          "line": 22,
-        },
-      },
+      "location": [Ln 22, Col 13] - [Ln 22, Col 23],
       "properties": {
         "args": {
           "children": "Expected name: Custom story name override",
@@ -657,18 +347,7 @@ exports[`csf parses story file project/src/stories/CustomName.stories.js 1`] = `
     },
     {
       "exportName": "NamedViaVariable",
-      "location": {
-        "end": Position {
-          "column": 29,
-          "index": 682,
-          "line": 29,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 666,
-          "line": 29,
-        },
-      },
+      "location": [Ln 29, Col 13] - [Ln 29, Col 29],
       "properties": {
         "args": {
           "children": "Expected name: Custom story name var",
@@ -678,54 +357,21 @@ exports[`csf parses story file project/src/stories/CustomName.stories.js 1`] = `
     },
     {
       "exportName": "InterpolatedName",
-      "location": {
-        "end": Position {
-          "column": 29,
-          "index": 898,
-          "line": 36,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 882,
-          "line": 36,
-        },
-      },
+      "location": [Ln 36, Col 13] - [Ln 36, Col 29],
       "properties": {
         "storyName": "Custom story name var in template string",
       },
     },
     {
       "exportName": "EmptyName",
-      "location": {
-        "end": Position {
-          "column": 22,
-          "index": 1007,
-          "line": 39,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 998,
-          "line": 39,
-        },
-      },
+      "location": [Ln 39, Col 13] - [Ln 39, Col 22],
       "properties": {
         "storyName": "",
       },
     },
     {
       "exportName": "LeadingWhitespace",
-      "location": {
-        "end": Position {
-          "column": 30,
-          "index": 1086,
-          "line": 42,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 1069,
-          "line": 42,
-        },
-      },
+      "location": [Ln 42, Col 13] - [Ln 42, Col 30],
       "properties": {
         "storyName": "     Leading whitespace",
       },
@@ -738,16 +384,7 @@ exports[`csf parses story file project/src/stories/DeepTree.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 6,
-      },
-      "start": {
-        "column": 15,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 15] - [Ln 6, Col 1],
     "properties": {
       "title": "Example/Deep/Tree/With/Several/Kinds",
     },
@@ -755,18 +392,7 @@ exports[`csf parses story file project/src/stories/DeepTree.stories.js 1`] = `
   "stories": [
     {
       "exportName": "Story",
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 207,
-          "line": 10,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 202,
-          "line": 10,
-        },
-      },
+      "location": [Ln 10, Col 13] - [Ln 10, Col 18],
       "properties": {
         "args": {
           "children": "Deep hierarchy",
@@ -781,16 +407,7 @@ exports[`csf parses story file project/src/stories/Excluded.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 4,
-      },
-    },
+    "location": [Ln 4, Col 15] - [Ln 7, Col 1],
     "properties": {
       "excludeStories": [
         "excludedExport",
@@ -801,34 +418,12 @@ exports[`csf parses story file project/src/stories/Excluded.stories.js 1`] = `
   "stories": [
     {
       "exportName": "excludedExport",
-      "location": {
-        "end": Position {
-          "column": 27,
-          "index": 27,
-          "line": 1,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 13,
-          "line": 1,
-        },
-      },
+      "location": [Ln 1, Col 13] - [Ln 1, Col 27],
       "properties": {},
     },
     {
       "exportName": "otherExport",
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 89,
-          "line": 2,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 78,
-          "line": 2,
-        },
-      },
+      "location": [Ln 2, Col 13] - [Ln 2, Col 24],
       "properties": {},
     },
   ],
@@ -839,16 +434,7 @@ exports[`csf parses story file project/src/stories/ExportStyles.stories.js 1`] =
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 11,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 11, Col 1],
     "properties": {
       "args": {
         "color": "green",
@@ -859,18 +445,7 @@ exports[`csf parses story file project/src/stories/ExportStyles.stories.js 1`] =
   "stories": [
     {
       "exportName": "NormalExport",
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 255,
-          "line": 15,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 243,
-          "line": 15,
-        },
-      },
+      "location": [Ln 15, Col 6] - [Ln 15, Col 18],
       "properties": {
         "args": {
           "children": "Export Style/Normal",
@@ -879,18 +454,7 @@ exports[`csf parses story file project/src/stories/ExportStyles.stories.js 1`] =
     },
     {
       "exportName": "AlternativeExportName",
-      "location": {
-        "end": Position {
-          "column": 16,
-          "index": 354,
-          "line": 20,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 344,
-          "line": 20,
-        },
-      },
+      "location": [Ln 20, Col 6] - [Ln 20, Col 16],
       "properties": {
         "args": {
           "children": "Export Style/Exported as",
@@ -899,18 +463,7 @@ exports[`csf parses story file project/src/stories/ExportStyles.stories.js 1`] =
     },
     {
       "exportName": "ExportNameOverridden",
-      "location": {
-        "end": Position {
-          "column": 29,
-          "index": 469,
-          "line": 25,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 446,
-          "line": 25,
-        },
-      },
+      "location": [Ln 25, Col 6] - [Ln 25, Col 29],
       "properties": {
         "args": {
           "children": "Export Style/Story name takes priority over modified export name",
@@ -926,16 +479,7 @@ exports[`csf parses story file project/src/stories/Form.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 5,
-      },
-      "start": {
-        "column": 15,
-        "line": 3,
-      },
-    },
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
     "properties": {
       "title": "Example/Form",
     },
@@ -943,18 +487,7 @@ exports[`csf parses story file project/src/stories/Form.stories.js 1`] = `
   "stories": [
     {
       "exportName": "Form",
-      "location": {
-        "end": Position {
-          "column": 17,
-          "index": 105,
-          "line": 7,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 101,
-          "line": 7,
-        },
-      },
+      "location": [Ln 7, Col 13] - [Ln 7, Col 17],
       "properties": {},
     },
   ],
@@ -965,16 +498,7 @@ exports[`csf parses story file project/src/stories/Hoisting.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
     "properties": {
       "title": "Example/Hoisting",
     },
@@ -982,18 +506,7 @@ exports[`csf parses story file project/src/stories/Hoisting.stories.js 1`] = `
   "stories": [
     {
       "exportName": "Hoisting",
-      "location": {
-        "end": Position {
-          "column": 21,
-          "index": 131,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 123,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 21],
       "properties": {},
     },
   ],
@@ -1004,16 +517,7 @@ exports[`csf parses story file project/src/stories/Included.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 4,
-      },
-    },
+    "location": [Ln 4, Col 15] - [Ln 7, Col 1],
     "properties": {
       "includeStories": [
         "includedExport",
@@ -1024,34 +528,12 @@ exports[`csf parses story file project/src/stories/Included.stories.js 1`] = `
   "stories": [
     {
       "exportName": "includedExport",
-      "location": {
-        "end": Position {
-          "column": 27,
-          "index": 27,
-          "line": 1,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 13,
-          "line": 1,
-        },
-      },
+      "location": [Ln 1, Col 13] - [Ln 1, Col 27],
       "properties": {},
     },
     {
       "exportName": "otherExport",
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 89,
-          "line": 2,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 78,
-          "line": 2,
-        },
-      },
+      "location": [Ln 2, Col 13] - [Ln 2, Col 24],
       "properties": {},
     },
   ],
@@ -1062,16 +544,7 @@ exports[`csf parses story file project/src/stories/JsxExtension.stories.jsx 1`] 
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 3, Col 1],
     "properties": {
       "title": "Example/JSX extension",
     },
@@ -1079,18 +552,7 @@ exports[`csf parses story file project/src/stories/JsxExtension.stories.jsx 1`] 
   "stories": [
     {
       "exportName": "Story",
-      "location": {
-        "end": Position {
-          "column": 18,
-          "index": 73,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 68,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 18],
       "properties": {},
     },
   ],
@@ -1101,16 +563,7 @@ exports[`csf parses story file project/src/stories/MergeOne.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 3, Col 1],
     "properties": {
       "title": "Example/Merge",
     },
@@ -1118,18 +571,7 @@ exports[`csf parses story file project/src/stories/MergeOne.stories.js 1`] = `
   "stories": [
     {
       "exportName": "One",
-      "location": {
-        "end": Position {
-          "column": 16,
-          "index": 63,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 60,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 16],
       "properties": {},
     },
   ],
@@ -1140,16 +582,7 @@ exports[`csf parses story file project/src/stories/MergeTwo.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 15,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 15] - [Ln 3, Col 1],
     "properties": {
       "title": "Example/Merge",
     },
@@ -1157,18 +590,7 @@ exports[`csf parses story file project/src/stories/MergeTwo.stories.js 1`] = `
   "stories": [
     {
       "exportName": "Two",
-      "location": {
-        "end": Position {
-          "column": 16,
-          "index": 63,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 60,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 16],
       "properties": {},
     },
   ],
@@ -1179,16 +601,7 @@ exports[`csf parses story file project/src/stories/SameName.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
     "properties": {
       "title": "Example/With Same Name",
     },
@@ -1196,18 +609,7 @@ exports[`csf parses story file project/src/stories/SameName.stories.js 1`] = `
   "stories": [
     {
       "exportName": "SameName",
-      "location": {
-        "end": Position {
-          "column": 21,
-          "index": 224,
-          "line": 12,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 216,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 13] - [Ln 12, Col 21],
       "properties": {
         "args": {
           "children": "Same name story",
@@ -1222,16 +624,7 @@ exports[`csf parses story file project/src/stories/SameNameChild.stories.js 1`] 
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
     "properties": {
       "title": "Example/With Same Name/Same Name",
     },
@@ -1239,18 +632,7 @@ exports[`csf parses story file project/src/stories/SameNameChild.stories.js 1`] 
   "stories": [
     {
       "exportName": "NestedStory",
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 237,
-          "line": 12,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 226,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 13] - [Ln 12, Col 24],
       "properties": {
         "args": {
           "children": "Nested same name story",
@@ -1265,16 +647,7 @@ exports[`csf parses story file project/src/stories/StoryDeclarations.stories.js 
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 3,
-      },
-      "start": {
-        "column": 6,
-        "line": 1,
-      },
-    },
+    "location": [Ln 1, Col 6] - [Ln 3, Col 1],
     "properties": {
       "title": "Test/Story Declarations",
     },
@@ -1282,136 +655,48 @@ exports[`csf parses story file project/src/stories/StoryDeclarations.stories.js 
   "stories": [
     {
       "exportName": "ConstDeclarator",
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 105,
-          "line": 7,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 90,
-          "line": 7,
-        },
-      },
+      "location": [Ln 7, Col 13] - [Ln 7, Col 28],
       "properties": {},
     },
     {
       "exportName": "SeparateDeclarator",
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 169,
-          "line": 9,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 151,
-          "line": 9,
-        },
-      },
+      "location": [Ln 9, Col 6] - [Ln 9, Col 24],
       "properties": {},
     },
     {
       "exportName": "SeparateDeclarator2",
-      "location": {
-        "end": Position {
-          "column": 25,
-          "index": 236,
-          "line": 10,
-        },
-        "start": Position {
-          "column": 6,
-          "index": 217,
-          "line": 10,
-        },
-      },
+      "location": [Ln 10, Col 6] - [Ln 10, Col 25],
       "properties": {
         "storyName": "Separate declarator with story name",
       },
     },
     {
       "exportName": "MultipleOne",
-      "location": {
-        "end": Position {
-          "column": 24,
-          "index": 448,
-          "line": 15,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 437,
-          "line": 15,
-        },
-      },
+      "location": [Ln 15, Col 13] - [Ln 15, Col 24],
       "properties": {},
     },
     {
       "exportName": "MultipleTwo",
-      "location": {
-        "end": Position {
-          "column": 13,
-          "index": 505,
-          "line": 16,
-        },
-        "start": Position {
-          "column": 2,
-          "index": 494,
-          "line": 16,
-        },
-      },
+      "location": [Ln 16, Col 2] - [Ln 16, Col 13],
       "properties": {
         "storyName": "Multiple two (given name)",
       },
     },
     {
       "exportName": "FunctionStory",
-      "location": {
-        "end": Position {
-          "column": 29,
-          "index": 633,
-          "line": 20,
-        },
-        "start": Position {
-          "column": 16,
-          "index": 620,
-          "line": 20,
-        },
-      },
+      "location": [Ln 20, Col 16] - [Ln 20, Col 29],
       "properties": {
         "storyName": "Renamed Function Story",
       },
     },
     {
       "exportName": "SeparateFunctionStory",
-      "location": {
-        "end": Position {
-          "column": 30,
-          "index": 768,
-          "line": 25,
-        },
-        "start": Position {
-          "column": 9,
-          "index": 747,
-          "line": 25,
-        },
-      },
+      "location": [Ln 25, Col 9] - [Ln 25, Col 30],
       "properties": {},
     },
     {
       "exportName": "SeparateFunctionStory2",
-      "location": {
-        "end": Position {
-          "column": 31,
-          "index": 853,
-          "line": 29,
-        },
-        "start": Position {
-          "column": 9,
-          "index": 831,
-          "line": 29,
-        },
-      },
+      "location": [Ln 29, Col 9] - [Ln 29, Col 31],
       "properties": {
         "storyName": "Separate function story with story name",
       },
@@ -1424,16 +709,7 @@ exports[`csf parses story file project/src/stories/TitleInterpolation.stories.js
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 10,
-      },
-      "start": {
-        "column": 15,
-        "line": 7,
-      },
-    },
+    "location": [Ln 7, Col 15] - [Ln 10, Col 1],
     "properties": {
       "title": "Example/Title Interpolation",
     },
@@ -1441,18 +717,7 @@ exports[`csf parses story file project/src/stories/TitleInterpolation.stories.js
   "stories": [
     {
       "exportName": "Primary",
-      "location": {
-        "end": Position {
-          "column": 20,
-          "index": 271,
-          "line": 14,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 264,
-          "line": 14,
-        },
-      },
+      "location": [Ln 14, Col 13] - [Ln 14, Col 20],
       "properties": {
         "args": {
           "children": "Interpolation/Sample",
@@ -1467,16 +732,7 @@ exports[`csf parses story file project/src/stories/Top.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
     "properties": {
       "title": "Top",
     },
@@ -1484,18 +740,7 @@ exports[`csf parses story file project/src/stories/Top.stories.js 1`] = `
   "stories": [
     {
       "exportName": "TopLevelStory",
-      "location": {
-        "end": Position {
-          "column": 26,
-          "index": 210,
-          "line": 12,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 197,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 13] - [Ln 12, Col 26],
       "properties": {
         "args": {
           "children": "Top level story",
@@ -1510,16 +755,7 @@ exports[`csf parses story file project/src/stories/TopHoisted.stories.js 1`] = `
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
     "properties": {
       "title": "Top Hoisted",
     },
@@ -1527,18 +763,7 @@ exports[`csf parses story file project/src/stories/TopHoisted.stories.js 1`] = `
   "stories": [
     {
       "exportName": "TopHoisted",
-      "location": {
-        "end": Position {
-          "column": 23,
-          "index": 215,
-          "line": 12,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 205,
-          "line": 12,
-        },
-      },
+      "location": [Ln 12, Col 13] - [Ln 12, Col 23],
       "properties": {
         "args": {
           "children": "Top level hoisted story",
@@ -1553,16 +778,7 @@ exports[`csf parses story file project/src/stories/TypeScript.stories.tsx 1`] = 
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 9,
-        "line": 19,
-      },
-      "start": {
-        "column": 15,
-        "line": 17,
-      },
-    },
+    "location": [Ln 17, Col 15] - [Ln 19, Col 9],
     "properties": {
       "title": "Test/TypeScript/Sample",
     },
@@ -1570,66 +786,22 @@ exports[`csf parses story file project/src/stories/TypeScript.stories.tsx 1`] = 
   "stories": [
     {
       "exportName": "TypeScriptStory",
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 77,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 62,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
       "properties": {},
     },
     {
       "exportName": "TypeScriptTypedStory",
-      "location": {
-        "end": Position {
-          "column": 40,
-          "index": 150,
-          "line": 5,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 123,
-          "line": 5,
-        },
-      },
+      "location": [Ln 5, Col 13] - [Ln 5, Col 40],
       "properties": {},
     },
     {
       "exportName": "TypeScriptTypedGenericStory",
-      "location": {
-        "end": Position {
-          "column": 51,
-          "index": 255,
-          "line": 9,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 217,
-          "line": 9,
-        },
-      },
+      "location": [Ln 9, Col 13] - [Ln 9, Col 51],
       "properties": {},
     },
     {
       "exportName": "TypeScriptTypeAssertionStory",
-      "location": {
-        "end": Position {
-          "column": 41,
-          "index": 362,
-          "line": 13,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 334,
-          "line": 13,
-        },
-      },
+      "location": [Ln 13, Col 13] - [Ln 13, Col 41],
       "properties": {},
     },
   ],
@@ -1640,16 +812,7 @@ exports[`csf parses story file project/src/stories/TypeScriptAsMeta.stories.ts 1
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 9,
-        "line": 7,
-      },
-      "start": {
-        "column": 15,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 15] - [Ln 7, Col 9],
     "properties": {
       "title": "Test/TypeScript/Default as Meta",
     },
@@ -1657,18 +820,7 @@ exports[`csf parses story file project/src/stories/TypeScriptAsMeta.stories.ts 1
   "stories": [
     {
       "exportName": "TypeScriptStory",
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 70,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 55,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
       "properties": {},
     },
   ],
@@ -1679,16 +831,7 @@ exports[`csf parses story file project/src/stories/TypeScriptIdentifier.stories.
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 7,
-      },
-      "start": {
-        "column": 6,
-        "line": 5,
-      },
-    },
+    "location": [Ln 5, Col 6] - [Ln 7, Col 1],
     "properties": {
       "title": "Test/TypeScript/Typed Identifier",
     },
@@ -1696,18 +839,7 @@ exports[`csf parses story file project/src/stories/TypeScriptIdentifier.stories.
   "stories": [
     {
       "exportName": "TypeScriptStory",
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 70,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 55,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
       "properties": {},
     },
   ],
@@ -1718,16 +850,7 @@ exports[`csf parses story file project/src/stories/TypeScriptIdentifierAsMeta.st
 {
   "meta": {
     "declared": true,
-    "location": {
-      "end": {
-        "column": 1,
-        "line": 8,
-      },
-      "start": {
-        "column": 6,
-        "line": 6,
-      },
-    },
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
     "properties": {
       "title": "Test/TypeScript/Identifier Exported as Meta",
     },
@@ -1735,18 +858,7 @@ exports[`csf parses story file project/src/stories/TypeScriptIdentifierAsMeta.st
   "stories": [
     {
       "exportName": "TypeScriptStory",
-      "location": {
-        "end": Position {
-          "column": 28,
-          "index": 70,
-          "line": 3,
-        },
-        "start": Position {
-          "column": 13,
-          "index": 55,
-          "line": 3,
-        },
-      },
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
       "properties": {},
     },
   ],
