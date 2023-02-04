@@ -14,7 +14,7 @@ import { parseStoriesFile } from '../parser/parseStoriesFile';
 import type { StoryStore } from '../store/StoryStore';
 import { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import type { SettingsWatcher } from '../util/SettingsWatcher';
-import { isDefined } from '../util/isDefined';
+import { isDefined } from '../util/guards/isDefined';
 
 export class StoryCodeLensProvider implements CodeLensProvider {
   private readonly onDidChangeCodeLensesEmitter = new EventEmitter<void>();

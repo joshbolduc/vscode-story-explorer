@@ -1,6 +1,6 @@
 import { storyNameFromExport } from '@componentdriven/csf';
 import { logDebug } from '../../log/log';
-import { isDefined } from '../../util/isDefined';
+import { isDefined } from '../../util/guards/isDefined';
 import type { RawParsedStoryFile } from '../RawParsedStoryFile';
 import { sanitizeMetaObject } from '../sanitizeMetaObject';
 import { parseFromContents } from './parseFromContents';
