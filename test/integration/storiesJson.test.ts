@@ -1,13 +1,7 @@
 import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import merge from 'lodash/merge';
-import { Uri } from 'vscode';
-import { interpretStoriesConfigItem } from '../../src/config/normalizeStoriesEntry';
-import type { ParsedStoryWithFileUri } from '../../src/parser/parseStoriesFileByUri';
-import { StoryExplorerStoryFile } from '../../src/story/StoryExplorerStoryFile';
-import { getStoriesGlobs } from '../../src/storybook/getStoriesGlobs';
-import { parseLocalConfigFile } from '../../src/storybook/parseLocalConfigFile';
-import { parseTestProjectStories } from '../util/parseTestProjectStories';
+import { getTestStoryFiles } from '../util/getTestStoryFiles';
 import { testBaseDir } from '../util/testBaseDir';
 
 interface StoriesJsonV3Map {
@@ -34,48 +28,21 @@ interface StoriesJsonV3 {
 
 describe('stories.json', () => {
   it('matches storybook-generated stories.json', async () => {
-    const tests = parseTestProjectStories();
-
-    const storybookConfigPath = resolve(
-      testBaseDir,
-      'project',
-      '.storybook',
-      'main.js',
-    );
-
-    const mockConfig = parseLocalConfigFile(storybookConfigPath)!;
-    const storiesGlobs = await getStoriesGlobs(mockConfig.stories);
-    const mockSpecifiers = await Promise.all(
-      storiesGlobs.map((config) =>
-        interpretStoriesConfigItem(
-          config,
-          Uri.file('/mock/basedir/project/.storybook'),
-        ),
-      ),
-    );
-
     type StoryTestInfo = {
       id: string;
       name: string;
       title: string;
     };
 
-    const transformedStoriesJson = tests
-      .flatMap(({ file, parsedRaw }) => {
-        const parsed: ParsedStoryWithFileUri = {
-          ...parsedRaw,
-          file: Uri.file(`/mock/basedir/${file}`),
-        };
-
-        const storyFile = new StoryExplorerStoryFile(parsed, mockSpecifiers);
-
+    const transformedStoriesJson = (await getTestStoryFiles())
+      .flatMap((storyFile) => {
         return storyFile
           .getAllStories()
-          .filter((story) => !story.isDocs || story.getFile().isDocsOnly())
+          .filter((story) => !story.isDocs || storyFile.isDocsOnly())
           .map((story) => ({
             id: story.id,
             name: story.name,
-            title: story.getFile().getTitle()!,
+            title: storyFile.getTitle()!,
           }));
       })
       .reduce<Record<string, StoryTestInfo>>((acc, cur) => {
