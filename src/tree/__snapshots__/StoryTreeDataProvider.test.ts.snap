@@ -1,0 +1,698 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StoryTreeDataProvider creates tree from story files 1`] = `
+- MDX Docs at top level
+  Id: mdx-docs-at-top-level--page
+  File: file:///mock/basedir/project/src/stories/DocsOnlyTop.stories.mdx
+  Context: story
+  Icon: document
+  Command: Open file [Ln 2, Col 0]
+
+- MDX with stories, top
+  Id: mdx-with-stories-top--mdx-with-stories-top
+  File: file:///mock/basedir/project/src/stories/MdxWithStoriesTop.stories.mdx
+  Context: story
+  Icon: bookmark
+  Command: Open file [Ln 5, Col 0]
+
+- Top
+  Id: top
+  File: file:///mock/basedir/project/src/stories/Top.stories.js
+  Context: story
+  Expanded
+  Icon: component
+  Command: Open file [Ln 4, Col 15]
+
+  - Top Level Story
+    Id: top--top-level-story
+    Context: story
+    Icon: bookmark
+    Command: Open file file:///mock/basedir/project/src/stories/Top.stories.js [Ln 11, Col 13]
+
+- Top Hoisted
+  Id: top-hoisted--top-hoisted
+  File: file:///mock/basedir/project/src/stories/TopHoisted.stories.js
+  Context: story
+  Icon: bookmark
+  Command: Open file [Ln 11, Col 13]
+
+- Custom title prefix
+  Expanded
+
+  - Second level
+    Collapsed
+    Icon: folder
+
+    - csf
+      Collapsed
+      Icon: folder
+
+      - EmptyDefaultExport
+        Id: custom-title-prefix-second-level-csf-emptydefaultexport
+        File: file:///mock/basedir/project/src/autoTitle/csf/EmptyDefaultExport.stories.js
+        Context: story
+        Collapsed
+        Icon: component
+        Command: Open file [Ln 4, Col 15]
+
+        - Primary
+          Id: custom-title-prefix-second-level-csf-emptydefaultexport--primary
+          Context: story
+          Icon: bookmark
+          Command: Open file file:///mock/basedir/project/src/autoTitle/csf/EmptyDefaultExport.stories.js [Ln 8, Col 13]
+
+      - EmptyTitle
+        Id: custom-title-prefix-second-level-csf-emptytitle
+        File: file:///mock/basedir/project/src/autoTitle/csf/EmptyTitle.stories.js
+        Context: story
+        Collapsed
+        Icon: component
+        Command: Open file [Ln 4, Col 15]
+
+        - Primary
+          Id: custom-title-prefix-second-level-csf-emptytitle--primary
+          Context: story
+          Icon: bookmark
+          Command: Open file file:///mock/basedir/project/src/autoTitle/csf/EmptyTitle.stories.js [Ln 10, Col 13]
+
+      - nested
+        Id: custom-title-prefix-second-level-csf-nested
+        File: file:///mock/basedir/project/src/autoTitle/csf/nested/nested.stories.js
+        Context: story
+        Collapsed
+        Icon: folder
+        Command: Open file [Ln 4, Col 15]
+
+        - WithoutTitle
+          Id: custom-title-prefix-second-level-csf-nested-withouttitle
+          File: file:///mock/basedir/project/src/autoTitle/csf/nested/WithoutTitle.stories.js
+          Context: story
+          Collapsed
+          Icon: component
+          Command: Open file [Ln 4, Col 15]
+
+          - Primary
+            Id: custom-title-prefix-second-level-csf-nested-withouttitle--primary
+            Context: story
+            Icon: bookmark
+            Command: Open file file:///mock/basedir/project/src/autoTitle/csf/nested/WithoutTitle.stories.js [Ln 10, Col 13]
+
+        - Primary
+          Id: custom-title-prefix-second-level-csf-nested--primary
+          Context: story
+          Icon: bookmark
+          Command: Open file file:///mock/basedir/project/src/autoTitle/csf/nested/nested.stories.js [Ln 10, Col 13]
+
+      - withIndex
+        Id: custom-title-prefix-second-level-csf-withindex
+        File: file:///mock/basedir/project/src/autoTitle/csf/withIndex/index.stories.js
+        Context: story
+        Collapsed
+        Icon: component
+        Command: Open file [Ln 4, Col 15]
+
+        - Primary
+          Id: custom-title-prefix-second-level-csf-withindex--primary
+          Context: story
+          Icon: bookmark
+          Command: Open file file:///mock/basedir/project/src/autoTitle/csf/withIndex/index.stories.js [Ln 10, Col 13]
+
+    - Explicit title
+      Id: custom-title-prefix-second-level-explicit-title
+      File: file:///mock/basedir/project/src/autoTitle/csf/ExtraTitle.stories.js
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 4, Col 15]
+
+      - Primary
+        Id: custom-title-prefix-second-level-explicit-title--primary
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/autoTitle/csf/ExtraTitle.stories.js [Ln 10, Col 13]
+
+    - mdx
+      Collapsed
+      Icon: folder
+
+      - MdxMeta
+        Id: custom-title-prefix-second-level-mdx-mdxmeta--page
+        File: file:///mock/basedir/project/src/autoTitle/mdx/MdxMeta.stories.mdx
+        Context: story
+        Icon: document
+        Command: Open file [Ln 2, Col 0]
+
+      - MdxMetaAndStory
+        Id: custom-title-prefix-second-level-mdx-mdxmetaandstory
+        File: file:///mock/basedir/project/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx
+        Context: story
+        Collapsed
+        Icon: component
+        Command: Open file [Ln 2, Col 0]
+
+        - Primary
+          Id: custom-title-prefix-second-level-mdx-mdxmetaandstory--primary
+          Context: story
+          Icon: bookmark
+          Command: Open file file:///mock/basedir/project/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx [Ln 4, Col 0]
+
+      - MdxStory
+        Id: custom-title-prefix-second-level-mdx-mdxstory
+        File: file:///mock/basedir/project/src/autoTitle/mdx/MdxStory.stories.mdx
+        Context: story
+        Collapsed
+        Icon: component
+        Command: Open file
+
+        - Primary
+          Id: custom-title-prefix-second-level-mdx-mdxstory--primary
+          Context: story
+          Icon: bookmark
+          Command: Open file file:///mock/basedir/project/src/autoTitle/mdx/MdxStory.stories.mdx [Ln 2, Col 0]
+
+- Example
+  Expanded
+
+  - MDX importing CSF
+    Id: example-mdx-importing-csf
+    File: file:///mock/basedir/project/src/stories/CsfWithMdx.stories.mdx
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 4, Col 0]
+
+    - Basic
+      Id: example-mdx-importing-csf--basic
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CsfWithMdx.stories.mdx [Ln 10, Col 0]
+
+    - Story name from MDX
+      Id: example-mdx-importing-csf--basic-2
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CsfWithMdx.stories.mdx [Ln 20, Col 0]
+
+    - Basic 3
+      Id: example-mdx-importing-csf--basic-3
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CsfWithMdx.stories.mdx [Ln 24, Col 0]
+
+  - Custom ID MDX
+    Id: manually-specified-mdx-id
+    File: file:///mock/basedir/project/src/stories/CustomId.stories.mdx
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 2, Col 0]
+
+    - Story
+      Id: manually-specified-mdx-id--story
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CustomId.stories.mdx [Ln 6, Col 0]
+
+  - MDX Docs Only
+    Id: example-mdx-docs-only--page
+    File: file:///mock/basedir/project/src/stories/DocsOnly.stories.mdx
+    Context: story
+    Icon: document
+    Command: Open file [Ln 2, Col 0]
+
+  - MDX with Stories
+    Id: example-mdx-with-stories
+    File: file:///mock/basedir/project/src/stories/MdxWithStories.stories.mdx
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 5, Col 0]
+
+    - MDX first story
+      Id: example-mdx-with-stories--mdx-first-story
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/MdxWithStories.stories.mdx [Ln 9, Col 0]
+
+    - MDX second story
+      Id: example-mdx-with-stories--mdx-second-story
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/MdxWithStories.stories.mdx [Ln 13, Col 0]
+
+    - MDX Story 3
+      Id: example-mdx-with-stories--mdx-story-3
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/MdxWithStories.stories.mdx [Ln 17, Col 0]
+
+  - Precedence
+    Id: example-precedence
+    File: file:///mock/basedir/project/src/stories/Precedence.stories.mdx
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 3, Col 0]
+
+    - Story with name, story, body
+      Id: example-precedence--small
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/Precedence.stories.mdx [Ln 19, Col 0]
+
+    - Story with name, body
+      Id: example-precedence--story-with-name-body
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/Precedence.stories.mdx [Ln 25, Col 0]
+
+  - Basic CSF
+    Id: example-basic-csf
+    File: file:///mock/basedir/project/src/stories/BasicCsf.stories.js
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 4, Col 15]
+
+    - Primary
+      Id: example-basic-csf--primary
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/BasicCsf.stories.js [Ln 14, Col 13]
+
+    - Secondary
+      Id: example-basic-csf--secondary
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/BasicCsf.stories.js [Ln 19, Col 13]
+
+    - Large
+      Id: example-basic-csf--large
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/BasicCsf.stories.js [Ln 24, Col 13]
+
+    - Small
+      Id: example-basic-csf--small
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/BasicCsf.stories.js [Ln 30, Col 13]
+
+  - CSF v1
+    Id: example-csf-v1
+    File: file:///mock/basedir/project/src/stories/CsfV1.stories.js
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 0, Col 15]
+
+    - Renamed via non-hoisted story
+      Id: example-csf-v1--v-1-story-name
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CsfV1.stories.js [Ln 4, Col 13]
+
+    - v2 name override
+      Id: example-csf-v1--v-2-v-1-story-name
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CsfV1.stories.js [Ln 10, Col 13]
+
+    - v1 name should be used
+      Id: example-csf-v1--v-2-v-1-story-name-empty
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CsfV1.stories.js [Ln 17, Col 13]
+
+  - Custom ID CSF
+    Id: manually-specified-csf-story-id
+    File: file:///mock/basedir/project/src/stories/CustomId.stories.js
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 0, Col 15]
+
+    - Story
+      Id: manually-specified-csf-story-id--story
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CustomId.stories.js [Ln 5, Col 13]
+
+  - Custom Name
+    Id: example-custom-name
+    File: file:///mock/basedir/project/src/stories/CustomName.stories.js
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 4, Col 15]
+
+    - Custom story name
+      Id: example-custom-name--custom-name
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CustomName.stories.js [Ln 15, Col 13]
+
+    - Custom story name override
+      Id: example-custom-name--overridden
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CustomName.stories.js [Ln 21, Col 13]
+
+    - Custom story name var
+      Id: example-custom-name--named-via-variable
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CustomName.stories.js [Ln 28, Col 13]
+
+    - Custom story name var in template string
+      Id: example-custom-name--interpolated-name
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CustomName.stories.js [Ln 35, Col 13]
+
+    - Empty Name
+      Id: example-custom-name--empty-name
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CustomName.stories.js [Ln 38, Col 13]
+
+    - Leading whitespace
+      Id: example-custom-name--leading-whitespace
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/CustomName.stories.js [Ln 41, Col 13]
+
+  - Deep
+    Collapsed
+    Icon: folder
+
+    - Tree
+      Collapsed
+      Icon: folder
+
+      - With
+        Collapsed
+        Icon: folder
+
+        - Several
+          Collapsed
+          Icon: folder
+
+          - Kinds
+            Id: example-deep-tree-with-several-kinds
+            File: file:///mock/basedir/project/src/stories/DeepTree.stories.js
+            Context: story
+            Collapsed
+            Icon: component
+            Command: Open file [Ln 2, Col 15]
+
+            - Story
+              Id: example-deep-tree-with-several-kinds--story
+              Context: story
+              Icon: bookmark
+              Command: Open file file:///mock/basedir/project/src/stories/DeepTree.stories.js [Ln 9, Col 13]
+
+  - Export Styles
+    Id: example-export-styles
+    File: file:///mock/basedir/project/src/stories/ExportStyles.stories.js
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 4, Col 15]
+
+    - Normal Export
+      Id: example-export-styles--normal-export
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/ExportStyles.stories.js [Ln 14, Col 6]
+
+    - Alternative Export Name
+      Id: example-export-styles--alternative-export-name
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/ExportStyles.stories.js [Ln 19, Col 6]
+
+    - Override name 3
+      Id: example-export-styles--export-name-overridden
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/ExportStyles.stories.js [Ln 24, Col 6]
+
+  - Form
+    Id: example-form--form
+    File: file:///mock/basedir/project/src/stories/Form.stories.js
+    Context: story
+    Icon: bookmark
+    Command: Open file [Ln 6, Col 13]
+
+  - Hoisting
+    Id: example-hoisting--hoisting
+    File: file:///mock/basedir/project/src/stories/Hoisting.stories.js
+    Context: story
+    Icon: bookmark
+    Command: Open file [Ln 2, Col 13]
+
+  - JSX extension
+    Id: example-jsx-extension
+    File: file:///mock/basedir/project/src/stories/JsxExtension.stories.jsx
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 0, Col 15]
+
+    - Story
+      Id: example-jsx-extension--story
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/JsxExtension.stories.jsx [Ln 4, Col 13]
+
+  - Merge
+    Id: file:///mock/basedir/project/src/stories/MergeOne.stories.js
+    File: file:///mock/basedir/project/src/stories/MergeOne.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - One
+      Id: example-merge--one
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/MergeOne.stories.js [Ln 4, Col 13]
+
+    - Two
+      Id: example-merge--two
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/MergeTwo.stories.js [Ln 4, Col 13]
+
+  - With Same Name
+    Id: example-with-same-name
+    File: file:///mock/basedir/project/src/stories/SameName.stories.js
+    Context: story
+    Collapsed
+    Icon: folder
+    Command: Open file [Ln 4, Col 15]
+
+    - Same Name
+      Id: example-with-same-name--same-name
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/SameName.stories.js [Ln 11, Col 13]
+
+    - Same Name
+      Id: example-with-same-name-same-name
+      File: file:///mock/basedir/project/src/stories/SameNameChild.stories.js
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 4, Col 15]
+
+      - Nested Story
+        Id: example-with-same-name-same-name--nested-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/SameNameChild.stories.js [Ln 11, Col 13]
+
+  - Title Interpolation
+    Id: example-title-interpolation
+    File: file:///mock/basedir/project/src/stories/TitleInterpolation.stories.js
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 6, Col 15]
+
+    - Primary
+      Id: example-title-interpolation--primary
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/TitleInterpolation.stories.js [Ln 13, Col 13]
+
+- Test
+  Expanded
+
+  - Exclusions
+    Collapsed
+    Icon: folder
+
+    - Excluded
+      Id: test-exclusions-excluded
+      File: file:///mock/basedir/project/src/stories/Excluded.stories.js
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 3, Col 15]
+
+      - Other Export
+        Id: test-exclusions-excluded--other-export
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/Excluded.stories.js [Ln 1, Col 13]
+
+    - Included
+      Id: test-exclusions-included
+      File: file:///mock/basedir/project/src/stories/Included.stories.js
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 3, Col 15]
+
+      - Included Export
+        Id: test-exclusions-included--included-export
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/Included.stories.js [Ln 0, Col 13]
+
+  - Story Declarations
+    Id: test-story-declarations
+    File: file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 0, Col 6]
+
+    - Const Declarator
+      Id: test-story-declarations--const-declarator
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js [Ln 6, Col 13]
+
+    - Separate Declarator
+      Id: test-story-declarations--separate-declarator
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js [Ln 8, Col 6]
+
+    - Separate declarator with story name
+      Id: test-story-declarations--separate-declarator-2
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js [Ln 9, Col 6]
+
+    - Multiple One
+      Id: test-story-declarations--multiple-one
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js [Ln 14, Col 13]
+
+    - Multiple two (given name)
+      Id: test-story-declarations--multiple-two
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js [Ln 15, Col 2]
+
+    - Renamed Function Story
+      Id: test-story-declarations--function-story
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js [Ln 19, Col 16]
+
+    - Separate Function Story
+      Id: test-story-declarations--separate-function-story
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js [Ln 24, Col 9]
+
+    - Separate function story with story name
+      Id: test-story-declarations--separate-function-story-2
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js [Ln 28, Col 9]
+
+  - TypeScript
+    Collapsed
+    Icon: folder
+
+    - Sample
+      Id: test-typescript-sample
+      File: file:///mock/basedir/project/src/stories/TypeScript.stories.tsx
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 16, Col 15]
+
+      - Type Script Story
+        Id: test-typescript-sample--type-script-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/TypeScript.stories.tsx [Ln 2, Col 13]
+
+      - Type Script Typed Story
+        Id: test-typescript-sample--type-script-typed-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/TypeScript.stories.tsx [Ln 4, Col 13]
+
+      - Type Script Typed Generic Story
+        Id: test-typescript-sample--type-script-typed-generic-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/TypeScript.stories.tsx [Ln 8, Col 13]
+
+      - Type Script Type Assertion Story
+        Id: test-typescript-sample--type-script-type-assertion-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/TypeScript.stories.tsx [Ln 12, Col 13]
+
+    - Default as Meta
+      Id: test-typescript-default-as-meta
+      File: file:///mock/basedir/project/src/stories/TypeScriptAsMeta.stories.ts
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 4, Col 15]
+
+      - Type Script Story
+        Id: test-typescript-default-as-meta--type-script-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/TypeScriptAsMeta.stories.ts [Ln 2, Col 13]
+
+    - Typed Identifier
+      Id: test-typescript-typed-identifier
+      File: file:///mock/basedir/project/src/stories/TypeScriptIdentifier.stories.ts
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 4, Col 6]
+
+      - Type Script Story
+        Id: test-typescript-typed-identifier--type-script-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/TypeScriptIdentifier.stories.ts [Ln 2, Col 13]
+
+    - Identifier Exported as Meta
+      Id: test-typescript-identifier-exported-as-meta
+      File: file:///mock/basedir/project/src/stories/TypeScriptIdentifierAsMeta.stories.ts
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 5, Col 6]
+
+      - Type Script Story
+        Id: test-typescript-identifier-exported-as-meta--type-script-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/src/stories/TypeScriptIdentifierAsMeta.stories.ts [Ln 2, Col 13]
+`;
