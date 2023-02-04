@@ -2,7 +2,7 @@ import { merge, NEVER } from 'rxjs';
 import type { Uri } from 'vscode';
 import { Utils } from 'vscode-uri';
 import { logDebug } from '../../log/log';
-import { isVirtualUri } from '../isVirtualUri';
+import { isVirtualUri } from '../guards/isVirtualUri';
 import { watchFile } from './watchFile';
 
 const getUriAndParentUris = (initialUri: Uri) => {

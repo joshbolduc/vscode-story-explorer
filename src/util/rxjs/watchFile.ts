@@ -1,6 +1,6 @@
 import { map, merge, Observable, switchMap } from 'rxjs';
 import { FileSystemWatcher, GlobPattern, Uri, workspace } from 'vscode';
-import { isTruthy } from '../isTruthy';
+import { isTruthy } from '../guards/isTruthy';
 import { fromVsCodeEvent } from './fromVsCodeEvent';
 
 export const watchFile = (

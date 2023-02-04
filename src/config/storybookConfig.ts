@@ -5,7 +5,7 @@ import {
   storybookConfigParseFailedContext,
 } from '../constants/constants';
 import { parseLocalConfigFile } from '../storybook/parseLocalConfigFile';
-import { isVirtualUri } from '../util/isVirtualUri';
+import { isVirtualUri } from '../util/guards/isVirtualUri';
 import { deferAndShare } from '../util/rxjs/deferAndShare';
 import { distinctUntilNotStrictEqual } from '../util/rxjs/distinctUntilNotStrictEqual';
 import { watchFile } from '../util/rxjs/watchFile';
