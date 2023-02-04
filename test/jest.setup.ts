@@ -25,12 +25,13 @@ addSerializer({
 
 addSerializer({
   test: isLocation,
-  serialize: (v, config, indentation, depth, refs, printer) =>
-    `${printer(v.start, config, indentation, depth, refs)} - ${printer(
-      v.end,
-      config,
-      indentation,
-      depth,
-      refs,
-    )}`,
+  serialize: (v, config, indentation, depth, refs, printer) => {
+    const startStr = printer(v.start, config, indentation, depth, refs);
+
+    if (v.start.line === v.end.line && v.start.column === v.end.column) {
+      return startStr;
+    }
+
+    return `${startStr} - ${printer(v.end, config, indentation, depth, refs)}`;
+  },
 });
