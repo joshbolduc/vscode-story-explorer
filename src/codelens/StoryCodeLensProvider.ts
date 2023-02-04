@@ -120,18 +120,18 @@ export class StoryCodeLensProvider implements CodeLensProvider {
       );
     }
 
-    const { docsStory } = storyFile;
-    if (showDocs && docsStory) {
+    const docs = storyFile.getDocs();
+    if (showDocs && docs) {
       lenses.push(
         new CodeLens(new Range(0, 0, 0, 0), {
           command: openPreviewToSideCommand,
           title: 'Preview Docs',
-          arguments: [docsStory],
+          arguments: [docs],
         }),
         new CodeLens(new Range(0, 0, 0, 0), {
           command: openPreviewInBrowserCommand,
           title: 'Open Docs in Browser',
-          arguments: [docsStory],
+          arguments: [docs],
         }),
       );
     }

@@ -12,17 +12,16 @@ import type { TreeNode } from './TreeNode';
 import { TreeNodeItem } from './TreeNodeItem';
 import { storyFilesToKindTree } from './storyFilesToKindTree';
 
-const sortRootTreeNodes = (treeNodes: TreeNode[]) => {
-  return treeNodes.sort((a, b) => {
+const sortRootTreeNodes = (treeNodes: readonly TreeNode[]) => {
+  return treeNodes.slice().sort((a, b) => {
     const shouldPrioritize = (node: TreeNode) => {
       // At the root, sort the node first if:
-      // - it is a story itself
-      // - it is a kind node being (strictly) treated as a story node
+      // - it is a story itself, or is a kind node being treated as a story node
+      //   (i.e., a leaf)
       // - it is a kind node with immediate story children
       return (
-        node.type === 'story' ||
-        node.getEffectiveStory(true) ||
-        node.hasStoryChildren()
+        !!node.getLeafEntry() ||
+        (node.type === 'kind' && node.hasStoryChildren())
       );
     };
 
@@ -73,14 +72,16 @@ export class StoryTreeDataProvider implements TreeDataProvider<TreeNode> {
     return element.parent;
   }
 
-  public async getChildren(
-    element?: TreeNode,
-  ): Promise<TreeNode[] | undefined> {
+  public async getChildren(element?: TreeNode) {
     if (!element) {
-      return this.getRootChildren();
+      return (await this.getRootChildren()).slice();
     }
 
-    return this.getElementChildren(element);
+    if (element.type === 'story') {
+      return undefined;
+    }
+
+    return element.getChildren().slice();
   }
 
   public dispose() {
@@ -88,11 +89,7 @@ export class StoryTreeDataProvider implements TreeDataProvider<TreeNode> {
     this.storyStoreListener.dispose();
   }
 
-  private getElementChildren(element: TreeNode) {
-    return element.type === 'kind' ? element.getChildren() : undefined;
-  }
-
-  private async getRootChildren() {
+  private async getRootChildren(): Promise<readonly TreeNode[]> {
     await this.store.waitUntilInitialized();
 
     const storyFiles = await this.store.getSortedStoryFiles();

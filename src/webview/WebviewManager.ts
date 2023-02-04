@@ -12,7 +12,7 @@ import { logDebug, logError, logInfo } from '../log/log';
 import type { ProxyManager } from '../proxy/ProxyManager';
 import type { ServerManager } from '../server/ServerManager';
 import type { StoryStore } from '../store/StoryStore';
-import type { StoryExplorerStory } from '../story/StoryExplorerStory';
+import type { StoryExplorerEntry } from '../story/StoryExplorerEntry';
 import type { TreeViewManager } from '../tree/TreeViewManager';
 import { setContext } from '../util/setContext';
 import { StoryWebview } from './StoryWebview';
@@ -83,7 +83,7 @@ export class WebviewManager {
   }
 
   public async openOrActivateWebview(
-    story: StoryExplorerStory,
+    story: StoryExplorerEntry,
     openToSide: boolean,
   ) {
     const id = story.id;

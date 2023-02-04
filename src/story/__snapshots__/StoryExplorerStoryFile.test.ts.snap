@@ -7,13 +7,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/Empt
   "stories": [
     {
       "id": "auto-generated-title-prefix-csf-emptydefaultexport",
-      "isDocs": true,
       "name": "EmptyDefaultExport",
+      "type": "docs",
     },
     {
       "id": "auto-generated-title-prefix-csf-emptydefaultexport--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
   ],
   "title": "Auto-generated title prefix/csf/EmptyDefaultExport",
@@ -27,13 +27,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/Empt
   "stories": [
     {
       "id": "auto-generated-title-prefix-csf-emptytitle",
-      "isDocs": true,
       "name": "EmptyTitle",
+      "type": "docs",
     },
     {
       "id": "auto-generated-title-prefix-csf-emptytitle--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
   ],
   "title": "Auto-generated title prefix/csf/EmptyTitle",
@@ -47,13 +47,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/Extr
   "stories": [
     {
       "id": "auto-generated-title-prefix-explicit-title",
-      "isDocs": true,
       "name": "Explicit title",
+      "type": "docs",
     },
     {
       "id": "auto-generated-title-prefix-explicit-title--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
   ],
   "title": "Auto-generated title prefix/Explicit title",
@@ -67,13 +67,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/nest
   "stories": [
     {
       "id": "auto-generated-title-prefix-csf-nested-withouttitle",
-      "isDocs": true,
       "name": "WithoutTitle",
+      "type": "docs",
     },
     {
       "id": "auto-generated-title-prefix-csf-nested-withouttitle--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
   ],
   "title": "Auto-generated title prefix/csf/nested/WithoutTitle",
@@ -87,13 +87,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/nest
   "stories": [
     {
       "id": "auto-generated-title-prefix-csf-nested",
-      "isDocs": true,
       "name": "nested",
+      "type": "docs",
     },
     {
       "id": "auto-generated-title-prefix-csf-nested--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
   ],
   "title": "Auto-generated title prefix/csf/nested",
@@ -107,13 +107,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/csf/with
   "stories": [
     {
       "id": "auto-generated-title-prefix-csf-withindex",
-      "isDocs": true,
       "name": "withIndex",
+      "type": "docs",
     },
     {
       "id": "auto-generated-title-prefix-csf-withindex--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
   ],
   "title": "Auto-generated title prefix/csf/withIndex",
@@ -127,8 +127,8 @@ exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/mdx/MdxM
   "stories": [
     {
       "id": "auto-generated-title-prefix-mdx-mdxmeta--page",
-      "isDocs": true,
       "name": "Page",
+      "type": "docs",
     },
   ],
   "title": "Auto-generated title prefix/mdx/MdxMeta",
@@ -142,13 +142,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/mdx/MdxM
   "stories": [
     {
       "id": "auto-generated-title-prefix-mdx-mdxmetaandstory",
-      "isDocs": true,
       "name": "MdxMetaAndStory",
+      "type": "docs",
     },
     {
       "id": "auto-generated-title-prefix-mdx-mdxmetaandstory--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
   ],
   "title": "Auto-generated title prefix/mdx/MdxMetaAndStory",
@@ -162,13 +162,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/autoTitle/mdx/MdxS
   "stories": [
     {
       "id": "auto-generated-title-prefix-mdx-mdxstory",
-      "isDocs": true,
       "name": "MdxStory",
+      "type": "docs",
     },
     {
       "id": "auto-generated-title-prefix-mdx-mdxstory--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
   ],
   "title": "Auto-generated title prefix/mdx/MdxStory",
@@ -182,28 +182,28 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/BasicCsf.s
   "stories": [
     {
       "id": "example-basic-csf",
-      "isDocs": true,
       "name": "Basic CSF",
+      "type": "docs",
     },
     {
       "id": "example-basic-csf--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
     {
       "id": "example-basic-csf--secondary",
-      "isDocs": false,
       "name": "Secondary",
+      "type": "story",
     },
     {
       "id": "example-basic-csf--large",
-      "isDocs": false,
       "name": "Large",
+      "type": "story",
     },
     {
       "id": "example-basic-csf--small",
-      "isDocs": false,
       "name": "Small",
+      "type": "story",
     },
   ],
   "title": "Example/Basic CSF",
@@ -217,23 +217,23 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/CsfV1.stor
   "stories": [
     {
       "id": "example-csf-v1",
-      "isDocs": true,
       "name": "CSF v1",
+      "type": "docs",
     },
     {
       "id": "example-csf-v1--v-1-story-name",
-      "isDocs": false,
       "name": "Renamed via non-hoisted story",
+      "type": "story",
     },
     {
       "id": "example-csf-v1--v-2-v-1-story-name",
-      "isDocs": false,
       "name": "v2 name override",
+      "type": "story",
     },
     {
       "id": "example-csf-v1--v-2-v-1-story-name-empty",
-      "isDocs": false,
       "name": "v1 name should be used",
+      "type": "story",
     },
   ],
   "title": "Example/CSF v1",
@@ -247,23 +247,23 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/CsfWithMdx
   "stories": [
     {
       "id": "example-mdx-importing-csf",
-      "isDocs": true,
       "name": "MDX importing CSF",
+      "type": "docs",
     },
     {
       "id": "example-mdx-importing-csf--basic",
-      "isDocs": false,
       "name": "Basic",
+      "type": "story",
     },
     {
       "id": "example-mdx-importing-csf--basic-2",
-      "isDocs": false,
       "name": "Story name from MDX",
+      "type": "story",
     },
     {
       "id": "example-mdx-importing-csf--basic-3",
-      "isDocs": false,
       "name": "Basic 3",
+      "type": "story",
     },
   ],
   "title": "Example/MDX importing CSF",
@@ -277,13 +277,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/CustomId.s
   "stories": [
     {
       "id": "manually-specified-csf-story-id",
-      "isDocs": true,
       "name": "Custom ID CSF",
+      "type": "docs",
     },
     {
       "id": "manually-specified-csf-story-id--story",
-      "isDocs": false,
       "name": "Story",
+      "type": "story",
     },
   ],
   "title": "Example/Custom ID CSF",
@@ -297,13 +297,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/CustomId.s
   "stories": [
     {
       "id": "manually-specified-mdx-id",
-      "isDocs": true,
       "name": "Custom ID MDX",
+      "type": "docs",
     },
     {
       "id": "manually-specified-mdx-id--story",
-      "isDocs": false,
       "name": "Story",
+      "type": "story",
     },
   ],
   "title": "Example/Custom ID MDX",
@@ -317,38 +317,38 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/CustomName
   "stories": [
     {
       "id": "example-custom-name",
-      "isDocs": true,
       "name": "Custom Name",
+      "type": "docs",
     },
     {
       "id": "example-custom-name--custom-name",
-      "isDocs": false,
       "name": "Custom story name",
+      "type": "story",
     },
     {
       "id": "example-custom-name--overridden",
-      "isDocs": false,
       "name": "Custom story name override",
+      "type": "story",
     },
     {
       "id": "example-custom-name--named-via-variable",
-      "isDocs": false,
       "name": "Custom story name var",
+      "type": "story",
     },
     {
       "id": "example-custom-name--interpolated-name",
-      "isDocs": false,
       "name": "Custom story name var in template string",
+      "type": "story",
     },
     {
       "id": "example-custom-name--empty-name",
-      "isDocs": false,
       "name": "Empty Name",
+      "type": "story",
     },
     {
       "id": "example-custom-name--leading-whitespace",
-      "isDocs": false,
       "name": "     Leading whitespace",
+      "type": "story",
     },
   ],
   "title": "Example/Custom Name",
@@ -362,13 +362,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/DeepTree.s
   "stories": [
     {
       "id": "example-deep-tree-with-several-kinds",
-      "isDocs": true,
       "name": "Kinds",
+      "type": "docs",
     },
     {
       "id": "example-deep-tree-with-several-kinds--story",
-      "isDocs": false,
       "name": "Story",
+      "type": "story",
     },
   ],
   "title": "Example/Deep/Tree/With/Several/Kinds",
@@ -382,8 +382,8 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/DocsOnly.s
   "stories": [
     {
       "id": "example-mdx-docs-only--page",
-      "isDocs": true,
       "name": "Page",
+      "type": "docs",
     },
   ],
   "title": "Example/MDX Docs Only",
@@ -397,8 +397,8 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/DocsOnlyTo
   "stories": [
     {
       "id": "mdx-docs-at-top-level--page",
-      "isDocs": true,
       "name": "Page",
+      "type": "docs",
     },
   ],
   "title": "MDX Docs at top level",
@@ -412,13 +412,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/Excluded.s
   "stories": [
     {
       "id": "test-exclusions-excluded",
-      "isDocs": true,
       "name": "Excluded",
+      "type": "docs",
     },
     {
       "id": "test-exclusions-excluded--other-export",
-      "isDocs": false,
       "name": "Other Export",
+      "type": "story",
     },
   ],
   "title": "Test/Exclusions/Excluded",
@@ -432,23 +432,23 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/ExportStyl
   "stories": [
     {
       "id": "example-export-styles",
-      "isDocs": true,
       "name": "Export Styles",
+      "type": "docs",
     },
     {
       "id": "example-export-styles--normal-export",
-      "isDocs": false,
       "name": "Normal Export",
+      "type": "story",
     },
     {
       "id": "example-export-styles--alternative-export-name",
-      "isDocs": false,
       "name": "Alternative Export Name",
+      "type": "story",
     },
     {
       "id": "example-export-styles--export-name-overridden",
-      "isDocs": false,
       "name": "Override name 3",
+      "type": "story",
     },
   ],
   "title": "Example/Export Styles",
@@ -462,13 +462,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/Form.stori
   "stories": [
     {
       "id": "example-form",
-      "isDocs": true,
       "name": "Form",
+      "type": "docs",
     },
     {
       "id": "example-form--form",
-      "isDocs": false,
       "name": "Form",
+      "type": "story",
     },
   ],
   "title": "Example/Form",
@@ -482,13 +482,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/Hoisting.s
   "stories": [
     {
       "id": "example-hoisting",
-      "isDocs": true,
       "name": "Hoisting",
+      "type": "docs",
     },
     {
       "id": "example-hoisting--hoisting",
-      "isDocs": false,
       "name": "Hoisting",
+      "type": "story",
     },
   ],
   "title": "Example/Hoisting",
@@ -502,13 +502,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/Included.s
   "stories": [
     {
       "id": "test-exclusions-included",
-      "isDocs": true,
       "name": "Included",
+      "type": "docs",
     },
     {
       "id": "test-exclusions-included--included-export",
-      "isDocs": false,
       "name": "Included Export",
+      "type": "story",
     },
   ],
   "title": "Test/Exclusions/Included",
@@ -522,13 +522,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/JsxExtensi
   "stories": [
     {
       "id": "example-jsx-extension",
-      "isDocs": true,
       "name": "JSX extension",
+      "type": "docs",
     },
     {
       "id": "example-jsx-extension--story",
-      "isDocs": false,
       "name": "Story",
+      "type": "story",
     },
   ],
   "title": "Example/JSX extension",
@@ -542,23 +542,23 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/MdxWithSto
   "stories": [
     {
       "id": "example-mdx-with-stories",
-      "isDocs": true,
       "name": "MDX with Stories",
+      "type": "docs",
     },
     {
       "id": "example-mdx-with-stories--mdx-first-story",
-      "isDocs": false,
       "name": "MDX first story",
+      "type": "story",
     },
     {
       "id": "example-mdx-with-stories--mdx-second-story",
-      "isDocs": false,
       "name": "MDX second story",
+      "type": "story",
     },
     {
       "id": "example-mdx-with-stories--mdx-story-3",
-      "isDocs": false,
       "name": "MDX Story 3",
+      "type": "story",
     },
   ],
   "title": "Example/MDX with Stories",
@@ -572,13 +572,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/MdxWithSto
   "stories": [
     {
       "id": "mdx-with-stories-top",
-      "isDocs": true,
       "name": "MDX with stories, top",
+      "type": "docs",
     },
     {
       "id": "mdx-with-stories-top--mdx-with-stories-top",
-      "isDocs": false,
       "name": "MDX with stories, top",
+      "type": "story",
     },
   ],
   "title": "MDX with stories, top",
@@ -592,13 +592,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/MergeOne.s
   "stories": [
     {
       "id": "example-merge",
-      "isDocs": true,
       "name": "Merge",
+      "type": "docs",
     },
     {
       "id": "example-merge--one",
-      "isDocs": false,
       "name": "One",
+      "type": "story",
     },
   ],
   "title": "Example/Merge",
@@ -612,13 +612,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/MergeTwo.s
   "stories": [
     {
       "id": "example-merge",
-      "isDocs": true,
       "name": "Merge",
+      "type": "docs",
     },
     {
       "id": "example-merge--two",
-      "isDocs": false,
       "name": "Two",
+      "type": "story",
     },
   ],
   "title": "Example/Merge",
@@ -632,18 +632,18 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/Precedence
   "stories": [
     {
       "id": "example-precedence",
-      "isDocs": true,
       "name": "Precedence",
+      "type": "docs",
     },
     {
       "id": "example-precedence--small",
-      "isDocs": false,
       "name": "Story with name, story, body",
+      "type": "story",
     },
     {
       "id": "example-precedence--story-with-name-body",
-      "isDocs": false,
       "name": "Story with name, body",
+      "type": "story",
     },
   ],
   "title": "Example/Precedence",
@@ -657,13 +657,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/SameName.s
   "stories": [
     {
       "id": "example-with-same-name",
-      "isDocs": true,
       "name": "With Same Name",
+      "type": "docs",
     },
     {
       "id": "example-with-same-name--same-name",
-      "isDocs": false,
       "name": "Same Name",
+      "type": "story",
     },
   ],
   "title": "Example/With Same Name",
@@ -677,13 +677,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/SameNameCh
   "stories": [
     {
       "id": "example-with-same-name-same-name",
-      "isDocs": true,
       "name": "Same Name",
+      "type": "docs",
     },
     {
       "id": "example-with-same-name-same-name--nested-story",
-      "isDocs": false,
       "name": "Nested Story",
+      "type": "story",
     },
   ],
   "title": "Example/With Same Name/Same Name",
@@ -697,48 +697,48 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/StoryDecla
   "stories": [
     {
       "id": "test-story-declarations",
-      "isDocs": true,
       "name": "Story Declarations",
+      "type": "docs",
     },
     {
       "id": "test-story-declarations--const-declarator",
-      "isDocs": false,
       "name": "Const Declarator",
+      "type": "story",
     },
     {
       "id": "test-story-declarations--separate-declarator",
-      "isDocs": false,
       "name": "Separate Declarator",
+      "type": "story",
     },
     {
       "id": "test-story-declarations--separate-declarator-2",
-      "isDocs": false,
       "name": "Separate declarator with story name",
+      "type": "story",
     },
     {
       "id": "test-story-declarations--multiple-one",
-      "isDocs": false,
       "name": "Multiple One",
+      "type": "story",
     },
     {
       "id": "test-story-declarations--multiple-two",
-      "isDocs": false,
       "name": "Multiple two (given name)",
+      "type": "story",
     },
     {
       "id": "test-story-declarations--function-story",
-      "isDocs": false,
       "name": "Renamed Function Story",
+      "type": "story",
     },
     {
       "id": "test-story-declarations--separate-function-story",
-      "isDocs": false,
       "name": "Separate Function Story",
+      "type": "story",
     },
     {
       "id": "test-story-declarations--separate-function-story-2",
-      "isDocs": false,
       "name": "Separate function story with story name",
+      "type": "story",
     },
   ],
   "title": "Test/Story Declarations",
@@ -752,13 +752,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/TitleInter
   "stories": [
     {
       "id": "example-title-interpolation",
-      "isDocs": true,
       "name": "Title Interpolation",
+      "type": "docs",
     },
     {
       "id": "example-title-interpolation--primary",
-      "isDocs": false,
       "name": "Primary",
+      "type": "story",
     },
   ],
   "title": "Example/Title Interpolation",
@@ -772,13 +772,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/Top.storie
   "stories": [
     {
       "id": "top",
-      "isDocs": true,
       "name": "Top",
+      "type": "docs",
     },
     {
       "id": "top--top-level-story",
-      "isDocs": false,
       "name": "Top Level Story",
+      "type": "story",
     },
   ],
   "title": "Top",
@@ -792,13 +792,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/TopHoisted
   "stories": [
     {
       "id": "top-hoisted",
-      "isDocs": true,
       "name": "Top Hoisted",
+      "type": "docs",
     },
     {
       "id": "top-hoisted--top-hoisted",
-      "isDocs": false,
       "name": "Top Hoisted",
+      "type": "story",
     },
   ],
   "title": "Top Hoisted",
@@ -812,28 +812,28 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/TypeScript
   "stories": [
     {
       "id": "test-typescript-sample",
-      "isDocs": true,
       "name": "Sample",
+      "type": "docs",
     },
     {
       "id": "test-typescript-sample--type-script-story",
-      "isDocs": false,
       "name": "Type Script Story",
+      "type": "story",
     },
     {
       "id": "test-typescript-sample--type-script-typed-story",
-      "isDocs": false,
       "name": "Type Script Typed Story",
+      "type": "story",
     },
     {
       "id": "test-typescript-sample--type-script-typed-generic-story",
-      "isDocs": false,
       "name": "Type Script Typed Generic Story",
+      "type": "story",
     },
     {
       "id": "test-typescript-sample--type-script-type-assertion-story",
-      "isDocs": false,
       "name": "Type Script Type Assertion Story",
+      "type": "story",
     },
   ],
   "title": "Test/TypeScript/Sample",
@@ -847,13 +847,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/TypeScript
   "stories": [
     {
       "id": "test-typescript-default-as-meta",
-      "isDocs": true,
       "name": "Default as Meta",
+      "type": "docs",
     },
     {
       "id": "test-typescript-default-as-meta--type-script-story",
-      "isDocs": false,
       "name": "Type Script Story",
+      "type": "story",
     },
   ],
   "title": "Test/TypeScript/Default as Meta",
@@ -867,13 +867,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/TypeScript
   "stories": [
     {
       "id": "test-typescript-typed-identifier",
-      "isDocs": true,
       "name": "Typed Identifier",
+      "type": "docs",
     },
     {
       "id": "test-typescript-typed-identifier--type-script-story",
-      "isDocs": false,
       "name": "Type Script Story",
+      "type": "story",
     },
   ],
   "title": "Test/TypeScript/Typed Identifier",
@@ -887,13 +887,13 @@ exports[`StoryExplorerStoryFile parses story file project/src/stories/TypeScript
   "stories": [
     {
       "id": "test-typescript-identifier-exported-as-meta",
-      "isDocs": true,
       "name": "Identifier Exported as Meta",
+      "type": "docs",
     },
     {
       "id": "test-typescript-identifier-exported-as-meta--type-script-story",
-      "isDocs": false,
       "name": "Type Script Story",
+      "type": "story",
     },
   ],
   "title": "Test/TypeScript/Identifier Exported as Meta",

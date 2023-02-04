@@ -54,7 +54,7 @@ export class MdxStoryIdCompletionProvider
     return this.storyStore.getStoryFiles().reduce((acc, cur) => {
       cur.getStories().forEach((story) => {
         const id = story.id;
-        const path = workspace.asRelativePath(story.getFile().getUri());
+        const path = workspace.asRelativePath(cur.getUri());
 
         acc.set(id, { id, path });
       });

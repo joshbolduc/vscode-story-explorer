@@ -1,12 +1,14 @@
 import { sanitize } from '@componentdriven/csf';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
 import type { ParsedStoryWithFileUri } from '../parser/parseStoriesFileByUri';
+import { isDefined } from '../util/guards/isDefined';
+import { StoryExplorerDocs } from './StoryExplorerDocs';
 import { StoryExplorerStory } from './StoryExplorerStory';
 import { getAutoTitleSuffixParts } from './getAutoTitleSuffixParts';
 import { getPartialFilePath } from './getPartialFilePath';
 
 export class StoryExplorerStoryFile {
-  public readonly docsStory?: StoryExplorerStory | undefined;
+  private readonly docs?: StoryExplorerDocs | undefined;
 
   private readonly stories: StoryExplorerStory[];
 
@@ -30,7 +32,7 @@ export class StoryExplorerStoryFile {
       return acc;
     }, []);
 
-    this.docsStory = StoryExplorerStory.fromStoryFileForDocs(this);
+    this.docs = StoryExplorerDocs.fromStoryFileForDocs(this);
   }
 
   public getUri() {
@@ -83,10 +85,12 @@ export class StoryExplorerStoryFile {
     return this.stories;
   }
 
-  public getAllStories() {
-    return [this.docsStory, ...this.stories].filter(
-      Boolean,
-    ) as StoryExplorerStory[];
+  public getDocs() {
+    return this.docs;
+  }
+
+  public getStoriesAndDocs() {
+    return [this.getDocs(), ...this.stories].filter(isDefined);
   }
 
   public isDocsOnly() {

@@ -14,23 +14,19 @@ import type { TreeNode } from './TreeNode';
 import { findEntryByUri } from './findEntryByUri';
 
 const findEntryByStoryId = (
-  entries: Iterable<TreeNode>,
+  nodes: Iterable<TreeNode>,
   storyId: string,
 ): TreeNode | undefined => {
-  for (const entry of entries) {
-    if (entry.type === 'story') {
-      if (entry.story?.id === storyId) {
-        return entry;
-      }
-    } else {
-      const effectiveStory = entry.getEffectiveStory(true);
-      if (effectiveStory?.id === storyId) {
-        return entry;
-      }
+  for (const node of nodes) {
+    const entry = node.getLeafEntry();
+    if (entry?.id === storyId) {
+      return node;
+    }
 
-      const result = findEntryByStoryId(entry.getChildren(), storyId);
-      if (result) {
-        return result;
+    if (node.type === 'kind') {
+      const childNode = findEntryByStoryId(node.getChildren(), storyId);
+      if (childNode) {
+        return childNode;
       }
     }
   }
@@ -126,7 +122,7 @@ export class TreeViewManager {
       if (
         selectedItem.type === 'story' &&
         element.type === 'kind' &&
-        element.matchesUri(selectedItem.story.getFile().getUri())
+        element.matchesUri(selectedItem.file.getUri())
       ) {
         return;
       }
