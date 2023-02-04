@@ -7,9 +7,9 @@ import {
   initialLoadCompleteContext,
   loadingStoriesContext,
 } from '../constants/constants';
-import { ConvertedGlob, convertGlob } from '../globs/convertGlob';
+import { convertGlob } from '../globs/convertGlob';
 import { convertGlobForWorkspace } from '../globs/convertGlobForWorkspace';
-import { logError, logWarn } from '../log/log';
+import { logError } from '../log/log';
 import {
   ParsedStoryWithFileUri,
   parseStoriesFileByUri,
@@ -18,22 +18,15 @@ import { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import { FileWatcher } from '../util/FileWatcher';
 import { Mailbox } from '../util/Mailbox';
 import { setContext } from '../util/setContext';
-import { strCompareFn } from '../util/strCompareFn';
 import { BackingMap } from './BackingMap';
 import { findFilesByGlob } from './findFilesByGlob';
+import { globMatchesUri } from './globMatchesUri';
+import { sortStoryFiles } from './sortStoryFiles';
 
 interface StoreMapEntry {
   parsed: ParsedStoryWithFileUri;
   specifiers: GlobSpecifier[];
 }
-
-const globMatchesUri = (glob: ConvertedGlob, uri: Uri) => {
-  if (glob.filter) {
-    return glob.filter(uri);
-  }
-
-  return glob.globBase.toString() === uri.toString();
-};
 
 const globSpecifierMatchesUri = (uri: Uri) => {
   return (globSpecifier: GlobSpecifier) =>
@@ -114,14 +107,6 @@ export class StoryStore {
   }
 
   public async getSortedStoryFiles() {
-    const unsortedFiles = Array.from(this.backingMap.values())
-      .map((value) => value.storyFile)
-      .sort((a, b) => {
-        return strCompareFn(a.getUri().toString(), b.getUri().toString());
-      });
-
-    const sortedFiles: StoryExplorerStoryFile[] = [];
-
     const globSpecifiers = await firstValueFrom(storiesGlobs, {
       defaultValue: undefined,
     });
@@ -130,34 +115,11 @@ export class StoryStore {
       return [];
     }
 
-    const convertedGlobs = globSpecifiers.map((globSpecifier) =>
-      convertGlob(globSpecifier),
+    const unsortedFiles = Array.from(this.backingMap.values()).map(
+      (value) => value.storyFile,
     );
 
-    let remainingToSort = new Set(unsortedFiles);
-
-    convertedGlobs.forEach((glob) => {
-      remainingToSort = Array.from(remainingToSort).reduce((acc, file) => {
-        const matchesGlob = globMatchesUri(glob, file.getUri());
-
-        if (matchesGlob) {
-          sortedFiles.push(file);
-          acc.delete(file);
-        }
-
-        return acc;
-      }, remainingToSort);
-    });
-
-    if (remainingToSort.size > 0) {
-      logWarn(
-        'Unexpected condition: found unsorted items remaining',
-        remainingToSort.size,
-        remainingToSort,
-      );
-    }
-
-    return sortedFiles;
+    return sortStoryFiles(unsortedFiles, globSpecifiers);
   }
 
   public async waitUntilInitialized() {
