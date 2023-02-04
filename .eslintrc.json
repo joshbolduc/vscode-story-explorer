@@ -39,7 +39,7 @@
   "ignorePatterns": ["test/project/**/*"],
   "overrides": [
     {
-      "files": "**/*.test.*",
+      "files": ["**/*.test.*", "test/integration/**", "test/util/**"],
       "rules": {
         // Assertions are kind of the point of tests
         "@typescript-eslint/no-non-null-assertion": "off"
