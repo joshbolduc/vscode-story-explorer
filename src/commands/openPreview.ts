@@ -1,5 +1,5 @@
 import { logError, logWarn } from '../log/log';
-import type { StoryExplorerStory } from '../story/StoryExplorerStory';
+import type { StoryExplorerEntry } from '../story/StoryExplorerEntry';
 import type { TreeNode } from '../tree/TreeNode';
 import type { WebviewManager } from '../webview/WebviewManager';
 import { getStoryFromCommandArgument } from './getStoryFromCommandArgument';
@@ -8,7 +8,7 @@ export const openPreview = (
   webviewManager: WebviewManager,
   openToSide: boolean,
 ) => {
-  return (item: TreeNode | StoryExplorerStory) => {
+  return (item: TreeNode | StoryExplorerEntry) => {
     if (!item) {
       logWarn('Failed to open preview: no argument provided');
       return;

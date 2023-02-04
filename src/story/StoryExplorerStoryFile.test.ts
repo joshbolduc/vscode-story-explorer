@@ -27,8 +27,8 @@ describe('StoryExplorerStoryFile', () => {
       ]);
 
       const stories = storyFile
-        .getAllStories()
-        .map(({ id, name, isDocs }) => ({ id, name, isDocs }));
+        .getStoriesAndDocs()
+        .map(({ id, name, type }) => ({ id, name, type }));
 
       expect({
         id: storyFile.getId(),

@@ -1,10 +1,10 @@
 import type { StoryExplorerStory } from '../story/StoryExplorerStory';
 import type { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import type { IconName } from '../util/getIconPath';
+import { BaseTreeNode } from './BaseTreeNode';
 import type { KindTreeNode } from './KindTreeNode';
-import { TreeNodeBase } from './TreeNodeBase';
 
-export class StoryTreeNode extends TreeNodeBase {
+export class StoryTreeNode extends BaseTreeNode {
   public readonly type = 'story';
 
   /**
@@ -37,5 +37,13 @@ export class StoryTreeNode extends TreeNodeBase {
 
   public getIconName(): IconName | undefined {
     return 'bookmark';
+  }
+
+  public getEntry() {
+    return this.story;
+  }
+
+  public getLeafEntry() {
+    return this.story;
   }
 }

@@ -92,7 +92,7 @@ export class StoryStore {
   public getStoryById(id: string) {
     // FUTURE: index stories by ID to avoid having to traverse the existing map
     for (const { storyFile } of this.backingMap.values()) {
-      const stories = storyFile.getAllStories();
+      const stories = storyFile.getStoriesAndDocs();
       const match = stories.find((story) => story.id === id);
       if (match) {
         return match;

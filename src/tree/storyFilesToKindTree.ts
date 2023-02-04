@@ -30,10 +30,9 @@ const addStoryFileToKindTree = (
   const kindParts = splitKind(kindName);
 
   let treeParent: KindTreeNode | undefined;
-  let tree = rootChildren;
 
   kindParts.forEach((kindPart, i) => {
-    const existingChild = tree.find(
+    const existingChild = (treeParent?.getChildren() ?? rootChildren).find(
       (item): item is KindTreeNode =>
         item.type === 'kind' && item.name === kindPart,
     );
@@ -42,14 +41,17 @@ const addStoryFileToKindTree = (
       existingChild ?? new KindTreeNode({ name: kindPart, parent: treeParent });
 
     if (!existingChild) {
-      tree.push(kindTreeNode);
+      if (treeParent) {
+        treeParent.addChild(kindTreeNode);
+      } else {
+        rootChildren.push(kindTreeNode);
+      }
     }
 
     const isLeaf = i === kindParts.length - 1;
     if (isLeaf) {
       kindTreeNode.files.push(storyFile);
 
-      kindTreeNode.docsStory = storyFile.docsStory;
       stories.forEach((story) => {
         const node = new StoryTreeNode({
           name: story.name,
@@ -58,12 +60,11 @@ const addStoryFileToKindTree = (
           file: storyFile,
         });
 
-        kindTreeNode.getAllChildren().push(node);
+        kindTreeNode.addChild(node);
       });
     }
 
     treeParent = kindTreeNode;
-    tree = kindTreeNode.getAllChildren();
   });
 };
 

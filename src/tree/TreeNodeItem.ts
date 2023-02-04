@@ -56,12 +56,11 @@ export class TreeNodeItem extends TreeItem {
       this.command = createOpenInEditorCommand(uri);
     }
 
-    const effectiveStory =
-      node.type === 'story' ? node.story : node.getEffectiveStory(false);
+    const entry = node.getEntry();
 
-    if (effectiveStory) {
-      this.id = effectiveStory.id;
-      this.command = effectiveStory.getOpenCommand();
+    if (entry) {
+      this.id = entry.id;
+      this.command = entry.getOpenCommand();
       this.contextValue = 'story';
     }
 

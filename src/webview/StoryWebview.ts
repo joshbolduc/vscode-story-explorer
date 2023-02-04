@@ -12,7 +12,7 @@ import { logDebug, logError, logInfo } from '../log/log';
 import type { ProxyManager } from '../proxy/ProxyManager';
 import type { ServerManager } from '../server/ServerManager';
 import type { StoryStore } from '../store/StoryStore';
-import type { StoryExplorerStory } from '../story/StoryExplorerStory';
+import type { StoryExplorerEntry } from '../story/StoryExplorerEntry';
 import type { ValueOrPromise } from '../util/ValueOrPromise';
 import { getIconPath } from '../util/getIconPath';
 import { createMessenger, Messenger } from './createMessenger';
@@ -24,21 +24,21 @@ export class StoryWebview {
   private readyListener?: Disposable | undefined;
 
   private constructor(
-    story: StoryExplorerStory,
+    story: StoryExplorerEntry,
     context: ExtensionContext,
     proxyPort: number,
     serverManager: ServerManager,
     openToSide: boolean,
   );
   private constructor(
-    story: StoryExplorerStory,
+    story: StoryExplorerEntry,
     context: ExtensionContext,
     proxyPort: number,
     serverManager: ServerManager,
     panel: WebviewPanel,
   );
   private constructor(
-    private readonly story: StoryExplorerStory,
+    private readonly story: StoryExplorerEntry,
     private readonly context: ExtensionContext,
     private readonly proxyPort: number,
     private readonly serverManager: ServerManager,
@@ -71,7 +71,7 @@ export class StoryWebview {
   }
 
   public static async create(
-    story: StoryExplorerStory,
+    story: StoryExplorerEntry,
     context: ExtensionContext,
     serverManager: ServerManager,
     proxyManager: ProxyManager,
@@ -151,7 +151,7 @@ export class StoryWebview {
             await this.messenger.send({
               type: MessageType.SetStoryInfo,
               storyId: this.story.id,
-              storyType: this.story.getType(),
+              storyType: this.story.type,
             });
 
             const storybookUrl = await serverReadyPromise;
@@ -218,8 +218,8 @@ export class StoryWebview {
     this.panel.title = this.story.label;
 
     this.panel.iconPath = {
-      dark: getIconPath(this.story.getIconName(), this.context, 'dark'),
-      light: getIconPath(this.story.getIconName(), this.context, 'light'),
+      dark: getIconPath(this.story.iconName, this.context, 'dark'),
+      light: getIconPath(this.story.iconName, this.context, 'light'),
     };
 
     this.setLoading(serverReadyPromise, proxyPort);

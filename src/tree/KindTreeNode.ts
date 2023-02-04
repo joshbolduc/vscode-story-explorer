@@ -1,11 +1,10 @@
 import type { Uri } from 'vscode';
-import type { StoryExplorerStory } from '../story/StoryExplorerStory';
 import type { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import type { IconName } from '../util/getIconPath';
+import { BaseTreeNode } from './BaseTreeNode';
 import type { TreeNode } from './TreeNode';
-import { TreeNodeBase } from './TreeNodeBase';
 
-export class KindTreeNode extends TreeNodeBase {
+export class KindTreeNode extends BaseTreeNode {
   public readonly type = 'kind';
 
   /**
@@ -13,25 +12,19 @@ export class KindTreeNode extends TreeNodeBase {
    */
   public readonly files: StoryExplorerStoryFile[] = [];
 
-  public docsStory?: StoryExplorerStory | undefined;
-
   /**
    * The node's children.
    */
   private readonly children: TreeNode[] = [];
-
-  public constructor({ name, parent }: Pick<KindTreeNode, 'name' | 'parent'>) {
-    super({ name, parent });
-  }
 
   public hasStoryChildren() {
     return this.children.some((child) => child.type === 'story');
   }
 
   public getIconName(): IconName | undefined {
-    const effectiveStory = this.getEffectiveStory(true);
-    if (effectiveStory) {
-      return effectiveStory.getIconName();
+    const leafEntry = this.getLeafEntry();
+    if (leafEntry) {
+      return leafEntry.iconName;
     }
 
     // Root node (when not treated as story) has no icon if there no immediate
@@ -53,30 +46,12 @@ export class KindTreeNode extends TreeNodeBase {
   }
 
   /**
-   * Gets a story that maps to this node, such as a child story that should be
-   * hoisted or a docs story corresponding to the node.
+   * Gets a docs entry for the file that maps to this kind node, if one exists.
    *
-   * @param requireDocsOnly Whether to only accept docs stories that are
-   * docs-only stories.
-   * @returns A story that maps to this kind node, if one exists.
+   * @returns A docs entry that maps to this kind node, if one exists.
    */
-  public getEffectiveStory(requireDocsOnly: boolean) {
-    // If there is a story hoisted to this node, use it
-    const hoistedStory = this.getHoistedStory();
-    if (hoistedStory) {
-      return hoistedStory;
-    }
-
-    // Treat this node as a docs-only story, assuming there is only one file
-    // here and it's a docs-only story
-    if (this.files.length === 1) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- known length 1
-      const file = this.files[0]!;
-
-      if (file.isDocsOnly() || !requireDocsOnly) {
-        return file.docsStory;
-      }
-    }
+  public getDocs() {
+    return this.getSingleFile()?.getDocs();
   }
 
   public matchesUri(uri: Uri) {
@@ -85,7 +60,7 @@ export class KindTreeNode extends TreeNodeBase {
     );
   }
 
-  public getChildren() {
+  public getChildren(): readonly TreeNode[] {
     // If this is a hoisted story, it effectively has no children
     if (this.getHoistedStory()) {
       return [];
@@ -94,8 +69,16 @@ export class KindTreeNode extends TreeNodeBase {
     return this.children;
   }
 
-  public getAllChildren() {
-    return this.children;
+  public getEntry() {
+    return this.getHoistedStory() || this.getDocs();
+  }
+
+  public getLeafEntry() {
+    return this.getHoistedStory() || this.getHoistedDocs();
+  }
+
+  public addChild(childNode: TreeNode) {
+    this.children.push(childNode);
   }
 
   /**
@@ -112,6 +95,22 @@ export class KindTreeNode extends TreeNodeBase {
       if (child.type === 'story' && child.name === this.name) {
         return child.story;
       }
+    }
+  }
+
+  private getHoistedDocs() {
+    // Docs can be treated as hoisted if there is only one file here and it's a
+    // docs-only story
+    const file = this.getSingleFile();
+    if (file?.isDocsOnly()) {
+      return file.getDocs();
+    }
+  }
+
+  private getSingleFile() {
+    if (this.files.length === 1) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- known length 1
+      return this.files[0]!;
     }
   }
 }

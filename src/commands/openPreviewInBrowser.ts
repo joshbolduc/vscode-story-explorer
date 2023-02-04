@@ -43,7 +43,7 @@ export const openPreviewInBrowser =
     const baseUri = Uri.parse(host, true);
     const uriToOpen = storyId
       ? baseUri.with({
-          query: `path=/${story.getType()}/${encodeURIComponent(storyId)}`,
+          query: `path=/${story.type}/${encodeURIComponent(storyId)}`,
         })
       : baseUri;
 

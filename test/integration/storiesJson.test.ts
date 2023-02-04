@@ -37,8 +37,8 @@ describe('stories.json', () => {
     const transformedStoriesJson = (await getTestStoryFiles())
       .flatMap((storyFile) => {
         return storyFile
-          .getAllStories()
-          .filter((story) => !story.isDocs || storyFile.isDocsOnly())
+          .getStoriesAndDocs()
+          .filter((story) => story.type === 'story' || storyFile.isDocsOnly())
           .map((story) => ({
             id: story.id,
             name: story.name,
