@@ -535,7 +535,7 @@ exports[`StoryExplorerStoryFile > parses story file project/src/stories/JsxExten
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file project/src/stories/MdxWithStories.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file project/src/stories/Mdx2WithStories.stories.mdx 1`] = `
 {
   "id": "example-mdx-with-stories",
   "isDocsOnly": false,

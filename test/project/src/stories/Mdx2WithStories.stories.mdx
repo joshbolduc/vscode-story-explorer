@@ -1,0 +1,32 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Sample } from '../components/Sample';
+
+export const Template = (args) => <Sample {...args} />;
+
+export const Button = (props) => {
+  const style = {color: 'red'};
+
+  return <button style={style} {...props} />
+}
+
+<Meta title="Example/MDX with Stories" />
+
+<Story name="MDX first story">
+  <Sample background="orange">Test</Sample>
+</Story>
+
+<Story name="MDX second story">
+  <Sample background="skyblue">Test 2</Sample>
+</Story>
+
+<Story
+  name="MDX Story 3"
+  args={{
+    background: 'hotpink',
+    children: 'Test 3',
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+<Sample color="purple">Standalone component</Sample>

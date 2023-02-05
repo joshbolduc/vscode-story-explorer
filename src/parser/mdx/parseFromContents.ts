@@ -4,7 +4,8 @@ import { isJSXIdentifier, JSXElement } from '@babel/types';
 import type { Location } from '../../types/Location';
 import { sourceLocationToLocation } from '../sourceLocationToLocation';
 import { extractJsxAttributes } from './extractJsxAttributes';
-import { transformMdxForBabel } from './transformMdxForBabel';
+import { transformMdx1ForBabel } from './transformMdx1ForBabel';
+import { transformMdx2ForBabel } from './transformMdx2ForBabel';
 
 interface RawResult {
   meta: {
@@ -40,6 +41,16 @@ const getJSXElementInfo = (path: NodePath<JSXElement>) => {
   };
 };
 
+const tryTransformMdxForBabel = (contents: string) => {
+  try {
+    return transformMdx2ForBabel(contents);
+  } catch {
+    // fall through
+  }
+
+  return transformMdx1ForBabel(contents);
+};
+
 export const parseFromContents = (contents: string): RawResult | undefined => {
   const result: RawResult = {
     meta: {
@@ -50,7 +61,7 @@ export const parseFromContents = (contents: string): RawResult | undefined => {
     stories: [],
   };
 
-  const combinedOutput = transformMdxForBabel(contents);
+  const combinedOutput = tryTransformMdxForBabel(contents);
 
   if (!combinedOutput) {
     return undefined;
