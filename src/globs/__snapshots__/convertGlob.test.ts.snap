@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`convertGlob handles ** 1`] = `
+exports[`convertGlob > handles ** 1`] = `
 {
   "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
@@ -8,7 +8,7 @@ exports[`convertGlob handles ** 1`] = `
 }
 `;
 
-exports[`convertGlob handles **/* 1`] = `
+exports[`convertGlob > handles **/* 1`] = `
 {
   "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
@@ -16,7 +16,7 @@ exports[`convertGlob handles **/* 1`] = `
 }
 `;
 
-exports[`convertGlob handles **/*.stories.@(js|jsx|ts|tsx) 1`] = `
+exports[`convertGlob > handles **/*.stories.@(js|jsx|ts|tsx) 1`] = `
 {
   "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
@@ -24,7 +24,7 @@ exports[`convertGlob handles **/*.stories.@(js|jsx|ts|tsx) 1`] = `
 }
 `;
 
-exports[`convertGlob handles **/../*.ts 1`] = `
+exports[`convertGlob > handles **/../*.ts 1`] = `
 {
   "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
@@ -32,7 +32,7 @@ exports[`convertGlob handles **/../*.ts 1`] = `
 }
 `;
 
-exports[`convertGlob handles ../src/**/*.stories.@(js|jsx|ts|tsx) 1`] = `
+exports[`convertGlob > handles ../src/**/*.stories.@(js|jsx|ts|tsx) 1`] = `
 {
   "globBase": "file:///mock/src",
   "globPattern": "**/*",
@@ -40,7 +40,7 @@ exports[`convertGlob handles ../src/**/*.stories.@(js|jsx|ts|tsx) 1`] = `
 }
 `;
 
-exports[`convertGlob handles ../src/**/*.stories.mdx 1`] = `
+exports[`convertGlob > handles ../src/**/*.stories.mdx 1`] = `
 {
   "globBase": "file:///mock/src",
   "globPattern": "**/*",
@@ -48,7 +48,7 @@ exports[`convertGlob handles ../src/**/*.stories.mdx 1`] = `
 }
 `;
 
-exports[`convertGlob handles @(js|jsx|ts|tsx) 1`] = `
+exports[`convertGlob > handles @(js|jsx|ts|tsx) 1`] = `
 {
   "globBase": "file:///mock/baseDir",
   "globPattern": "**/*",
@@ -56,13 +56,13 @@ exports[`convertGlob handles @(js|jsx|ts|tsx) 1`] = `
 }
 `;
 
-exports[`convertGlob handles file.ts 1`] = `
+exports[`convertGlob > handles file.ts 1`] = `
 {
   "globBase": "file:///mock/baseDir/file.ts",
 }
 `;
 
-exports[`convertGlob handles src/* 1`] = `
+exports[`convertGlob > handles src/* 1`] = `
 {
   "globBase": "file:///mock/baseDir/src",
   "globPattern": "**/*",
@@ -70,7 +70,7 @@ exports[`convertGlob handles src/* 1`] = `
 }
 `;
 
-exports[`convertGlob handles src/** 1`] = `
+exports[`convertGlob > handles src/** 1`] = `
 {
   "globBase": "file:///mock/baseDir/src",
   "globPattern": "**/*",
@@ -78,7 +78,7 @@ exports[`convertGlob handles src/** 1`] = `
 }
 `;
 
-exports[`convertGlob handles src/**/*.ts 1`] = `
+exports[`convertGlob > handles src/**/*.ts 1`] = `
 {
   "globBase": "file:///mock/baseDir/src",
   "globPattern": "**/*",
@@ -86,7 +86,7 @@ exports[`convertGlob handles src/**/*.ts 1`] = `
 }
 `;
 
-exports[`convertGlob handles src/file.ts 1`] = `
+exports[`convertGlob > handles src/file.ts 1`] = `
 {
   "globBase": "file:///mock/baseDir/src/file.ts",
 }

@@ -13,5 +13,5 @@
     { "path": "./src" },
     { "path": "./webview" }
   ],
-  "include": ["package.json", "*.js", "*.mjs", "scripts/*.ts"]
+  "include": ["package.json", "*.js", "*.ts", "scripts/*.ts"]
 }

@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import { basename, join } from 'path';
 import { sync } from 'fast-glob';
+import { describe, expect, it } from 'vitest';
 import { testBaseDir } from '../../test/util/testBaseDir';
 import { parseStoriesFile } from './parseStoriesFile';
 

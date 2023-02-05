@@ -1,8 +1,10 @@
+import { describe, expect, it } from 'vitest';
+import { vi } from 'vitest';
 import { Cacheable } from './Cacheable';
 
 describe('Cacheable', () => {
   it('invokes operation on first getResult', () => {
-    const operation = jest.fn(() => 1234);
+    const operation = vi.fn(() => 1234);
     const cacheable = new Cacheable(operation);
 
     expect(operation).toHaveBeenCalledTimes(0);
@@ -11,7 +13,7 @@ describe('Cacheable', () => {
   });
 
   it('uses cached value on subsequest getResult calls', () => {
-    const operation = jest.fn(() => 1234);
+    const operation = vi.fn(() => 1234);
     const cacheable = new Cacheable(operation);
 
     expect(operation).toHaveBeenCalledTimes(0);
@@ -22,7 +24,7 @@ describe('Cacheable', () => {
   });
 
   it('makes cached result available', () => {
-    const operation = jest.fn(() => 1234);
+    const operation = vi.fn(() => 1234);
     const cacheable = new Cacheable(operation);
 
     expect(cacheable.getCachedResult()).toBe(undefined);
@@ -33,7 +35,7 @@ describe('Cacheable', () => {
   });
 
   it('handles clearing', () => {
-    const operation = jest.fn(() => 1234);
+    const operation = vi.fn(() => 1234);
     const cacheable = new Cacheable(operation);
 
     expect(operation).toHaveBeenCalledTimes(0);
@@ -47,7 +49,7 @@ describe('Cacheable', () => {
   });
 
   it('getCachedResult supports custom default value', () => {
-    const operation = jest.fn(() => 1234);
+    const operation = vi.fn(() => 1234);
     const cacheable = new Cacheable(operation);
 
     expect(cacheable.getCachedResult(999)).toBe(999);
@@ -55,13 +57,13 @@ describe('Cacheable', () => {
   });
 
   it('handles replacement callback', () => {
-    const operation = jest.fn(() => 1234);
+    const operation = vi.fn(() => 1234);
     const cacheable = new Cacheable(operation);
 
     expect(operation).toHaveBeenCalledTimes(0);
     expect(cacheable.getResult()).toBe(1234);
 
-    const replacementOperation = jest.fn(() => 3456);
+    const replacementOperation = vi.fn(() => 3456);
     cacheable.setCallback(replacementOperation);
 
     operation.mockClear();

@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { URI } from 'vscode-uri';
 import { convertGlob } from './convertGlob';
 

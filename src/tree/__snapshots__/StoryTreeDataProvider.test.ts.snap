@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`StoryTreeDataProvider creates tree from story files 1`] = `
+exports[`StoryTreeDataProvider > creates tree from story files 1`] = `
 - MDX Docs at top level
   Id: mdx-docs-at-top-level--page
   File: file:///mock/basedir/project/src/stories/DocsOnlyTop.stories.mdx

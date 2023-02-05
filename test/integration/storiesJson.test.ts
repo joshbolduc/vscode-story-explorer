@@ -1,6 +1,7 @@
 import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import merge from 'lodash/merge';
+import { describe, expect, it } from 'vitest';
 import { getTestStoryFiles } from '../util/getTestStoryFiles';
 import { testBaseDir } from '../util/testBaseDir';
 

@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { getStoriesGlobs } from './getStoriesGlobs';
 
 const mockGlobs = ['glob1', 'glob2', 'glob3'] as const;
