@@ -12,7 +12,6 @@ webview/**
 .prettierignore
 .prettierrc
 commitlint.config.js
-jest.config.mjs
 **/tsconfig.json
 **/tsconfig.*.json
 **/*.map

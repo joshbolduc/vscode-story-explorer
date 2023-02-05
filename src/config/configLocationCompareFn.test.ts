@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { URI, Utils } from 'vscode-uri';
 import {
   ConfigLocation,

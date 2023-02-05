@@ -1,6 +1,9 @@
+import { vi } from 'vitest';
 import { isLocation } from '../src/util/guards/isLocation';
 import { isPosition } from '../src/util/guards/isPosition';
 import { addSerializer } from './util/addSerializer';
+
+vi.mock('vscode');
 
 addSerializer({
   test: isPosition,

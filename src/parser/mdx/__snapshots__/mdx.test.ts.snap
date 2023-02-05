@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`mdx parses story file fixtures/Children.mdx 1`] = `
+exports[`mdx > parses story file fixtures/Children.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -32,7 +32,7 @@ exports[`mdx parses story file fixtures/Children.mdx 1`] = `
 }
 `;
 
-exports[`mdx parses story file fixtures/Spread.mdx 1`] = `
+exports[`mdx > parses story file fixtures/Spread.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -49,7 +49,7 @@ exports[`mdx parses story file fixtures/Spread.mdx 1`] = `
 }
 `;
 
-exports[`mdx parses story file project/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -60,7 +60,7 @@ exports[`mdx parses story file project/src/autoTitle/mdx/MdxMeta.stories.mdx 1`]
 }
 `;
 
-exports[`mdx parses story file project/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -77,7 +77,7 @@ exports[`mdx parses story file project/src/autoTitle/mdx/MdxMetaAndStory.stories
 }
 `;
 
-exports[`mdx parses story file project/src/autoTitle/mdx/MdxStory.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/autoTitle/mdx/MdxStory.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -94,9 +94,9 @@ exports[`mdx parses story file project/src/autoTitle/mdx/MdxStory.stories.mdx 1`
 }
 `;
 
-exports[`mdx parses story file project/src/autoTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
+exports[`mdx > parses story file project/src/autoTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
 
-exports[`mdx parses story file project/src/stories/CsfWithMdx.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/stories/CsfWithMdx.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -123,7 +123,7 @@ exports[`mdx parses story file project/src/stories/CsfWithMdx.stories.mdx 1`] = 
 }
 `;
 
-exports[`mdx parses story file project/src/stories/CustomId.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/stories/CustomId.stories.mdx 1`] = `
 {
   "meta": {
     "id": "manually-specified-mdx-id",
@@ -140,7 +140,7 @@ exports[`mdx parses story file project/src/stories/CustomId.stories.mdx 1`] = `
 }
 `;
 
-exports[`mdx parses story file project/src/stories/DocsOnly.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/stories/DocsOnly.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -151,7 +151,7 @@ exports[`mdx parses story file project/src/stories/DocsOnly.stories.mdx 1`] = `
 }
 `;
 
-exports[`mdx parses story file project/src/stories/DocsOnlyTop.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/stories/DocsOnlyTop.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -162,7 +162,7 @@ exports[`mdx parses story file project/src/stories/DocsOnlyTop.stories.mdx 1`] =
 }
 `;
 
-exports[`mdx parses story file project/src/stories/MdxWithStories.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/stories/MdxWithStories.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -189,7 +189,7 @@ exports[`mdx parses story file project/src/stories/MdxWithStories.stories.mdx 1`
 }
 `;
 
-exports[`mdx parses story file project/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -206,7 +206,7 @@ exports[`mdx parses story file project/src/stories/MdxWithStoriesTop.stories.mdx
 }
 `;
 
-exports[`mdx parses story file project/src/stories/Precedence.stories.mdx 1`] = `
+exports[`mdx > parses story file project/src/stories/Precedence.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,

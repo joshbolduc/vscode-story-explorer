@@ -1,4 +1,5 @@
 import { basename, extname } from 'path';
+import { describe, expect, it } from 'vitest';
 import {
   Command,
   ExtensionContext,
