@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.6.3...v0.7.0) (2023-02-05)
+
+### Features
+
+- support mdx2 ([b842de6](https://github.com/joshbolduc/vscode-story-explorer/commit/b842de6685fdbe6e56a43aec918508b3b693ab5c))
+
 ### [0.6.3](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.6.2...v0.6.3) (2023-02-03)
 
 ### [0.6.2](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.6.1...v0.6.2) (2023-01-16)
