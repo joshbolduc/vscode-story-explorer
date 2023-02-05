@@ -54,7 +54,7 @@ describe('stories.json', () => {
 
     // This file is assumed to be generated in advance and up-to-date
     const generatedStoriesJsonStr = await readFile(
-      resolve(testBaseDir, 'project', 'stories.json'),
+      resolve(testBaseDir, 'project', 'v6', 'stories.json'),
     );
 
     const storiesJson = JSON.parse(

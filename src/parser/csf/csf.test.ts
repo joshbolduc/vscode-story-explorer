@@ -6,7 +6,7 @@ import { testBaseDir } from '../../../test/util/testBaseDir';
 import { parseFromContents } from './parseFromContents';
 
 describe('csf', () => {
-  const tests = sync(['project/src/**/*.stories.{js,jsx,ts,tsx}'], {
+  const tests = sync(['project/v6/src/**/*.stories.{js,jsx,ts,tsx}'], {
     cwd: testBaseDir,
   });
 

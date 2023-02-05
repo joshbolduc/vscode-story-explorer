@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { join, resolve } from 'path';
 import { Uri } from 'vscode';
 import { interpretStoriesConfigItem } from '../../src/config/normalizeStoriesEntry';
 import type { ParsedStoryWithFileUri } from '../../src/parser/parseStoriesFileByUri';
@@ -12,10 +12,10 @@ import { testBaseDir } from './testBaseDir';
 export const getTestStoryFiles = async () => {
   const tests = parseTestProjectStories();
 
+  const storybookConfigDirRelativePath = join('project', 'v6', '.storybook');
   const storybookConfigPath = resolve(
     testBaseDir,
-    'project',
-    '.storybook',
+    storybookConfigDirRelativePath,
     'main.js',
   );
 
@@ -25,7 +25,7 @@ export const getTestStoryFiles = async () => {
     storiesGlobs.map((config) =>
       interpretStoriesConfigItem(
         config,
-        Uri.file('/mock/basedir/project/.storybook'),
+        Uri.file(resolve('/mock/basedir', storybookConfigDirRelativePath)),
       ),
     ),
   );

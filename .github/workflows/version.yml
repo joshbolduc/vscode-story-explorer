@@ -34,7 +34,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: |
             package-lock.json
-            test/project/package-lock.json
+            test/project/v6/package-lock.json
       - name: Install Node dependencies
         run: npm ci
       - name: Bump version (detect type)

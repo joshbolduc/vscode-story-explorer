@@ -6,7 +6,7 @@ import { testBaseDir } from '../../test/util/testBaseDir';
 import { parseStoriesFile } from './parseStoriesFile';
 
 describe('parseStoriesFile', () => {
-  const tests = sync(['project/src/**/*.stories.*', 'fixtures/**/*'], {
+  const tests = sync(['project/v6/src/**/*.stories.*', 'fixtures/**/*'], {
     cwd: testBaseDir,
   });
 

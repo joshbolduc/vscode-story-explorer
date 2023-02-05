@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/autoTitle/csf/EmptyDefaultExport.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/autoTitle/csf/EmptyDefaultExport.stories.js 1`] = `
 {
   "id": "custom-title-prefix-second-level-csf-emptydefaultexport",
   "isDocsOnly": false,
@@ -20,7 +20,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/autoTitle/csf/EmptyTitle.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/autoTitle/csf/EmptyTitle.stories.js 1`] = `
 {
   "id": "custom-title-prefix-second-level-csf-emptytitle",
   "isDocsOnly": false,
@@ -40,7 +40,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/autoTitle/csf/ExtraTitle.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/autoTitle/csf/ExtraTitle.stories.js 1`] = `
 {
   "id": "custom-title-prefix-second-level-explicit-title",
   "isDocsOnly": false,
@@ -60,7 +60,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/autoTitle/csf/nested/WithoutTitle.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/autoTitle/csf/nested/WithoutTitle.stories.js 1`] = `
 {
   "id": "custom-title-prefix-second-level-csf-nested-withouttitle",
   "isDocsOnly": false,
@@ -80,7 +80,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/autoTitle/csf/nested/nested.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/autoTitle/csf/nested/nested.stories.js 1`] = `
 {
   "id": "custom-title-prefix-second-level-csf-nested",
   "isDocsOnly": false,
@@ -100,7 +100,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/autoTitle/csf/withIndex/index.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/autoTitle/csf/withIndex/index.stories.js 1`] = `
 {
   "id": "custom-title-prefix-second-level-csf-withindex",
   "isDocsOnly": false,
@@ -120,7 +120,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
 {
   "id": "custom-title-prefix-second-level-mdx-mdxmeta",
   "isDocsOnly": true,
@@ -135,7 +135,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
 {
   "id": "custom-title-prefix-second-level-mdx-mdxmetaandstory",
   "isDocsOnly": false,
@@ -155,7 +155,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/autoTitle/mdx/MdxStory.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/autoTitle/mdx/MdxStory.stories.mdx 1`] = `
 {
   "id": "custom-title-prefix-second-level-mdx-mdxstory",
   "isDocsOnly": false,
@@ -175,7 +175,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/BasicCsf.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/BasicCsf.stories.js 1`] = `
 {
   "id": "example-basic-csf",
   "isDocsOnly": false,
@@ -210,7 +210,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/CsfV1.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/CsfV1.stories.js 1`] = `
 {
   "id": "example-csf-v1",
   "isDocsOnly": false,
@@ -240,7 +240,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/CsfWithMdx.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/CsfWithMdx.stories.mdx 1`] = `
 {
   "id": "example-mdx-importing-csf",
   "isDocsOnly": false,
@@ -270,7 +270,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/CustomId.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/CustomId.stories.js 1`] = `
 {
   "id": "manually-specified-csf-story-id",
   "isDocsOnly": false,
@@ -290,7 +290,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/CustomId.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/CustomId.stories.mdx 1`] = `
 {
   "id": "manually-specified-mdx-id",
   "isDocsOnly": false,
@@ -310,7 +310,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/CustomName.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/CustomName.stories.js 1`] = `
 {
   "id": "example-custom-name",
   "isDocsOnly": false,
@@ -355,7 +355,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/DeepTree.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/DeepTree.stories.js 1`] = `
 {
   "id": "example-deep-tree-with-several-kinds",
   "isDocsOnly": false,
@@ -375,7 +375,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/DocsOnly.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/DocsOnly.stories.mdx 1`] = `
 {
   "id": "example-mdx-docs-only",
   "isDocsOnly": true,
@@ -390,7 +390,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/DocsOnlyTop.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/DocsOnlyTop.stories.mdx 1`] = `
 {
   "id": "mdx-docs-at-top-level",
   "isDocsOnly": true,
@@ -405,7 +405,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/Excluded.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/Excluded.stories.js 1`] = `
 {
   "id": "test-exclusions-excluded",
   "isDocsOnly": false,
@@ -425,7 +425,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/ExportStyles.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/ExportStyles.stories.js 1`] = `
 {
   "id": "example-export-styles",
   "isDocsOnly": false,
@@ -455,7 +455,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/Form.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/Form.stories.js 1`] = `
 {
   "id": "example-form",
   "isDocsOnly": false,
@@ -475,7 +475,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/Hoisting.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/Hoisting.stories.js 1`] = `
 {
   "id": "example-hoisting",
   "isDocsOnly": false,
@@ -495,7 +495,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/Included.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/Included.stories.js 1`] = `
 {
   "id": "test-exclusions-included",
   "isDocsOnly": false,
@@ -515,7 +515,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/JsxExtension.stories.jsx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/JsxExtension.stories.jsx 1`] = `
 {
   "id": "example-jsx-extension",
   "isDocsOnly": false,
@@ -535,7 +535,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/Mdx2WithStories.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/Mdx2WithStories.stories.mdx 1`] = `
 {
   "id": "example-mdx-with-stories",
   "isDocsOnly": false,
@@ -565,7 +565,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
 {
   "id": "mdx-with-stories-top",
   "isDocsOnly": false,
@@ -585,7 +585,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/MergeOne.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/MergeOne.stories.js 1`] = `
 {
   "id": "example-merge",
   "isDocsOnly": false,
@@ -605,7 +605,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/MergeTwo.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/MergeTwo.stories.js 1`] = `
 {
   "id": "example-merge",
   "isDocsOnly": false,
@@ -625,7 +625,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/Precedence.stories.mdx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/Precedence.stories.mdx 1`] = `
 {
   "id": "example-precedence",
   "isDocsOnly": false,
@@ -650,7 +650,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/SameName.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/SameName.stories.js 1`] = `
 {
   "id": "example-with-same-name",
   "isDocsOnly": false,
@@ -670,7 +670,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/SameNameChild.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/SameNameChild.stories.js 1`] = `
 {
   "id": "example-with-same-name-same-name",
   "isDocsOnly": false,
@@ -690,7 +690,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/StoryDeclarations.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/StoryDeclarations.stories.js 1`] = `
 {
   "id": "test-story-declarations",
   "isDocsOnly": false,
@@ -745,7 +745,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/TitleInterpolation.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TitleInterpolation.stories.js 1`] = `
 {
   "id": "example-title-interpolation",
   "isDocsOnly": false,
@@ -765,7 +765,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/Top.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/Top.stories.js 1`] = `
 {
   "id": "top",
   "isDocsOnly": false,
@@ -785,7 +785,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/TopHoisted.stories.js 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TopHoisted.stories.js 1`] = `
 {
   "id": "top-hoisted",
   "isDocsOnly": false,
@@ -805,7 +805,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/TypeScript.stories.tsx 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TypeScript.stories.tsx 1`] = `
 {
   "id": "test-typescript-sample",
   "isDocsOnly": false,
@@ -840,7 +840,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/TypeScriptAsMeta.stories.ts 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TypeScriptAsMeta.stories.ts 1`] = `
 {
   "id": "test-typescript-default-as-meta",
   "isDocsOnly": false,
@@ -860,7 +860,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/TypeScriptIdentifier.stories.ts 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifier.stories.ts 1`] = `
 {
   "id": "test-typescript-typed-identifier",
   "isDocsOnly": false,
@@ -880,7 +880,7 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/src/stories/TypeScriptIdentifierAsMeta.stories.ts 1`] = `
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierAsMeta.stories.ts 1`] = `
 {
   "id": "test-typescript-identifier-exported-as-meta",
   "isDocsOnly": false,

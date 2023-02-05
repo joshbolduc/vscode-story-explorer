@@ -18,12 +18,12 @@
       "internalConsoleOptions": "neverOpen"
     },
     {
-      "name": "Run Extension",
+      "name": "Run Extension (SB 6)",
       "type": "extensionHost",
       "request": "launch",
       "args": [
         "--extensionDevelopmentPath=${workspaceFolder}",
-        "${workspaceFolder}/test/project"
+        "${workspaceFolder}/test/project/v6"
       ],
       "outFiles": ["${workspaceFolder}/dist/**/*.js"],
       "preLaunchTask": "${defaultBuildTask}"

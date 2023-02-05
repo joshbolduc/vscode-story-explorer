@@ -76,7 +76,7 @@ exports[`mdx > parses story file fixtures/Spread.mdx 1`] = `
 }
 `;
 
-exports[`mdx > parses story file project/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -87,7 +87,7 @@ exports[`mdx > parses story file project/src/autoTitle/mdx/MdxMeta.stories.mdx 1
 }
 `;
 
-exports[`mdx > parses story file project/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/autoTitle/mdx/MdxMetaAndStory.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -104,7 +104,7 @@ exports[`mdx > parses story file project/src/autoTitle/mdx/MdxMetaAndStory.stori
 }
 `;
 
-exports[`mdx > parses story file project/src/autoTitle/mdx/MdxStory.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/autoTitle/mdx/MdxStory.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -121,9 +121,9 @@ exports[`mdx > parses story file project/src/autoTitle/mdx/MdxStory.stories.mdx 
 }
 `;
 
-exports[`mdx > parses story file project/src/autoTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
+exports[`mdx > parses story file project/v6/src/autoTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
 
-exports[`mdx > parses story file project/src/stories/CsfWithMdx.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/stories/CsfWithMdx.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -150,7 +150,7 @@ exports[`mdx > parses story file project/src/stories/CsfWithMdx.stories.mdx 1`] 
 }
 `;
 
-exports[`mdx > parses story file project/src/stories/CustomId.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/stories/CustomId.stories.mdx 1`] = `
 {
   "meta": {
     "id": "manually-specified-mdx-id",
@@ -167,7 +167,7 @@ exports[`mdx > parses story file project/src/stories/CustomId.stories.mdx 1`] = 
 }
 `;
 
-exports[`mdx > parses story file project/src/stories/DocsOnly.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/stories/DocsOnly.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -178,7 +178,7 @@ exports[`mdx > parses story file project/src/stories/DocsOnly.stories.mdx 1`] = 
 }
 `;
 
-exports[`mdx > parses story file project/src/stories/DocsOnlyTop.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/stories/DocsOnlyTop.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -189,7 +189,7 @@ exports[`mdx > parses story file project/src/stories/DocsOnlyTop.stories.mdx 1`]
 }
 `;
 
-exports[`mdx > parses story file project/src/stories/Mdx2WithStories.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/stories/Mdx2WithStories.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -216,7 +216,7 @@ exports[`mdx > parses story file project/src/stories/Mdx2WithStories.stories.mdx
 }
 `;
 
-exports[`mdx > parses story file project/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -233,7 +233,7 @@ exports[`mdx > parses story file project/src/stories/MdxWithStoriesTop.stories.m
 }
 `;
 
-exports[`mdx > parses story file project/src/stories/Precedence.stories.mdx 1`] = `
+exports[`mdx > parses story file project/v6/src/stories/Precedence.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,

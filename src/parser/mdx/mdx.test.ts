@@ -7,7 +7,7 @@ import { testBaseDir } from '../../../test/util/testBaseDir';
 import { tryParseMdx } from './mdx';
 
 describe('mdx', () => {
-  const tests = sync(['project/src/**/*.stories.mdx', 'fixtures/**/*.mdx'], {
+  const tests = sync(['project/v6/src/**/*.stories.mdx', 'fixtures/**/*.mdx'], {
     cwd: testBaseDir,
   });
 

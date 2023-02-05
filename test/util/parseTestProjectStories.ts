@@ -7,7 +7,7 @@ import { testBaseDir } from './testBaseDir';
 type ParsedStoriesFileResult = ReturnType<typeof parseStoriesFile>;
 
 export const parseTestProjectStories = () =>
-  sync(['project/src/**/*.stories.*'], {
+  sync(['project/v6/src/**/*.stories.*'], {
     cwd: testBaseDir,
   })
     .map((file) => {
