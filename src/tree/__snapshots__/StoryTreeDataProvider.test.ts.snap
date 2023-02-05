@@ -222,29 +222,29 @@ exports[`StoryTreeDataProvider > creates tree from story files 1`] = `
 
   - MDX with Stories
     Id: example-mdx-with-stories
-    File: file:///mock/basedir/project/src/stories/MdxWithStories.stories.mdx
+    File: file:///mock/basedir/project/src/stories/Mdx2WithStories.stories.mdx
     Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 5, Col 0]
+    Command: Open file [Ln 11, Col 0]
 
     - MDX first story
       Id: example-mdx-with-stories--mdx-first-story
       Context: story
       Icon: bookmark
-      Command: Open file file:///mock/basedir/project/src/stories/MdxWithStories.stories.mdx [Ln 9, Col 0]
+      Command: Open file file:///mock/basedir/project/src/stories/Mdx2WithStories.stories.mdx [Ln 13, Col 0]
 
     - MDX second story
       Id: example-mdx-with-stories--mdx-second-story
       Context: story
       Icon: bookmark
-      Command: Open file file:///mock/basedir/project/src/stories/MdxWithStories.stories.mdx [Ln 13, Col 0]
+      Command: Open file file:///mock/basedir/project/src/stories/Mdx2WithStories.stories.mdx [Ln 17, Col 0]
 
     - MDX Story 3
       Id: example-mdx-with-stories--mdx-story-3
       Context: story
       Icon: bookmark
-      Command: Open file file:///mock/basedir/project/src/stories/MdxWithStories.stories.mdx [Ln 17, Col 0]
+      Command: Open file file:///mock/basedir/project/src/stories/Mdx2WithStories.stories.mdx [Ln 21, Col 0]
 
   - Precedence
     Id: example-precedence
