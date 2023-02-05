@@ -6,7 +6,7 @@ updates:
       interval: 'daily'
     open-pull-requests-limit: 10
   - package-ecosystem: 'npm'
-    directory: '/test/project'
+    directory: '/test/project/v6'
     schedule:
       interval: 'daily'
     open-pull-requests-limit: 10
