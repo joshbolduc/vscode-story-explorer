@@ -12,10 +12,10 @@
     "generate-stories-json": "build-storybook && sb extract storybook-static ./stories.json"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "6.5.15",
-    "@storybook/addon-essentials": "6.5.15",
-    "@storybook/cli": "6.5.15",
+    "@storybook/addon-actions": "6.5.16",
+    "@storybook/addon-essentials": "6.5.16",
+    "@storybook/cli": "6.5.16",
     "@storybook/mdx2-csf": "0.0.4",
-    "@storybook/react": "6.5.15"
+    "@storybook/react": "6.5.16"
   }
 }
