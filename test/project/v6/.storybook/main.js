@@ -8,6 +8,9 @@ module.exports = {
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: ['@storybook/addon-essentials'],
+  core: {
+    builder: 'webpack5',
+  },
   features: {
     previewMdx2: true,
   },
