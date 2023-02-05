@@ -1,32 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { URI } from 'vscode-uri';
-import { parseTestProjectStories } from '../../test/util/parseTestProjectStories';
-import type { ParsedStoryWithFileUri } from '../parser/parseStoriesFileByUri';
-import { StoryExplorerStoryFile } from './StoryExplorerStoryFile';
+import { getTestStoryFiles } from '../../test/util/getTestStoryFiles';
 
-describe('StoryExplorerStoryFile', () => {
-  const tests = parseTestProjectStories();
+describe('StoryExplorerStoryFile', async () => {
+  const storyFiles = await getTestStoryFiles();
 
-  tests.forEach(({ file, parsedRaw }) => {
-    it(`parses story file ${file}`, () => {
-      const parsed: ParsedStoryWithFileUri = {
-        ...parsedRaw,
-        file: URI.file(`/mock/basedir/${file}`),
-      };
-
-      const storyFile = new StoryExplorerStoryFile(parsed, [
-        {
-          directory: URI.file('/mock/basedir/project/src/autoTitle'),
-          files: '**/*',
-          titlePrefix: 'Auto-generated title prefix',
-        },
-        {
-          directory: URI.file('/mock/basedir/project/src'),
-          files: '**/*',
-          titlePrefix: '',
-        },
-      ]);
-
+  storyFiles.forEach((storyFile) => {
+    it(`parses story file ${storyFile.getUri().toString()}`, () => {
       const stories = storyFile
         .getStoriesAndDocs()
         .map(({ id, name, type }) => ({ id, name, type }));
