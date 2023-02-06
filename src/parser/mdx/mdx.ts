@@ -9,10 +9,13 @@ const parse = (contents: string): RawParsedStoryFile | undefined => {
   const parsed = parseFromContents(contents);
 
   if (parsed) {
-    const { id, title } = sanitizeMetaObject(parsed.meta.properties.values);
+    const { id, tags, title } = sanitizeMetaObject(
+      parsed.meta.properties.values,
+    );
 
     const meta = {
       id,
+      tags,
       title,
       location: parsed.meta.location,
     };

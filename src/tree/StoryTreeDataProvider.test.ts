@@ -1,5 +1,5 @@
 import { basename, extname } from 'path';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vitest } from 'vitest';
 import {
   Command,
   TextDocumentShowOptions,
@@ -14,6 +14,8 @@ import {
 import { hasProperty } from '../util/guards/hasProperty';
 import { isTruthy } from '../util/guards/isTruthy';
 import { TreeNodeItem } from './TreeNodeItem';
+
+vitest.mock('../config/autodocs');
 
 const isTreeItemRepresentation = (v: unknown): v is TreeItemRepresentation =>
   hasProperty('isTreeItem')(v) && v.isTreeItem === true;

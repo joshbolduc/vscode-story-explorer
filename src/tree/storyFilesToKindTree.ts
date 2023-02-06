@@ -1,13 +1,19 @@
+import type { AutodocsConfig } from '../config/autodocs';
 import type { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import { splitKind } from '../util/splitKind';
 import { KindTreeNode } from './KindTreeNode';
 import { StoryTreeNode } from './StoryTreeNode';
 import type { TreeNode } from './TreeNode';
 
+interface StoryFileToKindTreeOptions {
+  autodocsConfig: AutodocsConfig | undefined;
+  showKindsWithoutChildren: boolean;
+}
+
 const addStoryFileToKindTree = (
   rootChildren: TreeNode[],
   storyFile: StoryExplorerStoryFile,
-  showKindsWithoutChildren: boolean,
+  { autodocsConfig, showKindsWithoutChildren }: StoryFileToKindTreeOptions,
 ) => {
   const kindName = storyFile.getTitle();
 
@@ -38,7 +44,11 @@ const addStoryFileToKindTree = (
     );
 
     const kindTreeNode =
-      existingChild ?? new KindTreeNode({ name: kindPart, parent: treeParent });
+      existingChild ??
+      new KindTreeNode(
+        { name: kindPart, parent: treeParent },
+        { showAutodocsAsChildren: !!autodocsConfig },
+      );
 
     if (!existingChild) {
       if (treeParent) {
@@ -52,6 +62,30 @@ const addStoryFileToKindTree = (
     if (isLeaf) {
       kindTreeNode.files.push(storyFile);
 
+      if (autodocsConfig) {
+        const autodocEntry = storyFile.getDocs();
+
+        // Add an autodocs entry, if appropriate
+        if (
+          // Autodocs entry must exist
+          autodocEntry &&
+          // Skip if an entry with the expected autodocs ID has already been
+          // added--e.g., it might be that there are multiple autodocs (in which
+          // case we just disregard the excess)
+          !kindTreeNode
+            .getChildren()
+            .some((child) => child.getLeafEntry()?.id === autodocEntry.id)
+        ) {
+          kindTreeNode.addChild(
+            new StoryTreeNode({
+              name: autodocEntry.name,
+              parent: kindTreeNode,
+              story: autodocEntry,
+              file: storyFile,
+            }),
+          );
+        }
+      }
       stories.forEach((story) => {
         const node = new StoryTreeNode({
           name: story.name,
@@ -70,12 +104,12 @@ const addStoryFileToKindTree = (
 
 export const storyFilesToKindTree = (
   storyFiles: StoryExplorerStoryFile[],
-  showKindsWithoutChildren: boolean,
+  options: StoryFileToKindTreeOptions,
 ) => {
   const root: TreeNode[] = [];
 
   storyFiles.forEach((storyFile) => {
-    addStoryFileToKindTree(root, storyFile, showKindsWithoutChildren);
+    addStoryFileToKindTree(root, storyFile, options);
   });
 
   return root;

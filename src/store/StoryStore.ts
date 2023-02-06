@@ -1,7 +1,8 @@
 import pLimit from 'p-limit';
-import { firstValueFrom, Subscription } from 'rxjs';
+import { combineLatest, firstValueFrom, Subscription } from 'rxjs';
 import { Disposable, EventEmitter, Uri, workspace } from 'vscode';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
+import { AutodocsConfig, autodocsConfig } from '../config/autodocs';
 import { storiesGlobs } from '../config/storiesGlobs';
 import {
   initialLoadCompleteContext,
@@ -61,7 +62,10 @@ export class StoryStore {
     });
 
   private constructor() {
-    this.configWatcher = storiesGlobs.subscribe(() => {
+    this.configWatcher = combineLatest([
+      storiesGlobs,
+      autodocsConfig,
+    ]).subscribe(() => {
       this.refreshAll().catch((e) => {
         logError(
           'Failed to initialize story store after globs config change',
@@ -78,8 +82,8 @@ export class StoryStore {
     return storyStore;
   }
 
-  public set(uri: Uri, info: StoreMapEntry) {
-    this.setWithoutNotify(uri, info);
+  public async set(uri: Uri, info: StoreMapEntry) {
+    this.setWithoutNotify(uri, info, await firstValueFrom(autodocsConfig));
     this.onDidUpdateStoryStoreEmitter.fire();
   }
 
@@ -153,7 +157,7 @@ export class StoryStore {
       globSpecifiers.length > 0 ? await parseStoriesFileByUri(uri) : undefined;
 
     if (storyInfo) {
-      this.set(uri, { parsed: storyInfo, specifiers: globSpecifiers });
+      await this.set(uri, { parsed: storyInfo, specifiers: globSpecifiers });
     } else {
       this.delete(uri);
     }
@@ -170,6 +174,8 @@ export class StoryStore {
   private async init() {
     const globSpecifiers =
       (await firstValueFrom(storiesGlobs, { defaultValue: undefined })) ?? [];
+
+    const autodocs = await firstValueFrom(autodocsConfig);
 
     setLoadingStories(true);
 
@@ -224,7 +230,7 @@ export class StoryStore {
     }, new Map<string, StoreMapEntry>());
 
     for (const [, value] of map) {
-      this.setWithoutNotify(value.parsed.file, value);
+      this.setWithoutNotify(value.parsed.file, value, autodocs);
     }
 
     this.onDidUpdateStoryStoreEmitter.fire();
@@ -235,7 +241,11 @@ export class StoryStore {
     setLoadingStories(false);
   }
 
-  private setWithoutNotify(uri: Uri, info: StoreMapEntry) {
+  private setWithoutNotify(
+    uri: Uri,
+    info: StoreMapEntry,
+    autodocs: AutodocsConfig | undefined,
+  ) {
     const watcher =
       this.backingMap.get(uri)?.fileWatcher ??
       new FileWatcher(uri, (watchedUri, eventType) => {
@@ -254,7 +264,11 @@ export class StoryStore {
       });
 
     this.backingMap.set(uri, {
-      storyFile: new StoryExplorerStoryFile(info.parsed, info.specifiers),
+      storyFile: new StoryExplorerStoryFile(
+        info.parsed,
+        info.specifiers,
+        autodocs,
+      ),
       fileWatcher: watcher,
     });
   }

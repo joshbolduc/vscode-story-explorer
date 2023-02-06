@@ -1,5 +1,11 @@
+import type { Uri } from 'vscode';
 import type { StoryExplorerEntry } from '../story/StoryExplorerEntry';
 import type { KindTreeNode } from './KindTreeNode';
+
+export type BaseTreeNodeConstuctorParams = Pick<
+  BaseTreeNode,
+  'name' | 'parent'
+>;
 
 /**
  * An internal representation of a node in the story tree.
@@ -23,7 +29,7 @@ export abstract class BaseTreeNode {
    */
   public abstract readonly type: 'kind' | 'story';
 
-  public constructor({ name, parent }: Pick<BaseTreeNode, 'name' | 'parent'>) {
+  public constructor({ name, parent }: BaseTreeNodeConstuctorParams) {
     this.name = name;
     this.parent = parent;
   }
@@ -42,4 +48,6 @@ export abstract class BaseTreeNode {
    * @returns An entry associated with this node, if one exists.
    */
   public abstract getLeafEntry(): StoryExplorerEntry | undefined;
+
+  public abstract matchesUri(uri: Uri): boolean;
 }

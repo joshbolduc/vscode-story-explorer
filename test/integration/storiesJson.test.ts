@@ -1,10 +1,12 @@
 import { readFile } from 'fs/promises';
 import { relative, resolve } from 'path';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vitest } from 'vitest';
 import { strCompareFn } from '../../src/util/strCompareFn';
 import type { TestProjectVersion } from '../util/getTestStoryFiles';
 import { getTreeRoots, TreeItemRepresentation } from '../util/getTreeRoots';
 import { testBaseDir } from '../util/testBaseDir';
+
+vitest.mock('../../src/config/autodocs');
 
 interface StoriesJsonV3Map {
   [id: string]: {
@@ -60,31 +62,12 @@ describe('stories.json', () => {
     {
       version: '7',
       corrections: {
-        // autodocs NYI
-        'custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title--page':
-          {
-            id: 'custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title--autodoc',
-            name: 'Autodoc',
-          },
-        'custom-title-prefix-second-level-mdx-plainmarkdown--page': {
-          id: 'custom-title-prefix-second-level-mdx-plainmarkdown--autodoc',
-          name: 'Autodoc',
+        // https://github.com/storybookjs/storybook/issues/21312
+        'manually-specified-csf-story-id--autodoc': {
+          id: 'example-custom-id-csf--autodoc',
         },
-        'custom-title-prefix-second-level-mdx-withouttitle--page': {
-          id: 'custom-title-prefix-second-level-mdx-withouttitle--autodoc',
-          name: 'Autodoc',
-        },
-        'custom-title-prefix-second-level-mdx-with-specified-title--page': {
-          id: 'custom-title-prefix-second-level-mdx-with-specified-title--autodoc',
-          name: 'Autodoc',
-        },
-        'example-mdx-docs-only--page': {
-          id: 'example-mdx-docs-only--autodoc',
-          name: 'Autodoc',
-        },
-        'mdx-docs-at-top-level--page': {
-          id: 'mdx-docs-at-top-level--autodoc',
-          name: 'Autodoc',
+        'manually-specified-mdx-id--autodoc': {
+          id: 'example-custom-id-mdx--autodoc',
         },
         // storyStoreV7 limitations
         'example-csf-v1--v-1-story-name': {
@@ -183,15 +166,9 @@ describe('stories.json', () => {
         generatedStoriesJsonStr.toString(),
       ) as StoriesJsonV3;
 
-      const receivedIds = transformedStoriesJson.reduce((acc, cur) => {
-        acc.add(cur.id);
-        return acc;
-      }, new Set<string>());
       const referenceStories = Object.values(storiesJson.stories)
         .filter(
-          (entry) =>
-            (!entry.tags?.includes('autodocs') || receivedIds.has(entry.id)) &&
-            !exclusions.some((exclusion) => exclusion === entry.id),
+          (entry) => !exclusions.some((exclusion) => exclusion === entry.id),
         )
         .map<StoryTestInfo>((story) => ({
           id: story.id,

@@ -1,8 +1,12 @@
 import type { Uri } from 'vscode';
 import type { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import type { IconName } from '../util/getIconPath';
-import { BaseTreeNode } from './BaseTreeNode';
+import { BaseTreeNode, BaseTreeNodeConstuctorParams } from './BaseTreeNode';
 import type { TreeNode } from './TreeNode';
+
+export interface TreeNodeCreationOptions {
+  showAutodocsAsChildren: boolean;
+}
 
 export class KindTreeNode extends BaseTreeNode {
   public readonly type = 'kind';
@@ -16,6 +20,13 @@ export class KindTreeNode extends BaseTreeNode {
    * The node's children.
    */
   private readonly children: TreeNode[] = [];
+
+  public constructor(
+    baseProps: BaseTreeNodeConstuctorParams,
+    protected readonly options: TreeNodeCreationOptions,
+  ) {
+    super(baseProps);
+  }
 
   public hasStoryChildren() {
     return this.children.some((child) => child.type === 'story');
@@ -33,13 +44,12 @@ export class KindTreeNode extends BaseTreeNode {
       return undefined;
     }
 
-    // Use folder icon if there are nested children or docs
+    // Use folder icon if there are nested children or no stories
     if (
       this.children.some(
-        (child) =>
-          (child.type === 'kind' && child.children.length > 0) ||
-          child.getEntry()?.type === 'docs',
-      )
+        (child) => child.type === 'kind' && child.children.length > 0,
+      ) ||
+      this.children.every((child) => child.getEntry()?.type !== 'story')
     ) {
       return 'folder';
     }
@@ -53,6 +63,16 @@ export class KindTreeNode extends BaseTreeNode {
    * @returns A docs entry that maps to this kind node, if one exists.
    */
   public getDocs() {
+    // We only hoist docs to the last node in the title if docs aren't being
+    // shown as children nodes (as in Storybook 7+). (Docs only nodes aren't
+    // really being "hoisted," so we allow those.)
+    if (
+      this.options.showAutodocsAsChildren &&
+      !this.getSingleFile()?.isDocsOnly()
+    ) {
+      return undefined;
+    }
+
     return this.getSingleFile()?.getDocs();
   }
 
@@ -63,8 +83,8 @@ export class KindTreeNode extends BaseTreeNode {
   }
 
   public getChildren(): readonly TreeNode[] {
-    // If this is a hoisted story, it effectively has no children
-    if (this.getHoistedStory()) {
+    // If this is treated as hoisted, it effectively has no children
+    if (this.getHoistedStory() || this.getHoistedDocs()) {
       return [];
     }
 
@@ -72,6 +92,9 @@ export class KindTreeNode extends BaseTreeNode {
   }
 
   public getEntry() {
+    if (this.options.showAutodocsAsChildren) {
+      return this.getLeafEntry();
+    }
     return this.getHoistedStory() || this.getDocs();
   }
 
@@ -104,7 +127,14 @@ export class KindTreeNode extends BaseTreeNode {
     // Docs can be treated as hoisted if there is only one file here and it's a
     // docs-only story
     const file = this.getSingleFile();
-    if (file?.isDocsOnly()) {
+    if (
+      file?.isDocsOnly() &&
+      // If autodocs are rendered as children, make sure that one child is the
+      // autodocs entry
+      (!this.options.showAutodocsAsChildren ||
+        (this.children.length === 1 &&
+          this.children[0]?.getEntry() === file.getDocs()))
+    ) {
       return file.getDocs();
     }
   }

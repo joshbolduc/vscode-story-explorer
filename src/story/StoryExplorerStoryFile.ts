@@ -1,5 +1,6 @@
 import { sanitize } from '@componentdriven/csf';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
+import type { AutodocsConfig } from '../config/autodocs';
 import type { ParsedStoryWithFileUri } from '../parser/parseStoriesFileByUri';
 import { isDefined } from '../util/guards/isDefined';
 import { StoryExplorerDocs } from './StoryExplorerDocs';
@@ -15,6 +16,7 @@ export class StoryExplorerStoryFile {
   public constructor(
     private readonly parsed: ParsedStoryWithFileUri,
     private readonly specifiers: GlobSpecifier[],
+    autodocsConfig: AutodocsConfig | undefined,
   ) {
     this.stories = parsed.stories.reduce<StoryExplorerStory[]>((acc, story) => {
       const { nameForId, location, name } = story;
@@ -32,7 +34,19 @@ export class StoryExplorerStoryFile {
       return acc;
     }, []);
 
-    this.docs = StoryExplorerDocs.fromStoryFileForDocs(this);
+    const hasFileLevelDocs =
+      // pre-v7 autodocs
+      !autodocsConfig ||
+      // MDX file
+      this.isMdx() ||
+      // autodocs everywhere
+      autodocsConfig.autodocs === true ||
+      // autodocs opt-in for this file
+      (autodocsConfig.autodocs === 'tag' && this.hasAutodocsTag());
+
+    if (hasFileLevelDocs) {
+      this.docs = StoryExplorerDocs.fromStoryFileForDocs(this, autodocsConfig);
+    }
   }
 
   public getUri() {
@@ -101,7 +115,15 @@ export class StoryExplorerStoryFile {
     return this.parsed.meta.location;
   }
 
-  public isMdx() {
+  private getMetaTags() {
+    return this.parsed.meta.tags;
+  }
+
+  private hasAutodocsTag() {
+    return this.getMetaTags()?.includes('autodocs');
+  }
+
+  private isMdx() {
     return this.parsed.type === 'mdx';
   }
 }

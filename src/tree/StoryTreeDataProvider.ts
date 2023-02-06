@@ -1,3 +1,4 @@
+import { firstValueFrom } from 'rxjs';
 import {
   Disposable,
   EventEmitter,
@@ -5,6 +6,7 @@ import {
   TreeDataProvider,
   TreeItem,
 } from 'vscode';
+import { autodocsConfig } from '../config/autodocs';
 import { storiesViewShowItemsWithoutStoriesConfigSuffix } from '../constants/constants';
 import type { StoryStore } from '../store/StoryStore';
 import { SettingsWatcher } from '../util/SettingsWatcher';
@@ -95,7 +97,11 @@ export class StoryTreeDataProvider implements TreeDataProvider<TreeNode> {
     const storyFiles = await this.store.getSortedStoryFiles();
     const showKindsWithoutChildren =
       this.showItemsWithoutStoriesWatcher.read() === true;
-    const root = storyFilesToKindTree(storyFiles, showKindsWithoutChildren);
+    const autodocs = await firstValueFrom(autodocsConfig);
+    const root = storyFilesToKindTree(storyFiles, {
+      autodocsConfig: autodocs,
+      showKindsWithoutChildren,
+    });
 
     return sortRootTreeNodes(root);
   }

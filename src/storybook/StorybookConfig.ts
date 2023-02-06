@@ -16,4 +16,8 @@ export type StoriesConfig = ValueOrFunction<
 
 export interface StorybookConfig {
   stories: StoriesConfig;
+  docs?: {
+    autodocs?: boolean | 'tag';
+    defaultName?: string;
+  };
 }

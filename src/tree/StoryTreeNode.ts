@@ -1,3 +1,5 @@
+import type { Uri } from 'vscode';
+import type { StoryExplorerDocs } from '../story/StoryExplorerDocs';
 import type { StoryExplorerStory } from '../story/StoryExplorerStory';
 import type { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import type { IconName } from '../util/getIconPath';
@@ -15,7 +17,7 @@ export class StoryTreeNode extends BaseTreeNode {
   /**
    * The story backing this node.
    */
-  public story: StoryExplorerStory;
+  public story: StoryExplorerStory | StoryExplorerDocs;
 
   /**
    * The node's parent.
@@ -36,7 +38,7 @@ export class StoryTreeNode extends BaseTreeNode {
   }
 
   public getIconName(): IconName | undefined {
-    return 'bookmark';
+    return this.story.type === 'docs' ? 'document' : 'bookmark';
   }
 
   public getEntry() {
@@ -45,5 +47,9 @@ export class StoryTreeNode extends BaseTreeNode {
 
   public getLeafEntry() {
     return this.story;
+  }
+
+  public matchesUri(uri: Uri) {
+    return this.file.getUri().toString() === uri.toString();
   }
 }
