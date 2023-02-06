@@ -1,5 +1,5 @@
 import { readFile } from 'fs/promises';
-import { resolve } from 'path';
+import { relative, resolve } from 'path';
 import merge from 'lodash/merge';
 import { describe, expect, it } from 'vitest';
 import { getTestStoryFiles } from '../util/getTestStoryFiles';
@@ -29,11 +29,12 @@ interface StoriesJsonV3 {
 
 describe('stories.json', () => {
   it('matches storybook-generated stories.json', async () => {
-    type StoryTestInfo = {
+    interface StoryTestInfo {
       id: string;
       name: string;
       title: string;
-    };
+      importPath: string;
+    }
 
     const transformedStoriesJson = (await getTestStoryFiles())
       .flatMap((storyFile) => {
@@ -44,6 +45,10 @@ describe('stories.json', () => {
             id: story.id,
             name: story.name,
             title: storyFile.getTitle()!,
+            importPath: `./${relative(
+              '/mock/basedir/project/v6',
+              storyFile.getUri().path,
+            )}`,
           }));
       })
       .reduce<Record<string, StoryTestInfo>>((acc, cur) => {
@@ -68,6 +73,7 @@ describe('stories.json', () => {
         id: story.id,
         name: story.name,
         title: story.title,
+        importPath: story.importPath,
       };
       return acc;
     }, {});

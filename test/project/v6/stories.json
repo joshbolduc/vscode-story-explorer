@@ -218,11 +218,11 @@
       "id": "example-mdx-with-stories--mdx-first-story",
       "name": "MDX first story",
       "title": "Example/MDX with Stories",
-      "importPath": "./src/stories/MdxWithStories.stories.mdx",
+      "importPath": "./src/stories/Mdx2WithStories.stories.mdx",
       "kind": "Example/MDX with Stories",
       "story": "MDX first story",
       "parameters": {
-        "fileName": "./src/stories/MdxWithStories.stories.mdx",
+        "fileName": "./src/stories/Mdx2WithStories.stories.mdx",
         "framework": "react",
         "__id": "example-mdx-with-stories--mdx-first-story",
         "__isArgsStory": false
@@ -232,11 +232,11 @@
       "id": "example-mdx-with-stories--mdx-second-story",
       "name": "MDX second story",
       "title": "Example/MDX with Stories",
-      "importPath": "./src/stories/MdxWithStories.stories.mdx",
+      "importPath": "./src/stories/Mdx2WithStories.stories.mdx",
       "kind": "Example/MDX with Stories",
       "story": "MDX second story",
       "parameters": {
-        "fileName": "./src/stories/MdxWithStories.stories.mdx",
+        "fileName": "./src/stories/Mdx2WithStories.stories.mdx",
         "framework": "react",
         "__id": "example-mdx-with-stories--mdx-second-story",
         "__isArgsStory": false
@@ -246,11 +246,11 @@
       "id": "example-mdx-with-stories--mdx-story-3",
       "name": "MDX Story 3",
       "title": "Example/MDX with Stories",
-      "importPath": "./src/stories/MdxWithStories.stories.mdx",
+      "importPath": "./src/stories/Mdx2WithStories.stories.mdx",
       "kind": "Example/MDX with Stories",
       "story": "MDX Story 3",
       "parameters": {
-        "fileName": "./src/stories/MdxWithStories.stories.mdx",
+        "fileName": "./src/stories/Mdx2WithStories.stories.mdx",
         "framework": "react",
         "__id": "example-mdx-with-stories--mdx-story-3",
         "__isArgsStory": true
