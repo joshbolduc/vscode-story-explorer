@@ -6,11 +6,11 @@ export const findEntryByUri = (
   uri: Uri,
 ): TreeNode | undefined => {
   for (const entry of entries) {
-    if (entry.type === 'kind') {
-      if (entry.matchesUri(uri)) {
-        return entry;
-      }
+    if (entry.matchesUri(uri)) {
+      return entry;
+    }
 
+    if (entry.type === 'kind') {
       const result = findEntryByUri(entry.getChildren(), uri);
       if (result) {
         return result;

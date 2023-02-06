@@ -5,6 +5,7 @@ exports[`parseStoriesFile > parses story file fixtures/Children.mdx 1`] = `
   "meta": {
     "id": undefined,
     "location": undefined,
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [
@@ -38,6 +39,7 @@ exports[`parseStoriesFile > parses story file fixtures/Mdx1WithStories.stories.m
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 0],
+    "tags": undefined,
     "title": "Example/MDX with Stories",
   },
   "stories": [
@@ -66,6 +68,7 @@ exports[`parseStoriesFile > parses story file fixtures/Spread.mdx 1`] = `
   "meta": {
     "id": undefined,
     "location": undefined,
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [
@@ -84,6 +87,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/Empty
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 5, Col 17],
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [
@@ -102,6 +106,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/Empty
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
     "title": "",
   },
   "stories": [
@@ -122,6 +127,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxMe
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [],
@@ -134,6 +140,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxMe
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [
@@ -152,6 +159,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxSt
   "meta": {
     "id": undefined,
     "location": undefined,
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [
@@ -172,6 +180,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/Tit
   "meta": {
     "id": undefined,
     "location": [Ln 7, Col 15] - [Ln 10, Col 1],
+    "tags": undefined,
     "title": "Example/Title Interpolation",
   },
   "stories": [
@@ -190,6 +199,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/Top
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 8, Col 1],
+    "tags": undefined,
     "title": "Top Hoisted",
   },
   "stories": [
@@ -208,6 +218,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/Typ
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "tags": undefined,
     "title": "Test/TypeScript/Identifier Default Exported as Meta",
   },
   "stories": [
@@ -226,6 +237,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/Typ
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "tags": undefined,
     "title": "Test/TypeScript/Identifier exported satisfies as Meta",
   },
   "stories": [
@@ -244,6 +256,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/Typ
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "tags": undefined,
     "title": "Test/TypeScript/Identifier exported satisfies Meta",
   },
   "stories": [
@@ -262,6 +275,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/Typ
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 6] - [Ln 8, Col 24],
+    "tags": undefined,
     "title": "Test/TypeScript/Identifier Satisfies as Meta",
   },
   "stories": [
@@ -280,6 +294,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/Extra
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
     "title": "Explicit title",
   },
   "stories": [
@@ -298,6 +313,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/neste
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [
@@ -316,6 +332,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/neste
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [
@@ -334,6 +351,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/withI
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [
@@ -347,11 +365,25 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/withI
 }
 `;
 
+exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/DocNodeAndParent.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 0],
+    "tags": undefined,
+    "title": "mdx",
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
 exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/WithTitle.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "tags": undefined,
     "title": "mdx/Non-stories MDX file with specified title",
   },
   "stories": [],
@@ -364,6 +396,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/WithT
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "tags": undefined,
     "title": "mdx/With specified title",
   },
   "stories": [],
@@ -376,6 +409,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/Witho
   "meta": {
     "id": undefined,
     "location": undefined,
+    "tags": undefined,
     "title": undefined,
   },
   "stories": [],
@@ -388,6 +422,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/BasicCsf.st
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 11, Col 1],
+    "tags": undefined,
     "title": "Example/Basic CSF",
   },
   "stories": [
@@ -421,6 +456,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfV1.stori
   "meta": {
     "id": undefined,
     "location": [Ln 1, Col 15] - [Ln 3, Col 1],
+    "tags": undefined,
     "title": "Example/CSF v1",
   },
   "stories": [
@@ -449,6 +485,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfWithMdx.
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 0],
+    "tags": undefined,
     "title": "Example/MDX importing CSF",
   },
   "stories": [
@@ -476,12 +513,15 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CustomId.st
 {
   "meta": {
     "id": "manually-specified-csf-story-id",
-    "location": [Ln 1, Col 15] - [Ln 4, Col 1],
+    "location": [Ln 1, Col 15] - [Ln 5, Col 1],
+    "tags": [
+      "autodocs",
+    ],
     "title": "Example/Custom ID CSF",
   },
   "stories": [
     {
-      "location": [Ln 6, Col 13] - [Ln 6, Col 18],
+      "location": [Ln 7, Col 13] - [Ln 7, Col 18],
       "name": "Story",
       "nameForId": "Story",
     },
@@ -495,6 +535,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CustomId.st
   "meta": {
     "id": "manually-specified-mdx-id",
     "location": [Ln 3, Col 0],
+    "tags": undefined,
     "title": "Example/Custom ID MDX",
   },
   "stories": [
@@ -513,6 +554,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CustomName.
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 12, Col 1],
+    "tags": undefined,
     "title": "Example/Custom Name",
   },
   "stories": [
@@ -556,6 +598,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/Decorators.
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "tags": undefined,
     "title": "Example/Decorators",
   },
   "stories": [
@@ -579,6 +622,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/DeepTree.st
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 15] - [Ln 6, Col 1],
+    "tags": undefined,
     "title": "Example/Deep/Tree/With/Several/Kinds",
   },
   "stories": [
@@ -597,6 +641,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/DocsOnly.st
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "tags": undefined,
     "title": "Example/MDX Docs Only",
   },
   "stories": [],
@@ -609,6 +654,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/DocsOnlyTop
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "tags": undefined,
     "title": "MDX Docs at top level",
   },
   "stories": [],
@@ -621,6 +667,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/Excluded.st
   "meta": {
     "id": undefined,
     "location": [Ln 4, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
     "title": "Test/Exclusions/Excluded",
   },
   "stories": [
@@ -639,6 +686,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/ExportStyle
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 11, Col 1],
+    "tags": undefined,
     "title": "Example/Export Styles",
   },
   "stories": [
@@ -667,6 +715,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/Form.storie
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "tags": undefined,
     "title": "Example/Form",
   },
   "stories": [
@@ -685,6 +734,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/Hoisting.st
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
     "title": "Example/Hoisting",
   },
   "stories": [
@@ -703,6 +753,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/Included.st
   "meta": {
     "id": undefined,
     "location": [Ln 4, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
     "title": "Test/Exclusions/Included",
   },
   "stories": [
@@ -721,6 +772,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/JsxExtensio
   "meta": {
     "id": undefined,
     "location": [Ln 1, Col 15] - [Ln 3, Col 1],
+    "tags": undefined,
     "title": "Example/JSX extension",
   },
   "stories": [
@@ -739,6 +791,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/Mdx2WithSto
   "meta": {
     "id": undefined,
     "location": [Ln 12, Col 0],
+    "tags": undefined,
     "title": "Example/MDX with Stories",
   },
   "stories": [
@@ -767,6 +820,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/MdxWithStor
   "meta": {
     "id": undefined,
     "location": [Ln 4, Col 0],
+    "tags": undefined,
     "title": "MDX with stories, top",
   },
   "stories": [
@@ -785,6 +839,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/MergeOne.st
   "meta": {
     "id": undefined,
     "location": [Ln 1, Col 15] - [Ln 3, Col 1],
+    "tags": undefined,
     "title": "Example/Merge",
   },
   "stories": [
@@ -803,6 +858,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/MergeTwo.st
   "meta": {
     "id": undefined,
     "location": [Ln 1, Col 15] - [Ln 3, Col 1],
+    "tags": undefined,
     "title": "Example/Merge",
   },
   "stories": [
@@ -821,6 +877,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/Precedence.
   "meta": {
     "id": undefined,
     "location": [Ln 4, Col 0],
+    "tags": undefined,
     "title": "Example/Precedence",
   },
   "stories": [
@@ -844,6 +901,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/SameName.st
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 8, Col 1],
+    "tags": undefined,
     "title": "Example/With Same Name",
   },
   "stories": [
@@ -862,6 +920,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/SameNameChi
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 8, Col 1],
+    "tags": undefined,
     "title": "Example/With Same Name/Same Name",
   },
   "stories": [
@@ -880,6 +939,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/StoryDeclar
   "meta": {
     "id": undefined,
     "location": [Ln 1, Col 6] - [Ln 3, Col 1],
+    "tags": undefined,
     "title": "Test/Story Declarations",
   },
   "stories": [
@@ -928,11 +988,38 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/StoryDeclar
 }
 `;
 
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TaggedDocs.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 5, Col 15] - [Ln 12, Col 1],
+    "tags": [
+      "autodocs",
+    ],
+    "title": "Example/Tagged autodocs",
+  },
+  "stories": [
+    {
+      "location": [Ln 16, Col 13] - [Ln 16, Col 20],
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+    {
+      "location": [Ln 21, Col 13] - [Ln 21, Col 22],
+      "name": "Secondary",
+      "nameForId": "Secondary",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
 exports[`parseStoriesFile > parses story file project/v7/src/stories/Top.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 8, Col 1],
+    "tags": undefined,
     "title": "Top",
   },
   "stories": [
@@ -951,6 +1038,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScript.
   "meta": {
     "id": undefined,
     "location": [Ln 17, Col 15] - [Ln 19, Col 9],
+    "tags": undefined,
     "title": "Test/TypeScript/Sample",
   },
   "stories": [
@@ -984,6 +1072,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptA
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 15] - [Ln 7, Col 9],
+    "tags": undefined,
     "title": "Test/TypeScript/Default as Meta",
   },
   "stories": [
@@ -1002,6 +1091,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptI
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 6] - [Ln 7, Col 1],
+    "tags": undefined,
     "title": "Test/TypeScript/Typed Identifier",
   },
   "stories": [
@@ -1020,6 +1110,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptI
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 6] - [Ln 8, Col 9],
+    "tags": undefined,
     "title": "Test/TypeScript/Identifier as Meta",
   },
   "stories": [
@@ -1038,6 +1129,7 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptI
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 6] - [Ln 8, Col 16],
+    "tags": undefined,
     "title": "Test/TypeScript/Identifier Satisfies",
   },
   "stories": [

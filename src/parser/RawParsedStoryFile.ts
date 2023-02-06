@@ -2,6 +2,7 @@ import type { Location } from '../types/Location';
 
 export interface RawParsedStoriesMeta {
   id: string | undefined;
+  tags: string[] | undefined;
   title: string | undefined;
   location: Location | undefined;
 }

@@ -39,8 +39,16 @@ export class TreeNodeItem extends TreeItem {
   ) {
     super(label, getDefaultCollapsedState(node));
 
-    // If kind has multiple files, arbitrarily pick the first one
-    const file = node.type === 'kind' ? node.files[0] : undefined;
+    const entry = node.getEntry();
+
+    // If kind has multiple files, arbitrarily pick the first one. If this is a
+    // docs only file, avoid associating it with the kind node.
+    const file =
+      node.type === 'kind' && !node.files[0]?.isDocsOnly()
+        ? node.files[0]
+        : entry?.storyFile.isDocsOnly()
+        ? entry.storyFile
+        : undefined;
 
     const uri = file?.getUri();
 
@@ -55,8 +63,6 @@ export class TreeNodeItem extends TreeItem {
       this.resourceUri = uri;
       this.command = createOpenInEditorCommand(uri);
     }
-
-    const entry = node.getEntry();
 
     if (entry) {
       this.id = entry.id;

@@ -169,26 +169,43 @@ exports[`StoryTreeDataProvider > creates tree from story files for v6 1`] = `
 
 exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
 - MDX Docs at top level
-  Id: mdx-docs-at-top-level--page
+  Id: mdx-docs-at-top-level--autodoc
   File: file:///mock/basedir/project/v7/src/stories/DocsOnlyTop.stories.mdx
   Context: story
   Icon: document
   Command: Open file [Ln 2, Col 0]
 
 - MDX with stories, top
-  Id: mdx-with-stories-top--mdx-with-stories-top
+  Id: file:///mock/basedir/project/v7/src/stories/MdxWithStoriesTop.stories.mdx
   File: file:///mock/basedir/project/v7/src/stories/MdxWithStoriesTop.stories.mdx
-  Context: story
-  Icon: bookmark
-  Command: Open file [Ln 5, Col 0]
-
-- Top
-  Id: top
-  File: file:///mock/basedir/project/v7/src/stories/Top.stories.js
-  Context: story
   Expanded
   Icon: component
-  Command: Open file [Ln 4, Col 15]
+  Command: Open file
+
+  - Autodoc
+    Id: mdx-with-stories-top--autodoc
+    Context: story
+    Icon: document
+    Command: Open file file:///mock/basedir/project/v7/src/stories/MdxWithStoriesTop.stories.mdx [Ln 3, Col 0]
+
+  - MDX with stories, top
+    Id: mdx-with-stories-top--mdx-with-stories-top
+    Context: story
+    Icon: bookmark
+    Command: Open file file:///mock/basedir/project/v7/src/stories/MdxWithStoriesTop.stories.mdx [Ln 5, Col 0]
+
+- Top
+  Id: file:///mock/basedir/project/v7/src/stories/Top.stories.js
+  File: file:///mock/basedir/project/v7/src/stories/Top.stories.js
+  Expanded
+  Icon: component
+  Command: Open file
+
+  - Autodoc
+    Id: top--autodoc
+    Context: story
+    Icon: document
+    Command: Open file file:///mock/basedir/project/v7/src/stories/Top.stories.js [Ln 4, Col 15]
 
   - Top Level Story
     Id: top--top-level-story
@@ -204,12 +221,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
     Icon: folder
 
     - Explicit title
-      Id: custom-title-prefix-second-level-explicit-title
+      Id: file:///mock/basedir/project/v7/src/autoTitle/csf/ExtraTitle.stories.js
       File: file:///mock/basedir/project/v7/src/autoTitle/csf/ExtraTitle.stories.js
-      Context: story
       Collapsed
       Icon: component
-      Command: Open file [Ln 4, Col 15]
+      Command: Open file
+
+      - Autodoc
+        Id: custom-title-prefix-second-level-explicit-title--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/autoTitle/csf/ExtraTitle.stories.js [Ln 4, Col 15]
 
       - Primary
         Id: custom-title-prefix-second-level-explicit-title--primary
@@ -222,26 +244,36 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Icon: folder
 
       - nested
-        Id: custom-title-prefix-second-level-csf-nested
+        Id: file:///mock/basedir/project/v7/src/autoTitle/csf/nested/nested.stories.js
         File: file:///mock/basedir/project/v7/src/autoTitle/csf/nested/nested.stories.js
-        Context: story
         Collapsed
         Icon: folder
-        Command: Open file [Ln 4, Col 15]
+        Command: Open file
 
         - WithoutTitle
-          Id: custom-title-prefix-second-level-csf-nested-withouttitle
+          Id: file:///mock/basedir/project/v7/src/autoTitle/csf/nested/WithoutTitle.stories.js
           File: file:///mock/basedir/project/v7/src/autoTitle/csf/nested/WithoutTitle.stories.js
-          Context: story
           Collapsed
           Icon: component
-          Command: Open file [Ln 4, Col 15]
+          Command: Open file
+
+          - Autodoc
+            Id: custom-title-prefix-second-level-csf-nested-withouttitle--autodoc
+            Context: story
+            Icon: document
+            Command: Open file file:///mock/basedir/project/v7/src/autoTitle/csf/nested/WithoutTitle.stories.js [Ln 4, Col 15]
 
           - Primary
             Id: custom-title-prefix-second-level-csf-nested-withouttitle--primary
             Context: story
             Icon: bookmark
             Command: Open file file:///mock/basedir/project/v7/src/autoTitle/csf/nested/WithoutTitle.stories.js [Ln 10, Col 13]
+
+        - Autodoc
+          Id: custom-title-prefix-second-level-csf-nested--autodoc
+          Context: story
+          Icon: document
+          Command: Open file file:///mock/basedir/project/v7/src/autoTitle/csf/nested/nested.stories.js [Ln 4, Col 15]
 
         - Primary
           Id: custom-title-prefix-second-level-csf-nested--primary
@@ -250,12 +282,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
           Command: Open file file:///mock/basedir/project/v7/src/autoTitle/csf/nested/nested.stories.js [Ln 10, Col 13]
 
       - withIndex
-        Id: custom-title-prefix-second-level-csf-withindex
+        Id: file:///mock/basedir/project/v7/src/autoTitle/csf/withIndex/index.stories.js
         File: file:///mock/basedir/project/v7/src/autoTitle/csf/withIndex/index.stories.js
-        Context: story
         Collapsed
         Icon: component
-        Command: Open file [Ln 4, Col 15]
+        Command: Open file
+
+        - Autodoc
+          Id: custom-title-prefix-second-level-csf-withindex--autodoc
+          Context: story
+          Icon: document
+          Command: Open file file:///mock/basedir/project/v7/src/autoTitle/csf/withIndex/index.stories.js [Ln 4, Col 15]
 
         - Primary
           Id: custom-title-prefix-second-level-csf-withindex--primary
@@ -267,22 +304,29 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Collapsed
       Icon: folder
 
+      - Autodoc
+        Id: custom-title-prefix-second-level-mdx--autodoc
+        File: file:///mock/basedir/project/v7/src/autoTitle/mdx/DocNodeAndParent.mdx
+        Context: story
+        Icon: document
+        Command: Open file [Ln 2, Col 0]
+
       - Non-stories MDX file with specified title
-        Id: custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title--page
+        Id: custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title--autodoc
         File: file:///mock/basedir/project/v7/src/autoTitle/mdx/WithTitle.mdx
         Context: story
         Icon: document
         Command: Open file [Ln 2, Col 0]
 
       - With specified title
-        Id: custom-title-prefix-second-level-mdx-with-specified-title--page
+        Id: custom-title-prefix-second-level-mdx-with-specified-title--autodoc
         File: file:///mock/basedir/project/v7/src/autoTitle/mdx/WithTitle.stories.mdx
         Context: story
         Icon: document
         Command: Open file [Ln 2, Col 0]
 
       - WithoutTitle
-        Id: custom-title-prefix-second-level-mdx-withouttitle--page
+        Id: custom-title-prefix-second-level-mdx-withouttitle--autodoc
         File: file:///mock/basedir/project/v7/src/autoTitle/mdx/WithoutTitle.mdx
         Context: story
         Icon: document
@@ -292,12 +336,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
   Expanded
 
   - MDX importing CSF
-    Id: example-mdx-importing-csf
+    Id: file:///mock/basedir/project/v7/src/stories/CsfWithMdx.stories.mdx
     File: file:///mock/basedir/project/v7/src/stories/CsfWithMdx.stories.mdx
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 4, Col 0]
+    Command: Open file
+
+    - Autodoc
+      Id: example-mdx-importing-csf--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/CsfWithMdx.stories.mdx [Ln 4, Col 0]
 
     - Basic
       Id: example-mdx-importing-csf--basic
@@ -318,12 +367,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/CsfWithMdx.stories.mdx [Ln 24, Col 0]
 
   - Custom ID MDX
-    Id: manually-specified-mdx-id
+    Id: file:///mock/basedir/project/v7/src/stories/CustomId.stories.mdx
     File: file:///mock/basedir/project/v7/src/stories/CustomId.stories.mdx
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 2, Col 0]
+    Command: Open file
+
+    - Autodoc
+      Id: manually-specified-mdx-id--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/CustomId.stories.mdx [Ln 2, Col 0]
 
     - Story
       Id: manually-specified-mdx-id--story
@@ -332,19 +386,24 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/CustomId.stories.mdx [Ln 6, Col 0]
 
   - MDX Docs Only
-    Id: example-mdx-docs-only--page
+    Id: example-mdx-docs-only--autodoc
     File: file:///mock/basedir/project/v7/src/stories/DocsOnly.stories.mdx
     Context: story
     Icon: document
     Command: Open file [Ln 2, Col 0]
 
   - MDX with Stories
-    Id: example-mdx-with-stories
+    Id: file:///mock/basedir/project/v7/src/stories/Mdx2WithStories.stories.mdx
     File: file:///mock/basedir/project/v7/src/stories/Mdx2WithStories.stories.mdx
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 11, Col 0]
+    Command: Open file
+
+    - Autodoc
+      Id: example-mdx-with-stories--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/Mdx2WithStories.stories.mdx [Ln 11, Col 0]
 
     - MDX first story
       Id: example-mdx-with-stories--mdx-first-story
@@ -365,12 +424,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/Mdx2WithStories.stories.mdx [Ln 21, Col 0]
 
   - Precedence
-    Id: example-precedence
+    Id: file:///mock/basedir/project/v7/src/stories/Precedence.stories.mdx
     File: file:///mock/basedir/project/v7/src/stories/Precedence.stories.mdx
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 3, Col 0]
+    Command: Open file
+
+    - Autodoc
+      Id: example-precedence--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/Precedence.stories.mdx [Ln 3, Col 0]
 
     - Story with name, story, body
       Id: example-precedence--small
@@ -385,12 +449,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/Precedence.stories.mdx [Ln 25, Col 0]
 
   - Basic CSF
-    Id: example-basic-csf
+    Id: file:///mock/basedir/project/v7/src/stories/BasicCsf.stories.js
     File: file:///mock/basedir/project/v7/src/stories/BasicCsf.stories.js
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 4, Col 15]
+    Command: Open file
+
+    - Autodoc
+      Id: example-basic-csf--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/BasicCsf.stories.js [Ln 4, Col 15]
 
     - Primary
       Id: example-basic-csf--primary
@@ -417,12 +486,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/BasicCsf.stories.js [Ln 30, Col 13]
 
   - CSF v1
-    Id: example-csf-v1
+    Id: file:///mock/basedir/project/v7/src/stories/CsfV1.stories.js
     File: file:///mock/basedir/project/v7/src/stories/CsfV1.stories.js
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 0, Col 15]
+    Command: Open file
+
+    - Autodoc
+      Id: example-csf-v1--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/CsfV1.stories.js [Ln 0, Col 15]
 
     - Renamed via non-hoisted story
       Id: example-csf-v1--v-1-story-name
@@ -443,26 +517,36 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/CsfV1.stories.js [Ln 17, Col 13]
 
   - Custom ID CSF
-    Id: manually-specified-csf-story-id
+    Id: file:///mock/basedir/project/v7/src/stories/CustomId.stories.js
     File: file:///mock/basedir/project/v7/src/stories/CustomId.stories.js
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 0, Col 15]
+    Command: Open file
+
+    - Autodoc
+      Id: manually-specified-csf-story-id--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/CustomId.stories.js [Ln 0, Col 15]
 
     - Story
       Id: manually-specified-csf-story-id--story
       Context: story
       Icon: bookmark
-      Command: Open file file:///mock/basedir/project/v7/src/stories/CustomId.stories.js [Ln 5, Col 13]
+      Command: Open file file:///mock/basedir/project/v7/src/stories/CustomId.stories.js [Ln 6, Col 13]
 
   - Custom Name
-    Id: example-custom-name
+    Id: file:///mock/basedir/project/v7/src/stories/CustomName.stories.js
     File: file:///mock/basedir/project/v7/src/stories/CustomName.stories.js
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 4, Col 15]
+    Command: Open file
+
+    - Autodoc
+      Id: example-custom-name--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/CustomName.stories.js [Ln 4, Col 15]
 
     - Custom story name
       Id: example-custom-name--custom-name
@@ -501,12 +585,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/CustomName.stories.js [Ln 41, Col 13]
 
   - Decorators
-    Id: example-decorators
+    Id: file:///mock/basedir/project/v7/src/stories/Decorators.stories.tsx
     File: file:///mock/basedir/project/v7/src/stories/Decorators.stories.tsx
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 2, Col 15]
+    Command: Open file
+
+    - Autodoc
+      Id: example-decorators--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/Decorators.stories.tsx [Ln 2, Col 15]
 
     - Decorated Class
       Id: example-decorators--decorated-class
@@ -537,12 +626,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
           Icon: folder
 
           - Kinds
-            Id: example-deep-tree-with-several-kinds
+            Id: file:///mock/basedir/project/v7/src/stories/DeepTree.stories.js
             File: file:///mock/basedir/project/v7/src/stories/DeepTree.stories.js
-            Context: story
             Collapsed
             Icon: component
-            Command: Open file [Ln 2, Col 15]
+            Command: Open file
+
+            - Autodoc
+              Id: example-deep-tree-with-several-kinds--autodoc
+              Context: story
+              Icon: document
+              Command: Open file file:///mock/basedir/project/v7/src/stories/DeepTree.stories.js [Ln 2, Col 15]
 
             - Story
               Id: example-deep-tree-with-several-kinds--story
@@ -551,12 +645,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
               Command: Open file file:///mock/basedir/project/v7/src/stories/DeepTree.stories.js [Ln 9, Col 13]
 
   - Export Styles
-    Id: example-export-styles
+    Id: file:///mock/basedir/project/v7/src/stories/ExportStyles.stories.js
     File: file:///mock/basedir/project/v7/src/stories/ExportStyles.stories.js
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 4, Col 15]
+    Command: Open file
+
+    - Autodoc
+      Id: example-export-styles--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/ExportStyles.stories.js [Ln 4, Col 15]
 
     - Normal Export
       Id: example-export-styles--normal-export
@@ -577,26 +676,55 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/ExportStyles.stories.js [Ln 24, Col 6]
 
   - Form
-    Id: example-form--form
+    Id: file:///mock/basedir/project/v7/src/stories/Form.stories.js
     File: file:///mock/basedir/project/v7/src/stories/Form.stories.js
-    Context: story
-    Icon: bookmark
-    Command: Open file [Ln 6, Col 13]
-
-  - Hoisting
-    Id: example-hoisting--hoisting
-    File: file:///mock/basedir/project/v7/src/stories/Hoisting.stories.js
-    Context: story
-    Icon: bookmark
-    Command: Open file [Ln 2, Col 13]
-
-  - JSX extension
-    Id: example-jsx-extension
-    File: file:///mock/basedir/project/v7/src/stories/JsxExtension.stories.jsx
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 0, Col 15]
+    Command: Open file
+
+    - Autodoc
+      Id: example-form--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/Form.stories.js [Ln 2, Col 15]
+
+    - Form
+      Id: example-form--form
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/stories/Form.stories.js [Ln 6, Col 13]
+
+  - Hoisting
+    Id: file:///mock/basedir/project/v7/src/stories/Hoisting.stories.js
+    File: file:///mock/basedir/project/v7/src/stories/Hoisting.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: example-hoisting--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/Hoisting.stories.js [Ln 4, Col 15]
+
+    - Hoisting
+      Id: example-hoisting--hoisting
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/stories/Hoisting.stories.js [Ln 2, Col 13]
+
+  - JSX extension
+    Id: file:///mock/basedir/project/v7/src/stories/JsxExtension.stories.jsx
+    File: file:///mock/basedir/project/v7/src/stories/JsxExtension.stories.jsx
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: example-jsx-extension--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/JsxExtension.stories.jsx [Ln 0, Col 15]
 
     - Story
       Id: example-jsx-extension--story
@@ -612,6 +740,12 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
     Icon: component
     Command: Open file
 
+    - Autodoc
+      Id: example-merge--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/MergeOne.stories.js [Ln 0, Col 15]
+
     - One
       Id: example-merge--one
       Context: story
@@ -625,12 +759,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/MergeTwo.stories.js [Ln 4, Col 13]
 
   - With Same Name
-    Id: example-with-same-name
+    Id: file:///mock/basedir/project/v7/src/stories/SameName.stories.js
     File: file:///mock/basedir/project/v7/src/stories/SameName.stories.js
-    Context: story
     Collapsed
     Icon: folder
-    Command: Open file [Ln 4, Col 15]
+    Command: Open file
+
+    - Autodoc
+      Id: example-with-same-name--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/SameName.stories.js [Ln 4, Col 15]
 
     - Same Name
       Id: example-with-same-name--same-name
@@ -639,18 +778,48 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Command: Open file file:///mock/basedir/project/v7/src/stories/SameName.stories.js [Ln 11, Col 13]
 
     - Same Name
-      Id: example-with-same-name-same-name
+      Id: file:///mock/basedir/project/v7/src/stories/SameNameChild.stories.js
       File: file:///mock/basedir/project/v7/src/stories/SameNameChild.stories.js
-      Context: story
       Collapsed
       Icon: component
-      Command: Open file [Ln 4, Col 15]
+      Command: Open file
+
+      - Autodoc
+        Id: example-with-same-name-same-name--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/SameNameChild.stories.js [Ln 4, Col 15]
 
       - Nested Story
         Id: example-with-same-name-same-name--nested-story
         Context: story
         Icon: bookmark
         Command: Open file file:///mock/basedir/project/v7/src/stories/SameNameChild.stories.js [Ln 11, Col 13]
+
+  - Tagged autodocs
+    Id: file:///mock/basedir/project/v7/src/stories/TaggedDocs.stories.js
+    File: file:///mock/basedir/project/v7/src/stories/TaggedDocs.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: example-tagged-autodocs--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/TaggedDocs.stories.js [Ln 4, Col 15]
+
+    - Primary
+      Id: example-tagged-autodocs--primary
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/stories/TaggedDocs.stories.js [Ln 15, Col 13]
+
+    - Secondary
+      Id: example-tagged-autodocs--secondary
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/stories/TaggedDocs.stories.js [Ln 20, Col 13]
 
 - Test
   Expanded
@@ -660,12 +829,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
     Icon: folder
 
     - Excluded
-      Id: test-exclusions-excluded
+      Id: file:///mock/basedir/project/v7/src/stories/Excluded.stories.js
       File: file:///mock/basedir/project/v7/src/stories/Excluded.stories.js
-      Context: story
       Collapsed
       Icon: component
-      Command: Open file [Ln 3, Col 15]
+      Command: Open file
+
+      - Autodoc
+        Id: test-exclusions-excluded--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/Excluded.stories.js [Ln 3, Col 15]
 
       - Other Export
         Id: test-exclusions-excluded--other-export
@@ -674,12 +848,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Command: Open file file:///mock/basedir/project/v7/src/stories/Excluded.stories.js [Ln 1, Col 13]
 
     - Included
-      Id: test-exclusions-included
+      Id: file:///mock/basedir/project/v7/src/stories/Included.stories.js
       File: file:///mock/basedir/project/v7/src/stories/Included.stories.js
-      Context: story
       Collapsed
       Icon: component
-      Command: Open file [Ln 3, Col 15]
+      Command: Open file
+
+      - Autodoc
+        Id: test-exclusions-included--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/Included.stories.js [Ln 3, Col 15]
 
       - Included Export
         Id: test-exclusions-included--included-export
@@ -688,12 +867,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Command: Open file file:///mock/basedir/project/v7/src/stories/Included.stories.js [Ln 0, Col 13]
 
   - Story Declarations
-    Id: test-story-declarations
+    Id: file:///mock/basedir/project/v7/src/stories/StoryDeclarations.stories.js
     File: file:///mock/basedir/project/v7/src/stories/StoryDeclarations.stories.js
-    Context: story
     Collapsed
     Icon: component
-    Command: Open file [Ln 0, Col 6]
+    Command: Open file
+
+    - Autodoc
+      Id: test-story-declarations--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/stories/StoryDeclarations.stories.js [Ln 0, Col 6]
 
     - Const Declarator
       Id: test-story-declarations--const-declarator
@@ -748,12 +932,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
     Icon: folder
 
     - Sample
-      Id: test-typescript-sample
+      Id: file:///mock/basedir/project/v7/src/stories/TypeScript.stories.tsx
       File: file:///mock/basedir/project/v7/src/stories/TypeScript.stories.tsx
-      Context: story
       Collapsed
       Icon: component
-      Command: Open file [Ln 16, Col 15]
+      Command: Open file
+
+      - Autodoc
+        Id: test-typescript-sample--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScript.stories.tsx [Ln 16, Col 15]
 
       - Type Script Story
         Id: test-typescript-sample--type-script-story
@@ -780,12 +969,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScript.stories.tsx [Ln 12, Col 13]
 
     - Default as Meta
-      Id: test-typescript-default-as-meta
+      Id: file:///mock/basedir/project/v7/src/stories/TypeScriptAsMeta.stories.ts
       File: file:///mock/basedir/project/v7/src/stories/TypeScriptAsMeta.stories.ts
-      Context: story
       Collapsed
       Icon: component
-      Command: Open file [Ln 4, Col 15]
+      Command: Open file
+
+      - Autodoc
+        Id: test-typescript-default-as-meta--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptAsMeta.stories.ts [Ln 4, Col 15]
 
       - Type Script Story
         Id: test-typescript-default-as-meta--type-script-story
@@ -794,12 +988,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptAsMeta.stories.ts [Ln 2, Col 13]
 
     - Typed Identifier
-      Id: test-typescript-typed-identifier
+      Id: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifier.stories.ts
       File: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifier.stories.ts
-      Context: story
       Collapsed
       Icon: component
-      Command: Open file [Ln 4, Col 6]
+      Command: Open file
+
+      - Autodoc
+        Id: test-typescript-typed-identifier--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifier.stories.ts [Ln 4, Col 6]
 
       - Type Script Story
         Id: test-typescript-typed-identifier--type-script-story
@@ -808,12 +1007,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifier.stories.ts [Ln 2, Col 13]
 
     - Identifier as Meta
-      Id: test-typescript-identifier-as-meta
+      Id: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierAsMeta.stories.ts
       File: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierAsMeta.stories.ts
-      Context: story
       Collapsed
       Icon: component
-      Command: Open file [Ln 5, Col 6]
+      Command: Open file
+
+      - Autodoc
+        Id: test-typescript-identifier-as-meta--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierAsMeta.stories.ts [Ln 5, Col 6]
 
       - Type Script Story
         Id: test-typescript-identifier-as-meta--type-script-story
@@ -822,12 +1026,17 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierAsMeta.stories.ts [Ln 2, Col 13]
 
     - Identifier Satisfies
-      Id: test-typescript-identifier-satisfies
+      Id: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierSatisfies.stories.ts
       File: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierSatisfies.stories.ts
-      Context: story
       Collapsed
       Icon: component
-      Command: Open file [Ln 5, Col 6]
+      Command: Open file
+
+      - Autodoc
+        Id: test-typescript-identifier-satisfies--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierSatisfies.stories.ts [Ln 5, Col 6]
 
       - Type Script Story
         Id: test-typescript-identifier-satisfies--type-script-story

@@ -376,16 +376,19 @@ exports[`csf > parses story file project/v7/src/stories/CustomId.stories.js 1`] 
   "meta": {
     "declared": true,
     "id": "Manually specified CSF story ID",
-    "location": [Ln 1, Col 15] - [Ln 4, Col 1],
+    "location": [Ln 1, Col 15] - [Ln 5, Col 1],
     "properties": {
       "id": "Manually specified CSF story ID",
+      "tags": [
+        "autodocs",
+      ],
       "title": "Example/Custom ID CSF",
     },
   },
   "stories": [
     {
       "exportName": "Story",
-      "location": [Ln 6, Col 13] - [Ln 6, Col 18],
+      "location": [Ln 7, Col 13] - [Ln 7, Col 18],
       "properties": {},
     },
   ],
@@ -804,6 +807,44 @@ exports[`csf > parses story file project/v7/src/stories/StoryDeclarations.storie
       "location": [Ln 29, Col 9] - [Ln 29, Col 31],
       "properties": {
         "storyName": "Separate function story with story name",
+      },
+    },
+  ],
+}
+`;
+
+exports[`csf > parses story file project/v7/src/stories/TaggedDocs.stories.js 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 5, Col 15] - [Ln 12, Col 1],
+    "properties": {
+      "args": {
+        "color": "blue",
+      },
+      "tags": [
+        "autodocs",
+      ],
+      "title": "Example/Tagged autodocs",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "Primary",
+      "location": [Ln 16, Col 13] - [Ln 16, Col 20],
+      "properties": {
+        "args": {
+          "children": "Primary",
+        },
+      },
+    },
+    {
+      "exportName": "Secondary",
+      "location": [Ln 21, Col 13] - [Ln 21, Col 22],
+      "properties": {
+        "args": {
+          "children": "Secondary",
+        },
       },
     },
   ],

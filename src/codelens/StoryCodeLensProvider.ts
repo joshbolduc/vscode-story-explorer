@@ -1,3 +1,4 @@
+import { firstValueFrom } from 'rxjs';
 import {
   CodeLens,
   CodeLensProvider,
@@ -5,6 +6,7 @@ import {
   Range,
   TextDocument,
 } from 'vscode';
+import { autodocsConfig } from '../config/autodocs';
 import { storiesGlobs } from '../config/storiesGlobs';
 import {
   openPreviewInBrowserCommand,
@@ -72,12 +74,15 @@ export class StoryCodeLensProvider implements CodeLensProvider {
       return;
     }
 
+    const autodocs = await firstValueFrom(autodocsConfig);
+
     const storyFile = new StoryExplorerStoryFile(
       {
         file: document.uri,
         ...parsed,
       },
       globSpecifiers,
+      autodocs,
     );
 
     const lenses: CodeLens[] = [];

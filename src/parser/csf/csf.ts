@@ -33,10 +33,11 @@ const parseCsf = (contents: string): RawParsedStoryFile | undefined => {
     return undefined;
   }
 
-  const { id, title } = sanitizeMetaObject(parsed.meta.properties);
+  const { id, tags, title } = sanitizeMetaObject(parsed.meta.properties);
 
   const meta = {
     id,
+    tags,
     title,
     location: parsed.meta.location,
   };
