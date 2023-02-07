@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.7.0...v0.7.1) (2023-02-07)
+
+### Bug Fixes
+
+- support `satisfies` and multiple type assertions on `Meta` objects ([38a0d1c](https://github.com/joshbolduc/vscode-story-explorer/commit/38a0d1cd127c4e984c70613af9abc12726448955))
+
 ## [0.7.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.6.3...v0.7.0) (2023-02-05)
 
 ### Features
