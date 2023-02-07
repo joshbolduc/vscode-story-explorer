@@ -682,17 +682,17 @@ exports[`StoryTreeDataProvider > creates tree from story files 1`] = `
         Icon: bookmark
         Command: Open file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifier.stories.ts [Ln 2, Col 13]
 
-    - Identifier Exported as Meta
-      Id: test-typescript-identifier-exported-as-meta
-      File: file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierAsMeta.stories.ts
+    - Identifier Default Exported as Meta
+      Id: test-typescript-identifier-default-exported-as-meta
+      File: file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts
       Context: story
       Collapsed
       Icon: component
       Command: Open file [Ln 5, Col 6]
 
       - Type Script Story
-        Id: test-typescript-identifier-exported-as-meta--type-script-story
+        Id: test-typescript-identifier-default-exported-as-meta--type-script-story
         Context: story
         Icon: bookmark
-        Command: Open file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierAsMeta.stories.ts [Ln 2, Col 13]
+        Command: Open file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts [Ln 2, Col 13]
 `;
