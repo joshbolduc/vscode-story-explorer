@@ -2,12 +2,16 @@ import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
 import type { Binding, NodePath } from '@babel/traverse';
 import {
+  ClassDeclaration,
+  Expression,
   FunctionDeclaration,
   Identifier,
   isExportSpecifier,
   isIdentifier,
+  isTSSatisfiesExpression,
   ObjectExpression,
   SourceLocation,
+  TSDeclareFunction,
   VariableDeclarator,
 } from '@babel/types';
 import type { Location } from '../../types/Location';
@@ -107,6 +111,25 @@ const createStory = (
   return newStory;
 };
 
+const getNestedExpression = (
+  node: NodePath<
+    | ClassDeclaration
+    | FunctionDeclaration
+    | TSDeclareFunction
+    | Expression
+    | null
+    | undefined
+  >,
+) => {
+  let expr = node;
+
+  while (expr.isTSAsExpression() || isTSSatisfiesExpression(expr.node)) {
+    expr = expr.get('expression') as NodePath<Expression>;
+  }
+
+  return expr;
+};
+
 export const parseFromContents = (contents: string): RawResult => {
   const parsedFile = parse(contents, {
     sourceType: 'unambiguous',
@@ -140,10 +163,12 @@ export const parseFromContents = (contents: string): RawResult => {
     if (bindingPath?.isVariableDeclarator()) {
       const init = bindingPath.get('init');
 
-      if (init.isObjectExpression()) {
+      const nestedExpression = getNestedExpression(init);
+
+      if (nestedExpression.isObjectExpression()) {
         const sourceLoc = bindingPath.node.loc;
         addMetaObjectProperties(
-          parseMetaObjectExpression(init),
+          parseMetaObjectExpression(nestedExpression),
           sourceLocationToLocation(sourceLoc),
         );
       }
@@ -175,8 +200,11 @@ export const parseFromContents = (contents: string): RawResult => {
         );
       } else if (declaration.isIdentifier()) {
         addFromBinding(declaration);
-      } else if (declaration.isTSAsExpression()) {
-        const expression = declaration.get('expression');
+      } else if (
+        declaration.isTSAsExpression() ||
+        isTSSatisfiesExpression(declaration.node)
+      ) {
+        const expression = getNestedExpression(declaration);
         if (expression.isObjectExpression()) {
           const sourceLoc = declaration.node.loc;
           addMetaObjectProperties(

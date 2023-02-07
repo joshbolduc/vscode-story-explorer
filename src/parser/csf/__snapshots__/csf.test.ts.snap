@@ -846,6 +846,25 @@ exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifier.sto
 }
 `;
 
+exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierAsMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 9],
+    "properties": {
+      "title": "Test/TypeScript/Identifier as Meta",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "TypeScriptStory",
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "properties": {},
+    },
+  ],
+}
+`;
+
 exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
 {
   "meta": {
@@ -853,6 +872,82 @@ exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierDefa
     "location": [Ln 6, Col 6] - [Ln 8, Col 1],
     "properties": {
       "title": "Test/TypeScript/Identifier Default Exported as Meta",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "TypeScriptStory",
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "properties": {},
+    },
+  ],
+}
+`;
+
+exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "properties": {
+      "title": "Test/TypeScript/Identifier exported satisfies as Meta",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "TypeScriptStory",
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "properties": {},
+    },
+  ],
+}
+`;
+
+exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "properties": {
+      "title": "Test/TypeScript/Identifier exported satisfies Meta",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "TypeScriptStory",
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "properties": {},
+    },
+  ],
+}
+`;
+
+exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierSatisfies.stories.ts 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 16],
+    "properties": {
+      "title": "Test/TypeScript/Identifier Satisfies",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "TypeScriptStory",
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "properties": {},
+    },
+  ],
+}
+`;
+
+exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 24],
+    "properties": {
+      "title": "Test/TypeScript/Identifier Satisfies as Meta",
     },
   },
   "stories": [
