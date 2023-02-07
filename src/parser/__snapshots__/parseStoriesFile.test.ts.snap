@@ -886,12 +886,12 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierAsMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 6] - [Ln 8, Col 1],
-    "title": "Test/TypeScript/Identifier Exported as Meta",
+    "title": "Test/TypeScript/Identifier Default Exported as Meta",
   },
   "stories": [
     {

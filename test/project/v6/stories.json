@@ -914,17 +914,17 @@
         "__isArgsStory": false
       }
     },
-    "test-typescript-identifier-exported-as-meta--type-script-story": {
-      "id": "test-typescript-identifier-exported-as-meta--type-script-story",
+    "test-typescript-identifier-default-exported-as-meta--type-script-story": {
+      "id": "test-typescript-identifier-default-exported-as-meta--type-script-story",
       "name": "Type Script Story",
-      "title": "Test/TypeScript/Identifier Exported as Meta",
-      "importPath": "./src/stories/TypeScriptIdentifierAsMeta.stories.ts",
-      "kind": "Test/TypeScript/Identifier Exported as Meta",
+      "title": "Test/TypeScript/Identifier Default Exported as Meta",
+      "importPath": "./src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts",
+      "kind": "Test/TypeScript/Identifier Default Exported as Meta",
       "story": "Type Script Story",
       "parameters": {
-        "fileName": "./src/stories/TypeScriptIdentifierAsMeta.stories.ts",
+        "fileName": "./src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts",
         "framework": "react",
-        "__id": "test-typescript-identifier-exported-as-meta--type-script-story",
+        "__id": "test-typescript-identifier-default-exported-as-meta--type-script-story",
         "__isArgsStory": false
       }
     }
