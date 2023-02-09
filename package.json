@@ -476,7 +476,7 @@
     "@types/picomatch": "2.3.0",
     "@types/vscode": "1.58.0",
     "@types/vscode-webview": "1.57.1",
-    "@typescript-eslint/eslint-plugin": "5.50.0",
+    "@typescript-eslint/eslint-plugin": "5.51.0",
     "@typescript-eslint/parser": "5.50.0",
     "@vitest/coverage-c8": "0.28.4",
     "@vscode/vsce": "2.17.0",
