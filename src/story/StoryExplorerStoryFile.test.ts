@@ -2,7 +2,10 @@ import { describe, expect, it } from 'vitest';
 import { getTestStoryFiles } from '../../test/util/getTestStoryFiles';
 
 describe('StoryExplorerStoryFile', async () => {
-  const storyFiles = await getTestStoryFiles();
+  const storyFiles = [
+    ...(await getTestStoryFiles('6')),
+    ...(await getTestStoryFiles('7')),
+  ];
 
   storyFiles.forEach((storyFile) => {
     it(`parses story file ${storyFile.getUri().toString()}`, () => {
