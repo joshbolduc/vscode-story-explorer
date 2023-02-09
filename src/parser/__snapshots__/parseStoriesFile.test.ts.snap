@@ -115,80 +115,6 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/Empty
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/ExtraTitle.stories.js 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
-    "title": "Explicit title",
-  },
-  "stories": [
-    {
-      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
-      "name": "Primary",
-      "nameForId": "Primary",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
-exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/NoDefaultExport.stories.js 1`] = `undefined`;
-
-exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/nested/WithoutTitle.stories.js 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
-    "title": undefined,
-  },
-  "stories": [
-    {
-      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
-      "name": "Primary",
-      "nameForId": "Primary",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
-exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/nested/nested.stories.js 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
-    "title": undefined,
-  },
-  "stories": [
-    {
-      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
-      "name": "Primary",
-      "nameForId": "Primary",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
-exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/withIndex/index.stories.js 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
-    "title": undefined,
-  },
-  "stories": [
-    {
-      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
-      "name": "Primary",
-      "nameForId": "Primary",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
 exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
 {
   "meta": {
@@ -239,7 +165,117 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxSt
 
 exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/BasicCsf.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/TitleInterpolation.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 7, Col 15] - [Ln 10, Col 1],
+    "title": "Example/Title Interpolation",
+  },
+  "stories": [
+    {
+      "location": [Ln 14, Col 13] - [Ln 14, Col 20],
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v6/src/stories/TopHoisted.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
+    "title": "Top Hoisted",
+  },
+  "stories": [
+    {
+      "location": [Ln 12, Col 13] - [Ln 12, Col 23],
+      "name": "Top Hoisted",
+      "nameForId": "Top Hoisted",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/ExtraTitle.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "title": "Explicit title",
+  },
+  "stories": [
+    {
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/NoDefaultExport.stories.js 1`] = `undefined`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/nested/WithoutTitle.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/nested/nested.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/withIndex/index.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/stories/BasicCsf.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -272,7 +308,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/BasicCsf.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/CsfV1.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfV1.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -300,9 +336,9 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/CsfV1.stori
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/CsfWithMdx.stories.js 1`] = `undefined`;
+exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfWithMdx.stories.js 1`] = `undefined`;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/CsfWithMdx.stories.mdx 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfWithMdx.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -330,7 +366,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/CsfWithMdx.
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/CustomId.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/CustomId.stories.js 1`] = `
 {
   "meta": {
     "id": "manually-specified-csf-story-id",
@@ -348,7 +384,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/CustomId.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/CustomId.stories.mdx 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/CustomId.stories.mdx 1`] = `
 {
   "meta": {
     "id": "manually-specified-mdx-id",
@@ -366,7 +402,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/CustomId.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/CustomName.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/CustomName.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -409,7 +445,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/CustomName.
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/DeepTree.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/DeepTree.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -427,7 +463,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/DeepTree.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/DocsOnly.stories.mdx 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/DocsOnly.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -439,7 +475,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/DocsOnly.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/DocsOnlyTop.stories.mdx 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/DocsOnlyTop.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -451,7 +487,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/DocsOnlyTop
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/Excluded.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/Excluded.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -469,7 +505,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/Excluded.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/ExportStyles.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/ExportStyles.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -497,7 +533,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/ExportStyle
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/Form.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/Form.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -515,7 +551,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/Form.storie
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/Hoisting.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/Hoisting.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -533,7 +569,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/Hoisting.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/Included.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/Included.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -551,7 +587,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/Included.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/JsxExtension.stories.jsx 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/JsxExtension.stories.jsx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -569,7 +605,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/JsxExtensio
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/Mdx2WithStories.stories.mdx 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/Mdx2WithStories.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -597,7 +633,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/Mdx2WithSto
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/MdxWithStoriesTop.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -615,7 +651,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/MdxWithStor
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/MergeOne.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/MergeOne.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -633,7 +669,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/MergeOne.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/MergeTwo.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/MergeTwo.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -651,7 +687,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/MergeTwo.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/Precedence.stories.mdx 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/Precedence.stories.mdx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -674,7 +710,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/Precedence.
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/SameName.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/SameName.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -692,7 +728,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/SameName.st
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/SameNameChild.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/SameNameChild.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -710,7 +746,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/SameNameChi
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/StoryDeclarations.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/StoryDeclarations.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -763,25 +799,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/StoryDeclar
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TitleInterpolation.stories.js 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 7, Col 15] - [Ln 10, Col 1],
-    "title": "Example/Title Interpolation",
-  },
-  "stories": [
-    {
-      "location": [Ln 14, Col 13] - [Ln 14, Col 20],
-      "name": "Primary",
-      "nameForId": "Primary",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
-exports[`parseStoriesFile > parses story file project/v6/src/stories/Top.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/Top.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -799,25 +817,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/Top.stories
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TopHoisted.stories.js 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 5, Col 15] - [Ln 8, Col 1],
-    "title": "Top Hoisted",
-  },
-  "stories": [
-    {
-      "location": [Ln 12, Col 13] - [Ln 12, Col 23],
-      "name": "Top Hoisted",
-      "nameForId": "Top Hoisted",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScript.stories.tsx 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScript.stories.tsx 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -850,7 +850,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScript.
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptAsMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptAsMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -868,7 +868,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptA
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifier.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifier.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -886,7 +886,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierAsMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierAsMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -904,7 +904,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -922,7 +922,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -940,7 +940,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -958,7 +958,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierSatisfies.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierSatisfies.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -976,7 +976,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,

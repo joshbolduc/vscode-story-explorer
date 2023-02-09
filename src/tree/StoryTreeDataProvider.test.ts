@@ -111,44 +111,48 @@ addSerializer({
 });
 
 describe('StoryTreeDataProvider', () => {
-  it('creates tree from story files', async () => {
-    const storyFiles = await getTestStoryFiles();
-    const mockContext = {
-      extensionUri: URI.file('/mock/extension/root'),
-    } as ExtensionContext;
+  const versions = ['6', '7'] as const;
 
-    const mockStore = {
-      getSortedStoryFiles: () => Promise.resolve(storyFiles),
-      onDidUpdateStoryStore: () => ({
-        dispose: () => {
-          // no-op
-        },
-      }),
-      waitUntilInitialized: () => Promise.resolve(mockStore),
-    } as Partial<StoryStore> as StoryStore;
+  versions.forEach((version) =>
+    it(`creates tree from story files for v${version}`, async () => {
+      const storyFiles = await getTestStoryFiles(version);
+      const mockContext = {
+        extensionUri: URI.file('/mock/extension/root'),
+      } as ExtensionContext;
 
-    const provider = new StoryTreeDataProvider(mockContext, mockStore);
+      const mockStore = {
+        getSortedStoryFiles: () => Promise.resolve(storyFiles),
+        onDidUpdateStoryStore: () => ({
+          dispose: () => {
+            // no-op
+          },
+        }),
+        waitUntilInitialized: () => Promise.resolve(mockStore),
+      } as Partial<StoryStore> as StoryStore;
 
-    const nodeToTreeItem = async (
-      node: TreeNode,
-    ): Promise<TreeItemRepresentation> => {
-      const childItems = (await provider.getChildren(node))?.map(
-        nodeToTreeItem,
-      );
+      const provider = new StoryTreeDataProvider(mockContext, mockStore);
 
-      return {
-        item: await provider.getTreeItem(node),
-        ...(childItems &&
-          childItems.length > 0 && {
-            children: await Promise.all(childItems),
-          }),
-        isTreeItem: true,
+      const nodeToTreeItem = async (
+        node: TreeNode,
+      ): Promise<TreeItemRepresentation> => {
+        const childItems = (await provider.getChildren(node))?.map(
+          nodeToTreeItem,
+        );
+
+        return {
+          item: await provider.getTreeItem(node),
+          ...(childItems &&
+            childItems.length > 0 && {
+              children: await Promise.all(childItems),
+            }),
+          isTreeItem: true,
+        };
       };
-    };
 
-    const rootChildren = await Promise.all(
-      (await provider.getChildren())!.map(nodeToTreeItem),
-    );
-    expect(rootChildren).toMatchSnapshot();
-  });
+      const rootChildren = await Promise.all(
+        (await provider.getChildren())!.map(nodeToTreeItem),
+      );
+      expect(rootChildren).toMatchSnapshot();
+    }),
+  );
 });

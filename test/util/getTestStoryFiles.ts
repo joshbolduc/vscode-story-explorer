@@ -9,10 +9,19 @@ import { parseLocalConfigFile } from '../../src/storybook/parseLocalConfigFile';
 import { parseTestProjectStories } from './parseTestProjectStories';
 import { testBaseDir } from './testBaseDir';
 
-export const getTestStoryFiles = async () => {
+export type TestProjectVersion = '6' | '7';
+
+export const getTestStoryFiles = async (
+  version: TestProjectVersion,
+  configDir = '.storybook',
+) => {
   const tests = parseTestProjectStories();
 
-  const storybookConfigDirRelativePath = join('project', 'v6', '.storybook');
+  const storybookConfigDirRelativePath = join(
+    'project',
+    `v${version}`,
+    configDir,
+  );
   const storybookConfigPath = resolve(
     testBaseDir,
     storybookConfigDirRelativePath,

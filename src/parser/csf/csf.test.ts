@@ -6,9 +6,15 @@ import { testBaseDir } from '../../../test/util/testBaseDir';
 import { parseFromContents } from './parseFromContents';
 
 describe('csf', () => {
-  const tests = sync(['project/v6/src/**/*.stories.{js,jsx,ts,tsx}'], {
-    cwd: testBaseDir,
-  });
+  const tests = sync(
+    [
+      'project/v6/src/**/*.stories.{js,jsx,ts,tsx}',
+      'project/v7/src/**/*.stories.{js,jsx,ts,tsx}',
+    ],
+    {
+      cwd: testBaseDir,
+    },
+  );
 
   tests.forEach((match) => {
     it(`parses story file ${match}`, () => {

@@ -6,9 +6,16 @@ import { testBaseDir } from '../../test/util/testBaseDir';
 import { parseStoriesFile } from './parseStoriesFile';
 
 describe('parseStoriesFile', () => {
-  const tests = sync(['project/v6/src/**/*.stories.*', 'fixtures/**/*'], {
-    cwd: testBaseDir,
-  });
+  const tests = sync(
+    [
+      'project/v6/src/**/*.stories.*',
+      'project/v7/src/**/*.stories.*',
+      'fixtures/**/*',
+    ],
+    {
+      cwd: testBaseDir,
+    },
+  );
 
   tests.forEach((match) => {
     it(`parses story file ${match}`, () => {
