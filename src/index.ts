@@ -1,3 +1,4 @@
+import type { Subscription } from 'rxjs';
 import type { ExtensionContext } from 'vscode';
 
 import { commands, Disposable } from 'vscode';
@@ -19,6 +20,7 @@ import { startStorybookServer } from './commands/startStorybookServer';
 import { stopStorybookServer } from './commands/stopStorybookServer';
 import { IdCompletionManager } from './completion/IdCompletionManager';
 import { TitleCompletionManager } from './completion/TitleCompletionManager';
+import { storybookConfigLocation } from './config/storybookConfigLocation';
 import {
   goToStorySourceCommand,
   openOutputChannelCommand,
@@ -50,6 +52,14 @@ export const activate = async (context: ExtensionContext) => {
     return item;
   };
 
+  const addObservableSubscription = (subscription: Subscription) => {
+    return {
+      dispose: () => {
+        subscription.unsubscribe();
+      },
+    };
+  };
+
   addSubscription(initLogger(context.extensionMode));
 
   logInfo('Starting extension activation');
@@ -79,6 +89,8 @@ export const activate = async (context: ExtensionContext) => {
         proxyManager,
       ),
     );
+
+    addObservableSubscription(storybookConfigLocation.subscribe());
 
     addSubscription(CodeLensManager.init(storyStore));
     addSubscription(TitleCompletionManager.init(storyStore));
