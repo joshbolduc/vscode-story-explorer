@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.2](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.7.1...v0.7.2) (2023-02-14)
+
+### Bug Fixes
+
+- always determine config file location ([f36f562](https://github.com/joshbolduc/vscode-story-explorer/commit/f36f56274ccad306a5ef1cd0b12b3e35afb60fbc))
+
 ### [0.7.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.7.0...v0.7.1) (2023-02-07)
 
 ### Bug Fixes
