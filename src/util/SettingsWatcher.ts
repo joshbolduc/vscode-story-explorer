@@ -1,15 +1,16 @@
 import type { Subscription } from 'rxjs';
-import { ConfigurationScope, workspace } from 'vscode';
-import { configPrefix } from '../constants/constants';
+import type { ConfigurationScope } from 'vscode';
 import { logError } from '../log/log';
+import type { ConfigurationSuffix } from '../types/ConfigurationSuffix';
 import type { ValueOrPromise } from './ValueOrPromise';
+import { getConfiguration } from './getConfiguration';
 import { fromVsCodeSetting } from './rxjs/fromVsCodeSetting';
 
 export class SettingsWatcher<T = unknown> {
   private readonly subscription: Subscription;
 
   public constructor(
-    private readonly setting: string,
+    private readonly setting: ConfigurationSuffix,
     callback: (watcher: SettingsWatcher<T>) => ValueOrPromise<void>,
   ) {
     this.subscription = fromVsCodeSetting(setting, {
@@ -26,7 +27,7 @@ export class SettingsWatcher<T = unknown> {
   }
 
   public read(scope?: ConfigurationScope) {
-    return workspace.getConfiguration(configPrefix, scope).get<T>(this.setting);
+    return getConfiguration(scope).get<T>(this.setting);
   }
 
   public dispose() {

@@ -1,21 +1,14 @@
+import { ProcessExecution, Task, TaskRevealKind, TaskScope, Uri } from 'vscode';
 import {
-  ProcessExecution,
-  Task,
-  TaskRevealKind,
-  TaskScope,
-  Uri,
-  workspace,
-} from 'vscode';
-import {
-  configPrefix,
   serverInternalCommandLineArgsConfigSuffix,
   serverInternalEnvironmentVariablesConfigSuffix,
 } from '../constants/constants';
+import { readConfiguration } from '../util/getConfiguration';
 
 const getEnvironmentVariables = () => {
-  const rawConfig = workspace
-    .getConfiguration(configPrefix)
-    .get(serverInternalEnvironmentVariablesConfigSuffix);
+  const rawConfig = readConfiguration(
+    serverInternalEnvironmentVariablesConfigSuffix,
+  );
 
   if (rawConfig && typeof rawConfig === 'object') {
     return Object.entries(rawConfig).reduce<Record<string, string>>(
@@ -38,9 +31,9 @@ const getEnvironmentVariables = () => {
 };
 
 const getArgs = () => {
-  const rawConfig = workspace
-    .getConfiguration(configPrefix)
-    .get(serverInternalCommandLineArgsConfigSuffix);
+  const rawConfig = readConfiguration(
+    serverInternalCommandLineArgsConfigSuffix,
+  );
 
   if (
     Array.isArray(rawConfig) &&

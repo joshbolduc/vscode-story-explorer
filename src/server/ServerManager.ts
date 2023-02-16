@@ -1,12 +1,11 @@
-import { workspace } from 'vscode';
 import {
-  configPrefix,
   serverExternalUrlConfigSuffix,
   serverInternalBehaviorConfigSuffix,
   serverInternalEnabledConfigSuffix,
 } from '../constants/constants';
 import { logError } from '../log/log';
 import { SettingsWatcher } from '../util/SettingsWatcher';
+import { readConfiguration } from '../util/getConfiguration';
 import type { ServerMode } from './ServerMode';
 import { StorybookServer } from './StorybookServer';
 
@@ -49,9 +48,7 @@ export class ServerManager {
 
   public ensureServerHealthy() {
     if (!this.isInternalServerEnabled()) {
-      const rawSetting = workspace
-        .getConfiguration(configPrefix)
-        .get<string>(serverExternalUrlConfigSuffix);
+      const rawSetting = readConfiguration(serverExternalUrlConfigSuffix);
 
       if (!rawSetting || typeof rawSetting !== 'string') {
         return 'http://localhost:6006';
