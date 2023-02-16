@@ -1,12 +1,10 @@
 import { platform } from 'process';
 import { Uri, workspace } from 'vscode';
 import { Utils } from 'vscode-uri';
-import {
-  configPrefix,
-  serverInternalStorybookBinaryPathConfigSuffix,
-} from '../constants/constants';
+import { serverInternalStorybookBinaryPathConfigSuffix } from '../constants/constants';
 import { logDebug } from '../log/log';
 import type { ValueOrPromise } from '../util/ValueOrPromise';
+import { readConfiguration } from '../util/getConfiguration';
 import { pathDepthCompareFn } from '../util/pathDepthCompareFn';
 import { strCompareFn } from '../util/strCompareFn';
 import { tryStat } from '../util/tryStat';
@@ -95,9 +93,9 @@ const getDetectedStorybookBinPath = async (
 export const getStorybookBinPath = (
   configDir: Uri | undefined,
 ): ValueOrPromise<string | undefined> => {
-  const configuredPath = workspace
-    .getConfiguration(configPrefix)
-    .get(serverInternalStorybookBinaryPathConfigSuffix);
+  const configuredPath = readConfiguration(
+    serverInternalStorybookBinaryPathConfigSuffix,
+  );
 
   if (typeof configuredPath === 'string' && configuredPath) {
     return configuredPath;
