@@ -183,13 +183,13 @@ Controls whether to offer suggestions for titles when specifying a `Meta` object
 
 ### Static analysis
 
-Story Explorer uses static analysis to extract stories and metadata from source files. Static analysis is fast and safe, since it doesn't execute arbitrary code.
+Much like [Storybook's `storyStoreV7`](https://storybook.js.org/docs/react/configure/overview#feature-flags) (which is enabled by default in Storybook 7), Story Explorer uses static analysis to identify stories and extract metadata from source files.
 
-The downside is its evaluation capabilities are more limited, so it won't handle certain complex expressions that work at runtime.
+Static analysis is faster and safer than running arbitrary code, but its evaluation capabilities are more limited. As a result, its behavior may differ from what happens at runtime.
 
-If you import stories from other files or use complex expressions when defining stories, some of your stories may not be recognized correctly.
+In practice, if your project is compatible with Storybook's `storyStoreV7`, it should be fully supported. Even if your project isn't fully compliant with `storyStoreV7`, you may not notice any discrepancies.
 
-To maximize compatibility, avoid using complex expressions and importing from other files.
+However, if you rely on nontrivial runtime behavior when defining or naming stories, they may not be recognized correctly.
 
 ### CSF and MDX only
 
