@@ -51,11 +51,11 @@ Log level to use for logging. Logs are available via the Story Explorer output c
 
 ### `storyExplorer.server.external.url`
 
-URL of an externally launched and managed Storybook instance, used when `storyExplorer.server.internal.enabled` is disabled. Defaults to `http://localhost:6006`.
+URL of an externally launched and managed Storybook instance, used when [`storyExplorer.server.internal.enabled`](#storyexplorerserverinternalenabled) is disabled. Defaults to `http://localhost:6006`.
 
 ### `storyExplorer.server.internal.behavior`
 
-Controls when to automatically start a Storybook development server. This setting only applies when `storyExplorer.server.internal.enabled` is enabled.
+Controls when to automatically start a Storybook development server. This setting only applies when [`storyExplorer.server.internal.enabled`](#storyexplorerserverinternalenabled) is enabled.
 
 ### Options
 
