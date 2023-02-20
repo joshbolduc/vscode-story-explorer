@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.7.2...v0.8.0) (2023-02-20)
+
+### Features
+
+- support additional launch strategies ([4b13fd9](https://github.com/joshbolduc/vscode-story-explorer/commit/4b13fd9c138397ae0aa59f23ed478859648da441)), closes [#571](https://github.com/joshbolduc/vscode-story-explorer/issues/571) [#605](https://github.com/joshbolduc/vscode-story-explorer/issues/605)
+
 ### [0.7.2](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.7.1...v0.7.2) (2023-02-14)
 
 ### Bug Fixes
