@@ -1,4 +1,4 @@
-import { ProcessExecution, Task, TaskScope } from 'vscode';
+import { ProcessExecution, Task, TaskRevealKind, TaskScope } from 'vscode';
 import type { EnvironmentVariables } from './EnvironmentVariables';
 
 export const createProcessTask = (
@@ -6,8 +6,8 @@ export const createProcessTask = (
   args: string[],
   cwdPath: string | undefined,
   injectedEnv: EnvironmentVariables,
-) =>
-  new Task(
+) => {
+  const task = new Task(
     { type: 'story-explorer' },
     TaskScope.Workspace,
     'Storybook Server',
@@ -17,3 +17,12 @@ export const createProcessTask = (
       env: injectedEnv,
     }),
   );
+
+  task.isBackground = true;
+  task.detail = 'Storybook Development Server';
+  task.presentationOptions = {
+    reveal: TaskRevealKind.Silent,
+  };
+
+  return task;
+};
