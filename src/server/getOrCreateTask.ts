@@ -1,6 +1,6 @@
 import { isDeepStrictEqual } from 'util';
 import { firstValueFrom } from 'rxjs';
-import { TaskRevealKind, tasks } from 'vscode';
+import { tasks } from 'vscode';
 import { storybookConfigLocation } from '../config/storybookConfigLocation';
 import { serverInternalEnvironmentVariablesConfigSuffix } from '../constants/constants';
 import { logDebug } from '../log/log';
@@ -120,12 +120,6 @@ export const getOrCreateTask = async () => {
   if (!task) {
     return undefined;
   }
-
-  task.isBackground = true;
-  task.detail = 'Storybook Development Server';
-  task.presentationOptions = {
-    reveal: TaskRevealKind.Silent,
-  };
 
   const existingExecution = tasks.taskExecutions.find(
     (execution) =>
