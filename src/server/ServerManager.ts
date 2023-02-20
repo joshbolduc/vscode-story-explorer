@@ -8,6 +8,7 @@ import { SettingsWatcher } from '../util/SettingsWatcher';
 import { readConfiguration } from '../util/getConfiguration';
 import type { ServerMode } from './ServerMode';
 import { StorybookServer } from './StorybookServer';
+import { processExecutions } from './processExecutions';
 
 export class ServerManager {
   private server?: StorybookServer | undefined;
@@ -28,6 +29,11 @@ export class ServerManager {
       });
     },
   );
+
+  // Eagerly subscribe since we want to observe process executions as soon as
+  // possible, in case they're relevant later
+  private readonly processExecutionsSubscription =
+    processExecutions.subscribe();
 
   public static async init() {
     const serverManager = new ServerManager();
@@ -66,6 +72,7 @@ export class ServerManager {
 
     this.behaviorSettingsWatcher.dispose();
     this.enabledSettingsWatcher.dispose();
+    this.processExecutionsSubscription.unsubscribe();
   }
 
   public isInternalServerEnabled() {
@@ -90,7 +97,7 @@ export class ServerManager {
 
   private ensureServer() {
     if (!this.server) {
-      this.server = new StorybookServer();
+      this.server = new StorybookServer(processExecutions);
     }
 
     return this.server;

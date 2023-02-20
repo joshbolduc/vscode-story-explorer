@@ -31,7 +31,7 @@ const output = Object.entries(settings)
       typeof value.markdownDeprecationMessage === 'string'
     ) {
       paragraphs.push(
-        `:warning: _**Deprecated:** ${parseMarkdown(
+        `⚠️ _**Deprecated:** ${parseMarkdown(
           value.markdownDeprecationMessage,
         )}_`,
       );

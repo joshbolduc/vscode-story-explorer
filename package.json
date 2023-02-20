@@ -223,7 +223,8 @@
         },
         "storyExplorer.server.internal.storybookBinaryPath": {
           "scope": "window",
-          "markdownDescription": "Path to the `start-storybook` script used to start a Storybook development server. By default, Story Explorer will attempt to auto-detect the script inside `node_modules`.",
+          "markdownDescription": "Path to the `start-storybook` script used to start the Storybook development server. By default, Story Explorer will attempt to auto-detect the path inside `node_modules`.",
+          "markdownDeprecationMessage": "This option has been replaced with `#storyExplorer.server.internal.startStorybook.path#`. If you used this option to run a script other than `start-storybook`, consider switching to a different launch strategy.",
           "type": "string",
           "examples": [
             "node_modules/.bin/start-storybook"
@@ -233,6 +234,111 @@
         "storyExplorer.server.internal.commandLineArgs": {
           "scope": "window",
           "markdownDescription": "Array of command line arguments to pass to the `start-storybook` script.",
+          "markdownDeprecationMessage": "This option has been replaced with `#storyExplorer.server.internal.startStorybook.args#`. If you used this option to run a script other than `start-storybook`, consider switching to a different launch strategy.",
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "examples": [
+            [
+              "-p",
+              "6006"
+            ]
+          ],
+          "default": null
+        },
+        "storyExplorer.server.internal.environmentVariables": {
+          "scope": "window",
+          "markdownDescription": "Object with environment variables that will be added to the Storybook server process.",
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        },
+        "storyExplorer.server.internal.launchStrategy": {
+          "scope": "window",
+          "markdownDescription": "The method to use to launch the Storybook development server.",
+          "enum": [
+            "detect",
+            "npm",
+            "storybook",
+            "start-storybook",
+            "task",
+            "custom"
+          ],
+          "enumItemLabels": [
+            "Detect automatically",
+            "npm script",
+            "storybook command (Storybook 7)",
+            "start-storybook command (Storybook 6)",
+            "VS Code task",
+            "Custom command"
+          ],
+          "markdownEnumDescriptions": [
+            "Detect automatically",
+            "Run an npm script",
+            "Run `storybook dev` directly, for use with Storybook 7",
+            "Run `start-storybook` directly, for use with Storybook 6",
+            "Run a VS Code task",
+            "Run a custom command"
+          ],
+          "default": "detect"
+        },
+        "storyExplorer.server.internal.npm.dir": {
+          "scope": "window",
+          "markdownDescription": "Optional path to the directory containing the `package.json` file with the npm script to use. If your workspace contains multiple `package.json` files with the same script name, you can set this to specify which one to use. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `npm` or `detect`.",
+          "type": "string",
+          "default": null
+        },
+        "storyExplorer.server.internal.npm.script": {
+          "scope": "window",
+          "markdownDescription": "Name of the npm script to use to launch the Storybook development server. Defaults to `storybook`. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `npm` or `detect`.",
+          "type": "string",
+          "examples": [
+            "storybook"
+          ],
+          "default": "storybook"
+        },
+        "storyExplorer.server.internal.npm.args": {
+          "scope": "window",
+          "markdownDescription": "Array of command line arguments to pass to the npm script when launching a development server. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `storybook` or `detect`.",
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "number"
+            ]
+          }
+        },
+        "storyExplorer.server.internal.task.label": {
+          "scope": "window",
+          "markdownDescription": "Label of the task to run to launch the Storybook development server. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `task` or `detect`.",
+          "type": "string"
+        },
+        "storyExplorer.server.internal.task.type": {
+          "scope": "window",
+          "markdownDescription": "Optional type of the task to run to launch the Storybook development server. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `task` or `detect`.",
+          "type": "string"
+        },
+        "storyExplorer.server.internal.storybook.path": {
+          "scope": "window",
+          "markdownDescription": "Path to the `storybook` CLI used to start the Storybook 7 development server. By default, Story Explorer will attempt to auto-detect the path inside `node_modules`. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `storybook` or `detect`.",
+          "type": "string",
+          "examples": [
+            "node_modules/.bin/storybook"
+          ],
+          "default": null
+        },
+        "storyExplorer.server.internal.storybook.args": {
+          "scope": "window",
+          "markdownDescription": "Array of command line arguments to pass to the `storybook` CLI when launching a development server. The `dev` argument is always included. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `storybook` or `detect`.",
           "type": "array",
           "items": {
             "type": [
@@ -247,21 +353,47 @@
             ]
           ]
         },
-        "storyExplorer.server.internal.environmentVariables": {
+        "storyExplorer.server.internal.startStorybook.path": {
           "scope": "window",
-          "markdownDescription": "Object with environment variables that will be added to the Storybook server process.",
-          "type": "object",
-          "additionalProperties": {
-            "oneOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "boolean"
-              }
+          "markdownDescription": "Path to the `start-storybook` script used to start the Storybook 6 development server. By default, Story Explorer will attempt to auto-detect the path inside `node_modules`. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `start-storybook` or `detect`.",
+          "type": "string",
+          "examples": [
+            "node_modules/.bin/start-storybook"
+          ],
+          "default": null
+        },
+        "storyExplorer.server.internal.startStorybook.args": {
+          "scope": "window",
+          "markdownDescription": "Array of command line arguments to pass to the `start-storybook` script. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `start-storybook` or `detect`.",
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "examples": [
+            [
+              "-p",
+              "6006"
+            ]
+          ],
+          "default": null
+        },
+        "storyExplorer.server.internal.custom.path": {
+          "scope": "window",
+          "markdownDescription": "Path to a custom script used to start the Storybook development server. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `custom` or `detect`.",
+          "type": "string",
+          "default": null
+        },
+        "storyExplorer.server.internal.custom.args": {
+          "scope": "window",
+          "markdownDescription": "Array of command line arguments to pass to the custom script. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `custom` or `detect`.",
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "number"
             ]
           }
         },
@@ -474,6 +606,7 @@
     "@types/node": "14.17.4",
     "@types/node-netstat": "1.8.1",
     "@types/picomatch": "2.3.0",
+    "@types/semver": "7.3.13",
     "@types/vscode": "1.58.0",
     "@types/vscode-webview": "1.57.1",
     "@typescript-eslint/eslint-plugin": "5.50.0",
@@ -494,6 +627,7 @@
     "pidtree": "0.6.0",
     "prettier": "2.8.3",
     "rxjs": "7.8.0",
+    "semver": "7.3.8",
     "standard-version": "9.5.0",
     "ts-eager": "2.0.2",
     "typescript": "4.9.5",
