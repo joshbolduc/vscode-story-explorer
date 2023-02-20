@@ -1,3 +1,4 @@
+import { firstValueFrom, Observable } from 'rxjs';
 import {
   CancellationToken,
   Task,
@@ -7,8 +8,7 @@ import {
   tasks,
   window,
 } from 'vscode';
-import { serverInternalStorybookBinaryPathConfig } from '../constants/constants';
-import { logError } from '../log/log';
+import { logDebug, logError } from '../log/log';
 import { openWorkspaceSetting } from '../util/openWorkspaceSetting';
 import { TaskProcessListener } from './TaskProcessListener';
 
@@ -17,28 +17,33 @@ export class TaskExecutor {
   private execution?: TaskExecution | undefined;
 
   public constructor(
-    private readonly taskFactory: () => Promise<Task | undefined>,
+    private readonly taskFactory: () => Promise<
+      { task: Task; execution: TaskExecution | undefined } | undefined
+    >,
     private readonly onStart: (e: TaskProcessStartEvent) => void,
     private readonly onEnd: (e: TaskProcessEndEvent) => void,
   ) {}
 
-  public async start(token: CancellationToken) {
-    const task = await this.taskFactory();
+  public async start(
+    token: CancellationToken,
+    processExecutions: Observable<Map<TaskExecution, number>>,
+  ) {
+    const result = await this.taskFactory();
     if (token.isCancellationRequested) {
       return;
     }
 
-    if (!task) {
+    if (!result) {
       const showLaunchErrorMessage = async () => {
         const openSettingsItem = 'Open Settings';
 
         const choice = await window.showErrorMessage(
-          "Launching the Storybook server failed. The path to the Storybook server script couldn't be determined. If this project uses Storybook, you may need to install your project's dependencies, or specify a path manually in settings.",
+          "Launching the Storybook server failed. If this project uses Storybook, you may need to install your project's dependencies, or change your launch strategy in settings.",
           openSettingsItem,
         );
 
         if (choice === openSettingsItem) {
-          await openWorkspaceSetting(serverInternalStorybookBinaryPathConfig);
+          await openWorkspaceSetting('storyExplorer.server.internal');
         }
       };
 
@@ -49,7 +54,24 @@ export class TaskExecutor {
       throw new Error('Failed to find path to launch Storybook server');
     }
 
-    this.execution = await tasks.executeTask(task);
+    const { execution, task } = result;
+
+    let processId: number | undefined;
+    if (execution) {
+      const executions = await firstValueFrom(processExecutions);
+      processId = executions.get(execution);
+
+      if (!processId) {
+        logDebug(
+          'Unable to determine process ID for existing execution; launching new task instead',
+        );
+      }
+    } else {
+      logDebug('No existing execution found; launching new task');
+    }
+
+    this.execution =
+      execution && processId ? execution : await tasks.executeTask(task);
 
     if (token.isCancellationRequested) {
       this.execution.terminate();
@@ -62,6 +84,15 @@ export class TaskExecutor {
       this.onStart,
       this.onEnd,
     );
+
+    // If we have a process ID, it's because the process has already started, so
+    // we need to trigger the `onStart` listener here.
+    if (processId) {
+      logDebug(
+        `Found existing execution using process ID ${processId}; reusing it`,
+      );
+      this.onStart({ execution: this.execution, processId });
+    }
   }
 
   public stop() {

@@ -65,7 +65,17 @@ Controls when to automatically start a Storybook development server. This settin
 
 ### `storyExplorer.server.internal.commandLineArgs`
 
+⚠️ _**Deprecated:** This option has been replaced with [`storyExplorer.server.internal.startStorybook.args`](#storyexplorerserverinternalstartstorybookargs). If you used this option to run a script other than `start-storybook`, consider switching to a different launch strategy._
+
 Array of command line arguments to pass to the `start-storybook` script.
+
+### `storyExplorer.server.internal.custom.args`
+
+Array of command line arguments to pass to the custom script. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `custom` or `detect`.
+
+### `storyExplorer.server.internal.custom.path`
+
+Path to a custom script used to start the Storybook development server. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `custom` or `detect`.
 
 ### `storyExplorer.server.internal.enabled`
 
@@ -75,9 +85,65 @@ Controls whether to enable the internal Storybook development server. When unche
 
 Object with environment variables that will be added to the Storybook server process.
 
+### `storyExplorer.server.internal.launchStrategy`
+
+The method to use to launch the Storybook development server.
+
+### Options
+
+- `detect`: Detect automatically
+
+- `npm`: Run an npm script
+
+- `storybook`: Run `storybook dev` directly, for use with Storybook 7
+
+- `start-storybook`: Run `start-storybook` directly, for use with Storybook 6
+
+- `task`: Run a VS Code task
+
+- `custom`: Run a custom command
+
+### `storyExplorer.server.internal.npm.args`
+
+Array of command line arguments to pass to the npm script when launching a development server. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `storybook` or `detect`.
+
+### `storyExplorer.server.internal.npm.dir`
+
+Optional path to the directory containing the `package.json` file with the npm script to use. If your workspace contains multiple `package.json` files with the same script name, you can set this to specify which one to use. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `npm` or `detect`.
+
+### `storyExplorer.server.internal.npm.script`
+
+Name of the npm script to use to launch the Storybook development server. Defaults to `storybook`. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `npm` or `detect`.
+
+### `storyExplorer.server.internal.startStorybook.args`
+
+Array of command line arguments to pass to the `start-storybook` script. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `start-storybook` or `detect`.
+
+### `storyExplorer.server.internal.startStorybook.path`
+
+Path to the `start-storybook` script used to start the Storybook 6 development server. By default, Story Explorer will attempt to auto-detect the path inside `node_modules`. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `start-storybook` or `detect`.
+
+### `storyExplorer.server.internal.storybook.args`
+
+Array of command line arguments to pass to the `storybook` CLI when launching a development server. The `dev` argument is always included. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `storybook` or `detect`.
+
+### `storyExplorer.server.internal.storybook.path`
+
+Path to the `storybook` CLI used to start the Storybook 7 development server. By default, Story Explorer will attempt to auto-detect the path inside `node_modules`. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `storybook` or `detect`.
+
 ### `storyExplorer.server.internal.storybookBinaryPath`
 
-Path to the `start-storybook` script used to start a Storybook development server. By default, Story Explorer will attempt to auto-detect the script inside `node_modules`.
+⚠️ _**Deprecated:** This option has been replaced with [`storyExplorer.server.internal.startStorybook.path`](#storyexplorerserverinternalstartstorybookpath). If you used this option to run a script other than `start-storybook`, consider switching to a different launch strategy._
+
+Path to the `start-storybook` script used to start the Storybook development server. By default, Story Explorer will attempt to auto-detect the path inside `node_modules`.
+
+### `storyExplorer.server.internal.task.label`
+
+Label of the task to run to launch the Storybook development server. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `task` or `detect`.
+
+### `storyExplorer.server.internal.task.type`
+
+Optional type of the task to run to launch the Storybook development server. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `task` or `detect`.
 
 ### `storyExplorer.storiesGlobs`
 

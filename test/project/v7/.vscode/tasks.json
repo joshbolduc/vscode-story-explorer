@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "command": "scripts/task-script.sh",
+      "args": ["extra", "arg"],
+      "label": "sbtask"
+    }
+  ]
+}

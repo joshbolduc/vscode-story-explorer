@@ -1,7 +1,6 @@
 import type { IncomingMessage } from 'http';
-import { firstValueFrom } from 'rxjs';
-import { ProgressLocation, window, workspace } from 'vscode';
-import { storybookConfigLocation } from '../config/storybookConfigLocation';
+import type { Observable } from 'rxjs';
+import { ProgressLocation, TaskExecution, window } from 'vscode';
 import { internalServerRunningContext } from '../constants/constants';
 import { logDebug, logError, logInfo } from '../log/log';
 import { Cacheable } from '../util/Cacheable';
@@ -9,14 +8,13 @@ import { Mailbox } from '../util/Mailbox';
 import { poll } from '../util/poll';
 import { setContext } from '../util/setContext';
 import { TaskExecutor } from './TaskExecutor';
-import { createTask } from './createTask';
 import { fetch, TimeoutError } from './fetch';
-import { getStorybookBinPath } from './getStorybookBinPath';
+import { getOrCreateTask } from './getOrCreateTask';
 import { pollForPort } from './pollForPort';
 
 export class StorybookServer {
   private readonly taskExecutor = new TaskExecutor(
-    () => this.createTask(),
+    () => getOrCreateTask(),
     ({ processId }) => {
       logDebug(
         `Scanning process ${processId} and child processes for opened port`,
@@ -78,7 +76,7 @@ export class StorybookServer {
 
         setContext(internalServerRunningContext, true);
         try {
-          await this.taskExecutor.start(token);
+          await this.taskExecutor.start(token, this.processExecutions);
         } catch (e) {
           this.stop();
           throw e;
@@ -141,6 +139,10 @@ export class StorybookServer {
     );
   });
 
+  public constructor(
+    private readonly processExecutions: Observable<Map<TaskExecution, number>>,
+  ) {}
+
   public stop() {
     this.taskExecutor.stop();
 
@@ -156,24 +158,6 @@ export class StorybookServer {
     this.stop();
     this.urlMailbox.dispose();
     this.taskExecutor.dispose();
-  }
-
-  private async createTask() {
-    const configDir = (
-      await firstValueFrom(storybookConfigLocation, {
-        defaultValue: undefined,
-      })
-    )?.dir;
-    const binPath = await getStorybookBinPath(configDir);
-    const cwd = configDir
-      ? workspace.getWorkspaceFolder(configDir)?.uri
-      : undefined;
-
-    if (!binPath) {
-      return undefined;
-    }
-
-    return createTask(binPath, cwd, configDir);
   }
 
   private readonly cleanupAfterTaskExit = () => {
