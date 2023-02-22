@@ -19,7 +19,7 @@ const getPortNetstat = (pids: number[]) =>
         },
       },
       (data) => {
-        if (data.local.port && pids.includes(data.pid)) {
+        if (data.local.port && pids.includes(data.pid) && data.local.address == '127.0.0.1') {
           resolve(data.local.port);
         }
       },
