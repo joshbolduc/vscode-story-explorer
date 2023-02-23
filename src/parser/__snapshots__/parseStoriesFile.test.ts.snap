@@ -515,6 +515,29 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CustomName.
 }
 `;
 
+exports[`parseStoriesFile > parses story file project/v7/src/stories/Decorators.stories.tsx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "title": "Example/Decorators",
+  },
+  "stories": [
+    {
+      "location": [Ln 32, Col 13] - [Ln 32, Col 27],
+      "name": "Decorated Class",
+      "nameForId": "Decorated Class",
+    },
+    {
+      "location": [Ln 34, Col 13] - [Ln 34, Col 35],
+      "name": "Decorated Class With Args",
+      "nameForId": "Decorated Class With Args",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
 exports[`parseStoriesFile > parses story file project/v7/src/stories/DeepTree.stories.js 1`] = `
 {
   "meta": {

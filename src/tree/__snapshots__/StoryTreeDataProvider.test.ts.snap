@@ -475,6 +475,26 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Icon: bookmark
       Command: Open file file:///mock/basedir/project/v7/src/stories/CustomName.stories.js [Ln 41, Col 13]
 
+  - Decorators
+    Id: example-decorators
+    File: file:///mock/basedir/project/v7/src/stories/Decorators.stories.tsx
+    Context: story
+    Collapsed
+    Icon: component
+    Command: Open file [Ln 2, Col 15]
+
+    - Decorated Class
+      Id: example-decorators--decorated-class
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/stories/Decorators.stories.tsx [Ln 31, Col 13]
+
+    - Decorated Class With Args
+      Id: example-decorators--decorated-class-with-args
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/stories/Decorators.stories.tsx [Ln 33, Col 13]
+
   - Deep
     Collapsed
     Icon: folder
