@@ -461,6 +461,30 @@ exports[`csf > parses story file project/v7/src/stories/CustomName.stories.js 1`
 }
 `;
 
+exports[`csf > parses story file project/v7/src/stories/Decorators.stories.tsx 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "properties": {
+      "title": "Example/Decorators",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "DecoratedClass",
+      "location": [Ln 32, Col 13] - [Ln 32, Col 27],
+      "properties": {},
+    },
+    {
+      "exportName": "DecoratedClassWithArgs",
+      "location": [Ln 34, Col 13] - [Ln 34, Col 35],
+      "properties": {},
+    },
+  ],
+}
+`;
+
 exports[`csf > parses story file project/v7/src/stories/DeepTree.stories.js 1`] = `
 {
   "meta": {

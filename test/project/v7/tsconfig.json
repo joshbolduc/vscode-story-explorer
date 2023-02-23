@@ -9,7 +9,8 @@
     "rootDir": "src",
     "strict": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "experimentalDecorators": true
   },
   "exclude": ["node_modules"]
 }

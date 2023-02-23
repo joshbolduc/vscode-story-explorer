@@ -475,6 +475,31 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/Decorators.stories.tsx 1`] = `
+{
+  "id": "example-decorators",
+  "isDocsOnly": false,
+  "stories": [
+    {
+      "id": "example-decorators",
+      "name": "Decorators",
+      "type": "docs",
+    },
+    {
+      "id": "example-decorators--decorated-class",
+      "name": "Decorated Class",
+      "type": "story",
+    },
+    {
+      "id": "example-decorators--decorated-class-with-args",
+      "name": "Decorated Class With Args",
+      "type": "story",
+    },
+  ],
+  "title": "Example/Decorators",
+}
+`;
+
 exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/DeepTree.stories.js 1`] = `
 {
   "id": "example-deep-tree-with-several-kinds",
