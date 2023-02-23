@@ -133,7 +133,7 @@ const getNestedExpression = (
 export const parseFromContents = (contents: string): RawResult => {
   const parsedFile = parse(contents, {
     sourceType: 'unambiguous',
-    plugins: ['jsx', 'typescript'],
+    plugins: ['jsx', 'typescript', 'decorators'],
     errorRecovery: true,
   });
 
