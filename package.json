@@ -16,7 +16,7 @@
   "homepage": "https://github.com/joshbolduc/vscode-story-explorer",
   "license": "MIT",
   "engines": {
-    "npm": "^6.0.0",
+    "npm": "^9.0.0",
     "vscode": "^1.58.0"
   },
   "categories": [
