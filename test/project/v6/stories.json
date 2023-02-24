@@ -99,6 +99,62 @@
         "__id": "top-hoisted--top-hoisted",
         "__isArgsStory": true
       }
+    },
+    "test-typescript-identifier-default-exported-as-meta--type-script-story": {
+      "id": "test-typescript-identifier-default-exported-as-meta--type-script-story",
+      "name": "Type Script Story",
+      "title": "Test/TypeScript/Identifier Default Exported as Meta",
+      "importPath": "./src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts",
+      "kind": "Test/TypeScript/Identifier Default Exported as Meta",
+      "story": "Type Script Story",
+      "parameters": {
+        "fileName": "./src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts",
+        "framework": "react",
+        "__id": "test-typescript-identifier-default-exported-as-meta--type-script-story",
+        "__isArgsStory": false
+      }
+    },
+    "test-typescript-identifier-exported-satisfies-as-meta--type-script-story": {
+      "id": "test-typescript-identifier-exported-satisfies-as-meta--type-script-story",
+      "name": "Type Script Story",
+      "title": "Test/TypeScript/Identifier exported satisfies as Meta",
+      "importPath": "./src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts",
+      "kind": "Test/TypeScript/Identifier exported satisfies as Meta",
+      "story": "Type Script Story",
+      "parameters": {
+        "fileName": "./src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts",
+        "framework": "react",
+        "__id": "test-typescript-identifier-exported-satisfies-as-meta--type-script-story",
+        "__isArgsStory": false
+      }
+    },
+    "test-typescript-identifier-exported-satisfies-meta--type-script-story": {
+      "id": "test-typescript-identifier-exported-satisfies-meta--type-script-story",
+      "name": "Type Script Story",
+      "title": "Test/TypeScript/Identifier exported satisfies Meta",
+      "importPath": "./src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts",
+      "kind": "Test/TypeScript/Identifier exported satisfies Meta",
+      "story": "Type Script Story",
+      "parameters": {
+        "fileName": "./src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts",
+        "framework": "react",
+        "__id": "test-typescript-identifier-exported-satisfies-meta--type-script-story",
+        "__isArgsStory": false
+      }
+    },
+    "test-typescript-identifier-satisfies-as-meta--type-script-story": {
+      "id": "test-typescript-identifier-satisfies-as-meta--type-script-story",
+      "name": "Type Script Story",
+      "title": "Test/TypeScript/Identifier Satisfies as Meta",
+      "importPath": "./src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts",
+      "kind": "Test/TypeScript/Identifier Satisfies as Meta",
+      "story": "Type Script Story",
+      "parameters": {
+        "fileName": "./src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts",
+        "framework": "react",
+        "__id": "test-typescript-identifier-satisfies-as-meta--type-script-story",
+        "__isArgsStory": false
+      }
     }
   }
 }

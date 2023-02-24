@@ -61,14 +61,6 @@ describe('stories.json', () => {
           name: 'Story name from JS',
         },
       },
-      exclusions: [
-        // not supported by Storybook
-        'test-typescript-identifier-default-exported-as-meta--type-script-story',
-        'test-typescript-identifier-exported-as-meta--type-script-story',
-        'test-typescript-identifier-exported-satisfies-as-meta--type-script-story',
-        'test-typescript-identifier-exported-satisfies-meta--type-script-story',
-        'test-typescript-identifier-satisfies-as-meta--type-script-story',
-      ],
     },
   ];
 

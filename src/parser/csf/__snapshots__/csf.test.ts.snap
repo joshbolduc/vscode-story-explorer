@@ -44,6 +44,27 @@ exports[`csf > parses story file project/v6/src/autoTitle/csf/EmptyTitle.stories
 }
 `;
 
+exports[`csf > parses story file project/v6/src/autoTitle/csf/NoDefaultExport.stories.js 1`] = `
+{
+  "meta": {
+    "declared": false,
+    "location": undefined,
+    "properties": {},
+  },
+  "stories": [
+    {
+      "exportName": "Primary",
+      "location": [Ln 7, Col 13] - [Ln 7, Col 20],
+      "properties": {
+        "args": {
+          "children": "No default export",
+        },
+      },
+    },
+  ],
+}
+`;
+
 exports[`csf > parses story file project/v6/src/stories/TitleInterpolation.stories.js 1`] = `
 {
   "meta": {
@@ -90,6 +111,82 @@ exports[`csf > parses story file project/v6/src/stories/TopHoisted.stories.js 1`
 }
 `;
 
+exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "properties": {
+      "title": "Test/TypeScript/Identifier Default Exported as Meta",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "TypeScriptStory",
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "properties": {},
+    },
+  ],
+}
+`;
+
+exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "properties": {
+      "title": "Test/TypeScript/Identifier exported satisfies as Meta",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "TypeScriptStory",
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "properties": {},
+    },
+  ],
+}
+`;
+
+exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "properties": {
+      "title": "Test/TypeScript/Identifier exported satisfies Meta",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "TypeScriptStory",
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "properties": {},
+    },
+  ],
+}
+`;
+
+exports[`csf > parses story file project/v6/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 24],
+    "properties": {
+      "title": "Test/TypeScript/Identifier Satisfies as Meta",
+    },
+  },
+  "stories": [
+    {
+      "exportName": "TypeScriptStory",
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "properties": {},
+    },
+  ],
+}
+`;
+
 exports[`csf > parses story file project/v7/src/autoTitle/csf/ExtraTitle.stories.js 1`] = `
 {
   "meta": {
@@ -106,27 +203,6 @@ exports[`csf > parses story file project/v7/src/autoTitle/csf/ExtraTitle.stories
       "properties": {
         "args": {
           "children": "Story with explicit title and prefix",
-        },
-      },
-    },
-  ],
-}
-`;
-
-exports[`csf > parses story file project/v7/src/autoTitle/csf/NoDefaultExport.stories.js 1`] = `
-{
-  "meta": {
-    "declared": false,
-    "location": undefined,
-    "properties": {},
-  },
-  "stories": [
-    {
-      "exportName": "Primary",
-      "location": [Ln 7, Col 13] - [Ln 7, Col 20],
-      "properties": {
-        "args": {
-          "children": "No default export",
         },
       },
     },
@@ -289,47 +365,6 @@ exports[`csf > parses story file project/v7/src/stories/CsfV1.stories.js 1`] = `
           "name": "v1 name should be used",
         },
         "storyName": "",
-      },
-    },
-  ],
-}
-`;
-
-exports[`csf > parses story file project/v7/src/stories/CsfWithMdx.stories.js 1`] = `
-{
-  "meta": {
-    "declared": false,
-    "location": undefined,
-    "properties": {},
-  },
-  "stories": [
-    {
-      "exportName": "Basic",
-      "location": [Ln 11, Col 13] - [Ln 11, Col 18],
-      "properties": {
-        "args": {
-          "children": "Basic",
-        },
-        "storyName": "Story name from JS",
-      },
-    },
-    {
-      "exportName": "Basic2",
-      "location": [Ln 17, Col 13] - [Ln 17, Col 19],
-      "properties": {
-        "args": {
-          "children": "Basic 2",
-        },
-        "storyName": "Story name 2 from JS",
-      },
-    },
-    {
-      "exportName": "Basic3",
-      "location": [Ln 23, Col 13] - [Ln 23, Col 19],
-      "properties": {
-        "args": {
-          "children": "Basic 3",
-        },
       },
     },
   ],
@@ -865,63 +900,6 @@ exports[`csf > parses story file project/v7/src/stories/TypeScriptIdentifierAsMe
 }
 `;
 
-exports[`csf > parses story file project/v7/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
-{
-  "meta": {
-    "declared": true,
-    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
-    "properties": {
-      "title": "Test/TypeScript/Identifier Default Exported as Meta",
-    },
-  },
-  "stories": [
-    {
-      "exportName": "TypeScriptStory",
-      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
-      "properties": {},
-    },
-  ],
-}
-`;
-
-exports[`csf > parses story file project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
-{
-  "meta": {
-    "declared": true,
-    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
-    "properties": {
-      "title": "Test/TypeScript/Identifier exported satisfies as Meta",
-    },
-  },
-  "stories": [
-    {
-      "exportName": "TypeScriptStory",
-      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
-      "properties": {},
-    },
-  ],
-}
-`;
-
-exports[`csf > parses story file project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
-{
-  "meta": {
-    "declared": true,
-    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
-    "properties": {
-      "title": "Test/TypeScript/Identifier exported satisfies Meta",
-    },
-  },
-  "stories": [
-    {
-      "exportName": "TypeScriptStory",
-      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
-      "properties": {},
-    },
-  ],
-}
-`;
-
 exports[`csf > parses story file project/v7/src/stories/TypeScriptIdentifierSatisfies.stories.ts 1`] = `
 {
   "meta": {
@@ -929,25 +907,6 @@ exports[`csf > parses story file project/v7/src/stories/TypeScriptIdentifierSati
     "location": [Ln 6, Col 6] - [Ln 8, Col 16],
     "properties": {
       "title": "Test/TypeScript/Identifier Satisfies",
-    },
-  },
-  "stories": [
-    {
-      "exportName": "TypeScriptStory",
-      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
-      "properties": {},
-    },
-  ],
-}
-`;
-
-exports[`csf > parses story file project/v7/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
-{
-  "meta": {
-    "declared": true,
-    "location": [Ln 6, Col 6] - [Ln 8, Col 24],
-    "properties": {
-      "title": "Test/TypeScript/Identifier Satisfies as Meta",
     },
   },
   "stories": [
