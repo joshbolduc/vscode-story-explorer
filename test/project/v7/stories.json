@@ -10,7 +10,6 @@
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/ExtraTitle.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -23,7 +22,6 @@
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/nested/WithoutTitle.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -36,7 +34,6 @@
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/nested/nested.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -49,7 +46,6 @@
       "story": "Primary",
       "parameters": {
         "fileName": "./src/autoTitle/csf/withIndex/index.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -62,7 +58,6 @@
       "story": "Story name from JS",
       "parameters": {
         "fileName": "./src/stories/CsfWithMdx.stories.mdx",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -75,7 +70,6 @@
       "story": "Story name from MDX",
       "parameters": {
         "fileName": "./src/stories/CsfWithMdx.stories.mdx",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -88,7 +82,6 @@
       "story": "Basic 3",
       "parameters": {
         "fileName": "./src/stories/CsfWithMdx.stories.mdx",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -101,7 +94,6 @@
       "story": "Story",
       "parameters": {
         "fileName": "./src/stories/CustomId.stories.mdx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -114,7 +106,6 @@
       "story": "MDX first story",
       "parameters": {
         "fileName": "./src/stories/Mdx2WithStories.stories.mdx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -127,7 +118,6 @@
       "story": "MDX second story",
       "parameters": {
         "fileName": "./src/stories/Mdx2WithStories.stories.mdx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -140,7 +130,6 @@
       "story": "MDX Story 3",
       "parameters": {
         "fileName": "./src/stories/Mdx2WithStories.stories.mdx",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -153,7 +142,6 @@
       "story": "MDX with stories, top",
       "parameters": {
         "fileName": "./src/stories/MdxWithStoriesTop.stories.mdx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -166,7 +154,6 @@
       "story": "Story with name, story, body",
       "parameters": {
         "fileName": "./src/stories/Precedence.stories.mdx",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -179,7 +166,6 @@
       "story": "Story with name, body",
       "parameters": {
         "fileName": "./src/stories/Precedence.stories.mdx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -192,7 +178,6 @@
       "story": "Primary",
       "parameters": {
         "fileName": "./src/stories/BasicCsf.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -205,7 +190,6 @@
       "story": "Secondary",
       "parameters": {
         "fileName": "./src/stories/BasicCsf.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -218,7 +202,6 @@
       "story": "Large",
       "parameters": {
         "fileName": "./src/stories/BasicCsf.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -231,7 +214,6 @@
       "story": "Story with name, story, body",
       "parameters": {
         "fileName": "./src/stories/BasicCsf.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -244,7 +226,6 @@
       "story": "Renamed via non-hoisted story",
       "parameters": {
         "fileName": "./src/stories/CsfV1.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -257,7 +238,6 @@
       "story": "v2 name override",
       "parameters": {
         "fileName": "./src/stories/CsfV1.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -270,7 +250,6 @@
       "story": "v1 name should be used",
       "parameters": {
         "fileName": "./src/stories/CsfV1.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -283,7 +262,6 @@
       "story": "Story",
       "parameters": {
         "fileName": "./src/stories/CustomId.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -296,7 +274,6 @@
       "story": "Custom story name",
       "parameters": {
         "fileName": "./src/stories/CustomName.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -309,7 +286,6 @@
       "story": "Custom story name override",
       "parameters": {
         "fileName": "./src/stories/CustomName.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -322,7 +298,6 @@
       "story": "Custom story name var",
       "parameters": {
         "fileName": "./src/stories/CustomName.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -335,7 +310,6 @@
       "story": "Custom story name var in template string",
       "parameters": {
         "fileName": "./src/stories/CustomName.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -348,7 +322,6 @@
       "story": "Empty Name",
       "parameters": {
         "fileName": "./src/stories/CustomName.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -361,7 +334,6 @@
       "story": "     Leading whitespace",
       "parameters": {
         "fileName": "./src/stories/CustomName.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -374,7 +346,6 @@
       "story": "Story",
       "parameters": {
         "fileName": "./src/stories/DeepTree.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -387,7 +358,6 @@
       "story": "Other Export",
       "parameters": {
         "fileName": "./src/stories/Excluded.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -400,7 +370,6 @@
       "story": "Normal Export",
       "parameters": {
         "fileName": "./src/stories/ExportStyles.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -413,7 +382,6 @@
       "story": "Alternative Export Name",
       "parameters": {
         "fileName": "./src/stories/ExportStyles.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -426,7 +394,6 @@
       "story": "Override name 3",
       "parameters": {
         "fileName": "./src/stories/ExportStyles.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -439,7 +406,6 @@
       "story": "Form",
       "parameters": {
         "fileName": "./src/stories/Form.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -452,7 +418,6 @@
       "story": "Hoisting",
       "parameters": {
         "fileName": "./src/stories/Hoisting.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -465,7 +430,6 @@
       "story": "Included Export",
       "parameters": {
         "fileName": "./src/stories/Included.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -478,7 +442,6 @@
       "story": "Story",
       "parameters": {
         "fileName": "./src/stories/JsxExtension.stories.jsx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -491,7 +454,6 @@
       "story": "One",
       "parameters": {
         "fileName": "./src/stories/MergeOne.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -504,7 +466,6 @@
       "story": "Two",
       "parameters": {
         "fileName": "./src/stories/MergeTwo.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -517,7 +478,6 @@
       "story": "Same Name",
       "parameters": {
         "fileName": "./src/stories/SameName.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -530,7 +490,6 @@
       "story": "Nested Story",
       "parameters": {
         "fileName": "./src/stories/SameNameChild.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -543,7 +502,6 @@
       "story": "Const Declarator",
       "parameters": {
         "fileName": "./src/stories/StoryDeclarations.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -556,7 +514,6 @@
       "story": "Separate Declarator",
       "parameters": {
         "fileName": "./src/stories/StoryDeclarations.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -569,7 +526,6 @@
       "story": "Separate declarator with story name",
       "parameters": {
         "fileName": "./src/stories/StoryDeclarations.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -582,7 +538,6 @@
       "story": "Multiple One",
       "parameters": {
         "fileName": "./src/stories/StoryDeclarations.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -595,7 +550,6 @@
       "story": "Multiple two (given name)",
       "parameters": {
         "fileName": "./src/stories/StoryDeclarations.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -608,7 +562,6 @@
       "story": "Renamed Function Story",
       "parameters": {
         "fileName": "./src/stories/StoryDeclarations.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -621,7 +574,6 @@
       "story": "Separate Function Story",
       "parameters": {
         "fileName": "./src/stories/StoryDeclarations.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -634,7 +586,6 @@
       "story": "Separate function story with story name",
       "parameters": {
         "fileName": "./src/stories/StoryDeclarations.stories.js",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -647,7 +598,6 @@
       "story": "Top Level Story",
       "parameters": {
         "fileName": "./src/stories/Top.stories.js",
-        "framework": "react",
         "__isArgsStory": true
       }
     },
@@ -660,7 +610,6 @@
       "story": "Type Script Story",
       "parameters": {
         "fileName": "./src/stories/TypeScript.stories.tsx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -673,7 +622,6 @@
       "story": "Type Script Typed Story",
       "parameters": {
         "fileName": "./src/stories/TypeScript.stories.tsx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -686,7 +634,6 @@
       "story": "Type Script Typed Generic Story",
       "parameters": {
         "fileName": "./src/stories/TypeScript.stories.tsx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -699,7 +646,6 @@
       "story": "Type Script Type Assertion Story",
       "parameters": {
         "fileName": "./src/stories/TypeScript.stories.tsx",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -712,7 +658,6 @@
       "story": "Type Script Story",
       "parameters": {
         "fileName": "./src/stories/TypeScriptAsMeta.stories.ts",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -725,7 +670,6 @@
       "story": "Type Script Story",
       "parameters": {
         "fileName": "./src/stories/TypeScriptIdentifier.stories.ts",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -738,7 +682,6 @@
       "story": "Type Script Story",
       "parameters": {
         "fileName": "./src/stories/TypeScriptIdentifierAsMeta.stories.ts",
-        "framework": "react",
         "__isArgsStory": false
       }
     },
@@ -751,7 +694,6 @@
       "story": "Type Script Story",
       "parameters": {
         "fileName": "./src/stories/TypeScriptIdentifierSatisfies.stories.ts",
-        "framework": "react",
         "__isArgsStory": false
       }
     }

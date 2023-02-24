@@ -135,6 +135,86 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
+{
+  "id": "test-typescript-identifier-default-exported-as-meta",
+  "isDocsOnly": false,
+  "stories": [
+    {
+      "id": "test-typescript-identifier-default-exported-as-meta",
+      "name": "Identifier Default Exported as Meta",
+      "type": "docs",
+    },
+    {
+      "id": "test-typescript-identifier-default-exported-as-meta--type-script-story",
+      "name": "Type Script Story",
+      "type": "story",
+    },
+  ],
+  "title": "Test/TypeScript/Identifier Default Exported as Meta",
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
+{
+  "id": "test-typescript-identifier-exported-satisfies-as-meta",
+  "isDocsOnly": false,
+  "stories": [
+    {
+      "id": "test-typescript-identifier-exported-satisfies-as-meta",
+      "name": "Identifier exported satisfies as Meta",
+      "type": "docs",
+    },
+    {
+      "id": "test-typescript-identifier-exported-satisfies-as-meta--type-script-story",
+      "name": "Type Script Story",
+      "type": "story",
+    },
+  ],
+  "title": "Test/TypeScript/Identifier exported satisfies as Meta",
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
+{
+  "id": "test-typescript-identifier-exported-satisfies-meta",
+  "isDocsOnly": false,
+  "stories": [
+    {
+      "id": "test-typescript-identifier-exported-satisfies-meta",
+      "name": "Identifier exported satisfies Meta",
+      "type": "docs",
+    },
+    {
+      "id": "test-typescript-identifier-exported-satisfies-meta--type-script-story",
+      "name": "Type Script Story",
+      "type": "story",
+    },
+  ],
+  "title": "Test/TypeScript/Identifier exported satisfies Meta",
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
+{
+  "id": "test-typescript-identifier-satisfies-as-meta",
+  "isDocsOnly": false,
+  "stories": [
+    {
+      "id": "test-typescript-identifier-satisfies-as-meta",
+      "name": "Identifier Satisfies as Meta",
+      "type": "docs",
+    },
+    {
+      "id": "test-typescript-identifier-satisfies-as-meta--type-script-story",
+      "name": "Type Script Story",
+      "type": "story",
+    },
+  ],
+  "title": "Test/TypeScript/Identifier Satisfies as Meta",
+}
+`;
+
 exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/autoTitle/csf/ExtraTitle.stories.js 1`] = `
 {
   "id": "custom-title-prefix-second-level-explicit-title",
@@ -900,66 +980,6 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
-{
-  "id": "test-typescript-identifier-default-exported-as-meta",
-  "isDocsOnly": false,
-  "stories": [
-    {
-      "id": "test-typescript-identifier-default-exported-as-meta",
-      "name": "Identifier Default Exported as Meta",
-      "type": "docs",
-    },
-    {
-      "id": "test-typescript-identifier-default-exported-as-meta--type-script-story",
-      "name": "Type Script Story",
-      "type": "story",
-    },
-  ],
-  "title": "Test/TypeScript/Identifier Default Exported as Meta",
-}
-`;
-
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
-{
-  "id": "test-typescript-identifier-exported-satisfies-as-meta",
-  "isDocsOnly": false,
-  "stories": [
-    {
-      "id": "test-typescript-identifier-exported-satisfies-as-meta",
-      "name": "Identifier exported satisfies as Meta",
-      "type": "docs",
-    },
-    {
-      "id": "test-typescript-identifier-exported-satisfies-as-meta--type-script-story",
-      "name": "Type Script Story",
-      "type": "story",
-    },
-  ],
-  "title": "Test/TypeScript/Identifier exported satisfies as Meta",
-}
-`;
-
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
-{
-  "id": "test-typescript-identifier-exported-satisfies-meta",
-  "isDocsOnly": false,
-  "stories": [
-    {
-      "id": "test-typescript-identifier-exported-satisfies-meta",
-      "name": "Identifier exported satisfies Meta",
-      "type": "docs",
-    },
-    {
-      "id": "test-typescript-identifier-exported-satisfies-meta--type-script-story",
-      "name": "Type Script Story",
-      "type": "story",
-    },
-  ],
-  "title": "Test/TypeScript/Identifier exported satisfies Meta",
-}
-`;
-
 exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierSatisfies.stories.ts 1`] = `
 {
   "id": "test-typescript-identifier-satisfies",
@@ -977,25 +997,5 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
     },
   ],
   "title": "Test/TypeScript/Identifier Satisfies",
-}
-`;
-
-exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
-{
-  "id": "test-typescript-identifier-satisfies-as-meta",
-  "isDocsOnly": false,
-  "stories": [
-    {
-      "id": "test-typescript-identifier-satisfies-as-meta",
-      "name": "Identifier Satisfies as Meta",
-      "type": "docs",
-    },
-    {
-      "id": "test-typescript-identifier-satisfies-as-meta--type-script-story",
-      "name": "Type Script Story",
-      "type": "story",
-    },
-  ],
-  "title": "Test/TypeScript/Identifier Satisfies as Meta",
 }
 `;

@@ -102,6 +102,69 @@ exports[`StoryTreeDataProvider > creates tree from story files for v6 1`] = `
       Context: story
       Icon: bookmark
       Command: Open file file:///mock/basedir/project/v6/src/stories/TitleInterpolation.stories.js [Ln 13, Col 13]
+
+- Test
+  Expanded
+
+  - TypeScript
+    Collapsed
+    Icon: folder
+
+    - Identifier Default Exported as Meta
+      Id: test-typescript-identifier-default-exported-as-meta
+      File: file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 5, Col 6]
+
+      - Type Script Story
+        Id: test-typescript-identifier-default-exported-as-meta--type-script-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts [Ln 2, Col 13]
+
+    - Identifier exported satisfies as Meta
+      Id: test-typescript-identifier-exported-satisfies-as-meta
+      File: file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 5, Col 6]
+
+      - Type Script Story
+        Id: test-typescript-identifier-exported-satisfies-as-meta--type-script-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts [Ln 2, Col 13]
+
+    - Identifier exported satisfies Meta
+      Id: test-typescript-identifier-exported-satisfies-meta
+      File: file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 5, Col 6]
+
+      - Type Script Story
+        Id: test-typescript-identifier-exported-satisfies-meta--type-script-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts [Ln 2, Col 13]
+
+    - Identifier Satisfies as Meta
+      Id: test-typescript-identifier-satisfies-as-meta
+      File: file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts
+      Context: story
+      Collapsed
+      Icon: component
+      Command: Open file [Ln 5, Col 6]
+
+      - Type Script Story
+        Id: test-typescript-identifier-satisfies-as-meta--type-script-story
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/v6/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts [Ln 2, Col 13]
 `;
 
 exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
@@ -712,48 +775,6 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Icon: bookmark
         Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierAsMeta.stories.ts [Ln 2, Col 13]
 
-    - Identifier Default Exported as Meta
-      Id: test-typescript-identifier-default-exported-as-meta
-      File: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts
-      Context: story
-      Collapsed
-      Icon: component
-      Command: Open file [Ln 5, Col 6]
-
-      - Type Script Story
-        Id: test-typescript-identifier-default-exported-as-meta--type-script-story
-        Context: story
-        Icon: bookmark
-        Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts [Ln 2, Col 13]
-
-    - Identifier exported satisfies as Meta
-      Id: test-typescript-identifier-exported-satisfies-as-meta
-      File: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts
-      Context: story
-      Collapsed
-      Icon: component
-      Command: Open file [Ln 5, Col 6]
-
-      - Type Script Story
-        Id: test-typescript-identifier-exported-satisfies-as-meta--type-script-story
-        Context: story
-        Icon: bookmark
-        Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts [Ln 2, Col 13]
-
-    - Identifier exported satisfies Meta
-      Id: test-typescript-identifier-exported-satisfies-meta
-      File: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts
-      Context: story
-      Collapsed
-      Icon: component
-      Command: Open file [Ln 5, Col 6]
-
-      - Type Script Story
-        Id: test-typescript-identifier-exported-satisfies-meta--type-script-story
-        Context: story
-        Icon: bookmark
-        Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts [Ln 2, Col 13]
-
     - Identifier Satisfies
       Id: test-typescript-identifier-satisfies
       File: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierSatisfies.stories.ts
@@ -767,18 +788,4 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Context: story
         Icon: bookmark
         Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierSatisfies.stories.ts [Ln 2, Col 13]
-
-    - Identifier Satisfies as Meta
-      Id: test-typescript-identifier-satisfies-as-meta
-      File: file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts
-      Context: story
-      Collapsed
-      Icon: component
-      Command: Open file [Ln 5, Col 6]
-
-      - Type Script Story
-        Id: test-typescript-identifier-satisfies-as-meta--type-script-story
-        Context: story
-        Icon: bookmark
-        Command: Open file file:///mock/basedir/project/v7/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts [Ln 2, Col 13]
 `;

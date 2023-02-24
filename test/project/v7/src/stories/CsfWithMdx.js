@@ -1,13 +1,6 @@
 import React from 'react';
 import { Sample } from '../components/Sample';
 
-// NOTE: no default export since `Sample.stories.mdx` is the story file for `Sample` now
-//
-// export default {
-//   title: 'Demo/Sample',
-//   component: Sample,
-// };
-
 export const Basic = (args) => <Sample {...args} />;
 Basic.args = {
   children: 'Basic',
