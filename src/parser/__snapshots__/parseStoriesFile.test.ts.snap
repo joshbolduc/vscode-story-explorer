@@ -167,7 +167,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxSt
 
 exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TitleInterpolation.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TitleInterpolation.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -185,7 +185,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TitleInterp
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TopHoisted.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TopHoisted.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -203,7 +203,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TopHoisted.
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -221,7 +221,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -239,7 +239,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -257,7 +257,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,

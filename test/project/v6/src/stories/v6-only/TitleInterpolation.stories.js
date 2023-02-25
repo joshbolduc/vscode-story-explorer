@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Sample } from '../components/Sample';
+import { Sample } from '../../components/Sample';
 
 const interpolation = 'Interpolation';
 

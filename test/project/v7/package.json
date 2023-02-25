@@ -9,7 +9,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "generate-stories-json": "storybook build && storybook extract storybook-static ./stories.json"
+    "generate-stories-json": "storybook build && cp storybook-static/stories.json ./stories.json"
   },
   "devDependencies": {
     "@babel/preset-env": "7.20.2",
