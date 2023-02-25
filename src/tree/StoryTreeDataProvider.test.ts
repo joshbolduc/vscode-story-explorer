@@ -111,11 +111,12 @@ addSerializer({
 });
 
 describe('StoryTreeDataProvider', () => {
-  const versions = ['6', '7'] as const;
-
-  versions.forEach((version) =>
+  [
+    { version: '6' as const, configDir: '.config-unittest' },
+    { version: '7' as const },
+  ].forEach(({ version, configDir }) =>
     it(`creates tree from story files for v${version}`, async () => {
-      const storyFiles = await getTestStoryFiles(version);
+      const storyFiles = await getTestStoryFiles(version, configDir);
       const mockContext = {
         extensionUri: URI.file('/mock/extension/root'),
       } as ExtensionContext;

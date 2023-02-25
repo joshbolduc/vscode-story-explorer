@@ -8,7 +8,8 @@ import { parseStoriesFile } from './parseStoriesFile';
 describe('parseStoriesFile', () => {
   const tests = sync(
     [
-      'project/v6/src/**/*.stories.*',
+      'project/v6/src/autoTitle/**/*.stories.*',
+      'project/v6/src/stories/v6-only/**/*.stories.*',
       'project/v7/src/**/*.stories.*',
       'fixtures/**/*',
     ],

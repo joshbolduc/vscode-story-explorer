@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import * as stories from './CsfWithMdx.js';
+import { Sample } from '../components/Sample';
+
+<Meta title="Example/MDX importing CSF" component={Sample} />
+
+# MDX importing CSF
+
+## Story with story prop
+
+<Story story={stories.Basic} />
+
+## Story with id prop in Canvas
+
+<Canvas>
+  <Story id="example-basic-csf--large" />
+</Canvas>
+
+## Story with story and name props
+
+<Story story={stories.Basic2} name="Story name from MDX" />
+
+## Story with story prop, no name prop
+
+<Story story={stories.Basic3} />
