@@ -8,7 +8,7 @@ import { parseFromContents } from './parseFromContents';
 const parse = (contents: string): RawParsedStoryFile | undefined => {
   const parsed = parseFromContents(contents);
 
-  if (parsed && (parsed.meta.declared || parsed.stories.length > 0)) {
+  if (parsed) {
     const { id, title } = sanitizeMetaObject(parsed.meta.properties.values);
 
     const meta = {

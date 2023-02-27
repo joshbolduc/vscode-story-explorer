@@ -66,6 +66,10 @@ describe('stories.json', () => {
             id: 'custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title--autodoc',
             name: 'Autodoc',
           },
+        'custom-title-prefix-second-level-mdx-plainmarkdown--page': {
+          id: 'custom-title-prefix-second-level-mdx-plainmarkdown--autodoc',
+          name: 'Autodoc',
+        },
         'custom-title-prefix-second-level-mdx-withouttitle--page': {
           id: 'custom-title-prefix-second-level-mdx-withouttitle--autodoc',
           name: 'Autodoc',

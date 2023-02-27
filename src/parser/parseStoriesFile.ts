@@ -6,10 +6,10 @@ const mdxParser = { parser: tryParseMdx, type: 'mdx' } as const;
 
 const getParsers = (filePath?: string) => {
   if (filePath?.endsWith('.mdx') || filePath?.endsWith('.md')) {
-    return [mdxParser, csfParser];
+    return [mdxParser];
   }
 
-  return [csfParser, mdxParser];
+  return [csfParser];
 };
 
 export const parseStoriesFile = (contents: string, filePath?: string) => {
@@ -17,7 +17,15 @@ export const parseStoriesFile = (contents: string, filePath?: string) => {
 
   for (const { parser, type } of parsers) {
     const parsed = parser(contents);
-    if (parsed) {
+    if (
+      parsed &&
+      // .mdx files don't require a Meta tag or stories, but .stories.mdx files
+      // need at least one
+      (type !== 'mdx' ||
+        parsed.meta.location !== undefined ||
+        parsed.stories.length > 0 ||
+        !filePath?.endsWith('.stories.mdx'))
+    ) {
       return { ...parsed, type };
     }
   }

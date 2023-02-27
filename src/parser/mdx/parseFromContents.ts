@@ -63,7 +63,7 @@ export const parseFromContents = (contents: string): RawResult | undefined => {
 
   const combinedOutput = tryTransformMdxForBabel(contents);
 
-  if (!combinedOutput) {
+  if (combinedOutput === undefined) {
     return undefined;
   }
 
