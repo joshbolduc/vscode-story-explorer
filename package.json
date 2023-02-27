@@ -43,9 +43,9 @@
     "onView:storyExplorer.storiesView",
     "onWebviewPanel:storyExplorer.webviewPreview",
     "workspaceContains:**/.storybook/*",
+    "workspaceContains:**/*.mdx",
     "workspaceContains:**/*.stories.js",
     "workspaceContains:**/*.stories.jsx",
-    "workspaceContains:**/*.stories.mdx",
     "workspaceContains:**/*.stories.ts",
     "workspaceContains:**/*.stories.tsx"
   ],
@@ -208,13 +208,19 @@
               }
             },
             "examples": [
-              "src/**/*.stories.mdx",
-              "src/**/*.stories.@(js|jsx|ts|tsx)"
+              "src/**/*.mdx",
+              "src/**/*.stories.@(js|jsx|ts|tsx)",
+              "src/**/*.stories.mdx"
             ]
           },
           "examples": [
             "src/**/*.stories.mdx",
             "src/**/*.stories.@(js|jsx|ts|tsx)",
+            "src/**/*.mdx",
+            [
+              "src/**/*.mdx",
+              "src/**/*.stories.@(js|jsx|ts|tsx)"
+            ],
             [
               "src/**/*.stories.mdx",
               "src/**/*.stories.@(js|jsx|ts|tsx)"
