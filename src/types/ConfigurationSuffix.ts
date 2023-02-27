@@ -1,5 +1,8 @@
 import type { ConfigurationKey } from '../types/ConfigurationKey';
 import type { ConfigurationPrefix } from './ConfigurationPrefix';
 
+type HiddenConfigurationSuffix = 'storybookVersion';
+
 export type ConfigurationSuffix =
-  ConfigurationKey extends `${ConfigurationPrefix}.${infer U}` ? U : never;
+  | HiddenConfigurationSuffix
+  | (ConfigurationKey extends `${ConfigurationPrefix}.${infer U}` ? U : never);
