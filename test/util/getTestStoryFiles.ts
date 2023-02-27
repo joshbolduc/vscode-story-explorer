@@ -1,6 +1,6 @@
 import { join, resolve } from 'path';
 import { Uri } from 'vscode';
-import { interpretStoriesConfigItem } from '../../src/config/normalizeStoriesEntry';
+import { interpretStoriesConfigItem } from '../../src/config/interpretStoriesConfigItem';
 import type { ParsedStoryWithFileUri } from '../../src/parser/parseStoriesFileByUri';
 import { sortStoryFiles } from '../../src/store/sortStoryFiles';
 import { StoryExplorerStoryFile } from '../../src/story/StoryExplorerStoryFile';
@@ -13,7 +13,8 @@ export type TestProjectVersion = '6' | '7';
 
 export const getTestStoryFiles = async (
   version: TestProjectVersion,
-  configDir = '.storybook',
+  configDir: string,
+  { defaultGlobsIncludesAllMdx }: { defaultGlobsIncludesAllMdx: boolean },
 ) => {
   const tests = parseTestProjectStories();
 
@@ -35,6 +36,7 @@ export const getTestStoryFiles = async (
       interpretStoriesConfigItem(
         config,
         Uri.file(resolve('/mock/basedir', storybookConfigDirRelativePath)),
+        { defaultGlobsIncludesAllMdx },
       ),
     ),
   );

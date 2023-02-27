@@ -3,8 +3,12 @@ import { getTestStoryFiles } from '../../test/util/getTestStoryFiles';
 
 describe('StoryExplorerStoryFile', async () => {
   const storyFiles = [
-    ...(await getTestStoryFiles('6', '.config-unittest')),
-    ...(await getTestStoryFiles('7')),
+    ...(await getTestStoryFiles('6', '.config-unittest', {
+      defaultGlobsIncludesAllMdx: false,
+    })),
+    ...(await getTestStoryFiles('7', '.storybook', {
+      defaultGlobsIncludesAllMdx: true,
+    })),
   ];
 
   storyFiles.forEach((storyFile) => {

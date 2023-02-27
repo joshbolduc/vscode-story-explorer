@@ -267,6 +267,13 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Collapsed
       Icon: folder
 
+      - Non-stories MDX file with specified title
+        Id: custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title--page
+        File: file:///mock/basedir/project/v7/src/autoTitle/mdx/WithTitle.mdx
+        Context: story
+        Icon: document
+        Command: Open file [Ln 2, Col 0]
+
       - With specified title
         Id: custom-title-prefix-second-level-mdx-with-specified-title--page
         File: file:///mock/basedir/project/v7/src/autoTitle/mdx/WithTitle.stories.mdx

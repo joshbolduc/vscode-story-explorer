@@ -11,6 +11,7 @@ describe('parseStoriesFile', () => {
       'project/v6/src/autoTitle/**/*.stories.*',
       'project/v6/src/stories/v6-only/**/*.stories.*',
       'project/v7/src/**/*.stories.*',
+      'project/v7/src/**/*.mdx',
       'fixtures/**/*',
     ],
     {

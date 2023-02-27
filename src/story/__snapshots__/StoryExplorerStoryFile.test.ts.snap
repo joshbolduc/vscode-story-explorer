@@ -295,6 +295,21 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/autoTitle/mdx/WithTitle.mdx 1`] = `
+{
+  "id": "custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title",
+  "isDocsOnly": true,
+  "stories": [
+    {
+      "id": "custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title--page",
+      "name": "Page",
+      "type": "docs",
+    },
+  ],
+  "title": "Custom title prefix/Second level/mdx/Non-stories MDX file with specified title",
+}
+`;
+
 exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/autoTitle/mdx/WithTitle.stories.mdx 1`] = `
 {
   "id": "custom-title-prefix-second-level-mdx-with-specified-title",
