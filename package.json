@@ -611,7 +611,7 @@
     "@types/vscode-webview": "1.57.1",
     "@typescript-eslint/eslint-plugin": "5.50.0",
     "@typescript-eslint/parser": "5.50.0",
-    "@vitest/coverage-c8": "0.28.4",
+    "@vitest/coverage-c8": "0.28.5",
     "@vscode/vsce": "2.17.0",
     "concurrently": "7.6.0",
     "esbuild": "0.17.5",
