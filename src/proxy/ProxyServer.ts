@@ -1,7 +1,7 @@
 import { createServer, Server, ServerResponse } from 'http';
 import type { AddressInfo } from 'net';
 import * as httpProxy from 'http-proxy';
-import { Uri, workspace } from 'vscode';
+import { Uri } from 'vscode';
 import {
   ERR_BAD_GATEWAY,
   hostScriptPath,
@@ -10,8 +10,8 @@ import {
 } from '../../common/constants';
 import { logDebug, logError, logWarn } from '../log/log';
 import type { ServerManager } from '../server/ServerManager';
-
 import { Cacheable } from '../util/Cacheable';
+import { getFileContentFromFs } from '../util/getFileContent';
 import storyIframeHtml from './storyIframe.html';
 
 const respondWithScriptContents = (
@@ -30,7 +30,7 @@ const getScriptContents = async (extensionUri: Uri, scriptFileName: string) => {
     'webview',
     scriptFileName,
   );
-  return (await workspace.fs.readFile(scriptUri)).toString();
+  return await getFileContentFromFs(scriptUri);
 };
 
 export class ProxyServer {
