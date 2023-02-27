@@ -11,7 +11,7 @@ describe('mdx', () => {
     [
       'project/v6/src/autoTitle/**/*.stories.mdx',
       'project/v6/src/stories/v6-only/**/*.stories.mdx',
-      'project/v7/src/**/*.stories.mdx',
+      'project/v7/src/**/*.mdx',
       'fixtures/**/*.mdx',
     ],
     {

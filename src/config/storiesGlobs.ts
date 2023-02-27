@@ -1,4 +1,4 @@
-import { from, map, of, switchMap } from 'rxjs';
+import { combineLatest, from, map, of, switchMap } from 'rxjs';
 import { Utils } from 'vscode-uri';
 import { storiesGlobsConfigSuffix } from '../constants/constants';
 import { getStoriesGlobs } from '../storybook/getStoriesGlobs';
@@ -8,7 +8,8 @@ import { deferAndShare } from '../util/rxjs/deferAndShare';
 import { distinctUntilNotStrictEqual } from '../util/rxjs/distinctUntilNotStrictEqual';
 import { fromVsCodeSetting } from '../util/rxjs/fromVsCodeSetting';
 import { workspaceRoot } from '../util/workspaceRoot';
-import { interpretStoriesConfigItem } from './normalizeStoriesEntry';
+import { defaultGlobsIncludesAllMdxObservable } from './defaultGlobsIncludesAllMdxObservable';
+import { interpretStoriesConfigItem } from './interpretStoriesConfigItem';
 import { storybookConfig } from './storybookConfig';
 
 const defaultStoriesGlobSetting = null;
@@ -55,12 +56,17 @@ export const storiesGlobs = deferAndShare(() =>
 
       const { stories, dir } = result;
 
-      return from(getStoriesGlobs(stories)).pipe(
-        switchMap((storiesConfigItems) =>
+      return combineLatest([
+        getStoriesGlobs(stories),
+        defaultGlobsIncludesAllMdxObservable,
+      ]).pipe(
+        switchMap(([storiesConfigItems, defaultGlobsIncludesAllMdx]) =>
           from(
             Promise.all(
               storiesConfigItems.map((configItem) =>
-                interpretStoriesConfigItem(configItem, dir),
+                interpretStoriesConfigItem(configItem, dir, {
+                  defaultGlobsIncludesAllMdx,
+                }),
               ),
             ),
           ),

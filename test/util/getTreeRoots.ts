@@ -17,7 +17,9 @@ export const getTreeRoots = async (
   version: TestProjectVersion,
   configDir: string,
 ) => {
-  const storyFiles = await getTestStoryFiles(version, configDir);
+  const storyFiles = await getTestStoryFiles(version, configDir, {
+    defaultGlobsIncludesAllMdx: version === '7',
+  });
   const mockContext = {
     extensionUri: URI.file('/mock/extension/root'),
   } as ExtensionContext;

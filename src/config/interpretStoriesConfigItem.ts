@@ -5,7 +5,8 @@ import { Utils } from 'vscode-uri';
 import type { StoriesConfigItem } from '../storybook/StorybookConfig';
 import type { GlobSpecifier } from './GlobSpecifier';
 
-const DEFAULT_FILES = '**/*.stories.@(mdx|tsx|ts|jsx|js)';
+const DEFAULT_FILES_WITH_MDX_STORIES_ONLY = '**/*.stories.@(mdx|tsx|ts|jsx|js)';
+const DEFAULT_FILES_WITH_ALL_MDX_FILES = '**/*.@(mdx|stories.@(tsx|ts|jsx|js))';
 const DEFAULT_TITLE_PREFIX = '';
 
 const isDirectory = async (path: string, root: Uri) => {
@@ -17,12 +18,24 @@ const isDirectory = async (path: string, root: Uri) => {
   }
 };
 
-const getSpecifier = async (item: StoriesConfigItem, root: Uri) => {
+interface GlobSpecifierOptions {
+  defaultGlobsIncludesAllMdx: boolean;
+}
+
+const getSpecifier = async (
+  item: StoriesConfigItem,
+  root: Uri,
+  { defaultGlobsIncludesAllMdx }: GlobSpecifierOptions,
+) => {
+  const defaultFilesGlob = defaultGlobsIncludesAllMdx
+    ? DEFAULT_FILES_WITH_ALL_MDX_FILES
+    : DEFAULT_FILES_WITH_MDX_STORIES_ONLY;
+
   if (typeof item === 'object') {
     return {
       directory: item.directory,
       titlePrefix: item.titlePrefix ?? DEFAULT_TITLE_PREFIX,
-      files: item.files ?? DEFAULT_FILES,
+      files: item.files ?? defaultFilesGlob,
     };
   }
 
@@ -31,7 +44,7 @@ const getSpecifier = async (item: StoriesConfigItem, root: Uri) => {
       return {
         directory: item,
         titlePrefix: DEFAULT_TITLE_PREFIX,
-        files: DEFAULT_FILES,
+        files: defaultFilesGlob,
       };
     } else {
       return {
@@ -62,8 +75,13 @@ const getSpecifier = async (item: StoriesConfigItem, root: Uri) => {
 export const interpretStoriesConfigItem = async (
   item: StoriesConfigItem,
   configDir: Uri,
+  options: GlobSpecifierOptions,
 ): Promise<GlobSpecifier> => {
-  const { directory, ...specifier } = await getSpecifier(item, configDir);
+  const { directory, ...specifier } = await getSpecifier(
+    item,
+    configDir,
+    options,
+  );
 
   return {
     ...specifier,

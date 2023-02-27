@@ -61,6 +61,15 @@ describe('stories.json', () => {
       version: '7',
       corrections: {
         // autodocs NYI
+        'custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title--page':
+          {
+            id: 'custom-title-prefix-second-level-mdx-non-stories-mdx-file-with-specified-title--autodoc',
+            name: 'Autodoc',
+          },
+        'custom-title-prefix-second-level-mdx-withouttitle--page': {
+          id: 'custom-title-prefix-second-level-mdx-withouttitle--autodoc',
+          name: 'Autodoc',
+        },
         'custom-title-prefix-second-level-mdx-with-specified-title--page': {
           id: 'custom-title-prefix-second-level-mdx-with-specified-title--autodoc',
           name: 'Autodoc',
