@@ -123,6 +123,17 @@ exports[`mdx > parses story file project/v6/src/autoTitle/mdx/MdxStory.stories.m
 
 exports[`mdx > parses story file project/v6/src/autoTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
 
+exports[`mdx > parses story file project/v7/src/autoTitle/mdx/WithTitle.stories.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 0],
+    "title": "mdx/With specified title",
+  },
+  "stories": [],
+}
+`;
+
 exports[`mdx > parses story file project/v7/src/stories/CsfWithMdx.stories.mdx 1`] = `
 {
   "meta": {
