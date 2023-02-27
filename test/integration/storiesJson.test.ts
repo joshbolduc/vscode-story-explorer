@@ -121,7 +121,7 @@ describe('stories.json', () => {
           stories.push({
             id: node.item.id!,
             name: entry.name,
-            title: entry.storyFile.getTitle()!,
+            title: entry.storyFile.getTitle()!.join('/'),
             importPath: `./${relative(
               `/mock/basedir/project/v${version}`,
               entry.storyFile.getUri().path,

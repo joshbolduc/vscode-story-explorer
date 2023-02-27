@@ -26,6 +26,12 @@ export const getTreeRoots = async (
 
   const mockStore = {
     getSortedStoryFiles: () => Promise.resolve(storyFiles),
+    getStoriesAttachedToUri: (uri) =>
+      storyFiles.filter(
+        (storyFile) =>
+          storyFile.getDocs()?.getAttachedFile()?.getUri().toString() ===
+          uri.toString(),
+      ),
     onDidUpdateStoryStore: () => ({
       dispose: () => {
         // no-op

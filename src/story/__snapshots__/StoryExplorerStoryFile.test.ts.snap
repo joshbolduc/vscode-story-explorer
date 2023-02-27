@@ -16,7 +16,12 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Custom title prefix/Second level/csf/EmptyDefaultExport",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "csf",
+    "EmptyDefaultExport",
+  ],
 }
 `;
 
@@ -36,7 +41,12 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Custom title prefix/Second level/csf/EmptyTitle",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "csf",
+    "EmptyTitle",
+  ],
 }
 `;
 
@@ -51,7 +61,12 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "docs",
     },
   ],
-  "title": "Custom title prefix/Second level/mdx/MdxMeta",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "mdx",
+    "MdxMeta",
+  ],
 }
 `;
 
@@ -71,7 +86,12 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Custom title prefix/Second level/mdx/MdxMetaAndStory",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "mdx",
+    "MdxMetaAndStory",
+  ],
 }
 `;
 
@@ -91,7 +111,12 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Custom title prefix/Second level/mdx/MdxStory",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "mdx",
+    "MdxStory",
+  ],
 }
 `;
 
@@ -111,7 +136,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Title Interpolation",
+  "title": [
+    "Example",
+    "Title Interpolation",
+  ],
 }
 `;
 
@@ -131,7 +159,9 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Top Hoisted",
+  "title": [
+    "Top Hoisted",
+  ],
 }
 `;
 
@@ -151,7 +181,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/TypeScript/Identifier Default Exported as Meta",
+  "title": [
+    "Test",
+    "TypeScript",
+    "Identifier Default Exported as Meta",
+  ],
 }
 `;
 
@@ -171,7 +205,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/TypeScript/Identifier exported satisfies as Meta",
+  "title": [
+    "Test",
+    "TypeScript",
+    "Identifier exported satisfies as Meta",
+  ],
 }
 `;
 
@@ -191,7 +229,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/TypeScript/Identifier exported satisfies Meta",
+  "title": [
+    "Test",
+    "TypeScript",
+    "Identifier exported satisfies Meta",
+  ],
 }
 `;
 
@@ -211,7 +253,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/TypeScript/Identifier Satisfies as Meta",
+  "title": [
+    "Test",
+    "TypeScript",
+    "Identifier Satisfies as Meta",
+  ],
 }
 `;
 
@@ -231,7 +277,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Custom title prefix/Second level/Explicit title",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "Explicit title",
+  ],
 }
 `;
 
@@ -251,7 +301,13 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Custom title prefix/Second level/csf/nested/WithoutTitle",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "csf",
+    "nested",
+    "WithoutTitle",
+  ],
 }
 `;
 
@@ -271,7 +327,12 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Custom title prefix/Second level/csf/nested",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "csf",
+    "nested",
+  ],
 }
 `;
 
@@ -291,7 +352,12 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Custom title prefix/Second level/csf/withIndex",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "csf",
+    "withIndex",
+  ],
 }
 `;
 
@@ -306,7 +372,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "docs",
     },
   ],
-  "title": "Custom title prefix/Second level/mdx",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "mdx",
+  ],
 }
 `;
 
@@ -321,7 +391,12 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "docs",
     },
   ],
-  "title": "Custom title prefix/Second level/mdx/Non-stories MDX file with specified title",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "mdx",
+    "Non-stories MDX file with specified title",
+  ],
 }
 `;
 
@@ -336,7 +411,12 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "docs",
     },
   ],
-  "title": "Custom title prefix/Second level/mdx/With specified title",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "mdx",
+    "With specified title",
+  ],
 }
 `;
 
@@ -351,7 +431,204 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "docs",
     },
   ],
-  "title": "Custom title prefix/Second level/mdx/WithoutTitle",
+  "title": [
+    "Custom title prefix",
+    "Second level",
+    "mdx",
+    "WithoutTitle",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/AttachPoint.stories.js 1`] = `
+{
+  "id": "attached-attachpoint",
+  "isDocsOnly": false,
+  "stories": [
+    {
+      "id": "attached-attachpoint--autodoc",
+      "name": "Autodoc",
+      "type": "docs",
+    },
+    {
+      "id": "attached-attachpoint--primary",
+      "name": "Primary",
+      "type": "story",
+    },
+  ],
+  "title": [
+    "attached",
+    "AttachPoint",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/AttachedToPathNeedsNormalization.mdx 1`] = `
+{
+  "id": "attached-attachpoint--attached-to-non-normalized-path",
+  "isDocsOnly": true,
+  "stories": [
+    {
+      "id": "attached-attachpoint--attached-to-non-normalized-path",
+      "name": "Attached to non-normalized path",
+      "type": "docs",
+    },
+  ],
+  "title": [
+    "attached",
+    "AttachPoint",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/AttachedToPathWithExtension.mdx 1`] = `
+{
+  "id": "attached-attachpoint--attached-to-path-with-extension",
+  "isDocsOnly": true,
+  "stories": [
+    {
+      "id": "attached-attachpoint--attached-to-path-with-extension",
+      "name": "Attached to path with extension",
+      "type": "docs",
+    },
+  ],
+  "title": [
+    "attached",
+    "AttachPoint",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/AttachedWithName.mdx 1`] = `
+{
+  "id": "attached-attachpoint--manually-specified-name",
+  "isDocsOnly": true,
+  "stories": [
+    {
+      "id": "attached-attachpoint--manually-specified-name",
+      "name": "Manually specified name",
+      "type": "docs",
+    },
+  ],
+  "title": [
+    "attached",
+    "AttachPoint",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/AttachedWithNameWithSlashes.mdx 1`] = `
+{
+  "id": "attached-attachpoint--name-with-slashes",
+  "isDocsOnly": true,
+  "stories": [
+    {
+      "id": "attached-attachpoint--name-with-slashes",
+      "name": "Name/with/slashes",
+      "type": "docs",
+    },
+  ],
+  "title": [
+    "attached",
+    "AttachPoint",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/AttachedWithoutName.mdx 1`] = `
+{
+  "id": "attached-attachpoint--attachedwithoutname",
+  "isDocsOnly": true,
+  "stories": [
+    {
+      "id": "attached-attachpoint--attachedwithoutname",
+      "name": "AttachedWithoutName",
+      "type": "docs",
+    },
+  ],
+  "title": [
+    "attached",
+    "AttachPoint",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/Autodoc.mdx 1`] = `
+{
+  "id": "attached-attachpoint--autodoc",
+  "isDocsOnly": true,
+  "stories": [
+    {
+      "id": "attached-attachpoint--autodoc",
+      "name": "Autodoc",
+      "type": "docs",
+    },
+  ],
+  "title": [
+    "attached",
+    "AttachPoint",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/Sample.mdx 1`] = `
+{
+  "id": "attached-attachpoint--sample",
+  "isDocsOnly": true,
+  "stories": [
+    {
+      "id": "attached-attachpoint--sample",
+      "name": "Sample",
+      "type": "docs",
+    },
+  ],
+  "title": [
+    "attached",
+    "AttachPoint",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/autodoc-override/AttachPoint.mdx 1`] = `
+{
+  "id": "attached-autodoc-override-attachpoint--autodoc",
+  "isDocsOnly": true,
+  "stories": [
+    {
+      "id": "attached-autodoc-override-attachpoint--autodoc",
+      "name": "Autodoc",
+      "type": "docs",
+    },
+  ],
+  "title": [
+    "attached",
+    "autodoc-override",
+    "AttachPoint",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/features/attached/autodoc-override/AttachPoint.stories.js 1`] = `
+{
+  "id": "attached-autodoc-override-attachpoint",
+  "isDocsOnly": false,
+  "stories": [
+    {
+      "id": "attached-autodoc-override-attachpoint--autodoc",
+      "name": "Autodoc",
+      "type": "docs",
+    },
+    {
+      "id": "attached-autodoc-override-attachpoint--primary",
+      "name": "Primary",
+      "type": "story",
+    },
+  ],
+  "title": [
+    "attached",
+    "autodoc-override",
+    "AttachPoint",
+  ],
 }
 `;
 
@@ -386,7 +663,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Basic CSF",
+  "title": [
+    "Example",
+    "Basic CSF",
+  ],
 }
 `;
 
@@ -416,7 +696,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/CSF v1",
+  "title": [
+    "Example",
+    "CSF v1",
+  ],
 }
 `;
 
@@ -446,7 +729,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/MDX importing CSF",
+  "title": [
+    "Example",
+    "MDX importing CSF",
+  ],
 }
 `;
 
@@ -466,7 +752,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Custom ID CSF",
+  "title": [
+    "Example",
+    "Custom ID CSF",
+  ],
 }
 `;
 
@@ -486,7 +775,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Custom ID MDX",
+  "title": [
+    "Example",
+    "Custom ID MDX",
+  ],
 }
 `;
 
@@ -531,7 +823,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Custom Name",
+  "title": [
+    "Example",
+    "Custom Name",
+  ],
 }
 `;
 
@@ -556,7 +851,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Decorators",
+  "title": [
+    "Example",
+    "Decorators",
+  ],
 }
 `;
 
@@ -576,7 +874,14 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Deep/Tree/With/Several/Kinds",
+  "title": [
+    "Example",
+    "Deep",
+    "Tree",
+    "With",
+    "Several",
+    "Kinds",
+  ],
 }
 `;
 
@@ -591,7 +896,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "docs",
     },
   ],
-  "title": "Example/MDX Docs Only",
+  "title": [
+    "Example",
+    "MDX Docs Only",
+  ],
 }
 `;
 
@@ -606,7 +914,9 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "docs",
     },
   ],
-  "title": "MDX Docs at top level",
+  "title": [
+    "MDX Docs at top level",
+  ],
 }
 `;
 
@@ -626,7 +936,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/Exclusions/Excluded",
+  "title": [
+    "Test",
+    "Exclusions",
+    "Excluded",
+  ],
 }
 `;
 
@@ -656,7 +970,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Export Styles",
+  "title": [
+    "Example",
+    "Export Styles",
+  ],
 }
 `;
 
@@ -676,7 +993,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Form",
+  "title": [
+    "Example",
+    "Form",
+  ],
 }
 `;
 
@@ -696,7 +1016,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Hoisting",
+  "title": [
+    "Example",
+    "Hoisting",
+  ],
 }
 `;
 
@@ -716,7 +1039,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/Exclusions/Included",
+  "title": [
+    "Test",
+    "Exclusions",
+    "Included",
+  ],
 }
 `;
 
@@ -736,7 +1063,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/JSX extension",
+  "title": [
+    "Example",
+    "JSX extension",
+  ],
 }
 `;
 
@@ -766,7 +1096,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/MDX with Stories",
+  "title": [
+    "Example",
+    "MDX with Stories",
+  ],
 }
 `;
 
@@ -786,7 +1119,9 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "MDX with stories, top",
+  "title": [
+    "MDX with stories, top",
+  ],
 }
 `;
 
@@ -806,7 +1141,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Merge",
+  "title": [
+    "Example",
+    "Merge",
+  ],
 }
 `;
 
@@ -826,7 +1164,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Merge",
+  "title": [
+    "Example",
+    "Merge",
+  ],
 }
 `;
 
@@ -851,7 +1192,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Precedence",
+  "title": [
+    "Example",
+    "Precedence",
+  ],
 }
 `;
 
@@ -871,7 +1215,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/With Same Name",
+  "title": [
+    "Example",
+    "With Same Name",
+  ],
 }
 `;
 
@@ -891,7 +1238,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/With Same Name/Same Name",
+  "title": [
+    "Example",
+    "With Same Name",
+    "Same Name",
+  ],
 }
 `;
 
@@ -946,7 +1297,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/Story Declarations",
+  "title": [
+    "Test",
+    "Story Declarations",
+  ],
 }
 `;
 
@@ -971,7 +1325,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Example/Tagged autodocs",
+  "title": [
+    "Example",
+    "Tagged autodocs",
+  ],
 }
 `;
 
@@ -991,7 +1348,9 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Top",
+  "title": [
+    "Top",
+  ],
 }
 `;
 
@@ -1026,7 +1385,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/TypeScript/Sample",
+  "title": [
+    "Test",
+    "TypeScript",
+    "Sample",
+  ],
 }
 `;
 
@@ -1046,7 +1409,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/TypeScript/Default as Meta",
+  "title": [
+    "Test",
+    "TypeScript",
+    "Default as Meta",
+  ],
 }
 `;
 
@@ -1066,7 +1433,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/TypeScript/Typed Identifier",
+  "title": [
+    "Test",
+    "TypeScript",
+    "Typed Identifier",
+  ],
 }
 `;
 
@@ -1086,7 +1457,11 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/TypeScript/Identifier as Meta",
+  "title": [
+    "Test",
+    "TypeScript",
+    "Identifier as Meta",
+  ],
 }
 `;
 
@@ -1106,6 +1481,10 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
       "type": "story",
     },
   ],
-  "title": "Test/TypeScript/Identifier Satisfies",
+  "title": [
+    "Test",
+    "TypeScript",
+    "Identifier Satisfies",
+  ],
 }
 `;

@@ -1,6 +1,11 @@
 import { parse } from '@babel/parser';
 import traverse, { NodePath } from '@babel/traverse';
-import { isJSXIdentifier, JSXElement } from '@babel/types';
+import {
+  ImportDeclaration,
+  isJSXIdentifier,
+  JSXAttribute,
+  JSXElement,
+} from '@babel/types';
 import type { Location } from '../../types/Location';
 import { sourceLocationToLocation } from '../sourceLocationToLocation';
 import { extractJsxAttributes } from './extractJsxAttributes';
@@ -14,6 +19,7 @@ interface RawResult {
       values?: Record<string, unknown>;
       literals?: Record<string, string>;
     };
+    of?: { importPath: string };
     declared: boolean;
   };
   stories: {
@@ -87,6 +93,35 @@ export const parseFromContents = (contents: string): RawResult | undefined => {
             result.meta.properties = properties;
             result.meta.location = location;
             result.meta.declared = true;
+
+            const ofAttribute = path
+              .get('openingElement')
+              .get('attributes')
+              .find(
+                (attr): attr is NodePath<JSXAttribute> =>
+                  attr.isJSXAttribute() && attr.node.name.name === 'of',
+              );
+
+            const ofValue = ofAttribute?.get('value');
+            if (ofValue?.isJSXExpressionContainer()) {
+              const expression = ofValue.get('expression');
+              if (expression.isIdentifier()) {
+                const expressionName = expression.node.name;
+
+                const binding = expression.scope.getBinding(expressionName);
+                if (binding?.path.isImportNamespaceSpecifier()) {
+                  const importDeclaration = binding.path.findParent((p) =>
+                    p.isImportDeclaration(),
+                  ) as NodePath<ImportDeclaration> | null;
+                  const source = importDeclaration?.get('source');
+                  const importPath = source?.node.value;
+
+                  if (importPath) {
+                    result.meta.of = { importPath };
+                  }
+                }
+              }
+            }
           } else if (isStory) {
             result.stories.push({
               location,

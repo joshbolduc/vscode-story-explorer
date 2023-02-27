@@ -273,6 +273,48 @@ exports[`csf > parses story file project/v7/src/autoTitle/csf/withIndex/index.st
 }
 `;
 
+exports[`csf > parses story file project/v7/src/features/attached/AttachPoint.stories.js 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "properties": {},
+  },
+  "stories": [
+    {
+      "exportName": "Primary",
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
+      "properties": {
+        "args": {
+          "children": "Primary",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[`csf > parses story file project/v7/src/features/attached/autodoc-override/AttachPoint.stories.js 1`] = `
+{
+  "meta": {
+    "declared": true,
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "properties": {},
+  },
+  "stories": [
+    {
+      "exportName": "Primary",
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
+      "properties": {
+        "args": {
+          "children": "Primary",
+        },
+      },
+    },
+  ],
+}
+`;
+
 exports[`csf > parses story file project/v7/src/stories/BasicCsf.stories.js 1`] = `
 {
   "meta": {

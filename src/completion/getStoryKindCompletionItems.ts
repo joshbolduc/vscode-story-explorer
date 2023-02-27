@@ -1,14 +1,19 @@
 import type { Uri } from 'vscode';
 import type { StoryStore } from '../store/StoryStore';
-import { splitKind } from '../util/splitKind';
 import { TextCompletionItem } from './TextCompletionItem';
 
 const getStoryKindSegments = (storyStore: StoryStore, ignoreUri: Uri) => {
   return storyStore.getStoryFiles().reduce((acc, cur) => {
-    if (cur.getUri().toString() !== ignoreUri.toString()) {
-      const title = cur.getTitle();
-      if (title && typeof title === 'string') {
-        const segments = splitKind(title);
+    const ignoreUriStr = ignoreUri.toString();
+    // Don't make suggestions derived from this file, or any file attached to
+    // this file (whose title segments are presumably derived from the very
+    // input being completed)
+    if (
+      cur.getUri().toString() !== ignoreUriStr &&
+      cur.getDocs()?.getAttachedFile()?.getUri().toString() !== ignoreUriStr
+    ) {
+      const segments = cur.getTitle();
+      if (segments) {
         segments.forEach((segment, i) => {
           acc.add(segments.slice(0, i + 1).join('/'));
         });
