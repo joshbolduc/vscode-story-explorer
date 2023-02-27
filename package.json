@@ -611,7 +611,7 @@
     "@types/vscode-webview": "1.57.1",
     "@typescript-eslint/eslint-plugin": "5.50.0",
     "@typescript-eslint/parser": "5.50.0",
-    "@vitest/coverage-c8": "0.28.5",
+    "@vitest/coverage-c8": "0.29.1",
     "@vscode/vsce": "2.17.0",
     "concurrently": "7.6.0",
     "esbuild": "0.17.5",
@@ -631,7 +631,7 @@
     "standard-version": "9.5.0",
     "ts-eager": "2.0.2",
     "typescript": "4.9.5",
-    "vitest": "0.28.4",
+    "vitest": "0.29.1",
     "vscode-uri": "3.0.7"
   }
 }
