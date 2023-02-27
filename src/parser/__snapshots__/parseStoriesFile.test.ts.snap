@@ -347,6 +347,18 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/withI
 }
 `;
 
+exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/WithTitle.stories.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 0],
+    "title": "mdx/With specified title",
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
 exports[`parseStoriesFile > parses story file project/v7/src/stories/BasicCsf.stories.js 1`] = `
 {
   "meta": {

@@ -63,6 +63,10 @@ describe('stories.json', () => {
       version: '7',
       corrections: {
         // autodocs NYI
+        'custom-title-prefix-second-level-mdx-with-specified-title--page': {
+          id: 'custom-title-prefix-second-level-mdx-with-specified-title--autodoc',
+          name: 'Autodoc',
+        },
         'example-mdx-docs-only--page': {
           id: 'example-mdx-docs-only--autodoc',
           name: 'Autodoc',
