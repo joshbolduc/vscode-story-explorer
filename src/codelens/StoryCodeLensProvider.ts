@@ -82,6 +82,7 @@ export class StoryCodeLensProvider implements CodeLensProvider {
         ...parsed,
       },
       globSpecifiers,
+      this.storyStore,
       autodocs,
     );
 

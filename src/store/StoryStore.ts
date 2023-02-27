@@ -1,6 +1,7 @@
 import pLimit from 'p-limit';
 import { combineLatest, firstValueFrom, Subscription } from 'rxjs';
 import { Disposable, EventEmitter, Uri, workspace } from 'vscode';
+import { Utils } from 'vscode-uri';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
 import { AutodocsConfig, autodocsConfig } from '../config/autodocs';
 import { storiesGlobs } from '../config/storiesGlobs';
@@ -11,6 +12,7 @@ import {
 import { convertGlob } from '../globs/convertGlob';
 import { convertGlobForWorkspace } from '../globs/convertGlobForWorkspace';
 import { logError } from '../log/log';
+import type { parseStoriesFile } from '../parser/parseStoriesFile';
 import {
   ParsedStoryWithFileUri,
   parseStoriesFileByUri,
@@ -43,6 +45,11 @@ const setInitialLoadComplete = (loading: boolean) => {
 };
 
 const MAX_CONCURRENT_FIND_OPERATIONS = 3;
+
+export const unattachedFirstComparator = (
+  a: NonNullable<ReturnType<typeof parseStoriesFile>>,
+  b: NonNullable<ReturnType<typeof parseStoriesFile>>,
+): number => +!!a.meta.of - +!!b.meta.of;
 
 export class StoryStore {
   private readonly backingMap = new BackingMap();
@@ -84,11 +91,14 @@ export class StoryStore {
 
   public async set(uri: Uri, info: StoreMapEntry) {
     this.setWithoutNotify(uri, info, await firstValueFrom(autodocsConfig));
+    this.refreshAttachedFiles();
+
     this.onDidUpdateStoryStoreEmitter.fire();
   }
 
   public delete(uri: Uri) {
     if (this.backingMap.delete(uri)) {
+      this.refreshAttachedFiles();
       this.onDidUpdateStoryStoreEmitter.fire();
     }
   }
@@ -104,6 +114,34 @@ export class StoryStore {
     }
 
     return undefined;
+  }
+
+  public getStoryByUri(uri: Uri) {
+    return this.backingMap.get(uri)?.storyFile;
+  }
+
+  public getStoryByExtensionlessUri(uri: Uri) {
+    const extensions = [
+      '',
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.cjs',
+      '.mjs',
+    ] as const;
+    const dirname = Utils.dirname(uri);
+    const basename = Utils.basename(uri);
+
+    for (const extension of extensions) {
+      const potentialUri = Utils.joinPath(dirname, `${basename}${extension}`);
+
+      const storyFile = this.getStoryByUri(potentialUri);
+
+      if (storyFile) {
+        return storyFile;
+      }
+    }
   }
 
   public getStoryFiles() {
@@ -161,6 +199,17 @@ export class StoryStore {
     } else {
       this.delete(uri);
     }
+  }
+
+  public getStoriesAttachedToUri(uri: Uri) {
+    // FUTURE: index stories by attached file URI to avoid having to traverse the existing map
+    return Array.from(this.backingMap.values())
+      .filter(
+        (entry) =>
+          entry.storyFile.getDocs()?.getAttachedFile()?.getUri().toString() ===
+          uri.toString(),
+      )
+      .map((entry) => entry.storyFile);
   }
 
   public dispose() {
@@ -229,7 +278,11 @@ export class StoryStore {
       return acc;
     }, new Map<string, StoreMapEntry>());
 
-    for (const [, value] of map) {
+    const valuesWithUnattachedFirst = Array.from(map.values()).sort((a, b) =>
+      unattachedFirstComparator(a.parsed, b.parsed),
+    );
+
+    for (const value of valuesWithUnattachedFirst) {
       this.setWithoutNotify(value.parsed.file, value, autodocs);
     }
 
@@ -267,9 +320,34 @@ export class StoryStore {
       storyFile: new StoryExplorerStoryFile(
         info.parsed,
         info.specifiers,
+        this,
         autodocs,
       ),
       fileWatcher: watcher,
+    });
+  }
+
+  private refreshAttachedFiles() {
+    // We conservatively consider all attached docs as "affected", since their
+    // resolution could conceivably be missing (or even change).
+    const affectedStories = this.getStoryFiles().filter((file) =>
+      file.isAttachedDoc(),
+    );
+    affectedStories.forEach((storyFile) => {
+      this.refreshAttachedDoc(storyFile.getUri());
+    });
+  }
+
+  private refreshAttachedDoc(uri: Uri) {
+    const existingEntry = this.backingMap.get(uri);
+    if (!existingEntry) {
+      return;
+    }
+
+    const newStoryFile = existingEntry.storyFile.withRefreshedAttachedDoc(this);
+    this.backingMap.set(uri, {
+      fileWatcher: existingEntry.fileWatcher,
+      storyFile: newStoryFile,
     });
   }
 

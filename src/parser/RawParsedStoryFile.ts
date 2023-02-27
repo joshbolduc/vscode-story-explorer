@@ -5,6 +5,8 @@ export interface RawParsedStoriesMeta {
   tags: string[] | undefined;
   title: string | undefined;
   location: Location | undefined;
+  of?: { importPath: string } | undefined;
+  name?: string | undefined;
 }
 
 export interface RawParsedStory {

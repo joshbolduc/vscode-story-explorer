@@ -4,6 +4,7 @@ module.exports = {
       directory: '../src/autoTitle',
       titlePrefix: 'Custom title prefix/Second level',
     },
+    '../src/features/**/*',
     '../src/stories/**/*.mdx',
     '../src/stories/**/*.stories.@(js|jsx|ts|tsx)',
   ],

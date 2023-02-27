@@ -98,7 +98,7 @@ export class StoryTreeDataProvider implements TreeDataProvider<TreeNode> {
     const showKindsWithoutChildren =
       this.showItemsWithoutStoriesWatcher.read() === true;
     const autodocs = await firstValueFrom(autodocsConfig);
-    const root = storyFilesToKindTree(storyFiles, {
+    const root = storyFilesToKindTree(storyFiles, this.store, {
       autodocsConfig: autodocs,
       showKindsWithoutChildren,
     });

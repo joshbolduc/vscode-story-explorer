@@ -5,6 +5,10 @@ import { mockAutodocsSubject } from '../../src/config/__mocks__/autodocs';
 import type { AutodocsConfig } from '../../src/config/autodocs';
 import { interpretStoriesConfigItem } from '../../src/config/interpretStoriesConfigItem';
 import type { ParsedStoryWithFileUri } from '../../src/parser/parseStoriesFileByUri';
+import {
+  StoryStore,
+  unattachedFirstComparator,
+} from '../../src/store/StoryStore';
 import { sortStoryFiles } from '../../src/store/sortStoryFiles';
 import { StoryExplorerStoryFile } from '../../src/story/StoryExplorerStoryFile';
 import { getStoriesGlobs } from '../../src/storybook/getStoriesGlobs';
@@ -55,14 +59,34 @@ export const getTestStoryFiles = async (
 
   mockAutodocsSubject.next(autodocsConfig);
 
-  const storyFiles = tests.flatMap(({ file, parsedRaw }) => {
-    const parsed: ParsedStoryWithFileUri = {
-      ...parsedRaw,
-      file: Uri.file(`/mock/basedir/${file}`),
-    };
+  const files: StoryExplorerStoryFile[] = [];
 
-    return new StoryExplorerStoryFile(parsed, mockSpecifiers, autodocsConfig);
-  });
+  const storyFiles = tests
+    .sort((a, b) => unattachedFirstComparator(a.parsedRaw, b.parsedRaw))
+    .flatMap(({ file, parsedRaw }) => {
+      const parsed: ParsedStoryWithFileUri = {
+        ...parsedRaw,
+        file: Uri.file(`/mock/basedir/${file}`),
+      };
+
+      const mockStore = {
+        getStoryByExtensionlessUri: (uri) => {
+          return files.find((f) =>
+            f.getUri().toString().startsWith(uri.toString()),
+          );
+        },
+      } as Partial<StoryStore> as StoryStore;
+
+      const storyFile = new StoryExplorerStoryFile(
+        parsed,
+        mockSpecifiers,
+        mockStore,
+        autodocsConfig,
+      );
+
+      files.push(storyFile);
+      return storyFile;
+    });
 
   return sortStoryFiles(storyFiles, mockSpecifiers);
 };

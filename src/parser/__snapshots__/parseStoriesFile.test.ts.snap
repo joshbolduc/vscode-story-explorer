@@ -5,6 +5,8 @@ exports[`parseStoriesFile > parses story file fixtures/Children.mdx 1`] = `
   "meta": {
     "id": undefined,
     "location": undefined,
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": undefined,
   },
@@ -39,6 +41,8 @@ exports[`parseStoriesFile > parses story file fixtures/Mdx1WithStories.stories.m
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "Example/MDX with Stories",
   },
@@ -68,6 +72,8 @@ exports[`parseStoriesFile > parses story file fixtures/Spread.mdx 1`] = `
   "meta": {
     "id": undefined,
     "location": undefined,
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": undefined,
   },
@@ -127,6 +133,8 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxMe
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": undefined,
   },
@@ -140,6 +148,8 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxMe
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": undefined,
   },
@@ -159,6 +169,8 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxSt
   "meta": {
     "id": undefined,
     "location": undefined,
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": undefined,
   },
@@ -370,6 +382,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/DocNo
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "mdx",
   },
@@ -383,6 +397,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/WithT
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "mdx/Non-stories MDX file with specified title",
   },
@@ -396,6 +412,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/WithT
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "mdx/With specified title",
   },
@@ -409,11 +427,187 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/Witho
   "meta": {
     "id": undefined,
     "location": undefined,
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": undefined,
   },
   "stories": [],
   "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/AttachPoint.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/AttachedToPathNeedsNormalization.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 0],
+    "name": "Attached to non-normalized path",
+    "of": {
+      "importPath": "./../attached/././AttachPoint.stories",
+    },
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/AttachedToPathWithExtension.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 0],
+    "name": "Attached to path with extension",
+    "of": {
+      "importPath": "./AttachPoint.stories.js",
+    },
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/AttachedWithName.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 0],
+    "name": "Manually specified name",
+    "of": {
+      "importPath": "./AttachPoint.stories",
+    },
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/AttachedWithNameWithSlashes.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 0],
+    "name": "Name/with/slashes",
+    "of": {
+      "importPath": "./AttachPoint.stories",
+    },
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/AttachedWithoutName.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 0],
+    "name": undefined,
+    "of": {
+      "importPath": "./AttachPoint.stories",
+    },
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/Autodoc.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 0],
+    "name": undefined,
+    "of": {
+      "importPath": "./AttachPoint.stories",
+    },
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/Sample.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 0],
+    "name": undefined,
+    "of": {
+      "importPath": "./AttachPoint.stories",
+    },
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/autodoc-override/AttachPoint.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 0],
+    "name": undefined,
+    "of": {
+      "importPath": "./AttachPoint.stories",
+    },
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [],
+  "type": "mdx",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/attached/autodoc-override/AttachPoint.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 5, Col 15] - [Ln 7, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 11, Col 13] - [Ln 11, Col 20],
+      "name": "Primary",
+      "nameForId": "Primary",
+    },
+  ],
+  "type": "csf",
 }
 `;
 
@@ -485,6 +679,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfWithMdx.
   "meta": {
     "id": undefined,
     "location": [Ln 5, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "Example/MDX importing CSF",
   },
@@ -535,6 +731,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CustomId.st
   "meta": {
     "id": "manually-specified-mdx-id",
     "location": [Ln 3, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "Example/Custom ID MDX",
   },
@@ -641,6 +839,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/DocsOnly.st
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "Example/MDX Docs Only",
   },
@@ -654,6 +854,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/DocsOnlyTop
   "meta": {
     "id": undefined,
     "location": [Ln 3, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "MDX Docs at top level",
   },
@@ -791,6 +993,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/Mdx2WithSto
   "meta": {
     "id": undefined,
     "location": [Ln 12, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "Example/MDX with Stories",
   },
@@ -820,6 +1024,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/MdxWithStor
   "meta": {
     "id": undefined,
     "location": [Ln 4, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "MDX with stories, top",
   },
@@ -877,6 +1083,8 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/Precedence.
   "meta": {
     "id": undefined,
     "location": [Ln 4, Col 0],
+    "name": undefined,
+    "of": undefined,
     "tags": undefined,
     "title": "Example/Precedence",
   },

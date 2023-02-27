@@ -332,6 +332,95 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Icon: document
         Command: Open file
 
+- attached
+  Expanded
+
+  - AttachPoint
+    Id: file:///mock/basedir/project/v7/src/features/attached/AttachPoint.stories.js
+    File: file:///mock/basedir/project/v7/src/features/attached/AttachPoint.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: attached-attachpoint--autodoc
+      File: file:///mock/basedir/project/v7/src/features/attached/Autodoc.mdx
+      Context: story
+      Icon: document
+      Command: Open file [Ln 3, Col 0]
+
+    - Primary
+      Id: attached-attachpoint--primary
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/attached/AttachPoint.stories.js [Ln 10, Col 13]
+
+    - Attached to non-normalized path
+      Id: attached-attachpoint--attached-to-non-normalized-path
+      File: file:///mock/basedir/project/v7/src/features/attached/AttachedToPathNeedsNormalization.mdx
+      Context: story
+      Icon: document
+      Command: Open file [Ln 3, Col 0]
+
+    - Attached to path with extension
+      Id: attached-attachpoint--attached-to-path-with-extension
+      File: file:///mock/basedir/project/v7/src/features/attached/AttachedToPathWithExtension.mdx
+      Context: story
+      Icon: document
+      Command: Open file [Ln 3, Col 0]
+
+    - Manually specified name
+      Id: attached-attachpoint--manually-specified-name
+      File: file:///mock/basedir/project/v7/src/features/attached/AttachedWithName.mdx
+      Context: story
+      Icon: document
+      Command: Open file [Ln 3, Col 0]
+
+    - Name/with/slashes
+      Id: attached-attachpoint--name-with-slashes
+      File: file:///mock/basedir/project/v7/src/features/attached/AttachedWithNameWithSlashes.mdx
+      Context: story
+      Icon: document
+      Command: Open file [Ln 3, Col 0]
+
+    - AttachedWithoutName
+      Id: attached-attachpoint--attachedwithoutname
+      File: file:///mock/basedir/project/v7/src/features/attached/AttachedWithoutName.mdx
+      Context: story
+      Icon: document
+      Command: Open file [Ln 3, Col 0]
+
+    - Sample
+      Id: attached-attachpoint--sample
+      File: file:///mock/basedir/project/v7/src/features/attached/Sample.mdx
+      Context: story
+      Icon: document
+      Command: Open file [Ln 3, Col 0]
+
+  - autodoc-override
+    Collapsed
+    Icon: folder
+
+    - AttachPoint
+      Id: file:///mock/basedir/project/v7/src/features/attached/autodoc-override/AttachPoint.stories.js
+      File: file:///mock/basedir/project/v7/src/features/attached/autodoc-override/AttachPoint.stories.js
+      Collapsed
+      Icon: component
+      Command: Open file
+
+      - Autodoc
+        Id: attached-autodoc-override-attachpoint--autodoc
+        File: file:///mock/basedir/project/v7/src/features/attached/autodoc-override/AttachPoint.mdx
+        Context: story
+        Icon: document
+        Command: Open file [Ln 3, Col 0]
+
+      - Primary
+        Id: attached-autodoc-override-attachpoint--primary
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/v7/src/features/attached/autodoc-override/AttachPoint.stories.js [Ln 10, Col 13]
+
 - Example
   Expanded
 

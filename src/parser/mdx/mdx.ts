@@ -1,6 +1,7 @@
 import { storyNameFromExport } from '@componentdriven/csf';
 import { logDebug } from '../../log/log';
 import { isDefined } from '../../util/guards/isDefined';
+import { isNonEmptyString } from '../../util/guards/isNonEmptyString';
 import type { RawParsedStoryFile } from '../RawParsedStoryFile';
 import { sanitizeMetaObject } from '../sanitizeMetaObject';
 import { parseFromContents } from './parseFromContents';
@@ -13,11 +14,15 @@ const parse = (contents: string): RawParsedStoryFile | undefined => {
       parsed.meta.properties.values,
     );
 
+    const metaName = parsed.meta.properties.values?.name;
+
     const meta = {
       id,
       tags,
       title,
       location: parsed.meta.location,
+      of: parsed.meta.of,
+      name: isNonEmptyString(metaName) ? metaName : undefined,
     };
 
     const stories = parsed.stories
