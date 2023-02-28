@@ -118,8 +118,8 @@ describe('stories.json', () => {
 
   configs.forEach(({ version, corrections, exclusions = [] }) =>
     it(`matches storybook-generated stories.json for v${version}`, async () => {
-      const transformedStoriesJson = (await getTestStoryFiles(version))
-        .flatMap((storyFile) => {
+      const transformedStoriesJson = (await getTestStoryFiles(version)).flatMap(
+        (storyFile) => {
           return storyFile
             .getStoriesAndDocs()
             .filter((story) => story.type === 'story' || storyFile.isDocsOnly())
@@ -133,12 +133,8 @@ describe('stories.json', () => {
               )}`,
               ...corrections?.[story.id],
             }));
-        })
-        .reduce<Record<string, StoryTestInfo>>((acc, cur) => {
-          acc[cur.id] = cur;
-
-          return acc;
-        }, {});
+        },
+      );
 
       // This file is assumed to be generated in advance and up-to-date
       const generatedStoriesJsonStr = await readFile(
@@ -149,26 +145,22 @@ describe('stories.json', () => {
         generatedStoriesJsonStr.toString(),
       ) as StoriesJsonV3;
 
-      const referenceStories = Object.entries(storiesJson.stories)
+      const referenceStories = Object.values(storiesJson.stories)
         // TODO: v7 autodocs support NYI
         .filter(
-          ([, entry]) =>
+          (entry) =>
             !entry.tags?.includes('autodocs') ||
-            entry.id in transformedStoriesJson,
+            transformedStoriesJson.find((e) => e.id === entry.id) ||
+            exclusions.some((exclusion) => exclusion === entry.id),
         )
-        .reduce<Record<string, StoryTestInfo>>((acc, [id, story]) => {
-          acc[id] = {
-            id: story.id,
-            name: story.name,
-            title: story.title,
-            importPath: story.importPath,
-          };
-          return acc;
-        }, {});
+        .map<StoryTestInfo>((story) => ({
+          id: story.id,
+          name: story.name,
+          title: story.title,
+          importPath: story.importPath,
+        }));
 
-      expect(omit(transformedStoriesJson, exclusions)).toEqual(
-        referenceStories,
-      );
+      expect(transformedStoriesJson).toEqual(referenceStories);
     }),
   );
 });
