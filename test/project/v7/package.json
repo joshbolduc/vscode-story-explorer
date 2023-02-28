@@ -22,6 +22,6 @@
     "@storybook/cli": "7.0.0-beta.53",
     "@storybook/react": "7.0.0-beta.53",
     "@storybook/react-webpack5": "7.0.0-beta.53",
-    "storybook": "7.0.0-beta.53"
+    "storybook": "7.0.0-beta.55"
   }
 }
