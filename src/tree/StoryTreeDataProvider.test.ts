@@ -48,6 +48,9 @@ addSerializer({
       `- ${v.label!.toString()}`,
       v.id && `Id: ${v.id}`,
       v.resourceUri && `File: ${v.resourceUri.toString()}`,
+      typeof v.description === 'string' &&
+        v.description !== v.resourceUri?.toString() &&
+        `Description: ${v.description}`,
       v.contextValue && `Context: ${v.contextValue}`,
       v.collapsibleState !== undefined &&
         v.collapsibleState !== TreeItemCollapsibleState.None &&
