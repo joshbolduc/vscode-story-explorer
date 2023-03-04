@@ -593,6 +593,7 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
   - Merge
     Id: file:///mock/basedir/project/v7/src/stories/MergeOne.stories.js
     File: file:///mock/basedir/project/v7/src/stories/MergeOne.stories.js
+    Description: 2 files · file:///mock/basedir/project/v7/src/stories/MergeOne.stories.js
     Collapsed
     Icon: component
     Command: Open file
