@@ -26,7 +26,7 @@ export abstract class StoryExplorerEntry {
 
   protected constructor(
     story: Pick<StoryExplorerEntry, 'id' | 'name' | 'location'>,
-    protected readonly storyFile: StoryExplorerStoryFile,
+    public readonly storyFile: StoryExplorerStoryFile,
     public readonly label: string,
   ) {
     this.id = story.id;

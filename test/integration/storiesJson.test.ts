@@ -1,11 +1,9 @@
 import { readFile } from 'fs/promises';
 import { relative, resolve } from 'path';
-import omit from 'lodash/omit';
 import { describe, expect, it } from 'vitest';
-import {
-  getTestStoryFiles,
-  TestProjectVersion,
-} from '../util/getTestStoryFiles';
+import { strCompareFn } from '../../src/util/strCompareFn';
+import type { TestProjectVersion } from '../util/getTestStoryFiles';
+import { getTreeRoots, TreeItemRepresentation } from '../util/getTreeRoots';
 import { testBaseDir } from '../util/testBaseDir';
 
 interface StoriesJsonV3Map {
@@ -118,27 +116,50 @@ describe('stories.json', () => {
 
   configs.forEach(({ version, corrections, exclusions = [] }) =>
     it(`matches storybook-generated stories.json for v${version}`, async () => {
-      const transformedStoriesJson = (await getTestStoryFiles(version))
-        .flatMap((storyFile) => {
-          return storyFile
-            .getStoriesAndDocs()
-            .filter((story) => story.type === 'story' || storyFile.isDocsOnly())
-            .map((story) => ({
-              id: story.id,
-              name: story.name,
-              title: storyFile.getTitle()!,
-              importPath: `./${relative(
-                `/mock/basedir/project/v${version}`,
-                storyFile.getUri().path,
-              )}`,
-              ...corrections?.[story.id],
-            }));
-        })
-        .reduce<Record<string, StoryTestInfo>>((acc, cur) => {
-          acc[cur.id] = cur;
+      const getFlattenedChildren = (
+        node: TreeItemRepresentation,
+        stories: StoryTestInfo[],
+      ) => {
+        const entry = node.treeNode.getLeafEntry();
+        if (entry) {
+          stories.push({
+            id: node.item.id!,
+            name: entry.name,
+            title: entry.storyFile.getTitle()!,
+            importPath: `./${relative(
+              `/mock/basedir/project/v${version}`,
+              entry.storyFile.getUri().path,
+            )}`,
+          });
+        }
 
-          return acc;
-        }, {});
+        node.children?.forEach((childNode) => {
+          getFlattenedChildren(childNode, stories);
+        });
+      };
+
+      const stories: StoryTestInfo[] = [];
+      const rootChildren = await getTreeRoots(version, '.storybook');
+      rootChildren.forEach((root) => {
+        getFlattenedChildren(root, stories);
+      });
+
+      const transformedStoriesJson = stories
+        .map((story) => {
+          const itemCorrections = corrections?.[story.id];
+
+          // ensure corrections are minimally scoped and not stale
+          Object.entries(itemCorrections ?? {}).forEach(
+            ([key, correctedValue]) => {
+              expect(story[key as keyof typeof story]).not.toStrictEqual(
+                correctedValue,
+              );
+            },
+          );
+
+          return { ...story, ...itemCorrections };
+        })
+        .sort((a, b) => strCompareFn(a.id, b.id));
 
       // This file is assumed to be generated in advance and up-to-date
       const generatedStoriesJsonStr = await readFile(
@@ -149,25 +170,26 @@ describe('stories.json', () => {
         generatedStoriesJsonStr.toString(),
       ) as StoriesJsonV3;
 
-      const referenceStories = Object.entries(storiesJson.stories)
-        // TODO: v7 autodocs support NYI
+      const receivedIds = transformedStoriesJson.reduce((acc, cur) => {
+        acc.add(cur.id);
+        return acc;
+      }, new Set<string>());
+      const referenceStories = Object.values(storiesJson.stories)
         .filter(
-          ([, entry]) =>
-            !entry.tags?.includes('autodocs') ||
-            entry.id in transformedStoriesJson,
+          (entry) =>
+            (!entry.tags?.includes('autodocs') || receivedIds.has(entry.id)) &&
+            !exclusions.some((exclusion) => exclusion === entry.id),
         )
-        .reduce<Record<string, StoryTestInfo>>((acc, [id, story]) => {
-          acc[id] = {
-            id: story.id,
-            name: story.name,
-            title: story.title,
-            importPath: story.importPath,
-          };
-          return acc;
-        }, {});
+        .map<StoryTestInfo>((story) => ({
+          id: story.id,
+          name: story.name,
+          title: story.title,
+          importPath: story.importPath,
+        }))
+        .sort((a, b) => strCompareFn(a.id, b.id));
 
-      expect(omit(transformedStoriesJson, exclusions)).toEqual(
-        referenceStories,
+      expect(transformedStoriesJson.map((item) => item.id)).toStrictEqual(
+        referenceStories.map((item) => item.id),
       );
     }),
   );
