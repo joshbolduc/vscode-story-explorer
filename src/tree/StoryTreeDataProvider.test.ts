@@ -2,27 +2,18 @@ import { basename, extname } from 'path';
 import { describe, expect, it } from 'vitest';
 import {
   Command,
-  ExtensionContext,
   TextDocumentShowOptions,
-  TreeItem,
   TreeItemCollapsibleState,
   Uri,
 } from 'vscode';
-import { URI } from 'vscode-uri';
 import { addSerializer } from '../../test/util/addSerializer';
-import { getTestStoryFiles } from '../../test/util/getTestStoryFiles';
-import type { StoryStore } from '../store/StoryStore';
+import {
+  getTreeRoots,
+  TreeItemRepresentation,
+} from '../../test/util/getTreeRoots';
 import { hasProperty } from '../util/guards/hasProperty';
 import { isTruthy } from '../util/guards/isTruthy';
-import { StoryTreeDataProvider } from './StoryTreeDataProvider';
-import type { TreeNode } from './TreeNode';
 import { TreeNodeItem } from './TreeNodeItem';
-
-interface TreeItemRepresentation {
-  item: TreeItem;
-  children?: TreeItemRepresentation[];
-  isTreeItem: true;
-}
 
 const isTreeItemRepresentation = (v: unknown): v is TreeItemRepresentation =>
   hasProperty('isTreeItem')(v) && v.isTreeItem === true;
@@ -113,46 +104,10 @@ addSerializer({
 describe('StoryTreeDataProvider', () => {
   [
     { version: '6' as const, configDir: '.config-unittest' },
-    { version: '7' as const },
+    { version: '7' as const, configDir: '.storybook' },
   ].forEach(({ version, configDir }) =>
     it(`creates tree from story files for v${version}`, async () => {
-      const storyFiles = await getTestStoryFiles(version, configDir);
-      const mockContext = {
-        extensionUri: URI.file('/mock/extension/root'),
-      } as ExtensionContext;
-
-      const mockStore = {
-        getSortedStoryFiles: () => Promise.resolve(storyFiles),
-        onDidUpdateStoryStore: () => ({
-          dispose: () => {
-            // no-op
-          },
-        }),
-        waitUntilInitialized: () => Promise.resolve(mockStore),
-      } as Partial<StoryStore> as StoryStore;
-
-      const provider = new StoryTreeDataProvider(mockContext, mockStore);
-
-      const nodeToTreeItem = async (
-        node: TreeNode,
-      ): Promise<TreeItemRepresentation> => {
-        const childItems = (await provider.getChildren(node))?.map(
-          nodeToTreeItem,
-        );
-
-        return {
-          item: await provider.getTreeItem(node),
-          ...(childItems &&
-            childItems.length > 0 && {
-              children: await Promise.all(childItems),
-            }),
-          isTreeItem: true,
-        };
-      };
-
-      const rootChildren = await Promise.all(
-        (await provider.getChildren())!.map(nodeToTreeItem),
-      );
+      const rootChildren = await getTreeRoots(version, configDir);
       expect(rootChildren).toMatchSnapshot();
     }),
   );
