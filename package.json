@@ -3,7 +3,7 @@
   "displayName": "Story Explorer",
   "description": "Browse and preview Storybook stories inside VS Code",
   "publisher": "joshbolduc",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "preview": true,
   "icon": "icon.png",
   "repository": {
