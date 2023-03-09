@@ -8,7 +8,8 @@ import { parseFromContents } from './parseFromContents';
 describe('csf', () => {
   const tests = sync(
     [
-      'project/v6/src/**/*.stories.{js,jsx,ts,tsx}',
+      'project/v6/src/autoTitle/**/*.stories.{js,jsx,ts,tsx}',
+      'project/v6/src/stories/v6-only/**/*.stories.{js,jsx,ts,tsx}',
       'project/v7/src/**/*.stories.{js,jsx,ts,tsx}',
     ],
     {

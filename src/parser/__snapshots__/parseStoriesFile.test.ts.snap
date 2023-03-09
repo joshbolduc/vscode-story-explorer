@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`parseStoriesFile > parses story file fixtures/Children.mdx 1`] = `
 {
@@ -115,6 +115,8 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/Empty
 }
 `;
 
+exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/csf/NoDefaultExport.stories.js 1`] = `undefined`;
+
 exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxMeta.stories.mdx 1`] = `
 {
   "meta": {
@@ -165,7 +167,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/MdxSt
 
 exports[`parseStoriesFile > parses story file project/v6/src/autoTitle/mdx/PlainMarkdown.stories.mdx 1`] = `undefined`;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TitleInterpolation.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TitleInterpolation.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -183,7 +185,7 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TitleInterp
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v6/src/stories/TopHoisted.stories.js 1`] = `
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TopHoisted.stories.js 1`] = `
 {
   "meta": {
     "id": undefined,
@@ -195,6 +197,78 @@ exports[`parseStoriesFile > parses story file project/v6/src/stories/TopHoisted.
       "location": [Ln 12, Col 13] - [Ln 12, Col 23],
       "name": "Top Hoisted",
       "nameForId": "Top Hoisted",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "title": "Test/TypeScript/Identifier Default Exported as Meta",
+  },
+  "stories": [
+    {
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "name": "Type Script Story",
+      "nameForId": "Type Script Story",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "title": "Test/TypeScript/Identifier exported satisfies as Meta",
+  },
+  "stories": [
+    {
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "name": "Type Script Story",
+      "nameForId": "Type Script Story",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
+    "title": "Test/TypeScript/Identifier exported satisfies Meta",
+  },
+  "stories": [
+    {
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "name": "Type Script Story",
+      "nameForId": "Type Script Story",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v6/src/stories/v6-only/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 6, Col 6] - [Ln 8, Col 24],
+    "title": "Test/TypeScript/Identifier Satisfies as Meta",
+  },
+  "stories": [
+    {
+      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
+      "name": "Type Script Story",
+      "nameForId": "Type Script Story",
     },
   ],
   "type": "csf",
@@ -218,8 +292,6 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/Extra
   "type": "csf",
 }
 `;
-
-exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/NoDefaultExport.stories.js 1`] = `undefined`;
 
 exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/nested/WithoutTitle.stories.js 1`] = `
 {
@@ -272,6 +344,18 @@ exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/csf/withI
     },
   ],
   "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/autoTitle/mdx/WithTitle.stories.mdx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 0],
+    "title": "mdx/With specified title",
+  },
+  "stories": [],
+  "type": "mdx",
 }
 `;
 
@@ -335,8 +419,6 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfV1.stori
   "type": "csf",
 }
 `;
-
-exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfWithMdx.stories.js 1`] = `undefined`;
 
 exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfWithMdx.stories.mdx 1`] = `
 {
@@ -439,6 +521,29 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/CustomName.
       "location": [Ln 42, Col 13] - [Ln 42, Col 30],
       "name": "     Leading whitespace",
       "nameForId": "Leading Whitespace",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/stories/Decorators.stories.tsx 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "title": "Example/Decorators",
+  },
+  "stories": [
+    {
+      "location": [Ln 32, Col 13] - [Ln 32, Col 27],
+      "name": "Decorated Class",
+      "nameForId": "Decorated Class",
+    },
+    {
+      "location": [Ln 34, Col 13] - [Ln 34, Col 35],
+      "name": "Decorated Class With Args",
+      "nameForId": "Decorated Class With Args",
     },
   ],
   "type": "csf",
@@ -904,84 +1009,12 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptI
 }
 `;
 
-exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierDefaultAsMeta.stories.ts 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
-    "title": "Test/TypeScript/Identifier Default Exported as Meta",
-  },
-  "stories": [
-    {
-      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
-      "name": "Type Script Story",
-      "nameForId": "Type Script Story",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
-exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
-    "title": "Test/TypeScript/Identifier exported satisfies as Meta",
-  },
-  "stories": [
-    {
-      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
-      "name": "Type Script Story",
-      "nameForId": "Type Script Story",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
-exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 6, Col 6] - [Ln 8, Col 1],
-    "title": "Test/TypeScript/Identifier exported satisfies Meta",
-  },
-  "stories": [
-    {
-      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
-      "name": "Type Script Story",
-      "nameForId": "Type Script Story",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
 exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierSatisfies.stories.ts 1`] = `
 {
   "meta": {
     "id": undefined,
     "location": [Ln 6, Col 6] - [Ln 8, Col 16],
     "title": "Test/TypeScript/Identifier Satisfies",
-  },
-  "stories": [
-    {
-      "location": [Ln 3, Col 13] - [Ln 3, Col 28],
-      "name": "Type Script Story",
-      "nameForId": "Type Script Story",
-    },
-  ],
-  "type": "csf",
-}
-`;
-
-exports[`parseStoriesFile > parses story file project/v7/src/stories/TypeScriptIdentifierSatisfiesAsMeta.stories.ts 1`] = `
-{
-  "meta": {
-    "id": undefined,
-    "location": [Ln 6, Col 6] - [Ln 8, Col 24],
-    "title": "Test/TypeScript/Identifier Satisfies as Meta",
   },
   "stories": [
     {

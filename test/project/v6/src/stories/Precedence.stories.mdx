@@ -1,0 +1,26 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import * as stories from './BasicCsf.stories.js';
+
+<Meta title="Example/Precedence" />
+
+# Precedence
+
+## Name, ID, story, body
+
+<Story
+  id="example-basic-csf--large"
+  story={stories.Small}
+  name="Story with name, ID, story, body"
+>
+  ID prop > story prop > children prop
+</Story>
+
+## Name, story, body
+
+<Story story={stories.Small} name="Story with name, story, body">
+  story prop > children prop
+</Story>
+
+## Name, body
+
+<Story name="Story with name, body">children prop</Story>

@@ -3,7 +3,7 @@ import { getTestStoryFiles } from '../../test/util/getTestStoryFiles';
 
 describe('StoryExplorerStoryFile', async () => {
   const storyFiles = [
-    ...(await getTestStoryFiles('6')),
+    ...(await getTestStoryFiles('6', '.config-unittest')),
     ...(await getTestStoryFiles('7')),
   ];
 

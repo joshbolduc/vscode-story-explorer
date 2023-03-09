@@ -72,15 +72,421 @@
         "__isArgsStory": false
       }
     },
+    "example-mdx-importing-csf--basic": {
+      "id": "example-mdx-importing-csf--basic",
+      "name": "Story name from JS",
+      "title": "Example/MDX importing CSF",
+      "importPath": "./src/stories/CsfWithMdx.stories.mdx",
+      "kind": "Example/MDX importing CSF",
+      "story": "Story name from JS",
+      "parameters": {
+        "fileName": "./src/stories/CsfWithMdx.stories.mdx",
+        "framework": "react",
+        "__id": "example-mdx-importing-csf--basic",
+        "__isArgsStory": true
+      }
+    },
+    "example-mdx-importing-csf--basic-2": {
+      "id": "example-mdx-importing-csf--basic-2",
+      "name": "Story name from MDX",
+      "title": "Example/MDX importing CSF",
+      "importPath": "./src/stories/CsfWithMdx.stories.mdx",
+      "kind": "Example/MDX importing CSF",
+      "story": "Story name from MDX",
+      "parameters": {
+        "fileName": "./src/stories/CsfWithMdx.stories.mdx",
+        "framework": "react",
+        "__id": "example-mdx-importing-csf--basic-2",
+        "__isArgsStory": true
+      }
+    },
+    "example-mdx-importing-csf--basic-3": {
+      "id": "example-mdx-importing-csf--basic-3",
+      "name": "Basic 3",
+      "title": "Example/MDX importing CSF",
+      "importPath": "./src/stories/CsfWithMdx.stories.mdx",
+      "kind": "Example/MDX importing CSF",
+      "story": "Basic 3",
+      "parameters": {
+        "fileName": "./src/stories/CsfWithMdx.stories.mdx",
+        "framework": "react",
+        "__id": "example-mdx-importing-csf--basic-3",
+        "__isArgsStory": true
+      }
+    },
+    "example-precedence--small": {
+      "id": "example-precedence--small",
+      "name": "Story with name, story, body",
+      "title": "Example/Precedence",
+      "importPath": "./src/stories/Precedence.stories.mdx",
+      "kind": "Example/Precedence",
+      "story": "Story with name, story, body",
+      "parameters": {
+        "fileName": "./src/stories/Precedence.stories.mdx",
+        "framework": "react",
+        "__id": "example-precedence--small",
+        "__isArgsStory": true
+      }
+    },
+    "example-precedence--story-with-name-body": {
+      "id": "example-precedence--story-with-name-body",
+      "name": "Story with name, body",
+      "title": "Example/Precedence",
+      "importPath": "./src/stories/Precedence.stories.mdx",
+      "kind": "Example/Precedence",
+      "story": "Story with name, body",
+      "parameters": {
+        "fileName": "./src/stories/Precedence.stories.mdx",
+        "framework": "react",
+        "__id": "example-precedence--story-with-name-body",
+        "__isArgsStory": false
+      }
+    },
+    "example-basic-csf--primary": {
+      "id": "example-basic-csf--primary",
+      "name": "Primary",
+      "title": "Example/Basic CSF",
+      "importPath": "./src/stories/BasicCsf.stories.js",
+      "kind": "Example/Basic CSF",
+      "story": "Primary",
+      "parameters": {
+        "fileName": "./src/stories/BasicCsf.stories.js",
+        "framework": "react",
+        "__id": "example-basic-csf--primary",
+        "__isArgsStory": true
+      }
+    },
+    "example-basic-csf--secondary": {
+      "id": "example-basic-csf--secondary",
+      "name": "Secondary",
+      "title": "Example/Basic CSF",
+      "importPath": "./src/stories/BasicCsf.stories.js",
+      "kind": "Example/Basic CSF",
+      "story": "Secondary",
+      "parameters": {
+        "fileName": "./src/stories/BasicCsf.stories.js",
+        "framework": "react",
+        "__id": "example-basic-csf--secondary",
+        "__isArgsStory": true
+      }
+    },
+    "example-basic-csf--large": {
+      "id": "example-basic-csf--large",
+      "name": "Large",
+      "title": "Example/Basic CSF",
+      "importPath": "./src/stories/BasicCsf.stories.js",
+      "kind": "Example/Basic CSF",
+      "story": "Large",
+      "parameters": {
+        "fileName": "./src/stories/BasicCsf.stories.js",
+        "framework": "react",
+        "__id": "example-basic-csf--large",
+        "__isArgsStory": true
+      }
+    },
+    "example-basic-csf--small": {
+      "id": "example-basic-csf--small",
+      "name": "Story with name, story, body",
+      "title": "Example/Basic CSF",
+      "importPath": "./src/stories/BasicCsf.stories.js",
+      "kind": "Example/Basic CSF",
+      "story": "Story with name, story, body",
+      "parameters": {
+        "fileName": "./src/stories/BasicCsf.stories.js",
+        "framework": "react",
+        "__id": "example-basic-csf--small",
+        "__isArgsStory": true
+      }
+    },
+    "example-csf-v1--v-1-story-name": {
+      "id": "example-csf-v1--v-1-story-name",
+      "name": "Renamed via non-hoisted story",
+      "title": "Example/CSF v1",
+      "importPath": "./src/stories/CsfV1.stories.js",
+      "kind": "Example/CSF v1",
+      "story": "Renamed via non-hoisted story",
+      "parameters": {
+        "fileName": "./src/stories/CsfV1.stories.js",
+        "framework": "react",
+        "__id": "example-csf-v1--v-1-story-name",
+        "__isArgsStory": false
+      }
+    },
+    "example-csf-v1--v-2-v-1-story-name": {
+      "id": "example-csf-v1--v-2-v-1-story-name",
+      "name": "v2 name override",
+      "title": "Example/CSF v1",
+      "importPath": "./src/stories/CsfV1.stories.js",
+      "kind": "Example/CSF v1",
+      "story": "v2 name override",
+      "parameters": {
+        "fileName": "./src/stories/CsfV1.stories.js",
+        "framework": "react",
+        "__id": "example-csf-v1--v-2-v-1-story-name",
+        "__isArgsStory": false
+      }
+    },
+    "example-csf-v1--v-2-v-1-story-name-empty": {
+      "id": "example-csf-v1--v-2-v-1-story-name-empty",
+      "name": "v1 name should be used",
+      "title": "Example/CSF v1",
+      "importPath": "./src/stories/CsfV1.stories.js",
+      "kind": "Example/CSF v1",
+      "story": "v1 name should be used",
+      "parameters": {
+        "fileName": "./src/stories/CsfV1.stories.js",
+        "framework": "react",
+        "__id": "example-csf-v1--v-2-v-1-story-name-empty",
+        "__isArgsStory": false
+      }
+    },
+    "example-custom-name--custom-name": {
+      "id": "example-custom-name--custom-name",
+      "name": "Custom story name",
+      "title": "Example/Custom Name",
+      "importPath": "./src/stories/CustomName.stories.js",
+      "kind": "Example/Custom Name",
+      "story": "Custom story name",
+      "parameters": {
+        "fileName": "./src/stories/CustomName.stories.js",
+        "framework": "react",
+        "__id": "example-custom-name--custom-name",
+        "__isArgsStory": true
+      }
+    },
+    "example-custom-name--overridden": {
+      "id": "example-custom-name--overridden",
+      "name": "Custom story name override",
+      "title": "Example/Custom Name",
+      "importPath": "./src/stories/CustomName.stories.js",
+      "kind": "Example/Custom Name",
+      "story": "Custom story name override",
+      "parameters": {
+        "fileName": "./src/stories/CustomName.stories.js",
+        "framework": "react",
+        "__id": "example-custom-name--overridden",
+        "__isArgsStory": true
+      }
+    },
+    "example-custom-name--named-via-variable": {
+      "id": "example-custom-name--named-via-variable",
+      "name": "Custom story name var",
+      "title": "Example/Custom Name",
+      "importPath": "./src/stories/CustomName.stories.js",
+      "kind": "Example/Custom Name",
+      "story": "Custom story name var",
+      "parameters": {
+        "fileName": "./src/stories/CustomName.stories.js",
+        "framework": "react",
+        "__id": "example-custom-name--named-via-variable",
+        "__isArgsStory": true
+      }
+    },
+    "example-custom-name--interpolated-name": {
+      "id": "example-custom-name--interpolated-name",
+      "name": "Custom story name var in template string",
+      "title": "Example/Custom Name",
+      "importPath": "./src/stories/CustomName.stories.js",
+      "kind": "Example/Custom Name",
+      "story": "Custom story name var in template string",
+      "parameters": {
+        "fileName": "./src/stories/CustomName.stories.js",
+        "framework": "react",
+        "__id": "example-custom-name--interpolated-name",
+        "__isArgsStory": true
+      }
+    },
+    "example-custom-name--empty-name": {
+      "id": "example-custom-name--empty-name",
+      "name": "Empty Name",
+      "title": "Example/Custom Name",
+      "importPath": "./src/stories/CustomName.stories.js",
+      "kind": "Example/Custom Name",
+      "story": "Empty Name",
+      "parameters": {
+        "fileName": "./src/stories/CustomName.stories.js",
+        "framework": "react",
+        "__id": "example-custom-name--empty-name",
+        "__isArgsStory": true
+      }
+    },
+    "example-custom-name--leading-whitespace": {
+      "id": "example-custom-name--leading-whitespace",
+      "name": "     Leading whitespace",
+      "title": "Example/Custom Name",
+      "importPath": "./src/stories/CustomName.stories.js",
+      "kind": "Example/Custom Name",
+      "story": "     Leading whitespace",
+      "parameters": {
+        "fileName": "./src/stories/CustomName.stories.js",
+        "framework": "react",
+        "__id": "example-custom-name--leading-whitespace",
+        "__isArgsStory": true
+      }
+    },
+    "example-export-styles--normal-export": {
+      "id": "example-export-styles--normal-export",
+      "name": "Normal Export",
+      "title": "Example/Export Styles",
+      "importPath": "./src/stories/ExportStyles.stories.js",
+      "kind": "Example/Export Styles",
+      "story": "Normal Export",
+      "parameters": {
+        "fileName": "./src/stories/ExportStyles.stories.js",
+        "framework": "react",
+        "__id": "example-export-styles--normal-export",
+        "__isArgsStory": true
+      }
+    },
+    "example-export-styles--alternative-export-name": {
+      "id": "example-export-styles--alternative-export-name",
+      "name": "Alternative Export Name",
+      "title": "Example/Export Styles",
+      "importPath": "./src/stories/ExportStyles.stories.js",
+      "kind": "Example/Export Styles",
+      "story": "Alternative Export Name",
+      "parameters": {
+        "fileName": "./src/stories/ExportStyles.stories.js",
+        "framework": "react",
+        "__id": "example-export-styles--alternative-export-name",
+        "__isArgsStory": true
+      }
+    },
+    "example-export-styles--export-name-overridden": {
+      "id": "example-export-styles--export-name-overridden",
+      "name": "Override name 3",
+      "title": "Example/Export Styles",
+      "importPath": "./src/stories/ExportStyles.stories.js",
+      "kind": "Example/Export Styles",
+      "story": "Override name 3",
+      "parameters": {
+        "fileName": "./src/stories/ExportStyles.stories.js",
+        "framework": "react",
+        "__id": "example-export-styles--export-name-overridden",
+        "__isArgsStory": true
+      }
+    },
+    "test-story-declarations--const-declarator": {
+      "id": "test-story-declarations--const-declarator",
+      "name": "Const Declarator",
+      "title": "Test/Story Declarations",
+      "importPath": "./src/stories/StoryDeclarations.stories.js",
+      "kind": "Test/Story Declarations",
+      "story": "Const Declarator",
+      "parameters": {
+        "fileName": "./src/stories/StoryDeclarations.stories.js",
+        "framework": "react",
+        "__id": "test-story-declarations--const-declarator",
+        "__isArgsStory": false
+      }
+    },
+    "test-story-declarations--separate-declarator": {
+      "id": "test-story-declarations--separate-declarator",
+      "name": "Separate Declarator",
+      "title": "Test/Story Declarations",
+      "importPath": "./src/stories/StoryDeclarations.stories.js",
+      "kind": "Test/Story Declarations",
+      "story": "Separate Declarator",
+      "parameters": {
+        "fileName": "./src/stories/StoryDeclarations.stories.js",
+        "framework": "react",
+        "__id": "test-story-declarations--separate-declarator",
+        "__isArgsStory": false
+      }
+    },
+    "test-story-declarations--separate-declarator-2": {
+      "id": "test-story-declarations--separate-declarator-2",
+      "name": "Separate declarator with story name",
+      "title": "Test/Story Declarations",
+      "importPath": "./src/stories/StoryDeclarations.stories.js",
+      "kind": "Test/Story Declarations",
+      "story": "Separate declarator with story name",
+      "parameters": {
+        "fileName": "./src/stories/StoryDeclarations.stories.js",
+        "framework": "react",
+        "__id": "test-story-declarations--separate-declarator-2",
+        "__isArgsStory": false
+      }
+    },
+    "test-story-declarations--multiple-one": {
+      "id": "test-story-declarations--multiple-one",
+      "name": "Multiple One",
+      "title": "Test/Story Declarations",
+      "importPath": "./src/stories/StoryDeclarations.stories.js",
+      "kind": "Test/Story Declarations",
+      "story": "Multiple One",
+      "parameters": {
+        "fileName": "./src/stories/StoryDeclarations.stories.js",
+        "framework": "react",
+        "__id": "test-story-declarations--multiple-one",
+        "__isArgsStory": false
+      }
+    },
+    "test-story-declarations--multiple-two": {
+      "id": "test-story-declarations--multiple-two",
+      "name": "Multiple two (given name)",
+      "title": "Test/Story Declarations",
+      "importPath": "./src/stories/StoryDeclarations.stories.js",
+      "kind": "Test/Story Declarations",
+      "story": "Multiple two (given name)",
+      "parameters": {
+        "fileName": "./src/stories/StoryDeclarations.stories.js",
+        "framework": "react",
+        "__id": "test-story-declarations--multiple-two",
+        "__isArgsStory": false
+      }
+    },
+    "test-story-declarations--function-story": {
+      "id": "test-story-declarations--function-story",
+      "name": "Renamed Function Story",
+      "title": "Test/Story Declarations",
+      "importPath": "./src/stories/StoryDeclarations.stories.js",
+      "kind": "Test/Story Declarations",
+      "story": "Renamed Function Story",
+      "parameters": {
+        "fileName": "./src/stories/StoryDeclarations.stories.js",
+        "framework": "react",
+        "__id": "test-story-declarations--function-story",
+        "__isArgsStory": false
+      }
+    },
+    "test-story-declarations--separate-function-story": {
+      "id": "test-story-declarations--separate-function-story",
+      "name": "Separate Function Story",
+      "title": "Test/Story Declarations",
+      "importPath": "./src/stories/StoryDeclarations.stories.js",
+      "kind": "Test/Story Declarations",
+      "story": "Separate Function Story",
+      "parameters": {
+        "fileName": "./src/stories/StoryDeclarations.stories.js",
+        "framework": "react",
+        "__id": "test-story-declarations--separate-function-story",
+        "__isArgsStory": false
+      }
+    },
+    "test-story-declarations--separate-function-story-2": {
+      "id": "test-story-declarations--separate-function-story-2",
+      "name": "Separate function story with story name",
+      "title": "Test/Story Declarations",
+      "importPath": "./src/stories/StoryDeclarations.stories.js",
+      "kind": "Test/Story Declarations",
+      "story": "Separate function story with story name",
+      "parameters": {
+        "fileName": "./src/stories/StoryDeclarations.stories.js",
+        "framework": "react",
+        "__id": "test-story-declarations--separate-function-story-2",
+        "__isArgsStory": false
+      }
+    },
     "example-title-interpolation--primary": {
       "id": "example-title-interpolation--primary",
       "name": "Primary",
       "title": "Example/Title Interpolation",
-      "importPath": "./src/stories/TitleInterpolation.stories.js",
+      "importPath": "./src/stories/v6-only/TitleInterpolation.stories.js",
       "kind": "Example/Title Interpolation",
       "story": "Primary",
       "parameters": {
-        "fileName": "./src/stories/TitleInterpolation.stories.js",
+        "fileName": "./src/stories/v6-only/TitleInterpolation.stories.js",
         "framework": "react",
         "__id": "example-title-interpolation--primary",
         "__isArgsStory": true
@@ -90,14 +496,70 @@
       "id": "top-hoisted--top-hoisted",
       "name": "Top Hoisted",
       "title": "Top Hoisted",
-      "importPath": "./src/stories/TopHoisted.stories.js",
+      "importPath": "./src/stories/v6-only/TopHoisted.stories.js",
       "kind": "Top Hoisted",
       "story": "Top Hoisted",
       "parameters": {
-        "fileName": "./src/stories/TopHoisted.stories.js",
+        "fileName": "./src/stories/v6-only/TopHoisted.stories.js",
         "framework": "react",
         "__id": "top-hoisted--top-hoisted",
         "__isArgsStory": true
+      }
+    },
+    "test-typescript-identifier-default-exported-as-meta--type-script-story": {
+      "id": "test-typescript-identifier-default-exported-as-meta--type-script-story",
+      "name": "Type Script Story",
+      "title": "Test/TypeScript/Identifier Default Exported as Meta",
+      "importPath": "./src/stories/v6-only/TypeScriptIdentifierDefaultAsMeta.stories.ts",
+      "kind": "Test/TypeScript/Identifier Default Exported as Meta",
+      "story": "Type Script Story",
+      "parameters": {
+        "fileName": "./src/stories/v6-only/TypeScriptIdentifierDefaultAsMeta.stories.ts",
+        "framework": "react",
+        "__id": "test-typescript-identifier-default-exported-as-meta--type-script-story",
+        "__isArgsStory": false
+      }
+    },
+    "test-typescript-identifier-exported-satisfies-as-meta--type-script-story": {
+      "id": "test-typescript-identifier-exported-satisfies-as-meta--type-script-story",
+      "name": "Type Script Story",
+      "title": "Test/TypeScript/Identifier exported satisfies as Meta",
+      "importPath": "./src/stories/v6-only/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts",
+      "kind": "Test/TypeScript/Identifier exported satisfies as Meta",
+      "story": "Type Script Story",
+      "parameters": {
+        "fileName": "./src/stories/v6-only/TypeScriptIdentifierDefaultSatisfiesAsMeta.stories.ts",
+        "framework": "react",
+        "__id": "test-typescript-identifier-exported-satisfies-as-meta--type-script-story",
+        "__isArgsStory": false
+      }
+    },
+    "test-typescript-identifier-exported-satisfies-meta--type-script-story": {
+      "id": "test-typescript-identifier-exported-satisfies-meta--type-script-story",
+      "name": "Type Script Story",
+      "title": "Test/TypeScript/Identifier exported satisfies Meta",
+      "importPath": "./src/stories/v6-only/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts",
+      "kind": "Test/TypeScript/Identifier exported satisfies Meta",
+      "story": "Type Script Story",
+      "parameters": {
+        "fileName": "./src/stories/v6-only/TypeScriptIdentifierDefaultSatisfiesMeta.stories.ts",
+        "framework": "react",
+        "__id": "test-typescript-identifier-exported-satisfies-meta--type-script-story",
+        "__isArgsStory": false
+      }
+    },
+    "test-typescript-identifier-satisfies-as-meta--type-script-story": {
+      "id": "test-typescript-identifier-satisfies-as-meta--type-script-story",
+      "name": "Type Script Story",
+      "title": "Test/TypeScript/Identifier Satisfies as Meta",
+      "importPath": "./src/stories/v6-only/TypeScriptIdentifierSatisfiesAsMeta.stories.ts",
+      "kind": "Test/TypeScript/Identifier Satisfies as Meta",
+      "story": "Type Script Story",
+      "parameters": {
+        "fileName": "./src/stories/v6-only/TypeScriptIdentifierSatisfiesAsMeta.stories.ts",
+        "framework": "react",
+        "__id": "test-typescript-identifier-satisfies-as-meta--type-script-story",
+        "__isArgsStory": false
       }
     }
   }

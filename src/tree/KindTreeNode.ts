@@ -33,16 +33,18 @@ export class KindTreeNode extends BaseTreeNode {
       return undefined;
     }
 
-    // Use component icon if there are no nested children
+    // Use folder icon if there are nested children or docs
     if (
-      this.children.every(
-        (child) => child.type !== 'kind' || child.children.length === 0,
+      this.children.some(
+        (child) =>
+          (child.type === 'kind' && child.children.length > 0) ||
+          child.getEntry()?.type === 'docs',
       )
     ) {
-      return 'component';
+      return 'folder';
     }
 
-    return 'folder';
+    return 'component';
   }
 
   /**

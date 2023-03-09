@@ -3,7 +3,7 @@
   "displayName": "Story Explorer",
   "description": "Browse and preview Storybook stories inside VS Code",
   "publisher": "joshbolduc",
-  "version": "0.8.1",
+  "version": "0.8.3",
   "preview": true,
   "icon": "icon.png",
   "repository": {
@@ -16,7 +16,7 @@
   "homepage": "https://github.com/joshbolduc/vscode-story-explorer",
   "license": "MIT",
   "engines": {
-    "npm": "^6.0.0",
+    "npm": "^9.0.0",
     "vscode": "^1.58.0"
   },
   "categories": [
@@ -593,8 +593,8 @@
     }
   },
   "devDependencies": {
-    "@babel/parser": "7.20.15",
-    "@babel/traverse": "7.20.13",
+    "@babel/parser": "7.21.2",
+    "@babel/traverse": "7.21.2",
     "@babel/types": "7.20.7",
     "@commitlint/config-conventional": "17.4.2",
     "@componentdriven/csf": "0.0.2-alpha.0",
@@ -611,7 +611,7 @@
     "@types/vscode-webview": "1.57.1",
     "@typescript-eslint/eslint-plugin": "5.50.0",
     "@typescript-eslint/parser": "5.50.0",
-    "@vitest/coverage-c8": "0.28.4",
+    "@vitest/coverage-c8": "0.29.1",
     "@vscode/vsce": "2.17.0",
     "concurrently": "7.6.0",
     "esbuild": "0.17.5",
@@ -631,7 +631,7 @@
     "standard-version": "9.5.0",
     "ts-eager": "2.0.2",
     "typescript": "4.9.5",
-    "vitest": "0.28.4",
+    "vitest": "0.29.1",
     "vscode-uri": "3.0.7"
   }
 }

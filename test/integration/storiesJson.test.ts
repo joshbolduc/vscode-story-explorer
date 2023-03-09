@@ -1,6 +1,5 @@
 import { readFile } from 'fs/promises';
 import { relative, resolve } from 'path';
-import merge from 'lodash/merge';
 import omit from 'lodash/omit';
 import { describe, expect, it } from 'vitest';
 import {
@@ -17,6 +16,7 @@ interface StoriesJsonV3Map {
     importPath: string;
     kind: string;
     story: string;
+    tags?: string[] | undefined;
     parameters: {
       fileName: string;
       framework: string;
@@ -46,9 +46,6 @@ describe('stories.json', () => {
   }[] = [
     {
       version: '6',
-    },
-    {
-      version: '7',
       corrections: {
         // BUG: name assigned to MDX story importing CSF story is not reflected in
         // imported CSF story
@@ -61,14 +58,61 @@ describe('stories.json', () => {
           name: 'Story name from JS',
         },
       },
-      exclusions: [
-        // not supported by Storybook
-        'test-typescript-identifier-default-exported-as-meta--type-script-story',
-        'test-typescript-identifier-exported-as-meta--type-script-story',
-        'test-typescript-identifier-exported-satisfies-as-meta--type-script-story',
-        'test-typescript-identifier-exported-satisfies-meta--type-script-story',
-        'test-typescript-identifier-satisfies-as-meta--type-script-story',
-      ],
+    },
+    {
+      version: '7',
+      corrections: {
+        // autodocs NYI
+        'custom-title-prefix-second-level-mdx-with-specified-title--page': {
+          id: 'custom-title-prefix-second-level-mdx-with-specified-title--autodoc',
+          name: 'Autodoc',
+        },
+        'example-mdx-docs-only--page': {
+          id: 'example-mdx-docs-only--autodoc',
+          name: 'Autodoc',
+        },
+        'mdx-docs-at-top-level--page': {
+          id: 'mdx-docs-at-top-level--autodoc',
+          name: 'Autodoc',
+        },
+        // storyStoreV7 limitations
+        'example-csf-v1--v-1-story-name': {
+          name: 'V 1 Story Name',
+        },
+        'example-csf-v1--v-2-v-1-story-name-empty': {
+          name: '',
+        },
+        'example-custom-name--named-via-variable': {
+          name: 'Named Via Variable',
+        },
+        'example-custom-name--interpolated-name': {
+          name: 'Interpolated Name',
+        },
+        'example-custom-name--empty-name': {
+          name: '',
+        },
+        'example-export-styles--normal-export': {
+          name: 'NormalExport',
+        },
+        'example-export-styles--alternative-export-name': {
+          name: 'AlternativeExportName',
+        },
+        'example-export-styles--export-name-overridden': {
+          name: 'ExportNameOverridden',
+        },
+        'test-story-declarations--separate-declarator': {
+          name: 'SeparateDeclarator',
+        },
+        'test-story-declarations--separate-declarator-2': {
+          name: 'SeparateDeclarator2',
+        },
+        'test-story-declarations--separate-function-story': {
+          name: 'SeparateFunctionStory',
+        },
+        'test-story-declarations--separate-function-story-2': {
+          name: 'SeparateFunctionStory2',
+        },
+      },
     },
   ];
 
@@ -78,12 +122,7 @@ describe('stories.json', () => {
         .flatMap((storyFile) => {
           return storyFile
             .getStoriesAndDocs()
-            .filter(
-              (story) =>
-                story.type === 'story' ||
-                // Only v6 includes docs-only stories in stories.json
-                (version === '6' && storyFile.isDocsOnly()),
-            )
+            .filter((story) => story.type === 'story' || storyFile.isDocsOnly())
             .map((story) => ({
               id: story.id,
               name: story.name,
@@ -92,6 +131,7 @@ describe('stories.json', () => {
                 `/mock/basedir/project/v${version}`,
                 storyFile.getUri().path,
               )}`,
+              ...corrections?.[story.id],
             }));
         })
         .reduce<Record<string, StoryTestInfo>>((acc, cur) => {
@@ -109,21 +149,26 @@ describe('stories.json', () => {
         generatedStoriesJsonStr.toString(),
       ) as StoriesJsonV3;
 
-      const referenceStories = Object.entries(storiesJson.stories).reduce<
-        Record<string, StoryTestInfo>
-      >((acc, [id, story]) => {
-        acc[id] = {
-          id: story.id,
-          name: story.name,
-          title: story.title,
-          importPath: story.importPath,
-        };
-        return acc;
-      }, {});
+      const referenceStories = Object.entries(storiesJson.stories)
+        // TODO: v7 autodocs support NYI
+        .filter(
+          ([, entry]) =>
+            !entry.tags?.includes('autodocs') ||
+            entry.id in transformedStoriesJson,
+        )
+        .reduce<Record<string, StoryTestInfo>>((acc, [id, story]) => {
+          acc[id] = {
+            id: story.id,
+            name: story.name,
+            title: story.title,
+            importPath: story.importPath,
+          };
+          return acc;
+        }, {});
 
-      expect(
-        omit(merge(transformedStoriesJson, corrections), exclusions),
-      ).toEqual(referenceStories);
+      expect(omit(transformedStoriesJson, exclusions)).toEqual(
+        referenceStories,
+      );
     }),
   );
 });
