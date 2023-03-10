@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.8.3...v0.9.0) (2023-03-10)
+
+### Features
+
+- include `*.mdx` in default glob with Storybook 7 ([2c58254](https://github.com/joshbolduc/vscode-story-explorer/commit/2c58254aa0d087e2af7f8fbfbdd284610244483b)), closes [#758](https://github.com/joshbolduc/vscode-story-explorer/issues/758)
+- support attached docs ([71f35a6](https://github.com/joshbolduc/vscode-story-explorer/commit/71f35a651c4ac4c76195d57980ef92c386cf04db)), closes [#760](https://github.com/joshbolduc/vscode-story-explorer/issues/760)
+- support Storybook 7 autodocs ([02677ec](https://github.com/joshbolduc/vscode-story-explorer/commit/02677ecdc5b17115cd3de3476fb729f41c260510)), closes [#759](https://github.com/joshbolduc/vscode-story-explorer/issues/759)
+- support unattached docs ([94682a4](https://github.com/joshbolduc/vscode-story-explorer/commit/94682a41aee48c1b66d91f29ab842a2187d2b54f)), closes [#761](https://github.com/joshbolduc/vscode-story-explorer/issues/761)
+
+### Bug Fixes
+
+- add activation events for `*.mdx` ([133c6b8](https://github.com/joshbolduc/vscode-story-explorer/commit/133c6b88f0d6732b05f0d959003a0fdc649d3c68))
+
 ### [0.8.3](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.8.2...v0.8.3) (2023-03-08)
 
 ### Bug Fixes
