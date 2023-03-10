@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.9.0...v0.9.1) (2023-03-10)
+
+### Bug Fixes
+
+- account for prefixes when suggesting titles ([8447dbb](https://github.com/joshbolduc/vscode-story-explorer/commit/8447dbb97c6b2a407bd1bda63c7dfa570c2437bb))
+
 ## [0.9.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.8.3...v0.9.0) (2023-03-10)
 
 ### Features
