@@ -103,10 +103,6 @@ The method to use to launch the Storybook development server.
 
 - `custom`: Run a custom command
 
-### `storyExplorer.server.internal.npm.args`
-
-Array of command line arguments to pass to the npm script when launching a development server. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `storybook` or `detect`.
-
 ### `storyExplorer.server.internal.npm.dir`
 
 Optional path to the directory containing the `package.json` file with the npm script to use. If your workspace contains multiple `package.json` files with the same script name, you can set this to specify which one to use. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `npm` or `detect`.
