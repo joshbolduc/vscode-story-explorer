@@ -106,6 +106,10 @@ export class KindTreeNode extends BaseTreeNode {
     this.children.push(childNode);
   }
 
+  public updateName(name: string) {
+    this._name = name;
+  }
+
   /**
    * Gets a story that should be considered hoisted to this node. A hoisted
    * story if its name is exactly the same as its parent's display name, and it

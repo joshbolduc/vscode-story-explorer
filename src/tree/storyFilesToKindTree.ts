@@ -1,3 +1,4 @@
+import { sanitize } from '@componentdriven/csf';
 import type { AutodocsConfig } from '../config/autodocs';
 import { logDebug } from '../log/log';
 import type { StoryStore } from '../store/StoryStore';
@@ -42,10 +43,16 @@ const addStoryFileToKindTree = (
   let treeParent: KindTreeNode | undefined;
 
   kindParts.forEach((kindPart, i) => {
+    const kindPartSanitized = sanitize(kindPart);
     const existingChild = (treeParent?.getChildren() ?? rootChildren).find(
       (item): item is KindTreeNode =>
-        item.type === 'kind' && item.name === kindPart,
+        item.type === 'kind' && sanitize(item.name) === kindPartSanitized,
     );
+    if (existingChild) {
+      // If there's a difference between the unsanitized versions of the names,
+      // use the latest one, which seems to match Storybook's behavior.
+      existingChild.updateName(kindPart);
+    }
 
     const kindTreeNode =
       existingChild ??

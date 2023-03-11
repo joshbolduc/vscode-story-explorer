@@ -670,6 +670,54 @@ exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project
 }
 `;
 
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/CaseLower.stories.js 1`] = `
+{
+  "id": "example-cas-ing-lower",
+  "isDocsOnly": false,
+  "stories": [
+    {
+      "id": "example-cas-ing-lower--autodoc",
+      "name": "Autodoc",
+      "type": "docs",
+    },
+    {
+      "id": "example-cas-ing-lower--basic",
+      "name": "Basic",
+      "type": "story",
+    },
+  ],
+  "title": [
+    "Example",
+    "cas_ing",
+    "lower",
+  ],
+}
+`;
+
+exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/CaseUpper.stories.js 1`] = `
+{
+  "id": "example-cas-ing-upper",
+  "isDocsOnly": false,
+  "stories": [
+    {
+      "id": "example-cas-ing-upper--autodoc",
+      "name": "Autodoc",
+      "type": "docs",
+    },
+    {
+      "id": "example-cas-ing-upper--basic",
+      "name": "Basic",
+      "type": "story",
+    },
+  ],
+  "title": [
+    "Example",
+    "CAS-ING",
+    "Upper",
+  ],
+}
+`;
+
 exports[`StoryExplorerStoryFile > parses story file file:///mock/basedir/project/v7/src/stories/CsfV1.stories.js 1`] = `
 {
   "id": "example-csf-v1",

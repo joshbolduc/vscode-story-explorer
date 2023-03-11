@@ -12,15 +12,11 @@ export type BaseTreeNodeConstuctorParams = Pick<
  */
 export abstract class BaseTreeNode {
   /**
-   * The name for this tree node, e.g., a portion of the kind hierarchy or story
-   * name.
-   */
-  public readonly name: string;
-
-  /**
    * The node's parent, if any.
    */
   public readonly parent?: KindTreeNode | undefined;
+
+  protected _name: string;
 
   /**
    * The node's type. `kind` is any intermediate entry or file (including
@@ -30,8 +26,16 @@ export abstract class BaseTreeNode {
   public abstract readonly type: 'kind' | 'story';
 
   public constructor({ name, parent }: BaseTreeNodeConstuctorParams) {
-    this.name = name;
+    this._name = name;
     this.parent = parent;
+  }
+
+  /**
+   * The name for this tree node, e.g., a portion of the kind hierarchy or story
+   * name.
+   */
+  public get name(): string {
+    return this._name;
   }
 
   /**
