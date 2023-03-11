@@ -312,17 +312,6 @@
           ],
           "default": "storybook"
         },
-        "storyExplorer.server.internal.npm.args": {
-          "scope": "window",
-          "markdownDescription": "Array of command line arguments to pass to the npm script when launching a development server. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `storybook` or `detect`.",
-          "type": "array",
-          "items": {
-            "type": [
-              "string",
-              "number"
-            ]
-          }
-        },
         "storyExplorer.server.internal.task.label": {
           "scope": "window",
           "markdownDescription": "Label of the task to run to launch the Storybook development server. Only used when `#storyExplorer.server.internal.launchStrategy#` is set to `task` or `detect`.",

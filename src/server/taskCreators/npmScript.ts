@@ -6,7 +6,6 @@ import { isNonEmptyString } from '../../util/guards/isNonEmptyString';
 import { isTruthy } from '../../util/guards/isTruthy';
 import type { TaskCreatorOptions } from '../TaskCreatorOptions';
 import { fetchVsCodeTask } from '../fetchVsCodeTask';
-import { getSanitizedArgs } from '../getSanitizedArgs';
 
 interface NpmTaskDefinition extends TaskDefinition {
   readonly type: 'npm';
@@ -33,7 +32,7 @@ export const tryGetNpmScriptTask = async (taskOptions: TaskCreatorOptions) => {
 
   const packageDir = readConfiguration('server.internal.npm.dir');
 
-  const npmTask = await fetchVsCodeTask(taskOptions, {
+  return await fetchVsCodeTask(taskOptions, {
     type: 'npm',
     filterFn: (task) => {
       const definition = task.definition as NpmTaskDefinition;
@@ -66,21 +65,4 @@ export const tryGetNpmScriptTask = async (taskOptions: TaskCreatorOptions) => {
       return true;
     },
   });
-
-  if (!npmTask) {
-    return undefined;
-  }
-
-  const args = getSanitizedArgs(readConfiguration('server.internal.npm.args'));
-
-  if (
-    args &&
-    args.length > 0 &&
-    hasProperty('args')(npmTask.execution) &&
-    Array.isArray(npmTask.execution.args)
-  ) {
-    npmTask.execution.args.push('--', ...args);
-  }
-
-  return npmTask;
 };
