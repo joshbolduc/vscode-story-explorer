@@ -23,6 +23,7 @@
       "request": "launch",
       "args": [
         "--extensionDevelopmentPath=${workspaceFolder}",
+        "--disable-extensions",
         "${workspaceFolder}/test/project/v6"
       ],
       "outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -34,6 +35,7 @@
       "request": "launch",
       "args": [
         "--extensionDevelopmentPath=${workspaceFolder}",
+        "--disable-extensions",
         "${workspaceFolder}/test/project/v7"
       ],
       "outFiles": ["${workspaceFolder}/dist/**/*.js"],
