@@ -462,6 +462,17 @@
         }
       }
     },
+    "languages": [
+      {
+        "id": "mdx",
+        "aliases": [
+          "MDX"
+        ],
+        "extensions": [
+          ".mdx"
+        ]
+      }
+    ],
     "menus": {
       "commandPalette": [
         {
