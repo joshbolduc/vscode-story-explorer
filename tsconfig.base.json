@@ -5,7 +5,7 @@
     "target": "esnext",
     "outDir": "out",
     "emitDeclarationOnly": true,
-    "lib": ["ES2019"],
+    "lib": ["ES2020"],
     "sourceMap": true,
     "rootDir": ".",
     "strict": true,
