@@ -1,8 +1,11 @@
+import { firstValueFrom } from 'rxjs';
 import { gte } from 'semver';
 import { Uri, workspace } from 'vscode';
 import { readConfiguration } from '../../util/getConfiguration';
 import { getInstalledPackageVersion } from '../../util/getInstalledPackageVersion';
 import { isNonEmptyString } from '../../util/guards/isNonEmptyString';
+import { storybookVersion } from '../../versions/storybookVersion';
+import { VERSION_7_x_ALPHA } from '../../versions/versions';
 import type { TaskCreatorOptions } from '../TaskCreatorOptions';
 import { createProcessTask } from '../createProcessTask';
 import { getDetectedBinPath } from '../getBinPath';
@@ -21,7 +24,7 @@ const getStorybookCliLocation = async (configDir: Uri | undefined) => {
       try {
         const version = await getInstalledPackageVersion('@storybook/cli', uri);
 
-        if (typeof version === 'string' && gte(version, '7.0.0-alpha.0')) {
+        if (typeof version === 'string' && gte(version, VERSION_7_x_ALPHA)) {
           return true;
         }
       } catch {
@@ -33,6 +36,20 @@ const getStorybookCliLocation = async (configDir: Uri | undefined) => {
   );
 
   return binPath;
+};
+
+// https://github.com/storybookjs/storybook/issues/21055
+const shouldInjectEnvFlags = async () =>
+  gte(await firstValueFrom(storybookVersion), VERSION_7_x_ALPHA);
+
+const getAdjustedArgs = (args: string[], configDirPath: string | undefined) => {
+  return [
+    ...(args.includes('--ci') ? [] : ['--ci']),
+    ...(args.includes('--config-dir') || args.includes('-c') || !configDirPath
+      ? []
+      : ['--config-dir', configDirPath]),
+    ...args,
+  ];
 };
 
 export const tryGetStorybookCliTask = async ({
@@ -49,9 +66,12 @@ export const tryGetStorybookCliTask = async ({
     ? workspace.getWorkspaceFolder(configDir)?.uri.fsPath
     : undefined;
 
-  const args = getSanitizedArgs(
-    readConfiguration('server.internal.storybook.args'),
-  );
+  const userSuppliedArgs =
+    getSanitizedArgs(readConfiguration('server.internal.storybook.args')) ?? [];
 
-  return createProcessTask(binPath, ['dev', ...(args ?? [])], cwd, env);
+  const args = (await shouldInjectEnvFlags())
+    ? getAdjustedArgs(userSuppliedArgs, configDir?.fsPath)
+    : userSuppliedArgs;
+
+  return createProcessTask(binPath, ['dev', ...args], cwd, env);
 };
