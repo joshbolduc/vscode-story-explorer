@@ -574,6 +574,48 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
       Icon: bookmark
       Command: Open file file:///mock/basedir/project/v7/src/stories/BasicCsf.stories.js [Ln 30, Col 13]
 
+  - CAS-ING
+    Collapsed
+    Icon: folder
+
+    - lower
+      Id: file:///mock/basedir/project/v7/src/stories/CaseLower.stories.js
+      File: file:///mock/basedir/project/v7/src/stories/CaseLower.stories.js
+      Collapsed
+      Icon: component
+      Command: Open file
+
+      - Autodoc
+        Id: example-cas-ing-lower--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/CaseLower.stories.js [Ln 8, Col 15]
+
+      - Basic
+        Id: example-cas-ing-lower--basic
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/v7/src/stories/CaseLower.stories.js [Ln 3, Col 13]
+
+    - Upper
+      Id: file:///mock/basedir/project/v7/src/stories/CaseUpper.stories.js
+      File: file:///mock/basedir/project/v7/src/stories/CaseUpper.stories.js
+      Collapsed
+      Icon: component
+      Command: Open file
+
+      - Autodoc
+        Id: example-cas-ing-upper--autodoc
+        Context: story
+        Icon: document
+        Command: Open file file:///mock/basedir/project/v7/src/stories/CaseUpper.stories.js [Ln 8, Col 15]
+
+      - Basic
+        Id: example-cas-ing-upper--basic
+        Context: story
+        Icon: bookmark
+        Command: Open file file:///mock/basedir/project/v7/src/stories/CaseUpper.stories.js [Ln 3, Col 13]
+
   - CSF v1
     Id: file:///mock/basedir/project/v7/src/stories/CsfV1.stories.js
     File: file:///mock/basedir/project/v7/src/stories/CsfV1.stories.js

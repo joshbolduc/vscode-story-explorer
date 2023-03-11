@@ -645,6 +645,44 @@ exports[`parseStoriesFile > parses story file project/v7/src/stories/BasicCsf.st
 }
 `;
 
+exports[`parseStoriesFile > parses story file project/v7/src/stories/CaseLower.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 9, Col 15] - [Ln 11, Col 1],
+    "tags": undefined,
+    "title": "Example/cas_ing/lower",
+  },
+  "stories": [
+    {
+      "location": [Ln 4, Col 13] - [Ln 4, Col 18],
+      "name": "Basic",
+      "nameForId": "Basic",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/stories/CaseUpper.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 9, Col 15] - [Ln 11, Col 1],
+    "tags": undefined,
+    "title": "Example/CAS-ING/Upper",
+  },
+  "stories": [
+    {
+      "location": [Ln 4, Col 13] - [Ln 4, Col 18],
+      "name": "Basic",
+      "nameForId": "Basic",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
 exports[`parseStoriesFile > parses story file project/v7/src/stories/CsfV1.stories.js 1`] = `
 {
   "meta": {
