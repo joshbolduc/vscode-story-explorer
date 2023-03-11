@@ -3,6 +3,7 @@ import { platform } from 'process';
 import netstat from 'node-netstat';
 import pidtree from 'pidtree';
 import { logWarn } from '../log/log';
+import { parseLsOfForPorts } from './parseLsOfForPorts';
 
 const getPortNetstat = (pids: number[]) =>
   new Promise<number | undefined>((resolve, reject) => {
@@ -28,7 +29,7 @@ const getPortNetstat = (pids: number[]) =>
 
 const getPortLsOf = (pids: number[]) =>
   new Promise<number | undefined>((resolve, reject) => {
-    exec(`lsof -aPi -Fn -p ${pids.map(Number).join(',')}`, (error, stdout) => {
+    exec(`lsof -aPni -Fn -p ${pids.map(Number).join(',')}`, (error, stdout) => {
       if (error) {
         if (error.code === 1) {
           resolve(undefined);
@@ -40,12 +41,9 @@ const getPortLsOf = (pids: number[]) =>
         return;
       }
 
-      const lines = stdout.trim().split('\n');
-      const addressLine = lines.find((line) => line.startsWith('n'));
-      const matches = addressLine ? /:([0-9]+)$/.exec(addressLine) : undefined;
-      const [, port] = matches ?? [];
+      const [port] = parseLsOfForPorts(stdout);
 
-      resolve(port === undefined ? undefined : parseInt(port, 10));
+      resolve(port);
     });
   });
 
