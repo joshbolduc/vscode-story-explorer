@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.2](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.9.1...v0.9.2) (2023-03-11)
+
+### Bug Fixes
+
+- add skeleton MDX language contribution ([67201a9](https://github.com/joshbolduc/vscode-story-explorer/commit/67201a946a21ea2f8cf2ab015d78312c35e8a911))
+- avoid confusing outgoing ports with open ports ([41740ab](https://github.com/joshbolduc/vscode-story-explorer/commit/41740abf3babe8f2592c2a1248b73e2628577257))
+- combine tree items with the same sanitized value ([0b61a17](https://github.com/joshbolduc/vscode-story-explorer/commit/0b61a17444c8ad2bfaefb22c243bb5e102f30ec5))
+- remove non-functional npm args setting ([7b8f209](https://github.com/joshbolduc/vscode-story-explorer/commit/7b8f209029af0dfa45ed15ba6cd6b0813e843aff))
+
 ### [0.9.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.9.0...v0.9.1) (2023-03-10)
 
 ### Bug Fixes
