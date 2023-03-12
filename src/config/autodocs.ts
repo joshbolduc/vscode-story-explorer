@@ -10,6 +10,11 @@ export interface AutodocsConfig {
   defaultName: string;
 }
 
+const defaultAutodocsConfig = {
+  autodocs: 'tag',
+  defaultName: 'Docs',
+} as const satisfies AutodocsConfig;
+
 export const autodocsConfig: Observable<AutodocsConfig | undefined> =
   deferAndShare(() =>
     fromMinimumVersion(VERSION_7_x_ALPHA).pipe(
@@ -21,7 +26,7 @@ export const autodocsConfig: Observable<AutodocsConfig | undefined> =
         return storybookConfig.pipe(
           map((value) => {
             if (!value?.config) {
-              return undefined;
+              return defaultAutodocsConfig;
             }
 
             const { config } = value;
@@ -30,9 +35,10 @@ export const autodocsConfig: Observable<AutodocsConfig | undefined> =
               typeof config.docs?.autodocs === 'boolean' ||
               config.docs?.autodocs === 'tag'
                 ? config.docs.autodocs
-                : 'tag';
+                : defaultAutodocsConfig.autodocs;
 
-            const defaultName = config.docs?.defaultName ?? 'Docs';
+            const defaultName =
+              config.docs?.defaultName ?? defaultAutodocsConfig.defaultName;
 
             return { autodocs, defaultName };
           }),
