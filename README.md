@@ -149,6 +149,24 @@ Globs specifying the location of stories in the project relative to the workspac
 
 Controls whether to display story kinds in the stories view that do not contain any valid stories. These items do not appear in Storybook.
 
+### `storyExplorer.storybookConfig.docs.autodocs`
+
+Overrides the `docs.autodocs` portion of the Storybook configuration. This property configures auto-generated documentation pages.
+
+### Options
+
+- `null`: Use the same settings as detected in the Storybook configuration file
+
+- `tag`: Show auto-generated documentation entries for files with the `autodocs` tag
+
+- `true`: Show auto-generated documentation entries for all files
+
+- `false`: Do not show auto-generated documentation entries
+
+### `storyExplorer.storybookConfig.docs.defaultName`
+
+Overrides the `docs.defaultName` portion of the Storybook configuration. This property controls the name of the auto-generated documentation page.
+
 ### `storyExplorer.storybookConfigDir`
 
 Location of the Storybook configuration directory containing `main.js`. By default, Story Explorer will attempt to auto-detect a `.storybook` configuration directory that contains a `main.js` file. If your configuration directory is named something other than `.storybook` or your workspace contains more than one configuration directory, you should manually specify a path to the configuration directory you wish to use.

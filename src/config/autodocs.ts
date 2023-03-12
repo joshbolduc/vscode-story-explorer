@@ -1,6 +1,8 @@
-import { map, Observable, of, switchMap } from 'rxjs';
+import { combineLatest, map, Observable, of, switchMap } from 'rxjs';
+import { isNonEmptyString } from '../util/guards/isNonEmptyString';
 import { deferAndShare } from '../util/rxjs/deferAndShare';
 import { distinctUntilNotStrictEqual } from '../util/rxjs/distinctUntilNotStrictEqual';
+import { fromVsCodeSetting } from '../util/rxjs/fromVsCodeSetting';
 import { fromMinimumVersion } from '../versions/fromMinimumVersion';
 import { VERSION_7_x_ALPHA } from '../versions/versions';
 import { storybookConfig } from './storybookConfig';
@@ -15,6 +17,59 @@ const defaultAutodocsConfig = {
   defaultName: 'Docs',
 } as const satisfies AutodocsConfig;
 
+const isValidAutodocsValue = (
+  value: unknown,
+): value is AutodocsConfig['autodocs'] =>
+  value === 'tag' || typeof value === 'boolean';
+
+const autodocsSetting = fromVsCodeSetting('storybookConfig.docs.autodocs').pipe(
+  switchMap((value) => {
+    if (isValidAutodocsValue(value)) {
+      return of(value);
+    }
+
+    return storybookConfig.pipe(
+      map((configValue) => {
+        if (configValue?.config) {
+          const { config } = configValue;
+
+          const providedValue = config.docs?.autodocs;
+          if (isValidAutodocsValue(providedValue)) {
+            return providedValue;
+          }
+        }
+
+        return defaultAutodocsConfig.autodocs;
+      }),
+    );
+  }),
+);
+
+const defaultNameSetting = fromVsCodeSetting(
+  'storybookConfig.docs.defaultName',
+).pipe(
+  switchMap((value) => {
+    if (isNonEmptyString(value)) {
+      return of(value);
+    }
+
+    return storybookConfig.pipe(
+      map((configValue) => {
+        if (configValue?.config) {
+          const { config } = configValue;
+
+          const providedValue = config.docs?.defaultName;
+          if (isNonEmptyString(providedValue)) {
+            return providedValue;
+          }
+        }
+
+        return defaultAutodocsConfig.defaultName;
+      }),
+    );
+  }),
+);
+
 export const autodocsConfig: Observable<AutodocsConfig | undefined> =
   deferAndShare(() =>
     fromMinimumVersion(VERSION_7_x_ALPHA).pipe(
@@ -23,25 +78,8 @@ export const autodocsConfig: Observable<AutodocsConfig | undefined> =
           return of(undefined);
         }
 
-        return storybookConfig.pipe(
-          map((value) => {
-            if (!value?.config) {
-              return defaultAutodocsConfig;
-            }
-
-            const { config } = value;
-
-            const autodocs =
-              typeof config.docs?.autodocs === 'boolean' ||
-              config.docs?.autodocs === 'tag'
-                ? config.docs.autodocs
-                : defaultAutodocsConfig.autodocs;
-
-            const defaultName =
-              config.docs?.defaultName ?? defaultAutodocsConfig.defaultName;
-
-            return { autodocs, defaultName };
-          }),
+        return combineLatest([autodocsSetting, defaultNameSetting]).pipe(
+          map(([autodocs, defaultName]) => ({ autodocs, defaultName })),
         );
       }),
       distinctUntilNotStrictEqual(),
