@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.9.2...v0.10.0) (2023-03-12)
+
+### Features
+
+- add settings to override Storybook autodocs config ([d8b2c6f](https://github.com/joshbolduc/vscode-story-explorer/commit/d8b2c6f9e2d709da5abfe584c487b187deb47eec))
+
+### Bug Fixes
+
+- add workaround for storybook CLI not honoring environment variables ([6eee046](https://github.com/joshbolduc/vscode-story-explorer/commit/6eee046e2cc604a44c76ff28ed3795390ee69966))
+- use default docs settings when config can't be read ([8f25702](https://github.com/joshbolduc/vscode-story-explorer/commit/8f25702a9e4dd67016210bb3be83a1bd159a7e31))
+
 ### [0.9.2](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.9.1...v0.9.2) (2023-03-11)
 
 ### Bug Fixes
