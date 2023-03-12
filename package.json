@@ -165,6 +165,38 @@
             ".storybook"
           ]
         },
+        "storyExplorer.storybookConfig.docs.autodocs": {
+          "scope": "window",
+          "markdownDescription": "Overrides the `docs.autodocs` portion of the Storybook configuration. This property configures auto-generated documentation pages.",
+          "default": null,
+          "enum": [
+            null,
+            "tag",
+            true,
+            false
+          ],
+          "enumItemLabels": [
+            "Detect from Storybook config",
+            "Tag",
+            "Enabled",
+            "Disabled"
+          ],
+          "markdownEnumDescriptions": [
+            "Use the same settings as detected in the Storybook configuration file",
+            "Show auto-generated documentation entries for files with the `autodocs` tag",
+            "Show auto-generated documentation entries for all files",
+            "Do not show auto-generated documentation entries"
+          ]
+        },
+        "storyExplorer.storybookConfig.docs.defaultName": {
+          "scope": "window",
+          "markdownDescription": "Overrides the `docs.defaultName` portion of the Storybook configuration. This property controls the name of the auto-generated documentation page.",
+          "default": null,
+          "type": "string",
+          "examples": [
+            "Docs"
+          ]
+        },
         "storyExplorer.storiesGlobs": {
           "scope": "window",
           "markdownDescription": "Globs specifying the location of stories in the project relative to the workspace root. By default, stories globs are read from the Storybook configuration file. If specified, this takes precedence over the Storybook configuration file.",
