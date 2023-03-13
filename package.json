@@ -17,7 +17,7 @@
   "license": "MIT",
   "engines": {
     "npm": "^9.0.0",
-    "vscode": "^1.58.0"
+    "vscode": "^1.66.0"
   },
   "categories": [
     "Other"
@@ -607,14 +607,14 @@
     "build": "npm run -s build:webview && npm run -s build:extension",
     "build:extension": "npm run -s build:extension:base -- --sourcemap",
     "build:webview": "npm run -s build:webview:base -- --sourcemap=inline",
-    "build:extension:base": "esbuild ./src/index.ts --bundle --outdir=dist/extension --external:vscode --loader:.html=text --format=cjs --platform=node --target=node14.16.0",
+    "build:extension:base": "esbuild ./src/index.ts --bundle --outdir=dist/extension --external:vscode --loader:.html=text --format=cjs --platform=node --target=node16.13.0",
     "build:webview:base": "esbuild ./webview/entry-story.ts ./webview/entry-host.ts --bundle --loader:.html=text --outdir=dist/webview --target=chrome89",
     "watch": "concurrently npm:watch:webview npm:watch:extension",
     "watch:extension": "npm run -s build:extension -- --watch",
     "watch:webview": "npm run -s build:webview -- --watch",
     "build:production": "npm run -s build:webview:base -- --minify && npm run -s build:extension:base -- --minify",
     "package": "npm run -s build:production && vsce package --githubBranch main",
-    "deploy": "vsce publish --packagePath story-explorer-*.vsix",
+    "deploy": "vsce publish --packagePath *.vsix",
     "format": "prettier --check '{.vscode,src}/**/*.{json,ts}' '*.{json,md}'",
     "format:fix": "npm run -s format -- --write",
     "generate-settings-markdown": "node -r ts-eager/register ./scripts/generateSettingsReadmeMarkdown.ts",
@@ -641,11 +641,11 @@
     "@types/babel__traverse": "7.18.3",
     "@types/http-proxy": "1.17.10",
     "@types/lodash": "4.14.191",
-    "@types/node": "14.17.4",
+    "@types/node": "16.11.68",
     "@types/node-netstat": "1.8.1",
     "@types/picomatch": "2.3.0",
     "@types/semver": "7.3.13",
-    "@types/vscode": "1.58.0",
+    "@types/vscode": "1.66.0",
     "@types/vscode-webview": "1.57.1",
     "@typescript-eslint/eslint-plugin": "5.54.1",
     "@typescript-eslint/parser": "5.54.1",
