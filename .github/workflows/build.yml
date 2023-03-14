@@ -1,9 +1,11 @@
-name: Build
+name: Build and Publish
 
 on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
   pull_request:
 
 jobs:
@@ -30,11 +32,71 @@ jobs:
         with:
           name: vsix
           path: '*.vsix'
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+      - name: Install Node.js
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            test/project/v6/package-lock.json
+            test/project/v7/package-lock.json
+      - name: Install Node dependencies
+        id: install
+        run: npm ci
       - name: Test
+        if: (success() || failure()) && steps.install.conclusion == 'success'
         run: npm run test -- --coverage
       - name: Typecheck
+        if: (success() || failure()) && steps.install.conclusion == 'success'
         run: npm run typecheck
       - name: Lint
+        if: (success() || failure()) && steps.install.conclusion == 'success'
         run: npm run lint
       - name: Format
+        if: (success() || failure()) && steps.install.conclusion == 'success'
         run: npm run format
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: [build, test]
+    if: success() && startsWith(github.ref, 'refs/tags/')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+      - name: Install Node.js
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            test/project/v6/package-lock.json
+            test/project/v7/package-lock.json
+      - name: Install Node dependencies
+        run: npm ci
+      - uses: actions/download-artifact@v3.0.2
+      - name: Publish to marketplace
+        run: npm run deploy
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - name: Read changelog
+        uses: yashanand1910/standard-release-notes@v1.3.0
+        id: changelog
+        with:
+          version: ${{ github.ref }}
+      - name: Create release
+        uses: svenstaro/upload-release-action@2.5.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: '*.vsix'
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
+          body: ${{ steps.changelog.outputs.release_notes }}
