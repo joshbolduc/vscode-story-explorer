@@ -15,9 +15,9 @@ export interface TreeItemRepresentation {
 
 export const getTreeRoots = async (
   version: TestProjectVersion,
-  configDir: string,
+  configPath: string,
 ) => {
-  const storyFiles = await getTestStoryFiles(version, configDir, {
+  const storyFiles = await getTestStoryFiles(version, configPath, {
     defaultGlobsIncludesAllMdx: version === '7',
   });
   const mockContext = {

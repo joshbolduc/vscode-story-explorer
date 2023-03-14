@@ -1,4 +1,6 @@
-module.exports = {
+import type { StorybookConfig } from '@storybook/react-webpack5';
+
+export default {
   stories: [
     {
       directory: '../src/autoTitle',
@@ -17,4 +19,4 @@ module.exports = {
     autodocs: true,
     defaultName: 'Autodoc',
   },
-};
+} satisfies StorybookConfig;

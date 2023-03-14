@@ -1,4 +1,4 @@
-import { map, of, startWith, switchMap, tap } from 'rxjs';
+import { from, map, of, startWith, switchMap, tap } from 'rxjs';
 import type { Uri } from 'vscode';
 import {
   storybookConfigParsedContext,
@@ -20,8 +20,8 @@ const setParsedConfigContext = (parsed: boolean) => {
   setContext(storybookConfigParsedContext, parsed);
 };
 
-const parseConfigUri = (uri: Uri) =>
-  isVirtualUri(uri) ? undefined : parseLocalConfigFile(uri.fsPath);
+const parseConfigUri = async (uri: Uri) =>
+  isVirtualUri(uri) ? undefined : await parseLocalConfigFile(uri.fsPath);
 
 /**
  * A parsed Storybook configuration.
@@ -35,7 +35,9 @@ export const storybookConfig = deferAndShare(() =>
 
       return watchFile(location.file, { watchChange: true }).pipe(
         startWith({ uri: location.file }),
-        map(({ uri }) => ({ uri, config: parseConfigUri(uri) })),
+        switchMap(({ uri }) =>
+          from(parseConfigUri(uri)).pipe(map((config) => ({ uri, config }))),
+        ),
       );
     }),
     tap((result) => {

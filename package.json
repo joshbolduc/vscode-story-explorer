@@ -604,15 +604,18 @@
   },
   "main": "./dist/extension/index.js",
   "scripts": {
-    "build": "npm run -s build:webview && npm run -s build:extension",
+    "build": "npm run -s build:webview && npm run -s build:configParser && npm run -s build:extension",
+    "build:configParser": "npm run -s build:configParser:base -- --sourcemap",
     "build:extension": "npm run -s build:extension:base -- --sourcemap",
     "build:webview": "npm run -s build:webview:base -- --sourcemap=inline",
+    "build:configParser:base": "esbuild ./configParser/index.ts --bundle --outdir=dist/configParser --external:esbuild-wasm --alias:esbuild=esbuild-wasm --format=cjs --platform=node --target=node16.13.0",
     "build:extension:base": "esbuild ./src/index.ts --bundle --outdir=dist/extension --external:vscode --loader:.html=text --format=cjs --platform=node --target=node16.13.0",
     "build:webview:base": "esbuild ./webview/entry-story.ts ./webview/entry-host.ts --bundle --loader:.html=text --outdir=dist/webview --target=chrome89",
-    "watch": "concurrently npm:watch:webview npm:watch:extension",
+    "watch": "concurrently npm:watch:webview npm:watch:configParser npm:watch:extension",
     "watch:extension": "npm run -s build:extension -- --watch",
+    "watch:configParser": "npm run -s build:configParser -- --watch",
     "watch:webview": "npm run -s build:webview -- --watch",
-    "build:production": "npm run -s build:webview:base -- --minify && npm run -s build:extension:base -- --minify",
+    "build:production": "npm run -s build:webview:base -- --minify && npm run -s build:configParser:base -- --minify && npm run -s build:extension:base -- --minify",
     "package": "npm run -s build:production && vsce package --githubBranch main",
     "deploy": "vsce publish --packagePath story-explorer-*.vsix",
     "format": "prettier --check '{.vscode,src}/**/*.{json,ts}' '*.{json,md}'",
@@ -629,6 +632,9 @@
     "scripts": {
       "postchangelog": "prettier --write CHANGELOG.md"
     }
+  },
+  "dependencies": {
+    "esbuild-wasm": "0.17.11"
   },
   "devDependencies": {
     "@babel/parser": "7.21.2",
@@ -653,6 +659,7 @@
     "@vscode/vsce": "2.18.0",
     "concurrently": "7.6.0",
     "esbuild": "0.17.11",
+    "esbuild-register": "3.4.2",
     "eslint": "8.35.0",
     "eslint-config-prettier": "8.7.0",
     "eslint-plugin-import": "2.27.5",

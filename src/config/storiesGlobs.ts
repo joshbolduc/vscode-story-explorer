@@ -1,7 +1,6 @@
-import { combineLatest, from, map, of, switchMap } from 'rxjs';
+import { from, map, of, switchMap } from 'rxjs';
 import { Utils } from 'vscode-uri';
 import { storiesGlobsConfigSuffix } from '../constants/constants';
-import { getStoriesGlobs } from '../storybook/getStoriesGlobs';
 import { isValidStoriesConfigItem } from '../storybook/isValidStoriesConfigItem';
 import { ensureArray } from '../util/ensureArray';
 import { deferAndShare } from '../util/rxjs/deferAndShare';
@@ -56,14 +55,11 @@ export const storiesGlobs = deferAndShare(() =>
 
       const { stories, dir } = result;
 
-      return combineLatest([
-        getStoriesGlobs(stories),
-        defaultGlobsIncludesAllMdxObservable,
-      ]).pipe(
-        switchMap(([storiesConfigItems, defaultGlobsIncludesAllMdx]) =>
+      return defaultGlobsIncludesAllMdxObservable.pipe(
+        switchMap((defaultGlobsIncludesAllMdx) =>
           from(
             Promise.all(
-              storiesConfigItems.map((configItem) =>
+              stories.map((configItem) =>
                 interpretStoriesConfigItem(configItem, dir, {
                   defaultGlobsIncludesAllMdx,
                 }),

@@ -3,10 +3,10 @@ import { getTestStoryFiles } from '../../test/util/getTestStoryFiles';
 
 describe('StoryExplorerStoryFile', async () => {
   const storyFiles = [
-    ...(await getTestStoryFiles('6', '.config-unittest', {
+    ...(await getTestStoryFiles('6', '.config-unittest/main.js', {
       defaultGlobsIncludesAllMdx: false,
     })),
-    ...(await getTestStoryFiles('7', '.storybook', {
+    ...(await getTestStoryFiles('7', '.storybook/main.ts', {
       defaultGlobsIncludesAllMdx: true,
     })),
   ];
