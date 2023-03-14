@@ -1,14 +1,13 @@
-import type { StoriesConfig } from './StorybookConfig';
 import { isValidStoriesConfigItem } from './isValidStoriesConfigItem';
 
-export const getStoriesGlobs = async (stories: StoriesConfig) => {
+export const getStoriesGlobs = async (stories: unknown) => {
   const resolvedStories = await (typeof stories === 'function'
-    ? stories()
+    ? (stories as () => unknown)()
     : stories);
 
   if (!Array.isArray(resolvedStories)) {
     return [];
   }
 
-  return resolvedStories.filter(isValidStoriesConfigItem);
+  return (resolvedStories as unknown[]).filter(isValidStoriesConfigItem);
 };

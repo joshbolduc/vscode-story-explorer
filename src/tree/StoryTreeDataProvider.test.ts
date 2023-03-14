@@ -108,11 +108,17 @@ addSerializer({
 
 describe('StoryTreeDataProvider', () => {
   [
-    { version: '6' as const, configDir: '.config-unittest' },
-    { version: '7' as const, configDir: '.storybook' },
-  ].forEach(({ version, configDir }) =>
+    {
+      version: '6' as const,
+      configPath: '.config-unittest/main.js',
+    },
+    {
+      version: '7' as const,
+      configPath: '.storybook/main.ts',
+    },
+  ].forEach(({ version, configPath }) =>
     it(`creates tree from story files for v${version}`, async () => {
-      const rootChildren = await getTreeRoots(version, configDir);
+      const rootChildren = await getTreeRoots(version, configPath);
       expect(rootChildren).toMatchSnapshot();
     }),
   );

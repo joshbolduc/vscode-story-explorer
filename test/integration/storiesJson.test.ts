@@ -41,11 +41,13 @@ interface StoryTestInfo {
 describe('stories.json', () => {
   const configs: {
     version: TestProjectVersion;
+    configPath: string;
     corrections?: Record<string, Partial<StoryTestInfo>>;
     exclusions?: string[];
   }[] = [
     {
       version: '6',
+      configPath: '.storybook/main.js',
       corrections: {
         // BUG: name assigned to MDX story importing CSF story is not reflected in
         // imported CSF story
@@ -61,6 +63,7 @@ describe('stories.json', () => {
     },
     {
       version: '7',
+      configPath: '.storybook/main.ts',
       corrections: {
         // https://github.com/storybookjs/storybook/issues/21312
         'manually-specified-csf-story-id--autodoc': {
@@ -110,7 +113,7 @@ describe('stories.json', () => {
     },
   ];
 
-  configs.forEach(({ version, corrections, exclusions = [] }) =>
+  configs.forEach(({ version, configPath, corrections, exclusions = [] }) =>
     it(`matches storybook-generated stories.json for v${version}`, async () => {
       const getFlattenedChildren = (
         node: TreeItemRepresentation,
@@ -135,7 +138,7 @@ describe('stories.json', () => {
       };
 
       const stories: StoryTestInfo[] = [];
-      const rootChildren = await getTreeRoots(version, '.storybook');
+      const rootChildren = await getTreeRoots(version, configPath);
       rootChildren.forEach((root) => {
         getFlattenedChildren(root, stories);
       });

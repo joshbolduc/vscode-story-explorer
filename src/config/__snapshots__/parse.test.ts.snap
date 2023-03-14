@@ -1,0 +1,68 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`parse > parses project/v6/.storybook/main.js 1`] = `
+{
+  "stories": [
+    {
+      "directory": "../src/autoTitle",
+      "titlePrefix": "Custom title prefix/Second level",
+    },
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
+}
+`;
+
+exports[`parse > parses project/v7/.config-async/main.ts 1`] = `
+{
+  "docs": {
+    "autodocs": true,
+    "defaultName": "Autodoc",
+  },
+  "stories": [
+    {
+      "directory": "../src/autoTitle",
+      "titlePrefix": "Custom title prefix/Second level",
+    },
+    "../src/features/**/*",
+    "../src/stories/**/*.mdx",
+    "../src/stories/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
+}
+`;
+
+exports[`parse > parses project/v7/.config-named-exports/main.js 1`] = `
+{
+  "docs": {
+    "autodocs": true,
+    "defaultName": "Autodoc",
+  },
+  "stories": [
+    {
+      "directory": "../src/autoTitle",
+      "titlePrefix": "Custom title prefix/Second level",
+    },
+    "../src/features/**/*",
+    "../src/stories/**/*.mdx",
+    "../src/stories/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
+}
+`;
+
+exports[`parse > parses project/v7/.storybook/main.ts 1`] = `
+{
+  "docs": {
+    "autodocs": true,
+    "defaultName": "Autodoc",
+  },
+  "stories": [
+    {
+      "directory": "../src/autoTitle",
+      "titlePrefix": "Custom title prefix/Second level",
+    },
+    "../src/features/**/*",
+    "../src/stories/**/*.mdx",
+    "../src/stories/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
+}
+`;

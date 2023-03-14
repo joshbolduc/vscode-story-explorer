@@ -1,5 +1,3 @@
-import type { ValueOrPromise } from '../util/ValueOrPromise';
-
 export interface StoriesSpecifier {
   directory: string;
   titlePrefix?: string | undefined;
@@ -8,16 +6,10 @@ export interface StoriesSpecifier {
 
 export type StoriesConfigItem = string | StoriesSpecifier;
 
-type ValueOrFunction<T> = T | (() => T);
-
-export type StoriesConfig = ValueOrFunction<
-  ValueOrPromise<StoriesConfigItem[]>
->;
-
 export interface StorybookConfig {
-  stories: StoriesConfig;
+  stories: StoriesConfigItem[];
   docs?: {
-    autodocs?: boolean | 'tag';
-    defaultName?: string;
+    autodocs?: boolean | 'tag' | undefined;
+    defaultName?: string | undefined;
   };
 }
