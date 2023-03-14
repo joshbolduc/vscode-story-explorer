@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.11.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.10.0...v0.11.0) (2023-03-14)
+
+### Features
+
+- support parsing TypeScript, ESM configs ([b6aa138](https://github.com/joshbolduc/vscode-story-explorer/commit/b6aa138ecd3de7ca6e03d007be892bd2989d0dcf)), closes [#756](https://github.com/joshbolduc/vscode-story-explorer/issues/756)
+
 ## [0.10.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.9.2...v0.10.0) (2023-03-12)
 
 ### Features
