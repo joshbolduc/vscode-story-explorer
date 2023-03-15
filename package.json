@@ -638,7 +638,7 @@
   },
   "devDependencies": {
     "@babel/parser": "7.21.2",
-    "@babel/traverse": "7.21.2",
+    "@babel/traverse": "7.21.3",
     "@babel/types": "7.21.2",
     "@commitlint/config-conventional": "17.4.4",
     "@componentdriven/csf": "0.0.2-alpha.0",
