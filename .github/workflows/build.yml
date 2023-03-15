@@ -95,7 +95,7 @@ jobs:
         uses: svenstaro/upload-release-action@2.5.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: '*.vsix'
+          file: 'vsix/*.vsix'
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
