@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.11.0...v0.11.1) (2023-03-15)
+
+### Bug Fixes
+
+- update icons ([c905018](https://github.com/joshbolduc/vscode-story-explorer/commit/c905018cfcd0b984e4ca27dd8afead6a108ed54a))
+
 ## [0.11.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.10.0...v0.11.0) (2023-03-14)
 
 ### Features
