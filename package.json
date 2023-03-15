@@ -617,7 +617,7 @@
     "watch:webview": "npm run -s build:webview -- --watch",
     "build:production": "npm run -s build:webview:base -- --minify && npm run -s build:configParser:base -- --minify && npm run -s build:extension:base -- --minify",
     "package": "npm run -s build:production && vsce package --githubBranch main",
-    "deploy": "vsce publish --packagePath story-explorer-*.vsix",
+    "deploy": "vsce publish --packagePath vsix/*.vsix",
     "format": "prettier --check '{.vscode,src}/**/*.{json,ts}' '*.{json,md}'",
     "format:fix": "npm run -s format -- --write",
     "generate-settings-markdown": "node -r ts-eager/register ./scripts/generateSettingsReadmeMarkdown.ts",
