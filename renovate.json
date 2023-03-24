@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":pinAllExceptPeerDependencies"],
+  "ignorePaths": [],
+  "ignoreDeps": ["@types/vscode"],
+  "packageRules": [
+    {
+      "extends": ["monorepo:storybook", ":disableMajorUpdates"]
+    },
+    {
+      "matchPackageNames": ["@types/node"],
+      "major": {
+        "enabled": false
+      },
+      "minor": {
+        "enabled": false
+      }
+    },
+    {
+      "matchPackageNames": ["@mdx-js/mdx"],
+      "extends": [":disableMajorUpdates"]
+    }
+  ]
+}
