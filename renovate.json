@@ -5,7 +5,10 @@
   "ignoreDeps": ["@types/vscode"],
   "packageRules": [
     {
-      "extends": ["monorepo:storybook", ":disableMajorUpdates"],
+      "extends": ["monorepo:storybook", ":disableMajorUpdates"]
+    },
+    {
+      "extends": ["monorepo:storybook"],
       "additionalBranchPrefix": "{{parentDir}}-"
     },
     {
