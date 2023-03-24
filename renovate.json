@@ -5,7 +5,6 @@
   "ignoreDeps": ["@types/vscode"],
   "packageRules": [
     {
-      "matchPaths": ["test/project/**"],
       "extends": ["monorepo:storybook", ":disableMajorUpdates"],
       "additionalBranchPrefix": "{{parentDir}}-"
     },
@@ -17,6 +16,10 @@
       "minor": {
         "enabled": false
       }
+    },
+    {
+      "matchPackageNames": ["@mdx-js/mdx"],
+      "extends": [":disableMajorUpdates"]
     }
   ]
 }
