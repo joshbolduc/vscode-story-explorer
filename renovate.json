@@ -8,10 +8,6 @@
       "extends": ["monorepo:storybook", ":disableMajorUpdates"]
     },
     {
-      "extends": ["monorepo:storybook"],
-      "additionalBranchPrefix": "{{parentDir}}-"
-    },
-    {
       "matchPackageNames": ["@types/node"],
       "major": {
         "enabled": false
