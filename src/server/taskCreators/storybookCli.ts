@@ -1,5 +1,5 @@
 import { firstValueFrom } from 'rxjs';
-import { gte } from 'semver';
+import { gte, lt } from 'semver';
 import { Uri, workspace } from 'vscode';
 import { readConfiguration } from '../../util/getConfiguration';
 import { getInstalledPackageVersion } from '../../util/getInstalledPackageVersion';
@@ -39,8 +39,10 @@ const getStorybookCliLocation = async (configDir: Uri | undefined) => {
 };
 
 // https://github.com/storybookjs/storybook/issues/21055
-const shouldInjectEnvFlags = async () =>
-  gte(await firstValueFrom(storybookVersion), VERSION_7_x_ALPHA);
+const shouldInjectEnvFlags = async () => {
+  const version = await firstValueFrom(storybookVersion);
+  return gte(version, VERSION_7_x_ALPHA) && lt(version, '7.0.0-rc.7');
+};
 
 const getAdjustedArgs = (args: string[], configDirPath: string | undefined) => {
   return [
