@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.2](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.11.1...v0.11.2) (2023-03-25)
+
+### Bug Fixes
+
+- limit workaround for CLI env args ([fc6e83c](https://github.com/joshbolduc/vscode-story-explorer/commit/fc6e83c6fc39c13080cfb3c43b60b8e2438d1bbd))
+
 ### [0.11.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.11.0...v0.11.1) (2023-03-15)
 
 ### Bug Fixes
