@@ -65,6 +65,14 @@ describe('stories.json', () => {
       version: '7',
       configPath: '.storybook/main.ts',
       corrections: {
+        // https://github.com/storybookjs/storybook/issues/22422 (?)
+        'csf3-objectnameas--a': {
+          name: 'A',
+        },
+        // https://github.com/storybookjs/storybook/issues/22422
+        'csf3-objectnamesatisfies--a': {
+          name: 'A',
+        },
         // https://github.com/storybookjs/storybook/issues/21312
         'manually-specified-csf-story-id--autodoc': {
           id: 'example-custom-id-csf--autodoc',
@@ -181,7 +189,9 @@ describe('stories.json', () => {
         }))
         .sort((a, b) => strCompareFn(a.id, b.id));
 
-      expect(transformedStoriesJson).toStrictEqual(referenceStories);
+      expect(JSON.stringify(transformedStoriesJson, null, 2)).toStrictEqual(
+        JSON.stringify(referenceStories, null, 2),
+      );
     }),
   );
 });

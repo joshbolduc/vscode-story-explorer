@@ -8,6 +8,7 @@ import {
 } from 'vscode';
 import { autodocsConfig } from '../config/autodocs';
 import { storiesGlobs } from '../config/storiesGlobs';
+import { supportLooseStoryNameSemantics } from '../config/supportLegacyStoryNameProperty';
 import {
   openPreviewInBrowserCommand,
   openPreviewToSideCommand,
@@ -69,7 +70,14 @@ export class StoryCodeLensProvider implements CodeLensProvider {
 
     const contents = document.getText();
 
-    const parsed = parseStoriesFile(contents, document.uri.path);
+    const useLooseStoryNameSemantics = await firstValueFrom(
+      supportLooseStoryNameSemantics,
+    );
+    const parsed = parseStoriesFile(
+      contents,
+      { useLooseStoryNameSemantics },
+      document.uri.path,
+    );
     if (!parsed) {
       return;
     }

@@ -478,6 +478,104 @@
         "__isArgsStory": false
       }
     },
+    "stories-csf3-objectargsrender--a": {
+      "id": "stories-csf3-objectargsrender--a",
+      "name": "A",
+      "title": "stories/csf3/ObjectArgsRender",
+      "importPath": "./src/stories/csf3/ObjectArgsRender.stories.js",
+      "kind": "stories/csf3/ObjectArgsRender",
+      "story": "A",
+      "parameters": {
+        "fileName": "./src/stories/csf3/ObjectArgsRender.stories.js",
+        "framework": "react",
+        "__id": "stories-csf3-objectargsrender--a",
+        "__isArgsStory": true
+      }
+    },
+    "stories-csf3-objectdefaultrender--a": {
+      "id": "stories-csf3-objectdefaultrender--a",
+      "name": "A",
+      "title": "stories/csf3/ObjectDefaultRender",
+      "importPath": "./src/stories/csf3/ObjectDefaultRender.stories.js",
+      "kind": "stories/csf3/ObjectDefaultRender",
+      "story": "A",
+      "parameters": {
+        "fileName": "./src/stories/csf3/ObjectDefaultRender.stories.js",
+        "framework": "react",
+        "__id": "stories-csf3-objectdefaultrender--a",
+        "__isArgsStory": true
+      }
+    },
+    "stories-csf3-objectdotname--a": {
+      "id": "stories-csf3-objectdotname--a",
+      "name": "Apple",
+      "title": "stories/csf3/ObjectDotName",
+      "importPath": "./src/stories/csf3/ObjectDotName.stories.js",
+      "kind": "stories/csf3/ObjectDotName",
+      "story": "Apple",
+      "parameters": {
+        "fileName": "./src/stories/csf3/ObjectDotName.stories.js",
+        "framework": "react",
+        "__id": "stories-csf3-objectdotname--a",
+        "__isArgsStory": true
+      }
+    },
+    "stories-csf3-objectdotstoryname--a": {
+      "id": "stories-csf3-objectdotstoryname--a",
+      "name": "Apple",
+      "title": "stories/csf3/ObjectDotStoryName",
+      "importPath": "./src/stories/csf3/ObjectDotStoryName.stories.js",
+      "kind": "stories/csf3/ObjectDotStoryName",
+      "story": "Apple",
+      "parameters": {
+        "fileName": "./src/stories/csf3/ObjectDotStoryName.stories.js",
+        "framework": "react",
+        "__id": "stories-csf3-objectdotstoryname--a",
+        "__isArgsStory": true
+      }
+    },
+    "stories-csf3-objectname--a": {
+      "id": "stories-csf3-objectname--a",
+      "name": "Apple",
+      "title": "stories/csf3/ObjectName",
+      "importPath": "./src/stories/csf3/ObjectName.stories.js",
+      "kind": "stories/csf3/ObjectName",
+      "story": "Apple",
+      "parameters": {
+        "fileName": "./src/stories/csf3/ObjectName.stories.js",
+        "framework": "react",
+        "__id": "stories-csf3-objectname--a",
+        "__isArgsStory": true
+      }
+    },
+    "stories-csf3-objectnoargsrender--a": {
+      "id": "stories-csf3-objectnoargsrender--a",
+      "name": "A",
+      "title": "stories/csf3/ObjectNoArgsRender",
+      "importPath": "./src/stories/csf3/ObjectNoArgsRender.stories.js",
+      "kind": "stories/csf3/ObjectNoArgsRender",
+      "story": "A",
+      "parameters": {
+        "fileName": "./src/stories/csf3/ObjectNoArgsRender.stories.js",
+        "framework": "react",
+        "__id": "stories-csf3-objectnoargsrender--a",
+        "__isArgsStory": false
+      }
+    },
+    "stories-csf3-objectstoryname--a": {
+      "id": "stories-csf3-objectstoryname--a",
+      "name": "Apple",
+      "title": "stories/csf3/ObjectStoryName",
+      "importPath": "./src/stories/csf3/ObjectStoryName.stories.js",
+      "kind": "stories/csf3/ObjectStoryName",
+      "story": "Apple",
+      "parameters": {
+        "fileName": "./src/stories/csf3/ObjectStoryName.stories.js",
+        "framework": "react",
+        "__id": "stories-csf3-objectstoryname--a",
+        "__isArgsStory": true
+      }
+    },
     "example-title-interpolation--primary": {
       "id": "example-title-interpolation--primary",
       "name": "Primary",

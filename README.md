@@ -193,7 +193,13 @@ To maximize compatibility, avoid using complex expressions and importing from ot
 
 ### CSF and MDX only
 
-Only [Component Story Format](https://storybook.js.org/docs/react/api/csf) (CSF, using CSF 1.0 or [2.0 with hoisted CSF annotations](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#hoisted-csf-annotations)) and [MDX](https://storybook.js.org/docs/react/api/mdx) stories are supported.
+Story Explorer supports:
+
+- [Component Story Format](https://storybook.js.org/docs/react/api/csf) (CSF) stories, including:
+  - CSF 1.0
+  - [CSF 2.0 with hoisted CSF annotations](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#hoisted-csf-annotations)
+  - [CSF 3.0 object stories](https://storybook.js.org/blog/component-story-format-3-0/)
+- [MDX](https://storybook.js.org/docs/react/api/mdx) stories and docs (v1 and v2).
 
 The legacy `storiesOf` API is not supported.
 

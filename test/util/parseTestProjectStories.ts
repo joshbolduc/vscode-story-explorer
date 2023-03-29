@@ -1,21 +1,40 @@
 import { readFileSync } from 'fs';
 import { basename, join } from 'path';
 import { sync } from 'fast-glob';
+import type { CsfParseOptions } from '../../src/parser/csf/csf';
 import { parseStoriesFile } from '../../src/parser/parseStoriesFile';
 import { testBaseDir } from './testBaseDir';
 
 type ParsedStoriesFileResult = ReturnType<typeof parseStoriesFile>;
 
 export const parseTestProjectStories = () =>
-  sync(['project/v6/src/**/*.stories.*', 'project/v7/src/**/*.*'], {
-    cwd: testBaseDir,
-  })
-    .map((file) => {
-      const storiesPath = join(testBaseDir, file);
+  (
+    [
+      {
+        glob: 'project/v6/src/**/*.stories.*',
+        options: { useLooseStoryNameSemantics: true },
+      },
+      {
+        glob: 'project/v7/src/**/*.*',
+        options: { useLooseStoryNameSemantics: false },
+      },
+    ] satisfies {
+      glob: string;
+      options: CsfParseOptions;
+    }[]
+  )
+    .flatMap((c) =>
+      sync(c.glob, { cwd: testBaseDir }).map((match) => ({
+        ...c,
+        match,
+      })),
+    )
+    .map(({ match, options }) => {
+      const storiesPath = join(testBaseDir, match);
       const contents = readFileSync(storiesPath).toString();
-      const parsedRaw = parseStoriesFile(contents, basename(file));
+      const parsedRaw = parseStoriesFile(contents, options, basename(match));
 
-      return { file, parsedRaw };
+      return { file: match, parsedRaw };
     })
     .filter(
       (

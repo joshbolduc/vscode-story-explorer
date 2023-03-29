@@ -15,19 +15,21 @@ import {
   VariableDeclarator,
 } from '@babel/types';
 import type { Location } from '../../types/Location';
+import type { PropertyInfo } from '../PropertyInfo';
 import { sourceLocationToLocation } from '../sourceLocationToLocation';
+import { assignProperties } from './assignProperties';
 
 interface RawMeta {
   id?: string;
   location: Location | undefined;
-  properties: Record<string, unknown>;
+  properties: Record<string, PropertyInfo>;
   declared: boolean;
 }
 
 export interface RawStory {
   exportName: string;
   location: Location | undefined;
-  properties: Record<string, unknown>;
+  properties: Record<string, PropertyInfo>;
 }
 
 interface RawResult {
@@ -40,7 +42,7 @@ const parseMetaObjectExpression = (
 ) => {
   return objectExpression
     .get('properties')
-    .reduce<Record<string, unknown>>((acc, property) => {
+    .reduce<Record<string, PropertyInfo>>((acc, property) => {
       if (property.isObjectProperty()) {
         const key = property.node.key;
         const name = 'name' in key ? key.name : undefined;
@@ -48,12 +50,34 @@ const parseMetaObjectExpression = (
         if (name) {
           const evalResult = property.get('value').evaluate();
           if (evalResult.confident) {
-            acc[name] = evalResult.value;
+            acc[name] = {
+              value: evalResult.value,
+              isPartOfDeclaration: true,
+            };
           }
         }
       }
       return acc;
     }, {});
+};
+
+const getNestedExpression = (
+  node: NodePath<
+    | ClassDeclaration
+    | FunctionDeclaration
+    | TSDeclareFunction
+    | Expression
+    | null
+    | undefined
+  >,
+) => {
+  let expr = node;
+
+  while (expr.isTSAsExpression() || isTSSatisfiesExpression(expr.node)) {
+    expr = expr.get('expression') as NodePath<Expression>;
+  }
+
+  return expr;
 };
 
 const createStory = (
@@ -72,6 +96,18 @@ const createStory = (
       : undefined,
     properties: {},
   };
+
+  if (path.isVariableDeclarator()) {
+    const initPath = getNestedExpression(path.get('init'));
+    const initValue = initPath.evaluate();
+
+    if (initValue.confident) {
+      const value = initValue.value as unknown;
+      if (typeof value === 'object' && value) {
+        assignProperties(newStory.properties, value);
+      }
+    }
+  }
 
   // find references
   const bindings = path.scope.getAllBindings() as Record<string, Binding>;
@@ -104,30 +140,14 @@ const createStory = (
     const evalResult = right.evaluate();
 
     if (evalResult.confident) {
-      newStory.properties[propertyName] = evalResult.value;
+      newStory.properties[propertyName] = {
+        value: evalResult.value,
+        isPartOfDeclaration: false,
+      };
     }
   });
 
   return newStory;
-};
-
-const getNestedExpression = (
-  node: NodePath<
-    | ClassDeclaration
-    | FunctionDeclaration
-    | TSDeclareFunction
-    | Expression
-    | null
-    | undefined
-  >,
-) => {
-  let expr = node;
-
-  while (expr.isTSAsExpression() || isTSSatisfiesExpression(expr.node)) {
-    expr = expr.get('expression') as NodePath<Expression>;
-  }
-
-  return expr;
 };
 
 export const parseFromContents = (contents: string): RawResult => {
@@ -145,7 +165,7 @@ export const parseFromContents = (contents: string): RawResult => {
   const stories: RawStory[] = [];
 
   const addMetaObjectProperties = (
-    properties: Record<string, unknown>,
+    properties: Record<string, PropertyInfo>,
     location: Location | undefined,
   ) => {
     meta.declared = true;

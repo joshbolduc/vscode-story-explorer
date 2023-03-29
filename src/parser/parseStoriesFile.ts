@@ -1,4 +1,4 @@
-import { tryParseCsf } from './csf/csf';
+import { CsfParseOptions, tryParseCsf } from './csf/csf';
 import { tryParseMdx } from './mdx/mdx';
 
 const csfParser = { parser: tryParseCsf, type: 'csf' } as const;
@@ -12,11 +12,15 @@ const getParsers = (filePath?: string) => {
   return [csfParser];
 };
 
-export const parseStoriesFile = (contents: string, filePath?: string) => {
+export const parseStoriesFile = (
+  contents: string,
+  options: CsfParseOptions,
+  filePath?: string,
+) => {
   const parsers = getParsers(filePath);
 
   for (const { parser, type } of parsers) {
-    const parsed = parser(contents);
+    const parsed = parser(contents, options);
     if (
       parsed &&
       // .mdx files don't require a Meta tag or stories, but .stories.mdx files
