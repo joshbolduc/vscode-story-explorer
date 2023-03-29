@@ -1,4 +1,6 @@
+import { firstValueFrom } from 'rxjs';
 import type { Uri } from 'vscode';
+import { supportLooseStoryNameSemantics } from '../config/supportLegacyStoryNameProperty';
 import { logDebug } from '../log/log';
 import { getFileContent } from '../util/getFileContent';
 import { parseStoriesFile } from './parseStoriesFile';
@@ -14,7 +16,15 @@ export const parseStoriesFileByUri = async (
 ): Promise<ParsedStoryWithFileUri | undefined> => {
   const contents = await getFileContent(storiesFile);
 
-  const parsed = parseStoriesFile(contents, storiesFile.path);
+  const useLooseStoryNameSemantics = await firstValueFrom(
+    supportLooseStoryNameSemantics,
+  );
+
+  const parsed = parseStoriesFile(
+    contents,
+    { useLooseStoryNameSemantics },
+    storiesFile.path,
+  );
 
   if (!parsed) {
     // Most likely due to transient syntax error

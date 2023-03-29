@@ -421,6 +421,199 @@ exports[`StoryTreeDataProvider > creates tree from story files for v7 1`] = `
         Icon: bookmark
         Command: Open file file:///mock/basedir/project/v7/src/features/attached/autodoc-override/AttachPoint.stories.js [Ln 10, Col 13]
 
+- csf3
+  Expanded
+
+  - ObjectArgsRender
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectArgsRender.stories.js
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectArgsRender.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectargsrender--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectArgsRender.stories.js [Ln 2, Col 15]
+
+    - A
+      Id: csf3-objectargsrender--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectArgsRender.stories.js [Ln 6, Col 13]
+
+  - ObjectDefaultRender
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectDefaultRender.stories.js
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectDefaultRender.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectdefaultrender--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectDefaultRender.stories.js [Ln 2, Col 15]
+
+    - A
+      Id: csf3-objectdefaultrender--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectDefaultRender.stories.js [Ln 6, Col 13]
+
+  - ObjectDotName
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectDotName.stories.js
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectDotName.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectdotname--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectDotName.stories.js [Ln 2, Col 15]
+
+    - A
+      Id: csf3-objectdotname--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectDotName.stories.js [Ln 6, Col 13]
+
+  - ObjectDotStoryName
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectDotStoryName.stories.js
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectDotStoryName.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectdotstoryname--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectDotStoryName.stories.js [Ln 2, Col 15]
+
+    - Apple
+      Id: csf3-objectdotstoryname--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectDotStoryName.stories.js [Ln 6, Col 13]
+
+  - ObjectName
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectName.stories.js
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectName.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectname--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectName.stories.js [Ln 2, Col 15]
+
+    - Apple
+      Id: csf3-objectname--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectName.stories.js [Ln 6, Col 13]
+
+  - ObjectNameAnnotation
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectNameAnnotation.stories.ts
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectNameAnnotation.stories.ts
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectnameannotation--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectNameAnnotation.stories.ts [Ln 3, Col 15]
+
+    - Apple
+      Id: csf3-objectnameannotation--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectNameAnnotation.stories.ts [Ln 7, Col 13]
+
+  - ObjectNameAs
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectNameAs.stories.ts
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectNameAs.stories.ts
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectnameas--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectNameAs.stories.ts [Ln 3, Col 15]
+
+    - Apple
+      Id: csf3-objectnameas--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectNameAs.stories.ts [Ln 7, Col 13]
+
+  - ObjectNameSatisfies
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectNameSatisfies.stories.ts
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectNameSatisfies.stories.ts
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectnamesatisfies--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectNameSatisfies.stories.ts [Ln 3, Col 15]
+
+    - Apple
+      Id: csf3-objectnamesatisfies--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectNameSatisfies.stories.ts [Ln 7, Col 13]
+
+  - ObjectNoArgsRender
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectNoArgsRender.stories.js
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectNoArgsRender.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectnoargsrender--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectNoArgsRender.stories.js [Ln 2, Col 15]
+
+    - A
+      Id: csf3-objectnoargsrender--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectNoArgsRender.stories.js [Ln 6, Col 13]
+
+  - ObjectStoryName
+    Id: file:///mock/basedir/project/v7/src/features/csf3/ObjectStoryName.stories.js
+    File: file:///mock/basedir/project/v7/src/features/csf3/ObjectStoryName.stories.js
+    Collapsed
+    Icon: component
+    Command: Open file
+
+    - Autodoc
+      Id: csf3-objectstoryname--autodoc
+      Context: story
+      Icon: document
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectStoryName.stories.js [Ln 2, Col 15]
+
+    - A
+      Id: csf3-objectstoryname--a
+      Context: story
+      Icon: bookmark
+      Command: Open file file:///mock/basedir/project/v7/src/features/csf3/ObjectStoryName.stories.js [Ln 6, Col 13]
+
 - Example
   Expanded
 

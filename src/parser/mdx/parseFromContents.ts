@@ -7,6 +7,7 @@ import {
   JSXElement,
 } from '@babel/types';
 import type { Location } from '../../types/Location';
+import type { PropertyInfo } from '../PropertyInfo';
 import { sourceLocationToLocation } from '../sourceLocationToLocation';
 import { extractJsxAttributes } from './extractJsxAttributes';
 import { transformMdx1ForBabel } from './transformMdx1ForBabel';
@@ -16,7 +17,7 @@ interface RawResult {
   meta: {
     location: Location | undefined;
     properties: {
-      values?: Record<string, unknown>;
+      values?: Record<string, PropertyInfo>;
       literals?: Record<string, string>;
     };
     of?: { importPath: string };
@@ -25,7 +26,7 @@ interface RawResult {
   stories: {
     location: Location | undefined;
     properties: {
-      values: Record<string, unknown>;
+      values: Record<string, PropertyInfo>;
       literals: Record<string, string>;
     };
   }[];

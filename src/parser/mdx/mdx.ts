@@ -14,7 +14,7 @@ const parse = (contents: string): RawParsedStoryFile | undefined => {
       parsed.meta.properties.values,
     );
 
-    const metaName = parsed.meta.properties.values?.name;
+    const metaName = parsed.meta.properties.values?.name?.value;
 
     const meta = {
       id,
@@ -27,7 +27,8 @@ const parse = (contents: string): RawParsedStoryFile | undefined => {
 
     const stories = parsed.stories
       .map((story) => {
-        const { name: nameProp, id: idProp } = story.properties.values;
+        const nameProp = story.properties.values.name?.value;
+        const idProp = story.properties.values.id?.value;
 
         // <Story id="..." /> just refers to another story and doesn't create an
         // entry in the store, so we'll disregard it.

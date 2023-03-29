@@ -1,5 +1,7 @@
 import type { NodePath } from '@babel/traverse';
 import type { JSXElement } from '@babel/types';
+import type { PropertyInfo } from '../PropertyInfo';
+import { assignProperties } from '../csf/assignProperties';
 
 const UNPARSED = Symbol('Unparsed value');
 
@@ -8,7 +10,7 @@ export const extractJsxAttributes = (path: NodePath<JSXElement>) => {
   const children = path.get('children');
 
   const mergedProps = attributes.reduce<{
-    values: Record<string, unknown>;
+    values: Record<string, PropertyInfo>;
     literals: Record<string, string>;
   }>(
     (acc, attr) => {
@@ -18,9 +20,15 @@ export const extractJsxAttributes = (path: NodePath<JSXElement>) => {
         if (typeof name === 'string') {
           const evalResult = attr.get('value').evaluate();
           if (evalResult.confident) {
-            acc.values[name] = evalResult.value;
+            acc.values[name] = {
+              isPartOfDeclaration: true,
+              value: evalResult.value,
+            };
           } else {
-            acc.values[name] = UNPARSED;
+            acc.values[name] = {
+              isPartOfDeclaration: true,
+              value: UNPARSED,
+            };
             const valuePath = attr.get('value');
             if (valuePath.isJSXExpressionContainer()) {
               acc.literals[name] = valuePath.get('expression').toString();
@@ -29,9 +37,10 @@ export const extractJsxAttributes = (path: NodePath<JSXElement>) => {
         }
       } else if (attr.isJSXSpreadAttribute()) {
         const evalResult = attr.get('argument').evaluate();
+        const value = evalResult.value as unknown;
 
-        if (evalResult.confident && typeof evalResult.value === 'object') {
-          Object.assign(acc.values, evalResult.value);
+        if (evalResult.confident && value && typeof value === 'object') {
+          assignProperties(acc.values, value);
         }
       }
       return acc;
@@ -40,7 +49,10 @@ export const extractJsxAttributes = (path: NodePath<JSXElement>) => {
   );
 
   if (children.length > 0) {
-    mergedProps.values.children = children;
+    mergedProps.values.children = {
+      isPartOfDeclaration: true,
+      value: children,
+    };
   }
 
   return mergedProps;

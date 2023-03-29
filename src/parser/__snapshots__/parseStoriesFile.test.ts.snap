@@ -611,6 +611,196 @@ exports[`parseStoriesFile > parses story file project/v7/src/features/attached/a
 }
 `;
 
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectArgsRender.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 7, Col 13] - [Ln 7, Col 14],
+      "name": "A",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectDefaultRender.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 7, Col 13] - [Ln 7, Col 14],
+      "name": "A",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectDotName.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 7, Col 13] - [Ln 7, Col 14],
+      "name": "A",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectDotStoryName.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 7, Col 13] - [Ln 7, Col 14],
+      "name": "Apple",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectName.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 7, Col 13] - [Ln 7, Col 14],
+      "name": "Apple",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectNameAnnotation.stories.ts 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 15] - [Ln 6, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 8, Col 13] - [Ln 8, Col 24],
+      "name": "Apple",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectNameAs.stories.ts 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 15] - [Ln 6, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 8, Col 13] - [Ln 8, Col 14],
+      "name": "Apple",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectNameSatisfies.stories.ts 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 4, Col 15] - [Ln 6, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 8, Col 13] - [Ln 8, Col 14],
+      "name": "Apple",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectNoArgsRender.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 7, Col 13] - [Ln 7, Col 14],
+      "name": "A",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
+exports[`parseStoriesFile > parses story file project/v7/src/features/csf3/ObjectStoryName.stories.js 1`] = `
+{
+  "meta": {
+    "id": undefined,
+    "location": [Ln 3, Col 15] - [Ln 5, Col 1],
+    "tags": undefined,
+    "title": undefined,
+  },
+  "stories": [
+    {
+      "location": [Ln 7, Col 13] - [Ln 7, Col 14],
+      "name": "A",
+      "nameForId": "A",
+    },
+  ],
+  "type": "csf",
+}
+`;
+
 exports[`parseStoriesFile > parses story file project/v7/src/stories/BasicCsf.stories.js 1`] = `
 {
   "meta": {
