@@ -181,9 +181,7 @@ describe('stories.json', () => {
         }))
         .sort((a, b) => strCompareFn(a.id, b.id));
 
-      expect(transformedStoriesJson.map((item) => item.id)).toStrictEqual(
-        referenceStories.map((item) => item.id),
-      );
+      expect(transformedStoriesJson).toStrictEqual(referenceStories);
     }),
   );
 });
