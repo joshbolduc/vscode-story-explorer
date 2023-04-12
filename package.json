@@ -642,7 +642,7 @@
     "@babel/types": "7.21.3",
     "@commitlint/config-conventional": "17.4.4",
     "@componentdriven/csf": "0.0.2-alpha.0",
-    "@mdx-js/mdx": "1.6.22",
+    "@mdx-js/mdx": "2.3.0",
     "@mdx-js/mdx-2": "npm:@mdx-js/mdx@2.2.1",
     "@types/babel__traverse": "7.18.3",
     "@types/http-proxy": "1.17.10",
