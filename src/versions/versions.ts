@@ -11,7 +11,7 @@ export const EARLIEST_VERSION = VERSION_6_x;
 
 export const notableVersions = [
   // Stable versions, newest first
-  VERSION_6_x,
-  // Future/unstable version
   VERSION_7_x,
+  VERSION_6_x,
+  // Future/unstable versions last
 ] as const;
