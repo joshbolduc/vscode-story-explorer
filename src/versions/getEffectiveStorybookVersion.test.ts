@@ -14,15 +14,15 @@ describe('getEffectiveStorybookVersion', () => {
   it('returns most compatible notable version when given range', () => {
     expect(getEffectiveStorybookVersion('^6.0.0')).toBe('6.0.0');
     expect(getEffectiveStorybookVersion('~6.2.0')).toBe('6.0.0');
-    expect(getEffectiveStorybookVersion('>= 4')).toBe('6.0.0');
+    expect(getEffectiveStorybookVersion('>= 4')).toBe('7.0.0');
     expect(getEffectiveStorybookVersion('~6.0.0-alpha.30 <6.0.0')).toBe(
       '6.0.0',
     );
-    expect(getEffectiveStorybookVersion('*')).toBe('6.0.0');
+    expect(getEffectiveStorybookVersion('*')).toBe('7.0.0');
     expect(getEffectiveStorybookVersion('^7.0.0-alpha.0')).toBe('7.0.0');
     expect(getEffectiveStorybookVersion('^7.0.0-alpha.53')).toBe('7.0.0');
     expect(getEffectiveStorybookVersion('^7.0.0-beta.12')).toBe('7.0.0');
     expect(getEffectiveStorybookVersion('^5.0.0')).toBe('6.0.0');
-    expect(getEffectiveStorybookVersion('^9.0.0')).toBe('6.0.0');
+    expect(getEffectiveStorybookVersion('^9.0.0')).toBe('7.0.0');
   });
 });
