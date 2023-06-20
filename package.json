@@ -646,7 +646,7 @@
     "@mdx-js/mdx-2": "npm:@mdx-js/mdx@2.2.1",
     "@types/babel__traverse": "7.18.3",
     "@types/http-proxy": "1.17.10",
-    "@types/lodash": "4.14.191",
+    "@types/lodash": "4.14.195",
     "@types/node": "16.11.68",
     "@types/node-netstat": "1.8.1",
     "@types/picomatch": "2.3.0",
