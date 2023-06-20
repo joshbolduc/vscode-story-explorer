@@ -637,9 +637,9 @@
     "esbuild-wasm": "0.17.11"
   },
   "devDependencies": {
-    "@babel/parser": "7.21.3",
-    "@babel/traverse": "7.21.3",
-    "@babel/types": "7.21.3",
+    "@babel/parser": "7.22.5",
+    "@babel/traverse": "7.22.5",
+    "@babel/types": "7.22.5",
     "@commitlint/config-conventional": "17.4.4",
     "@componentdriven/csf": "0.0.2-alpha.0",
     "@mdx-js/mdx": "1.6.22",
