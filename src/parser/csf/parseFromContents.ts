@@ -1,6 +1,6 @@
 import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
-import type { Binding, NodePath } from '@babel/traverse';
+import type { NodePath } from '@babel/traverse';
 import {
   ClassDeclaration,
   Expression,
@@ -110,7 +110,7 @@ const createStory = (
   }
 
   // find references
-  const bindings = path.scope.getAllBindings() as Record<string, Binding>;
+  const bindings = path.scope.getAllBindings();
   const referencePaths = bindings[localName]?.referencePaths;
   referencePaths?.forEach((referencePath) => {
     if (
@@ -246,10 +246,7 @@ export const parseFromContents = (contents: string): RawResult => {
           const localIdentifier = specifierNode.local;
           const exportedIdentifier = specifierNode.exported;
 
-          const bindings = path.scope.getAllBindings() as Record<
-            string,
-            Binding
-          >;
+          const bindings = path.scope.getAllBindings();
           const binding = bindings[localIdentifier.name];
           const location = binding?.identifier.loc;
           const newStory = createStory(
