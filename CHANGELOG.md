@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.11.2...v1.0.0) (2023-06-20)
+
+### Features
+
+- add support for CSF3 custom story names ([e7a0cf2](https://github.com/joshbolduc/vscode-story-explorer/commit/e7a0cf237ca849792fd7bdf61b15f7084a015a6a))
+
+### Bug Fixes
+
+- default to storybook v7 if version detection fails ([9eb736e](https://github.com/joshbolduc/vscode-story-explorer/commit/9eb736e0fa7bbeae6a3da1b7c1d313e3fe46a139))
+- **deps:** update dependency esbuild-wasm to v0.18.5 ([d29908d](https://github.com/joshbolduc/vscode-story-explorer/commit/d29908d83af1b6b5edc8df7de159a30b13c7976d))
+
 ### [0.11.2](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.11.1...v0.11.2) (2023-03-25)
 
 ### Bug Fixes
