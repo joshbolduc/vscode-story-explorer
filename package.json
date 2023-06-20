@@ -634,7 +634,7 @@
     }
   },
   "dependencies": {
-    "esbuild-wasm": "0.17.11"
+    "esbuild-wasm": "0.18.5"
   },
   "devDependencies": {
     "@babel/parser": "7.21.3",
