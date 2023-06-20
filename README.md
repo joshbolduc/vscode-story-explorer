@@ -191,6 +191,14 @@ In practice, if your project is compatible with Storybook's `storyStoreV7`, it s
 
 However, if you rely on nontrivial runtime behavior when defining or naming stories, they may not be recognized correctly.
 
+### Unsupported features
+
+Some advanced Storybook features aren't supported, including:
+
+- [Story indexers](https://storybook.js.org/docs/react/configure/sidebar-and-urls#story-indexers)
+- [`storySort` configuration](https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories)
+- [Sidebar options set via `addons.setConfig`](https://storybook.js.org/docs/react/configure/features-and-behavior) (including `collapsedRoots` and `renderLabel`)
+
 ### CSF and MDX only
 
 Story Explorer supports:
