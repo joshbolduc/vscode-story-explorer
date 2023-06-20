@@ -1,4 +1,5 @@
-import { Disposable, ExtensionMode, OutputChannel, window } from 'vscode';
+import type { Disposable, OutputChannel } from 'vscode';
+import { ExtensionMode, window } from 'vscode';
 import { extensionName, logLevelConfigSuffix } from '../constants/constants';
 import { SettingsWatcher } from '../util/SettingsWatcher';
 

@@ -1,10 +1,10 @@
-import {
+import type {
   Disposable,
   TaskExecution,
   TaskProcessEndEvent,
   TaskProcessStartEvent,
-  tasks,
 } from 'vscode';
+import { tasks } from 'vscode';
 
 export class TaskProcessListener {
   private startListener: Disposable | undefined;

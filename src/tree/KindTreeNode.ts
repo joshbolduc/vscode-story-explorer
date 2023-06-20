@@ -1,7 +1,8 @@
 import type { Uri } from 'vscode';
 import type { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import type { IconName } from '../util/getIconPath';
-import { BaseTreeNode, BaseTreeNodeConstuctorParams } from './BaseTreeNode';
+import type { BaseTreeNodeConstuctorParams } from './BaseTreeNode';
+import { BaseTreeNode } from './BaseTreeNode';
 import type { TreeNode } from './TreeNode';
 
 export interface TreeNodeCreationOptions {

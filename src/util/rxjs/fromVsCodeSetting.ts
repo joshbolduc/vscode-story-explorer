@@ -1,5 +1,6 @@
 import { defer, filter, map, share, startWith } from 'rxjs';
-import { ConfigurationScope, workspace } from 'vscode';
+import type { ConfigurationScope } from 'vscode';
+import { workspace } from 'vscode';
 import type { ConfigurationSuffix } from '../../types/ConfigurationSuffix';
 import { getConfiguration } from '../getConfiguration';
 import { makeFullConfigName } from '../makeFullConfigName';

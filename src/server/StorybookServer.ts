@@ -1,6 +1,7 @@
 import type { IncomingMessage } from 'http';
 import type { Observable } from 'rxjs';
-import { ProgressLocation, TaskExecution, window } from 'vscode';
+import type { TaskExecution } from 'vscode';
+import { ProgressLocation, window } from 'vscode';
 import { internalServerRunningContext } from '../constants/constants';
 import { logDebug, logError, logInfo } from '../log/log';
 import { Cacheable } from '../util/Cacheable';

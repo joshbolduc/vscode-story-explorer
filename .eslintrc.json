@@ -22,6 +22,7 @@
     "prettier"
   ],
   "rules": {
+    "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/explicit-member-accessibility": "error",
     "@typescript-eslint/member-ordering": "warn",
     "@typescript-eslint/no-empty-function": [

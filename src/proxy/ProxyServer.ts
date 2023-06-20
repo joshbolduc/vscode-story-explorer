@@ -1,4 +1,5 @@
-import { createServer, Server, ServerResponse } from 'http';
+import type { Server, ServerResponse } from 'http';
+import { createServer } from 'http';
 import type { AddressInfo } from 'net';
 import * as httpProxy from 'http-proxy';
 import { Uri } from 'vscode';

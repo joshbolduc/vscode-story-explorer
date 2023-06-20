@@ -1,6 +1,7 @@
 import { basename, dirname } from 'path';
 import { scan } from 'picomatch';
-import { FileType, Uri, workspace } from 'vscode';
+import type { Uri } from 'vscode';
+import { FileType, workspace } from 'vscode';
 import { Utils } from 'vscode-uri';
 import type { StoriesConfigItem } from '../storybook/StorybookConfig';
 import type { GlobSpecifier } from './GlobSpecifier';

@@ -1,11 +1,8 @@
 import { parse } from '@babel/parser';
-import traverse, { NodePath } from '@babel/traverse';
-import {
-  ImportDeclaration,
-  isJSXIdentifier,
-  JSXAttribute,
-  JSXElement,
-} from '@babel/types';
+import type { NodePath } from '@babel/traverse';
+import traverse from '@babel/traverse';
+import type { ImportDeclaration, JSXAttribute, JSXElement } from '@babel/types';
+import { isJSXIdentifier } from '@babel/types';
 import type { Location } from '../../types/Location';
 import type { PropertyInfo } from '../PropertyInfo';
 import { sourceLocationToLocation } from '../sourceLocationToLocation';

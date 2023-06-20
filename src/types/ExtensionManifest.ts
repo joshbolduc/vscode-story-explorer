@@ -1,1 +1,3 @@
-export type ExtensionManifest = typeof import('../../package.json');
+import type * as packageJson from '../../package.json';
+
+export type ExtensionManifest = typeof packageJson;

@@ -1,5 +1,6 @@
 import { merge, scan } from 'rxjs';
-import { TaskExecution, tasks } from 'vscode';
+import type { TaskExecution } from 'vscode';
+import { tasks } from 'vscode';
 import { hasProperty } from '../util/guards/hasProperty';
 import { deferAndShare } from '../util/rxjs/deferAndShare';
 import { fromVsCodeEvent } from '../util/rxjs/fromVsCodeEvent';

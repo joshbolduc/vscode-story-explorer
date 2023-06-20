@@ -1,9 +1,9 @@
-import {
+import type {
   Disposable,
   ExtensionContext,
   WebviewPanelSerializer,
-  window,
 } from 'vscode';
+import { window } from 'vscode';
 import {
   storybookWebviewsOpenContext,
   webviewPreviewViewType,

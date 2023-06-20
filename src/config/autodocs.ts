@@ -1,4 +1,5 @@
-import { combineLatest, map, Observable, of, switchMap } from 'rxjs';
+import type { Observable } from 'rxjs';
+import { combineLatest, map, of, switchMap } from 'rxjs';
 import { isNonEmptyString } from '../util/guards/isNonEmptyString';
 import { deferAndShare } from '../util/rxjs/deferAndShare';
 import { distinctUntilNotStrictEqual } from '../util/rxjs/distinctUntilNotStrictEqual';

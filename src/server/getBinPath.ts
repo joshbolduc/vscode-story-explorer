@@ -1,5 +1,6 @@
 import { platform } from 'process';
-import { Uri, workspace } from 'vscode';
+import type { Uri } from 'vscode';
+import { workspace } from 'vscode';
 import { Utils } from 'vscode-uri';
 import { logDebug } from '../log/log';
 import type { ConfigurationSuffix } from '../types/ConfigurationSuffix';

@@ -1,6 +1,7 @@
 import { firstValueFrom } from 'rxjs';
 import { gte, lt } from 'semver';
-import { Uri, workspace } from 'vscode';
+import type { Uri } from 'vscode';
+import { workspace } from 'vscode';
 import { readConfiguration } from '../../util/getConfiguration';
 import { getInstalledPackageVersion } from '../../util/getInstalledPackageVersion';
 import { isNonEmptyString } from '../../util/guards/isNonEmptyString';

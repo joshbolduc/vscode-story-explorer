@@ -5,7 +5,8 @@ import { isNonEmptyString } from '../../util/guards/isNonEmptyString';
 import type { RawParsedStoryFile } from '../RawParsedStoryFile';
 import { sanitizeMetaObject } from '../sanitizeMetaObject';
 import { isStoryDescriptor } from './isStoryDescriptor';
-import { parseFromContents, RawStory } from './parseFromContents';
+import type { RawStory } from './parseFromContents';
+import { parseFromContents } from './parseFromContents';
 
 export interface CsfParseOptions {
   /**

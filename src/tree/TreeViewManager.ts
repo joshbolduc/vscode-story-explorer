@@ -1,11 +1,10 @@
-import {
+import type {
   CancellationToken,
-  CancellationTokenSource,
   ExtensionContext,
   TreeView,
   Uri,
-  window,
 } from 'vscode';
+import { CancellationTokenSource, window } from 'vscode';
 import { storyTreeViewId } from '../constants/constants';
 import { logWarn } from '../log/log';
 import type { StoryStore } from '../store/StoryStore';

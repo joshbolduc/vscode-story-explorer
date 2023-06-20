@@ -1,10 +1,5 @@
-import {
-  ExtensionContext,
-  TreeItem,
-  TreeItemCollapsibleState,
-  window,
-  workspace,
-} from 'vscode';
+import type { ExtensionContext } from 'vscode';
+import { TreeItem, TreeItemCollapsibleState, window, workspace } from 'vscode';
 import { createOpenInEditorCommand } from '../util/createOpenCommand';
 import { getIconPath } from '../util/getIconPath';
 import type { TreeNode } from './TreeNode';

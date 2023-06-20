@@ -1,9 +1,12 @@
 import pLimit from 'p-limit';
-import { combineLatest, firstValueFrom, Subscription } from 'rxjs';
-import { Disposable, EventEmitter, Uri, workspace } from 'vscode';
+import type { Subscription } from 'rxjs';
+import { combineLatest, firstValueFrom } from 'rxjs';
+import type { Disposable, Uri } from 'vscode';
+import { EventEmitter, workspace } from 'vscode';
 import { Utils } from 'vscode-uri';
 import type { GlobSpecifier } from '../config/GlobSpecifier';
-import { AutodocsConfig, autodocsConfig } from '../config/autodocs';
+import type { AutodocsConfig } from '../config/autodocs';
+import { autodocsConfig } from '../config/autodocs';
 import { storiesGlobs } from '../config/storiesGlobs';
 import {
   initialLoadCompleteContext,
@@ -13,10 +16,8 @@ import { convertGlob } from '../globs/convertGlob';
 import { convertGlobForWorkspace } from '../globs/convertGlobForWorkspace';
 import { logError } from '../log/log';
 import type { parseStoriesFile } from '../parser/parseStoriesFile';
-import {
-  ParsedStoryWithFileUri,
-  parseStoriesFileByUri,
-} from '../parser/parseStoriesFileByUri';
+import type { ParsedStoryWithFileUri } from '../parser/parseStoriesFileByUri';
+import { parseStoriesFileByUri } from '../parser/parseStoriesFileByUri';
 import { StoryExplorerStoryFile } from '../story/StoryExplorerStoryFile';
 import { FileWatcher } from '../util/FileWatcher';
 import { Mailbox } from '../util/Mailbox';

@@ -1,4 +1,5 @@
-import { Disposable, languages } from 'vscode';
+import type { Disposable } from 'vscode';
+import { languages } from 'vscode';
 import {
   codeLensDocsEnabledConfigSuffix,
   codeLensStoriesEnabledConfigSuffix,

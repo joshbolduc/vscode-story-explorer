@@ -1,4 +1,5 @@
-import { Disposable, languages } from 'vscode';
+import type { Disposable } from 'vscode';
+import { languages } from 'vscode';
 import { suggestTitleConfigSuffix } from '../constants/constants';
 import type { StoryStore } from '../store/StoryStore';
 import { SettingsWatcher } from '../util/SettingsWatcher';

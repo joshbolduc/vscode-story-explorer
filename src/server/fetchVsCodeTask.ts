@@ -1,4 +1,5 @@
-import { Task, tasks } from 'vscode';
+import type { Task } from 'vscode';
+import { tasks } from 'vscode';
 import type { TaskCreatorOptions } from './TaskCreatorOptions';
 
 export const fetchVsCodeTask = async (

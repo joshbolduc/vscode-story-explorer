@@ -1,13 +1,13 @@
-import { firstValueFrom, Observable } from 'rxjs';
-import {
+import type { Observable } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
+import type {
   CancellationToken,
   Task,
   TaskExecution,
   TaskProcessEndEvent,
   TaskProcessStartEvent,
-  tasks,
-  window,
 } from 'vscode';
+import { tasks, window } from 'vscode';
 import { logDebug, logError } from '../log/log';
 import { openWorkspaceSetting } from '../util/openWorkspaceSetting';
 import { TaskProcessListener } from './TaskProcessListener';

@@ -1,11 +1,11 @@
 import { firstValueFrom } from 'rxjs';
-import {
+import type {
   Disposable,
-  EventEmitter,
   ExtensionContext,
   TreeDataProvider,
   TreeItem,
 } from 'vscode';
+import { EventEmitter } from 'vscode';
 import { autodocsConfig } from '../config/autodocs';
 import { storiesViewShowItemsWithoutStoriesConfigSuffix } from '../constants/constants';
 import type { StoryStore } from '../store/StoryStore';

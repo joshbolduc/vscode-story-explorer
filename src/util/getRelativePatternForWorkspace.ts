@@ -1,5 +1,6 @@
 import { join } from 'path';
-import { RelativePattern, Uri, workspace } from 'vscode';
+import type { Uri } from 'vscode';
+import { RelativePattern, workspace } from 'vscode';
 import { Utils } from 'vscode-uri';
 
 export const getRelativePatternForWorkspace = (
