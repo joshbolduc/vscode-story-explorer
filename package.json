@@ -658,7 +658,7 @@
     "@vitest/coverage-c8": "0.29.2",
     "@vscode/vsce": "2.19.0",
     "concurrently": "7.6.0",
-    "esbuild": "0.17.11",
+    "esbuild": "0.18.5",
     "esbuild-register": "3.4.2",
     "eslint": "8.43.0",
     "eslint-config-prettier": "8.8.0",
