@@ -1,3 +1,4 @@
+import { normalize } from 'path/posix';
 import type { Observable } from 'rxjs';
 import {
   combineLatestWith,
@@ -72,8 +73,11 @@ export const storybookConfigLocation: Observable<
     combineLatestWith(workspaceRoot),
     map(([fullGlob, root]): GlobPattern => {
       const rootPath = root?.fsPath;
+      const normalizedGlob = normalize(fullGlob);
 
-      return rootPath ? new RelativePattern(rootPath, fullGlob) : fullGlob;
+      return rootPath
+        ? new RelativePattern(rootPath, normalizedGlob)
+        : normalizedGlob;
     }),
     distinctUntilChanged(),
     switchMap((globPattern) => {
