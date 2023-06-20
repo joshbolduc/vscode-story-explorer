@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v1.0.0...v1.0.1) (2023-06-20)
+
+### Bug Fixes
+
+- don't hang when config fails to evaluate ([a38f637](https://github.com/joshbolduc/vscode-story-explorer/commit/a38f6379434fbeb9566827c1f7a12400e2881b2d))
+- normalize `storybookConfigDir` ([f2e81b0](https://github.com/joshbolduc/vscode-story-explorer/commit/f2e81b0ba6c776f5723f36db401e2ddf3c8bd254))
+
 ## [1.0.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v0.11.2...v1.0.0) (2023-06-20)
 
 ### Features
