@@ -656,7 +656,7 @@
     "@typescript-eslint/eslint-plugin": "5.60.0",
     "@typescript-eslint/parser": "5.60.0",
     "@vitest/coverage-c8": "0.29.2",
-    "@vscode/vsce": "2.18.0",
+    "@vscode/vsce": "2.19.0",
     "concurrently": "7.6.0",
     "esbuild": "0.17.11",
     "esbuild-register": "3.4.2",
