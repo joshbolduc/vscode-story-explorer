@@ -2,6 +2,7 @@ import type { ChildProcess, SendHandle } from 'child_process';
 import { fork } from 'child_process';
 import { resolve } from 'path';
 import {
+  defaultIfEmpty,
   defer,
   firstValueFrom,
   fromEvent,
@@ -44,6 +45,7 @@ const configParse = (configFilePath: string) => {
           map(([message]) => message),
           takeUntil(fromEvent(childProcess, 'close')),
           timeout({ first: 10000 }),
+          defaultIfEmpty(undefined),
         );
       }),
     ),
