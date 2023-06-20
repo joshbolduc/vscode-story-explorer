@@ -1,4 +1,5 @@
-import { ColorThemeKind, ExtensionContext, Uri, window } from 'vscode';
+import type { ExtensionContext } from 'vscode';
+import { ColorThemeKind, Uri, window } from 'vscode';
 
 export type IconName = 'bookmark' | 'component' | 'document' | 'folder';
 

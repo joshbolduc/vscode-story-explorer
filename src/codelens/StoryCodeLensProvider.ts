@@ -1,11 +1,6 @@
 import { firstValueFrom } from 'rxjs';
-import {
-  CodeLens,
-  CodeLensProvider,
-  EventEmitter,
-  Range,
-  TextDocument,
-} from 'vscode';
+import type { CodeLensProvider, TextDocument } from 'vscode';
+import { CodeLens, EventEmitter, Range } from 'vscode';
 import { autodocsConfig } from '../config/autodocs';
 import { storiesGlobs } from '../config/storiesGlobs';
 import { supportLooseStoryNameSemantics } from '../config/supportLegacyStoryNameProperty';

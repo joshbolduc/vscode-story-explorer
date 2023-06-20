@@ -1,9 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { URI, Utils } from 'vscode-uri';
-import {
-  ConfigLocation,
-  configLocationCompareFn,
-} from './configLocationCompareFn';
+import type { ConfigLocation } from './configLocationCompareFn';
+import { configLocationCompareFn } from './configLocationCompareFn';
 
 const configLocationFromFakePath = (path: string): ConfigLocation => ({
   dir: Utils.dirname(URI.file(path)),

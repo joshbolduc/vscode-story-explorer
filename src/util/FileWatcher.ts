@@ -1,10 +1,5 @@
-import {
-  Disposable,
-  FileSystemWatcher,
-  GlobPattern,
-  Uri,
-  workspace,
-} from 'vscode';
+import type { Disposable, FileSystemWatcher, GlobPattern, Uri } from 'vscode';
+import { workspace } from 'vscode';
 
 export type WatchListener = (
   uri: Uri,

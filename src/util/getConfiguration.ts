@@ -1,4 +1,5 @@
-import { ConfigurationScope, workspace } from 'vscode';
+import type { ConfigurationScope } from 'vscode';
+import { workspace } from 'vscode';
 import { configPrefix } from '../constants/constants';
 import type { ConfigurationSuffix } from '../types/ConfigurationSuffix';
 

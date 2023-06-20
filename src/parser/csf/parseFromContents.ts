@@ -1,18 +1,20 @@
 import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
 import type { NodePath } from '@babel/traverse';
-import {
+import type {
   ClassDeclaration,
   Expression,
   FunctionDeclaration,
   Identifier,
-  isExportSpecifier,
-  isIdentifier,
-  isTSSatisfiesExpression,
   ObjectExpression,
   SourceLocation,
   TSDeclareFunction,
   VariableDeclarator,
+} from '@babel/types';
+import {
+  isExportSpecifier,
+  isIdentifier,
+  isTSSatisfiesExpression,
 } from '@babel/types';
 import type { Location } from '../../types/Location';
 import type { PropertyInfo } from '../PropertyInfo';

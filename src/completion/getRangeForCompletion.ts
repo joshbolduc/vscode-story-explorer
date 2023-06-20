@@ -1,4 +1,5 @@
-import { Position, Range, TextDocument } from 'vscode';
+import type { Position, TextDocument } from 'vscode';
+import { Range } from 'vscode';
 import { logError } from '../log/log';
 import type { StoryStore } from '../store/StoryStore';
 

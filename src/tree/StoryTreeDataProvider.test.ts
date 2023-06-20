@@ -1,16 +1,10 @@
 import { basename, extname } from 'path';
 import { describe, expect, it, vitest } from 'vitest';
-import {
-  Command,
-  TextDocumentShowOptions,
-  TreeItemCollapsibleState,
-  Uri,
-} from 'vscode';
+import type { Command, TextDocumentShowOptions, Uri } from 'vscode';
+import { TreeItemCollapsibleState } from 'vscode';
 import { addSerializer } from '../../test/util/addSerializer';
-import {
-  getTreeRoots,
-  TreeItemRepresentation,
-} from '../../test/util/getTreeRoots';
+import type { TreeItemRepresentation } from '../../test/util/getTreeRoots';
+import { getTreeRoots } from '../../test/util/getTreeRoots';
 import { hasProperty } from '../util/guards/hasProperty';
 import { isTruthy } from '../util/guards/isTruthy';
 import { TreeNodeItem } from './TreeNodeItem';

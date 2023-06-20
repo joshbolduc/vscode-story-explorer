@@ -1,5 +1,7 @@
-import { IncomingMessage, request } from 'http';
-import { CancellationError, CancellationToken, Disposable } from 'vscode';
+import type { IncomingMessage } from 'http';
+import { request } from 'http';
+import type { CancellationToken, Disposable } from 'vscode';
+import { CancellationError } from 'vscode';
 
 export class TimeoutError extends Error {}
 

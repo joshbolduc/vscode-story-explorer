@@ -1,4 +1,5 @@
-import { ChildProcess, fork, SendHandle } from 'child_process';
+import type { ChildProcess, SendHandle } from 'child_process';
+import { fork } from 'child_process';
 import { resolve } from 'path';
 import {
   defer,

@@ -1,12 +1,8 @@
-import {
-  Disposable,
-  ExtensionContext,
-  ViewColumn,
-  WebviewPanel,
-  window,
-} from 'vscode';
+import type { Disposable, ExtensionContext, WebviewPanel } from 'vscode';
+import { ViewColumn, window } from 'vscode';
 import { hostScriptPath } from '../../common/constants';
-import { Message, MessageType } from '../../common/messaging';
+import type { Message } from '../../common/messaging';
+import { MessageType } from '../../common/messaging';
 import { webviewPreviewViewType } from '../constants/constants';
 import { logDebug, logError, logInfo } from '../log/log';
 import type { ProxyManager } from '../proxy/ProxyManager';
@@ -15,7 +11,8 @@ import type { StoryStore } from '../store/StoryStore';
 import type { StoryExplorerEntry } from '../story/StoryExplorerEntry';
 import type { ValueOrPromise } from '../util/ValueOrPromise';
 import { getIconPath } from '../util/getIconPath';
-import { createMessenger, Messenger } from './createMessenger';
+import type { Messenger } from './createMessenger';
+import { createMessenger } from './createMessenger';
 import webviewHtml from './webview.html';
 
 export class StoryWebview {

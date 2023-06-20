@@ -1,4 +1,5 @@
-import { Range, ViewColumn } from 'vscode';
+import type { ViewColumn } from 'vscode';
+import { Range } from 'vscode';
 import type { Location } from '../types/Location';
 import { createOpenInEditorCommand } from '../util/createOpenCommand';
 import type { IconName } from '../util/getIconPath';

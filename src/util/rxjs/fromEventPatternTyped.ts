@@ -1,4 +1,5 @@
-import { fromEventPattern, Observable } from 'rxjs';
+import type { Observable } from 'rxjs';
+import { fromEventPattern } from 'rxjs';
 
 interface FromEventPattern {
   <T, TToken>(

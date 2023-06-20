@@ -1,3 +1,4 @@
+import type { Observable } from 'rxjs';
 import {
   combineLatestWith,
   defer,
@@ -7,7 +8,6 @@ import {
   ignoreElements,
   map,
   merge,
-  Observable,
   scan,
   shareReplay,
   startWith,
@@ -16,7 +16,8 @@ import {
   tap,
   window,
 } from 'rxjs';
-import { GlobPattern, RelativePattern, Uri, workspace } from 'vscode';
+import type { GlobPattern, Uri } from 'vscode';
+import { RelativePattern, workspace } from 'vscode';
 import { Utils } from 'vscode-uri';
 import { storybookConfigDetectedContext } from '../constants/constants';
 import { storybookConfigDirConfigSuffix } from '../constants/constants';
@@ -28,10 +29,8 @@ import { watchFileDeletion } from '../util/rxjs/watchFileDeletion';
 import { setContext } from '../util/setContext';
 import { workspaceRoot } from '../util/workspaceRoot';
 import { configFileExtensions } from './configFileExtensions';
-import {
-  ConfigLocation,
-  configLocationCompareFn,
-} from './configLocationCompareFn';
+import type { ConfigLocation } from './configLocationCompareFn';
+import { configLocationCompareFn } from './configLocationCompareFn';
 
 export interface StorybookConfigLocation {
   dir: Uri;

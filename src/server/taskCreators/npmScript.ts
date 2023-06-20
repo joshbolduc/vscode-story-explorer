@@ -1,4 +1,5 @@
-import { TaskDefinition, workspace } from 'vscode';
+import type { TaskDefinition } from 'vscode';
+import { workspace } from 'vscode';
 import { Utils } from 'vscode-uri';
 import { readConfiguration } from '../../util/getConfiguration';
 import { hasProperty } from '../../util/guards/hasProperty';

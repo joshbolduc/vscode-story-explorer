@@ -1,5 +1,6 @@
 import { map, merge, Observable, switchMap } from 'rxjs';
-import { FileSystemWatcher, GlobPattern, Uri, workspace } from 'vscode';
+import type { FileSystemWatcher, GlobPattern, Uri } from 'vscode';
+import { workspace } from 'vscode';
 import { isTruthy } from '../guards/isTruthy';
 import { fromVsCodeEvent } from './fromVsCodeEvent';
 

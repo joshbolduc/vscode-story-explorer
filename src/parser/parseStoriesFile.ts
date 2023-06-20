@@ -1,4 +1,5 @@
-import { CsfParseOptions, tryParseCsf } from './csf/csf';
+import type { CsfParseOptions } from './csf/csf';
+import { tryParseCsf } from './csf/csf';
 import { tryParseMdx } from './mdx/mdx';
 
 const csfParser = { parser: tryParseCsf, type: 'csf' } as const;

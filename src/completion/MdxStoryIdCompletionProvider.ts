@@ -1,10 +1,10 @@
-import {
+import type {
   CompletionItemProvider,
   CompletionList,
   Position,
   TextDocument,
-  workspace,
 } from 'vscode';
+import { workspace } from 'vscode';
 import type { StoryStore } from '../store/StoryStore';
 import type { SettingsWatcher } from '../util/SettingsWatcher';
 import { TextCompletionItem } from './TextCompletionItem';

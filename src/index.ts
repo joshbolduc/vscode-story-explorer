@@ -1,7 +1,7 @@
 import type { Subscription } from 'rxjs';
-import type { ExtensionContext } from 'vscode';
+import type { Disposable, ExtensionContext } from 'vscode';
 
-import { commands, Disposable } from 'vscode';
+import { commands } from 'vscode';
 import { CodeLensManager } from './codelens/CodeLensManager';
 import { goToStorySource } from './commands/goToStorySource';
 import { openOutputChannel } from './commands/openOutputChannel';
