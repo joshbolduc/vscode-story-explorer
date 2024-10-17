@@ -3,7 +3,7 @@
   "displayName": "Story Explorer",
   "description": "Browse and preview Storybook stories inside VS Code",
   "publisher": "joshbolduc",
-  "version": "1.0.2",
+  "version": "1.0.3-alpha.0",
   "icon": "icon.png",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "engines": {
     "npm": "^9.0.0",
-    "vscode": "^1.66.0"
+    "vscode": "^1.94.2"
   },
   "categories": [
     "Other"
@@ -615,7 +615,7 @@
     "watch:configParser": "npm run -s build:configParser -- --watch",
     "watch:webview": "npm run -s build:webview -- --watch",
     "build:production": "npm run -s build:webview:base -- --minify && npm run -s build:configParser:base -- --minify && npm run -s build:extension:base -- --minify",
-    "package": "npm run -s build:production && vsce package --githubBranch main",
+    "package": "npm run -s build:production && vsce package",
     "deploy": "vsce publish --packagePath vsix/*.vsix",
     "format": "prettier --check '{.vscode,src}/**/*.{json,ts}' '*.{json,md}'",
     "format:fix": "npm run -s format -- --write",
@@ -655,7 +655,7 @@
     "@typescript-eslint/eslint-plugin": "5.60.0",
     "@typescript-eslint/parser": "5.60.0",
     "@vitest/coverage-v8": "0.32.2",
-    "@vscode/vsce": "2.19.0",
+    "@vscode/vsce": "3.1.1",
     "concurrently": "8.2.0",
     "esbuild": "0.18.5",
     "esbuild-register": "3.4.2",

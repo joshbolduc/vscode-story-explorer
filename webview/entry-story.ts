@@ -1,5 +1,6 @@
 import { ERR_BAD_GATEWAY } from '../common/constants';
-import { Message, MessageType } from '../common/messaging';
+import type { Message } from '../common/messaging';
+import { MessageType } from '../common/messaging';
 import { createIframeElement } from './createIframeElement';
 
 const storybookBgColor = 'rgb(246, 249, 252)';
@@ -40,12 +41,12 @@ const createIframe = (storyId: string, storyType: string) => {
   // is also needed to support <Story /> elements that reference other stories,
   // in which case we really can't use `singleStory` for docs.)
   const useSingleStory = storyType === 'story';
+  const storyIdParam = encodeURIComponent(storyId);
+  const viewMode = encodeURIComponent(storyType);
 
-  const src = `/iframe.html?id=${encodeURIComponent(
-    storyId,
-  )}&viewMode=${encodeURIComponent(storyType)}${
-    useSingleStory ? '&singleStory=true' : ''
-  }`;
+  const src = useSingleStory
+    ? `/?path=/story/${storyIdParam}&viewMode=${viewMode}&singleStory=true`
+    : `/iframe.html?id=${storyIdParam}&viewMode=${viewMode}`;
 
   iframe.src = src;
 
