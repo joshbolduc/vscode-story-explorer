@@ -9,6 +9,7 @@ describe('parse', () => {
     'project/v7/.storybook/main.ts',
     'project/v7/.config-async/main.ts',
     'project/v7/.config-named-exports/main.js',
+    'project/v8/.storybook/main.js',
   ];
 
   files.forEach((file) => {

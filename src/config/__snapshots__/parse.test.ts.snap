@@ -66,3 +66,12 @@ exports[`parse > parses project/v7/.storybook/main.ts 1`] = `
   ],
 }
 `;
+
+exports[`parse > parses project/v8/.storybook/main.js 1`] = `
+{
+  "stories": [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ],
+}
+`;

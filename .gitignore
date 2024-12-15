@@ -8,3 +8,4 @@ node_modules
 null.txt
 changelog.release.md
 storybook-static/
+*storybook.log
