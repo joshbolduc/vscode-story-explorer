@@ -63,6 +63,7 @@ export const storiesViewShowItemsWithoutStoriesConfigSuffix =
 export const storybookConfigDirConfigSuffix = 'storybookConfigDir';
 export const suggestStoryIdConfigSuffix = 'suggestStoryId';
 export const suggestTitleConfigSuffix = 'suggestTitle';
+export const previewModeConfigSuffix = 'preview.mode';
 
 export const serverExternalUrlConfig = makeFullConfigName(
   serverExternalUrlConfigSuffix,

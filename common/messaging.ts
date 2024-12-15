@@ -78,6 +78,10 @@ export interface LoadStoryMessage {
    * server.
    */
   isInternalServer: boolean;
+  /**
+   * The type of story preview to load.
+   */
+  previewMode: 'canvas' | 'full';
 }
 
 /**

@@ -479,6 +479,19 @@
           "markdownDescription": "Controls whether to offer suggestions for story IDs when using `<Story id=\"...\" />` in MDX files. Suggestions are based on the IDs of other stories in the project.",
           "type": "boolean",
           "default": true
+        },
+        "storyExplorer.preview.mode": {
+          "scope": "window",
+          "markdownDescription": "Controls the presentation of the story in the embedded story preview.",
+          "default": "canvas",
+          "enum": [
+            "canvas",
+            "full"
+          ],
+          "markdownEnumDescriptions": [
+            "Displays the story's canvas, without any additional toolbars or Storybook UI.",
+            "Displays the story within the full Storybook UI."
+          ]
         }
       }
     },
