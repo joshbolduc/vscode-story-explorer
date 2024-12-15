@@ -648,7 +648,7 @@
     "@types/lodash": "4.14.195",
     "@types/node": "16.11.68",
     "@types/node-netstat": "1.8.1",
-    "@types/picomatch": "2.3.0",
+    "@types/picomatch": "2.3.4",
     "@types/semver": "7.5.0",
     "@types/vscode": "1.66.0",
     "@types/vscode-webview": "1.57.1",
