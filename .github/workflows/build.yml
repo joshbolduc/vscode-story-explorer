@@ -23,6 +23,7 @@ jobs:
             package-lock.json
             test/project/v6/package-lock.json
             test/project/v7/package-lock.json
+            test/project/v8/package-lock.json
       - name: Install Node dependencies
         run: npm ci
       - name: Package VSIX
@@ -47,6 +48,7 @@ jobs:
             package-lock.json
             test/project/v6/package-lock.json
             test/project/v7/package-lock.json
+            test/project/v8/package-lock.json
       - name: Install Node dependencies
         id: install
         run: npm ci
@@ -79,6 +81,7 @@ jobs:
             package-lock.json
             test/project/v6/package-lock.json
             test/project/v7/package-lock.json
+            test/project/v8/package-lock.json
       - name: Install Node dependencies
         run: npm ci
       - uses: actions/download-artifact@v3.0.2
