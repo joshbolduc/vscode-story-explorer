@@ -49,6 +49,16 @@ Log level to use for logging. Logs are available via the Story Explorer output c
 
 - `debug`: Log debugging information, general operational information, warnings, and errors
 
+### `storyExplorer.preview.mode`
+
+Controls the presentation of the story in the embedded story preview.
+
+### Options
+
+- `canvas`: Displays the story's canvas, without any additional toolbars or Storybook UI.
+
+- `full`: Displays the story within the full Storybook UI.
+
 ### `storyExplorer.server.external.url`
 
 URL of an externally launched and managed Storybook instance, used when [`storyExplorer.server.internal.enabled`](#storyexplorerserverinternalenabled) is disabled. Defaults to `http://localhost:6006`.

@@ -1,4 +1,5 @@
-import { Message, MessageType } from '../common/messaging';
+import type { Message } from '../common/messaging';
+import { MessageType } from '../common/messaging';
 import { createIframeElement } from './createIframeElement';
 import errorHtml from './error.html';
 import { listen } from './listen';
@@ -27,14 +28,14 @@ const handleExtensionHostMessage = (hostMessage: Message): void => {
       break;
     }
     case MessageType.LoadStory: {
-      const { port, storybookUrl } = hostMessage;
+      const { port, storybookUrl, previewMode } = hostMessage;
       const { storyId, storyType } = storyInfo;
 
       const iframeSrc = `http://localhost:${Number(
         port,
       )}/__vscode_story_explorer_iframe#storyId=${encodeURIComponent(
         storyId,
-      )}&storyType=${encodeURIComponent(storyType)}`;
+      )}&storyType=${encodeURIComponent(storyType)}&mode=${previewMode}`;
 
       const iframeUrl = new URL(iframeSrc);
       const innerIframeOrigin = iframeUrl.origin;

@@ -10,6 +10,7 @@ import type { ServerManager } from '../server/ServerManager';
 import type { StoryStore } from '../store/StoryStore';
 import type { StoryExplorerEntry } from '../story/StoryExplorerEntry';
 import type { ValueOrPromise } from '../util/ValueOrPromise';
+import { readConfiguration } from '../util/getConfiguration';
 import { getIconPath } from '../util/getIconPath';
 import type { Messenger } from './createMessenger';
 import { createMessenger } from './createMessenger';
@@ -199,11 +200,16 @@ export class StoryWebview {
   }
 
   private finishLoading(storybookUrl: string, proxyPort: number) {
+    const previewMode = readConfiguration<'canvas' | 'full'>(
+      'preview.mode',
+      'canvas',
+    );
     return this.messenger.send({
       type: MessageType.LoadStory,
       port: proxyPort,
       storybookUrl,
       isInternalServer: this.serverManager.isInternalServerEnabled(),
+      previewMode,
     });
   }
 
