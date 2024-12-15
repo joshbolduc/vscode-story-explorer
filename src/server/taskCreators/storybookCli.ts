@@ -22,14 +22,18 @@ const getStorybookCliLocation = async (configDir: Uri | undefined) => {
     'storybook',
     configDir,
     async (uri) => {
-      try {
-        const version = await getInstalledPackageVersion('@storybook/cli', uri);
+      const cliPackages = ['storybook', '@storybook/cli'];
 
-        if (typeof version === 'string' && gte(version, VERSION_7_x_ALPHA)) {
-          return true;
+      for (const packageName of cliPackages) {
+        try {
+          const version = await getInstalledPackageVersion(packageName, uri);
+
+          if (typeof version === 'string' && gte(version, VERSION_7_x_ALPHA)) {
+            return true;
+          }
+        } catch {
+          // no-op; likely package.json couldn't be found or parsed
         }
-      } catch {
-        // no-op; likely package.json couldn't be found or parsed
       }
 
       return false;
