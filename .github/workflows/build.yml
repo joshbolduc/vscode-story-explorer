@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Install Node.js
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.8.2
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
@@ -40,7 +40,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Install Node.js
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.8.2
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
@@ -73,7 +73,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Install Node.js
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.8.2
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
