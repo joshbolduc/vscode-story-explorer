@@ -658,7 +658,7 @@
     "@vscode/vsce": "2.19.0",
     "concurrently": "8.2.2",
     "esbuild": "0.18.5",
-    "esbuild-register": "3.4.2",
+    "esbuild-register": "3.6.0",
     "eslint": "8.43.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
