@@ -661,7 +661,7 @@
     "esbuild-register": "3.6.0",
     "eslint": "8.43.0",
     "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-import": "2.31.0",
     "fast-glob": "3.2.12",
     "http-proxy": "1.18.1",
     "lodash": "4.17.21",
