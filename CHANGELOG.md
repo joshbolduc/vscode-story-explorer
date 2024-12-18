@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/joshbolduc/vscode-story-explorer/compare/v1.0.2...v1.1.0) (2024-12-18)
+
+### Features
+
+- support configuring preview mode ([b61d6e0](https://github.com/joshbolduc/vscode-story-explorer/commit/b61d6e0e37ab229a9cae3969ec03ddcc9935e166)), closes [#1056](https://github.com/joshbolduc/vscode-story-explorer/issues/1056)
+
+### Bug Fixes
+
+- improve storybook cli detection ([3583bb2](https://github.com/joshbolduc/vscode-story-explorer/commit/3583bb2868b8c5087bb978bede802a458ec0d531))
+
 ### [1.0.2](https://github.com/joshbolduc/vscode-story-explorer/compare/v1.0.1...v1.0.2) (2024-03-04)
 
 ### [1.0.1](https://github.com/joshbolduc/vscode-story-explorer/compare/v1.0.0...v1.0.1) (2023-06-20)
