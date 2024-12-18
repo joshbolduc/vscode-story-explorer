@@ -223,9 +223,7 @@ The legacy `storiesOf` API is not supported.
 
 ### Cross-origin restrictions
 
-Story previews are rendered in an `iframe` embedded in a VS Code `webview`. This imposes some restrictions inherent to the use of cross-origin `iframe`s.
-
-For example, attempts to access `window.top` in a story will cause an exception to be thrown. This can interfere with the official actions addon.
+Story previews are rendered in an `iframe` embedded in a VS Code `webview`. This imposes some restrictions inherent to the use of cross-origin `iframe`s. For example, attempts to access `window.top` in a story will cause an exception to be thrown.
 
 Story Explorer attempts to suppress any uncaught exceptions so that they don't interfere with the preview, but some functionality may not work as expected. You can always open stories in an external browser instead of the built-in preview.
 
