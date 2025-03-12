@@ -43,6 +43,7 @@ export const initLogger = (mode: ExtensionMode): Disposable => {
       configuredLogLevel = getLogLevelFromString(watcher.read());
     },
   );
+  configuredLogLevel = getLogLevelFromString(logLevelSettingsWatcher.read());
 
   return {
     dispose: () => {
