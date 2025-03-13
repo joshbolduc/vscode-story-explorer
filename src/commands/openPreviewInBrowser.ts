@@ -34,13 +34,13 @@ export const openPreviewInBrowser =
       return;
     }
 
-    const host = await serverManager.ensureServerHealthy();
-    if (!host) {
+    const { url } = await serverManager.ensureServerHealthy();
+    if (!url) {
       return;
     }
 
     const storyId = story.id;
-    const baseUri = Uri.parse(host, true);
+    const baseUri = Uri.parse(url, true);
     const uriToOpen = storyId
       ? baseUri.with({
           query: `path=/${story.type}/${encodeURIComponent(storyId)}`,

@@ -6,7 +6,7 @@ import { MessageType } from '../../common/messaging';
 import { webviewPreviewViewType } from '../constants/constants';
 import { logDebug, logError, logInfo } from '../log/log';
 import type { ProxyManager } from '../proxy/ProxyManager';
-import type { ServerManager } from '../server/ServerManager';
+import type { ServerManager, ServerStatus } from '../server/ServerManager';
 import type { StoryStore } from '../store/StoryStore';
 import type { StoryExplorerEntry } from '../story/StoryExplorerEntry';
 import type { ValueOrPromise } from '../util/ValueOrPromise';
@@ -137,7 +137,7 @@ export class StoryWebview {
   }
 
   public setLoading(
-    serverReadyPromise: NonNullable<ValueOrPromise<string | undefined>>,
+    serverReadyPromise: NonNullable<Promise<ServerStatus>>,
     proxyPortPromise: ValueOrPromise<number>,
   ) {
     this.readyListener = this.panel.webview.onDidReceiveMessage(
@@ -152,7 +152,7 @@ export class StoryWebview {
               storyType: this.story.type,
             });
 
-            const storybookUrl = await serverReadyPromise;
+            const { url: storybookUrl, type } = await serverReadyPromise;
             const proxyPort = await proxyPortPromise;
 
             // undefined URL suggests server launch was canceled
@@ -165,7 +165,11 @@ export class StoryWebview {
             logDebug(
               `Loading URL ${storybookUrl} in webview via proxy port ${proxyPort}`,
             );
-            await this.finishLoading(storybookUrl, proxyPort);
+            await this.finishLoading(
+              storybookUrl,
+              proxyPort,
+              type === 'internal',
+            );
           } catch (err) {
             logError('Failed to complete webview initialization', err);
             this.close();
@@ -199,7 +203,11 @@ export class StoryWebview {
     return this.story.id;
   }
 
-  private finishLoading(storybookUrl: string, proxyPort: number) {
+  private finishLoading(
+    storybookUrl: string,
+    proxyPort: number,
+    isInternalServer: boolean,
+  ) {
     const previewMode = readConfiguration<'canvas' | 'full'>(
       'preview.mode',
       'canvas',
@@ -208,15 +216,13 @@ export class StoryWebview {
       type: MessageType.LoadStory,
       port: proxyPort,
       storybookUrl,
-      isInternalServer: this.serverManager.isInternalServerEnabled(),
+      isInternalServer,
       previewMode,
     });
   }
 
   private init(proxyPort: number) {
-    const serverReadyPromise = Promise.resolve(
-      this.serverManager.ensureServerHealthy(),
-    );
+    const serverReadyPromise = this.serverManager.ensureServerHealthy();
 
     this.panel.title = this.story.label;
 
