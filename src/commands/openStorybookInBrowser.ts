@@ -5,12 +5,12 @@ import type { ServerManager } from '../server/ServerManager';
 export const openStorybookInBrowser =
   (serverManager: ServerManager) => async () => {
     try {
-      const host = await serverManager.ensureServerHealthy();
-      if (!host) {
+      const { url } = await serverManager.ensureServerHealthy();
+      if (!url) {
         return;
       }
 
-      const uriToOpen = Uri.parse(host, true);
+      const uriToOpen = Uri.parse(url, true);
       await env.openExternal(uriToOpen);
     } catch (e) {
       logError('Failed to launch storybook in browser', e);

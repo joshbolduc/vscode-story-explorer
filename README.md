@@ -61,7 +61,7 @@ Controls the presentation of the story in the embedded story preview.
 
 ### `storyExplorer.server.external.url`
 
-URL of an externally launched and managed Storybook instance, used when [`storyExplorer.server.internal.enabled`](#storyexplorerserverinternalenabled) is disabled. Defaults to `http://localhost:6006`.
+URL of an externally launched and managed Storybook instance, used when [`storyExplorer.server.internal.preferExternal`](#storyexplorerserverinternalpreferexternal) is enabled or [`storyExplorer.server.internal.enabled`](#storyexplorerserverinternalenabled) is disabled. Defaults to `http://localhost:6006`.
 
 ### `storyExplorer.server.internal.behavior`
 
@@ -120,6 +120,10 @@ Optional path to the directory containing the `package.json` file with the npm s
 ### `storyExplorer.server.internal.npm.script`
 
 Name of the npm script to use to launch the Storybook development server. Defaults to `storybook`. Only used when [`storyExplorer.server.internal.launchStrategy`](#storyexplorerserverinternallaunchstrategy) is set to `npm` or `detect`.
+
+### `storyExplorer.server.internal.preferExternal` (experimental)
+
+Controls whether to check for a running external Storybook server before launching an internal server. If the external server is reachable, it will be used instead. You can specify the external URL to check by setting [`storyExplorer.server.external.url`](#storyexplorerserverexternalurl)
 
 ### `storyExplorer.server.internal.startStorybook.args`
 
