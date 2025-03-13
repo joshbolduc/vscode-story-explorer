@@ -24,7 +24,13 @@ const parseMarkdown = (markdown: string) => {
 const output = Object.entries(settings)
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([key, value]) => {
-    const paragraphs = [`### \`${key}\``];
+    const tags = 'tags' in value ? value.tags : [];
+
+    const annotations = [
+      tags.includes('experimental') ? '(experimental)' : undefined,
+    ].filter(Boolean);
+
+    const paragraphs = [[`### \`${key}\``, ...annotations].join(' ')];
 
     if (
       'markdownDeprecationMessage' in value &&

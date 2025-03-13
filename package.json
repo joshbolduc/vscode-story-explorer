@@ -429,6 +429,15 @@
           "default": true,
           "type": "boolean"
         },
+        "storyExplorer.server.internal.preferExternal": {
+          "scope": "window",
+          "markdownDescription": "Controls whether to check for a running external Storybook server before launching an internal server. If the external server is reachable, it will be used instead. You can specify the external URL to check by setting `#storyExplorer.server.external.url#`",
+          "default": false,
+          "type": "boolean",
+          "tags": [
+            "experimental"
+          ]
+        },
         "storyExplorer.server.internal.behavior": {
           "scope": "window",
           "markdownDescription": "Controls when to automatically start a Storybook development server. This setting only applies when `#storyExplorer.server.internal.enabled#` is enabled.",
@@ -444,7 +453,7 @@
         },
         "storyExplorer.server.external.url": {
           "scope": "window",
-          "markdownDescription": "URL of an externally launched and managed Storybook instance, used when `#storyExplorer.server.internal.enabled#` is disabled. Defaults to `http://localhost:6006`.",
+          "markdownDescription": "URL of an externally launched and managed Storybook instance, used when `#storyExplorer.server.internal.preferExternal#` is enabled or `#storyExplorer.server.internal.enabled#` is disabled. Defaults to `http://localhost:6006`.",
           "type": "string",
           "examples": [
             "http://localhost:6006"

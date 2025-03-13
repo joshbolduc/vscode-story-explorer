@@ -5,7 +5,16 @@ import { CancellationError } from 'vscode';
 
 export class TimeoutError extends Error {}
 
-export const fetch = (url: string, token: CancellationToken) => {
+export const fetch = (
+  url: string,
+  {
+    token,
+    timeout,
+  }: {
+    token?: CancellationToken;
+    timeout?: number;
+  },
+) => {
   return new Promise<IncomingMessage>((resolve, reject) => {
     const cleanup = () => {
       tokenListener?.dispose();
@@ -15,7 +24,7 @@ export const fetch = (url: string, token: CancellationToken) => {
       }
     };
 
-    const req = request(url)
+    const req = request(url, { timeout })
       .once('response', (res) => {
         cleanup();
         resolve(res);
@@ -35,7 +44,7 @@ export const fetch = (url: string, token: CancellationToken) => {
 
     req.end();
 
-    let tokenListener: Disposable | undefined = token.onCancellationRequested(
+    let tokenListener: Disposable | undefined = token?.onCancellationRequested(
       () => {
         cleanup();
         reject(new CancellationError());

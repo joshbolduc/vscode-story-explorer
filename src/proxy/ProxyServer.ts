@@ -75,8 +75,8 @@ export class ProxyServer {
       } else {
         Promise.resolve(this.getProxyTarget())
           .then((target) => {
-            if (target) {
-              proxy.web(req, res, { target }, (e) => {
+            if (target.url) {
+              proxy.web(req, res, { target: target.url }, (e) => {
                 logWarn('Failed to proxy request', e, target);
                 res.writeHead(502);
                 res.write(ERR_BAD_GATEWAY);
