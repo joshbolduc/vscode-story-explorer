@@ -97,7 +97,7 @@ export class StorybookServer {
             async () => {
               try {
                 logDebug(`Sending request to ${url}`);
-                return await fetch(url, token);
+                return await fetch(url, { token });
               } catch (e: unknown) {
                 if (e instanceof TimeoutError) {
                   logDebug('Caught timeout error');

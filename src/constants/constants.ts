@@ -53,6 +53,8 @@ export const serverInternalBehaviorConfigSuffix = 'server.internal.behavior';
 export const serverInternalCommandLineArgsConfigSuffix =
   'server.internal.commandLineArgs';
 export const serverInternalEnabledConfigSuffix = 'server.internal.enabled';
+export const serverInternalPreferExternalConfigSuffix =
+  'server.internal.preferExternal';
 export const serverInternalEnvironmentVariablesConfigSuffix =
   'server.internal.environmentVariables';
 export const serverInternalStorybookBinaryPathConfigSuffix =
