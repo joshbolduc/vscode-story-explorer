@@ -12,11 +12,11 @@
     "generate-stories-json": "storybook build && cp storybook-static/stories.json ./stories.json"
   },
   "devDependencies": {
-    "@babel/core": "7.26.0",
-    "@babel/plugin-proposal-decorators": "7.25.9",
-    "@babel/preset-env": "7.26.0",
-    "@babel/preset-react": "7.26.3",
-    "@babel/preset-typescript": "7.26.0",
+    "@babel/core": "7.28.4",
+    "@babel/plugin-proposal-decorators": "7.28.0",
+    "@babel/preset-env": "7.28.3",
+    "@babel/preset-react": "7.27.1",
+    "@babel/preset-typescript": "7.27.1",
     "@storybook/addon-actions": "7.0.22",
     "@storybook/addon-essentials": "7.0.22",
     "@storybook/cli": "7.0.22",
