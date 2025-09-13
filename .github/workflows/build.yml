@@ -89,6 +89,10 @@ jobs:
         run: npm run deploy
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - name: Publish to Open VSX
+        run: npm run deploy:openvsx
+        env:
+          OVSX_PAT: ${{ secrets.OPEN_VSX_TOKEN }}
       - name: Read changelog
         uses: yashanand1910/standard-release-notes@v1.3.0
         id: changelog
