@@ -683,7 +683,7 @@
     "esbuild": "0.18.5",
     "esbuild-register": "3.6.0",
     "eslint": "8.43.0",
-    "eslint-config-prettier": "8.8.0",
+    "eslint-config-prettier": "8.10.2",
     "eslint-plugin-import": "2.31.0",
     "fast-glob": "3.3.2",
     "http-proxy": "1.18.1",
