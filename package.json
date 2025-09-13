@@ -680,7 +680,7 @@
     "@vitest/coverage-v8": "0.32.2",
     "@vscode/vsce": "2.19.0",
     "concurrently": "8.2.2",
-    "esbuild": "0.18.5",
+    "esbuild": "0.25.0",
     "esbuild-register": "3.6.0",
     "eslint": "8.43.0",
     "eslint-config-prettier": "8.8.0",
