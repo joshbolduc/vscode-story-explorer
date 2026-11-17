@@ -682,7 +682,7 @@
     "concurrently": "8.2.2",
     "esbuild": "0.18.5",
     "esbuild-register": "3.6.0",
-    "eslint": "8.43.0",
+    "eslint": "8.57.1",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.31.0",
     "fast-glob": "3.3.2",
